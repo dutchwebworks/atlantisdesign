@@ -1,3 +1,3 @@
 # Atlantisdesign personal web site
 
-*By Dennis Burger, Poort80 Amsterdam, may 2018*
+*By Dennis Burger, May 2018*
