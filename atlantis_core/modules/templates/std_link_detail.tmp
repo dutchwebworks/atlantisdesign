@@ -1,0 +1,10 @@
+
+<!-- BEGIN LINKS -->
+<!-- BEGIN CAT_DIV --><h2>{cat_heading}</h2><!-- END CAT_DIV -->
+<div class="links">
+	<h3>{link_heading}</h3>
+	{link_description}	
+	<p><a href="{link_url}" target="_blank">{link_url}</a></p>
+	<p class="date">{link_date}</p>
+</div>
+<!-- END LINKS -->

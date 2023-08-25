@@ -1,0 +1,4 @@
+
+<h1>{art_heading}</h1>
+{art_body}
+<p class="date">{art_date_mod}</p>

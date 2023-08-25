@@ -1,0 +1,29 @@
+
+	
+<div id="intro">
+	<blockquote>
+		<p>{gal_body}</p>
+	</blockquote>
+</div>
+
+<h1 id="slides">{gal_heading}</h1>
+
+<div class="gallery_detail">
+	<p>
+		<!-- BEGIN PREVIOUS_PAGE --><a href="/portfolio/id/{previous_id}/category/{gal_cat}">&laquo; Vorige foto</a><!-- END PREVIOUS_PAGE --> 		
+		<!-- BEGIN NEXT_PAGE --><a href="/portfolio/id/{next_id}/category/{gal_cat}">Volgende foto &raquo;</a><!-- END NEXT_PAGE -->		
+	</p>
+		
+	<p><img class="gallery_large" src="/{gal_img}" alt="{gal_heading}" /></p>
+	<p>{gal_body}</p>
+	
+	<p class="date">{gal_insert_date}</p>
+	
+	<h2>Pagina's</h2>
+	<p>
+		<!-- BEGIN PAGE_LIST -->
+		<!--<a class="{page_current}" href="portfolio_detail.php?gallery_id={gallery_id}&amp;gal_cat={gal_cat}#content">{page_number}</a> |-->
+		<a class="{page_current}" href="/portfolio/id/{gallery_id}/category/{gal_cat}">{page_number}</a> |
+		<!-- END PAGE_LIST -->
+	</p>
+</div>

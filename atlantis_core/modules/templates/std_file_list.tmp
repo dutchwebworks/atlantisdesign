@@ -1,0 +1,22 @@
+
+<!-- BEGIN UPLOAD_LIST -->
+<form name="uploads" action="" id="uploads" method="post">
+<table class="design" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+				<th>Naam</th>
+				<th>Grootte</th>
+				<th>Datum</th>
+				<th>Verwijder</th>
+		</tr>
+		<!-- BEGIN LIST -->
+		<tr class="{row}" valign="top">
+				<td>{name}</td>
+				<td>{size}</td>
+				<td>{date}</td>
+				<td><input type="checkbox" name="del_img[]" id="del_img" value="{name}" /></td>
+		</tr>
+		<!-- END LIST -->
+</table>
+<input type="submit" name="submit" value="Verwijder" />
+</form>
+<!-- END UPLOAD_LIST -->

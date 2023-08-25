@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- generator="FeedCreator 1.7.2-ppt (info@mypapit.net)" -->
+<rss version="2.0">
+    <channel>
+        <title>Atlantisdesign artikelen</title>
+        <description>Mac, webdesign en de Mac als webserver</description>
+        <link>http://atlantisdesign.dutchwebworks.nl/artikelen</link>
+        <lastBuildDate>Fri, 19 Jun 2009 09:42:02 +0100</lastBuildDate>
+        <generator>FeedCreator 1.7.2-ppt (info@mypapit.net)</generator>
+        <item>
+            <title>Subversion svnsync repository replication</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-svnsync-repository-replication</link>
+            <description>Met svnsync kan een slave-repository gesynchroniseerd worden met een master-repository. Een handige manier om een Subversion repository incrementeel te backupen. Dit kan naar een (externe) backup schijf of een andere computer over het netwerk.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 22 Jun 2008 13:58:07 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-svnsync-repository-replication</guid>
+        </item>
+        <item>
+            <title>Entropy PHP5 met GDLib op Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/entropy-php5-met-gdlib-op-leopard</link>
+            <description>De PHP 5.x versie op Entropy.ch (Marc Liyanage) bevat onder andere de [b]GDLib library[/b] waarmee dynamisch plaatje gegeneerd kunnen worden. Deze GDLib library staat helaas niet standaard op de default installatie van PHP die Apple ons biedt.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sat, 21 Jun 2008 22:43:03 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/entropy-php5-met-gdlib-op-leopard</guid>
+        </item>
+        <item>
+            <title>Subversion svnserve automatisch opstarten</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-svnserve-automatisch-opstarten</link>
+            <description>Subversion heeft ook een eigen svnserve deamon zodat het svn:// protocol gebruikt kan worden. Met een launchd plist (XML) bestand wordt bij het opstarten van de Mac automatisch  de svnserve daemon gestart.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sat, 14 Jun 2008 15:57:26 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-svnserve-automatisch-opstarten</guid>
+        </item>
+        <item>
+            <title>Synergy delen van muis en toetsenbord</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/synergy-delen-van-muis-en-toetsenbord</link>
+            <description>Stel je werkt op een Mac en daarnaast moet je ook wel eens op de Windows computer wat doen. Zou het dan niet handig zijn om slechts 1 muis en toetsenbord te (hoeven) gebruiken voor beide computers tegelijk? Zeer handig voor bijvoorbeeld meerdere laptops met externe toetsenborden en draadloze muizen. Daarbij wordt ook een simpel clipboard gedeeld tussen de computers.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sat, 07 Jun 2008 19:00:19 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/synergy-delen-van-muis-en-toetsenbord</guid>
+        </item>
+        <item>
+            <title>Apache deflate en expire headers</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-deflate-en-expire-headers</link>
+            <description>Comprimeren van bepaalde bestandstypen voordat deze naar de eindgebruiker gestuurd worden. Daarbij kunnen we ook aangeven dat bepaalde bestanden voor langere tijd bewaard kunnen worden in de webbrowser cache.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Tue, 03 Jun 2008 21:46:21 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-deflate-en-expire-headers</guid>
+        </item>
+        <item>
+            <title>Apache mod_vhost_alias virtual hosts</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-mod_vhost_alias-virtual-hosts</link>
+            <description>Snel en makkelijk virtual-hosts gebruiken. Door simpelweg twee mappen aan te maken en een regel in het hosts file.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 04 May 2008 22:11:34 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-mod_vhost_alias-virtual-hosts</guid>
+        </item>
+        <item>
+            <title>Trac op MacOS X Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/trac-op-macos-x-leopard</link>
+            <description>Via een lokale website makkelijk Subversion repository en changesets bekijken. Geintegreerde Wiki, issue- bugtracking systeem. Precies kunnen aangeven, d.m.v. integratie met Subversion en een ticketsysteem, wat er in bepaalde bestanden veranderd is en welke gebruikers zaken moeten oplossen.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Thu, 01 May 2008 23:02:49 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/trac-op-macos-x-leopard</guid>
+        </item>
+        <item>
+            <title>VNC server remote desktop op MacOSX</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/vnc-server-remote-desktop-op-macosx</link>
+            <description>Natuurlijk bestaat er Apple Remote Desktop. Windows computers kunnen ook gebruik maken van RDP (Remote Desktop Connection). Maar het is ook mogelijk om vanaf een Windows computer, met VNC, een Mac of Linux computer te besturen.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Wed, 26 Dec 2007 21:57:36 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/vnc-server-remote-desktop-op-macosx</guid>
+        </item>
+        <item>
+            <title>PureFTPd installeren op MacOSX Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/pureftpd-installeren-op-macosx-leopard</link>
+            <description>Een betere, makkelijkere te onderhouden FTP server op Mac OS X. Met gebruik van virtual-users.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Wed, 26 Dec 2007 19:35:09 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/pureftpd-installeren-op-macosx-leopard</guid>
+        </item>
+        <item>
+            <title>Subversion beschikbaar maken via Apache</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-beschikbaar-maken-via-apache</link>
+            <description>Op deze manier kun je via internet projecten downloaden, bewerken en de wijzigingen terug sturen naar Subversion. Dit maakt het mogelijk om met meerdere mensen aan een project te werken.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Mon, 17 Dec 2007 22:48:12 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-beschikbaar-maken-via-apache</guid>
+        </item>
+        <item>
+            <title>Subversion post commit update op test website</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-post-commit-update-op-test-website</link>
+            <description>Een auto update op een backup kopie maken vanuit Subversion? Zodra er een Subversion commit actie is gemaakt wordt een andere working copy automatisch ge-update naar de laatste revisie. Een soort auto update dus.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 16 Dec 2007 23:56:36 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-post-commit-update-op-test-website</guid>
+        </item>
+        <item>
+            <title>Subversion versie beheer op Mac OS X</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-versie-beheer-op-mac-os-x</link>
+            <description>Open-source versie beheer. Ideaal voor gebruik in het bouwen van websites waar bestanden vaak wijzigen, scripts getest worden en misschien niet meer werken. Dan is het handig om versies van alle bestanden centraal en handig te bewaren.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 16 Dec 2007 20:55:37 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/subversion-versie-beheer-op-mac-os-x</guid>
+        </item>
+        <item>
+            <title>WebDAV op Mac OS X Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/webdav-op-mac-os-x-leopard</link>
+            <description>Met webDAV kun je op een soort iDisk manier bestanden delen via het internet. Via Mac en Windows kunnen bestanden van en naar de Mac geschreven worden alsof het een netwerk schijf is.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Thu, 13 Dec 2007 22:17:04 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/webdav-op-mac-os-x-leopard</guid>
+        </item>
+        <item>
+            <title>Apache Server Side Includes SSI</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-server-side-includes-ssi</link>
+            <description>Je maakt voor een website bijvoorbeeld de navigatie in een apart HTML bestand. Dit is een stukje HTML dat je graag in andere pagina's elke keer wilt laten terug komen op een bepaalde plek. Bovendien wil je niet moeilijk gaan doen met bijvoorbeeld PHP. Met Apache SSI (Server-Side Includes) kun je makkelijk en snel bijvoorbeeld stukken HTML in andere pagina's laten terug komen / embedden.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 18 Nov 2007 20:47:02 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-server-side-includes-ssi</guid>
+        </item>
+        <item>
+            <title>Apache Virtual hosts</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-virtual-hosts</link>
+            <description>Als webdesigner / webdeveloper heb je vaak te maken met root relative paden naar externe bestanden die gebruikt worden op de website. Als je websites ontwikkeld in je eigen Sites directory kom je met dit nogal voor een probleem te staan. Hier is een mooie oplossing voor welke ik persoonlijk heel erg handig vind.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Tue, 06 Nov 2007 00:45:31 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-virtual-hosts</guid>
+        </item>
+        <item>
+            <title>Apache htaccess en mod_rewrite op MacOSX Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-leopard</link>
+            <description>MacOS X Leopard heeft de Apache 2.x webserver. Ook hier gaan we de mod_rewrite module gebruiken. Eigelijk moet er maar 1 configuratie regel aangepast te worden.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 04 Nov 2007 21:13:22 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-leopard</guid>
+        </item>
+        <item>
+            <title>PHP5 op MacOSX Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/php5-op-macosx-leopard</link>
+            <description>Apple heeft in haar nieuwe vier voeter voor ons de PHP5 module al voor geinstalleerd. Deze gaan we met 1 terminal commando aanzetten.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 04 Nov 2007 19:32:02 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/php5-op-macosx-leopard</guid>
+        </item>
+        <item>
+            <title>MySQL op MacOSX Leopard</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/mysql-op-macosx-leopard</link>
+            <description>Er is bij het schrijven van dit artikelen nog geen officiele versie uit van MySQL voor Mac OS X Leopard v10.5. Hier een omweg.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 04 Nov 2007 19:30:47 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/mysql-op-macosx-leopard</guid>
+        </item>
+        <item>
+            <title>Apache htaccess en mod_rewrite op MacOSX Tiger</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-tiger</link>
+            <description>Met Apache mod_rewrite kunnen we URL's netjes herschrijven zodat men aan het webadres kan zien waar de pagina over gaat. Dit is tevens heel goed voor SEO (Search Engine Friendly) url's, de vindbaarheid en content voorspelbaarheid van de webpagina. Hoe doen we dat op Mac OS X?</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 23 Sep 2007 13:06:02 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-tiger</guid>
+        </item>
+        <item>
+            <title>Het maken van een ISO bestand</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/het-maken-van-een-iso-bestand</link>
+            <description>Op het Windows platform wordt meer gebruik gemaakt van een .iso als zijnde Master disc-image formaat. Via een Unix command en een simpele Automator workflow kunnen we dat ook op de Mac.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sat, 15 Jul 2006 16:23:47 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/het-maken-van-een-iso-bestand</guid>
+        </item>
+        <item>
+            <title>WebDAV op Mac OS X Tiger</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/webdav-op-mac-os-x-tiger</link>
+            <description>Apple's iDisk is een WebDAV server. Je kan je eigen Mac ook zo opzetten dat je deze ook op de WebDAV manier te benaderen is.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Fri, 16 Jun 2006 19:34:33 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/webdav-op-mac-os-x-tiger</guid>
+        </item>
+        <item>
+            <title>Windows e-mail overzetten</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/windows-e-mail-overzetten</link>
+            <description>Oke, je hebt nu je eigen Mac. Zou het niet handig zijn om je oude e-mail van je Pc Outlook Express naar je Mac te kunnen krijgen?</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Sun, 12 Mar 2006 16:52:58 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/windows-e-mail-overzetten</guid>
+        </item>
+        <item>
+            <title>Apache Protect</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/apache-protect</link>
+            <description>Als je de Mac gebruikt voor websites kun je met dit programma'tje makkelijk mappen voorzien van een zelf gemaakte username en wachtwoord.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Mon, 20 Feb 2006 14:28:36 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/apache-protect</guid>
+        </item>
+        <item>
+            <title>Postfix mail server op MacOSX Tiger</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/postfix-mail-server-op-macosx-tiger</link>
+            <description>Activeer de ingebouwde mail server van Mac OS X. U kunt nu vanaf uw eigen Mac direct mail versturen.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Fri, 19 Aug 2005 10:45:54 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/postfix-mail-server-op-macosx-tiger</guid>
+        </item>
+        <item>
+            <title>PHP5 op MacOSX Tiger</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/php5-op-macosx-tiger</link>
+            <description>PHP is een Open-Source Server Side scripting taal welke zeer populair is en blijft groeien. Ondertussen is men bij versie 5. Op onze Mac staat versie 4.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Wed, 17 Aug 2005 18:22:45 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/php5-op-macosx-tiger</guid>
+        </item>
+        <item>
+            <title>PureFTPd installeren op MacOSX Tiger</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/pureftpd-installeren-op-macosx-tiger</link>
+            <description>Het opzetten van een goede FTP server hoeft niet moeilijk te zijn. Apple heeft een FTP server in alle versies van Mac OS X ingebouwd.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Wed, 17 Aug 2005 18:22:45 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/pureftpd-installeren-op-macosx-tiger</guid>
+        </item>
+        <item>
+            <title>MySQL op MacOSX Tiger</title>
+            <link>http://atlantisdesign.dutchwebworks.nl/artikel/mysql-op-macosx-tiger</link>
+            <description>PHP kan goed samenwerken met de MySQL database. Het wordt veel toegepast op website met dynamische content. Het is gratis te gebruiken voor eigen gebruik en leer doeleinden.</description>
+            <author>info@atlantisdesign.nl (D. Burger)</author>
+            <pubDate>Wed, 17 Aug 2005 18:22:45 +0100</pubDate>
+        <guid>http://atlantisdesign.dutchwebworks.nl/artikel/mysql-op-macosx-tiger</guid>
+        </item>
+    </channel>
+</rss>

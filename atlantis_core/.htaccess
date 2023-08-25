@@ -1,0 +1,7 @@
+dfs# Deny execution of PHP files in this directy 
+# These files are only ment / used by means of inclusion in other PHP files by the webserver
+
+<Files *.php>
+	Order Deny,Allow
+	Deny from all
+</Files>

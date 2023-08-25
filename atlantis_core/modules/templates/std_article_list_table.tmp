@@ -1,0 +1,16 @@
+<table class="design" cellspacing="0" summary="Lijst met artikelen">
+		<caption>Atlantisdesign artikelen</caption>
+		<!-- BEGIN ITEMS -->
+		<!-- BEGIN CAT_DIV --><tr>
+				<th colspan="2">{cat_heading}</th>
+		</tr><!-- END CAT_DIV -->
+		<tr class="{row}" valign="top">
+				<td width="120">
+					<!--<a href="article_show.php?article_id={art_id}">{art_heading}</a>-->
+					<!--<a href="article/{art_id}">{art_heading}</a>-->
+					<a href="/artikel/{art_postname}">{art_heading}</a>
+				</td>
+				<td>{art_intro}</td>				
+		</tr>
+		<!-- END ITEMS -->
+</table>

@@ -1,0 +1,7 @@
+
+<div class="gallery_detail">		
+	<p><a href="/portfolio/id/{gal_id}/category/{gal_cat}"><img class="gallery_large" src="/{gal_img}" alt="{gal_heading}" /></a></p>	
+	<p>{gal_body}</p>
+	
+	<p class="date">{gal_insert_date}</p>
+</div>

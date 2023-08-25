@@ -1,0 +1,140 @@
+
+<ul>
+	<li><a href="menu.php" target="_top">Menu</a></li>
+	<li><a href="article_edit.php" target="_top">New article</a></li>
+	<li><a href="article_list.php" target="_top">Article list</a></li>	
+	<li><a href="index.php?action=logout" target="_top">Logout</a></li>
+</ul>
+
+
+<form name="bbform" id="bbform" method="post" action="">
+  <table class="design" cellspacing="0">
+  <tr>
+  	<th colspan="2" class="atttention">{message}</th>
+  </tr>
+    <tr>
+      <td>Active</td>
+      <td><input type="checkbox" name="art_active" value="1"{art_active} /></td>
+    </tr>  
+    <tr>
+      <td>Category</td>
+      <td>
+	  <select name="cat" id="cat">
+        <!-- BEGIN CAT --><option value="{cat_id}"{selected}>{cat_heading}</option><!-- END CAT -->
+      </select>
+	  </td>
+    </tr>
+    <tr>
+      <td>Heading</td>
+      <td><input name="heading" type="text" id="heading" size="60" value="{art_heading}" /></td>
+    </tr>
+    <tr>
+      <td>Meta-data keywords</td>
+      <td><input name="keywords" type="text" id="keywords" size="60" value="{art_keywords}" /></td>
+    </tr>    
+    <tr valign="top">
+      <td>Short description</td>
+      <td><textarea name="intro" id="art_intro" cols="70" rows="10">{art_intro}</textarea></td>
+    </tr>    
+    <tr valign="top">
+      <td>Article</td>
+      <td>
+      
+      
+      <div id="java_edit">
+      	<h2>Simple Bulletin Board codes</h2>
+		<h3>Add link to article</h3>
+		<p>
+			<select name="artcile_list" id="artcile_list">
+				<!-- BEGIN ARTICLE_LIST --><option value="{pulldown_art_postname}">{pulldown_art_heading}</option><!-- END ARTICLE_LIST -->
+			</select>
+			<input type="text" size="20" name="article_label" />
+			<input name="url_add" type="button" id="url_add" value="Add" onClick="javascript:addArticleURL('artcile_list', 'article_label', 'art_body');" />
+	  	</p>
+		<h3>Custom link address &amp; label</h3>
+		<p>
+			<input type="text" size="15" name="custom_address" />
+			<input type="text" size="15" name="custom_address_name" />
+			<input name="link_toevoegen" type="button" id="link_toevoegen" value="Add" onClick="javascript:addBBUrl('custom_address', 'custom_address_name', 'art_body');" />
+		</p>
+	  
+		<h3>Insert image from uploads</h3>
+		<p>
+			<select name="img_list" id="img_list">
+			<!-- BEGIN IMG_LIST --><option value="{img_value}">{img_label}</option><!-- END IMG_LIST -->
+			</select>
+			<input type="radio" name="css_class" value="clear" checked="checked" />Clear
+			<input type="radio" name="css_class" value="float_left" />Left
+			<input type="radio" name="css_class" value="float_right" />Right
+			<input name="link" type="button" value="Add" onClick="javascript:addBBImg('img_list', 'css_class', 'art_body');" />
+	  	</p>	  
+		
+		<h3>Headings &amp; tags</h3>
+		<p>
+      	<img src="js_bbcode/kop1.gif" alt="" title="Heading 1"onClick="putExt('kop')" class="hand" height="18" width="18">
+      	<img src="js_bbcode/kop2.gif" alt="" title="Heading 2"onClick="putExt('kop2')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/kop3.gif" alt="" title="Heading 3"onClick="putExt('kop3')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/kop4.gif" alt="" title="Heading 4"onClick="putExt('kop4')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif"alt="" height="20" width="1"> 
+        <img src="js_bbcode/bold.gif" alt="" title="Maak de geselecteerde tekst vet. Sneltoets: ctrl-b" onClick="putExt('bold')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/italic.gif" alt="" title="Zet de geselecteerde tekst schuin. Sneltoets: ctrl-i" onClick="putExt('italic')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/underline.gif" alt="" title="Onderstreep de geselecteerde tekst. Sneltoets: ctrl-u" onClick="putExt('underline')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/strike.gif" alt="" title="Doorstreep de geselecteerde tekst. Sneltoets: ctrl-s" onClick="putExt('strike')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif" alt="" height="20" width="1"> <img src="js_bbcode/sub.gif" alt="" title="Zet de tekst in subscript" onClick="putExt('sub')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/sup.gif" alt="" title="Zet de tekst in superscript"onclick="putExt('sup')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/small.gif" alt="" title="Zet de tekst in kleinschrift"onclick="putExt('small')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif" alt="" height="20" width="1"> 
+        <img src="js_bbcode/align_center.gif" alt="" title="Centreer tekst" onClick="putExt('center')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif" alt="" height="20" width="1"> <img src="js_bbcode/list_bullet.gif" alt="" title="Maak lijst van tekst"onclick="putExt('listbullet')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif"alt="" height="20" width="1"> <img src="js_bbcode/link.gif" alt=""title="Maak een link van de tekst" onClick="putExt('url')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/image.gif" alt=""title="Voeg een afbeelding toe" onClick="putExt('img')" class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif" alt=""height="20" width="1"> <img src="js_bbcode/table.gif" alt="" title="Maak een tabel om de tekst" onClick="putExt('table')" class="hand"height="18" width="18"> 
+        <img src="js_bbcode/hr.gif" alt="" title="Zet een horizontale lijn na de tekst" onClick="putExt('hr')"class="hand" height="18" width="18"> 
+        <img src="js_bbcode/hline.gif"alt="" height="20" width="1">
+		</p>  
+		</div>
+		
+		
+      
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>&nbsp;</td>
+      <td><textarea name="art_body" cols="90" rows="50" id="art_body">{art_body}</textarea></td>
+    </tr>
+    <tr>
+      <td>Expiration date</td>
+      <td>Year:
+        <select name="end_year" id="end_year">
+        {end_year}
+      </select>
+        Month:
+        <select name="end_month" id="end_month">
+          {end_month}
+        </select>
+        Day:
+        <select name="end_days" id="end_days">
+          {end_days}
+        </select>
+        Hours:
+        <select name="end_hour" id="end_hour">
+          {end_hour}
+        </select>   
+        Minutes:
+        <select name="end_minutes" id="end_minutes">
+          {end_minutes}
+        </select> 
+        Secs:
+        <select name="end_seconds" id="end_seconds">
+          {end_seconds}
+        </select>          
+        </td>
+    </tr>
+  </table>
+  
+ <p>
+ 	<input type="submit" name="{button_name}" value="{button_value}" />
+ 	<input type="reset" name="reset" value="Reset" />
+ </p> 
+  
+</form>

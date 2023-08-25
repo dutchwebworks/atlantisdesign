@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+
+<link href="/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/css/print.css" rel="stylesheet" type="text/css" media="print" />
+<style type="text/css">
+@import("../css/macie5.css");
+</style>
+
+<script src="/js/header.inc.js" type="text/javascript"></script>
+<script src="/js/copyrights.inc.js" type="text/javascript"></script>
+<script src="js/bbcode.js" type=text/javascript></script>
+
+</head>
+
+<body>
+
+<h1>BBCode</h1>
+
+<p><a href="index.php?action=logout">Logout</a></p>
+
+<fieldset name="resultaat">
+<legend>BBCode result</legend>
+{result}
+</fieldset>
+
+<form name="bbform" id="bbform" method="post" action="">
+	<h3>Static link &amp; label</h3>
+	<p>
+		<select name="link_list" id="link_list">
+			<option value="http://www.adobe.com/">Adobe</option>
+			<option value="http://www.macromedia.com/">Macromedia</option>
+			<option value="http://www.sun.com/">Sun</option>
+			<option value="http://www.kaas.com/">Kaas</option>
+		</select>
+		<input type="text" size="20" name="link_label" />
+        <input name="url_add" type="button" id="url_add" value="Add" onClick="javascript:addBBUrl('link_list', 'link_label', 'user_field');" />
+  </p>
+  <h3>Custom link address &amp; label</h3>
+  <p>
+  	<input type="text" size="15" name="custom_address" />
+  	<input type="text" size="15" name="custom_address_name" />
+  	<input name="link_toevoegen" type="button" id="link_toevoegen" value="Add" onClick="javascript:addBBUrl('custom_address', 'custom_address_name', 'user_field');" />
+  </p>
+  
+  	<h3>Headings &amp; tags2</h3>
+	<p>
+		<input name="h1" type="button" value="H1" onClick="javascript:addBBTag('h1', 'user_field');" />
+		<input name="h2" type="button" value="H2" onClick="javascript:addBBTag('h2', 'user_field');" />
+		<input name="h3" type="button" value="H3" onClick="javascript:addBBTag('h3', 'user_field');" />
+		<input name="h4" type="button" value="H4" onClick="javascript:addBBTag('h4', 'user_field');" />
+
+		<input name="b" type="button" value="B" onClick="javascript:addBBTag('b', 'user_field');" />
+		<input name="i" type="button" value="I" onClick="javascript:addBBTag('i', 'user_field');" />
+		<input name="u" type="button" value="U" onClick="javascript:addBBTag('u', 'user_field');" />
+		<input name="stike" type="button" value="Strike"  onClick="javascript:addBBTag('strike', 'user_field');" />
+	</p>  
+	
+	<h3>Imagelist</h3>
+	<p>
+		<select name="img_list" id="img_list">
+			<option value="../img/redbull.jpg">redbull.jpg</option>
+			<option value="../img/pinda.jpg">pinda.jpg</option>
+			<option value="../img/bmw.jpg">bmw.jpg</option>
+			<option value="../img/parachute.jpg">parachute.jpg</option>
+		</select>
+		<input type="radio" name="css_class" value="float_left" />Class left
+		<input type="radio" name="css_class" value="float_right" />Class right
+        <input name="link" type="button" value="Add" onClick="javascript:addBBImg('img_list', 'css_class', 'user_field');" />
+  </p>	
+  
+  
+	<h2>Input field</h2>
+	<p><textarea name="user_field" cols="50" rows="8" id="user_field">{org_result}</textarea></p>
+	
+	<p>
+		<input type="submit" name="submit" value="View" />
+		<input type="reset" name="reset" value="Reset" />
+	</p>
+</form>
+
+
+
+
+<h2>Footer</h2>
+<p class="copyright"><script language="Javascript" type="text/javascript">document.write(copyrights());</script></p>			
+
+</body>
+</html>
+

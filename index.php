@@ -1,0 +1,116 @@
+<?PHP include("atlantis_core/base.inc.php");	// Atlantis modules ?>
+<?PHP new page_inc("default-html-dtd.inc.html"); ?>
+<head>
+
+<?PHP new page_inc("default-html-head.inc.html"); ?>
+
+<title><?php print($settings['main_title']); ?></title>
+
+</head>
+
+<body id="home">
+<p id="skipNav" class="hide non_print"><a href="#main" accesskey="2">Direct naar de tekst</a></p>
+
+<div id="wrapper" class="container_16 content">
+
+	<div id="nav" class="grid_16">
+		<?PHP new page_inc("main-nav.inc.html"); ?>
+	</div>
+
+	<div id="header" class="grid_16">
+		<h1><?php print($settings['main_title']); ?></h1>
+		<p><img class="hide" src="/img/atlantis_logo_print.gif" alt="<?php print($settings['main_title']); ?> logo" /></p>
+		<h2 id="tagline"><span class="head">WEBdesign</span> &amp; the Mac</h2>
+	</div>
+	
+	<div id="intro" class="grid_16">
+		<blockquote>
+			<p>
+				Atlantisdesign is een persoonlijke website voor een aantal ontwerp- en test projecten.  
+				Hier vind je diverse artikelen met betrekking tot de <strong>Apple Mac</strong> , <strong>webdesign</strong>, 
+				je eigen Mac als <strong>webserver</strong>  en dingen die ik interessant / leuk vind.
+				Een website gebouwd met <strong>webstandaarden</strong>.
+			</p>
+		</blockquote>		
+	</div>
+	
+	<div class="clear">&nbsp;</div>
+	
+	<div id="side" class="grid_5">
+		<h2>Artikelen</h2>
+		<p><a href="<?php echo($settings['article_rss_url']); ?>" class="iconRss">Artikelen lijst als RSS feed</a></p>
+		<p>
+			<strong>Bezig met webdesign / webdevelopment op de Mac?</strong> Altijd al eens je eigen Mac beter willen 
+			inrichten als webserver? Uitleg in het Nederlands en helemaal toegespits op Mac OS X (Tiger en Leopard).
+		</p>	
+	
+		<?PHP 
+			$art_list = new mod_article_list(); 
+			//$art_list->cat_split = false; 
+			$art_list->template = "std_article_list_small.tmp"; 			
+			$art_list->article_list();
+		?>	
+	</div>		
+	
+	<div id="main" class="grid_5">
+		<h2>Mac &amp; webdesign</h2>
+
+		<p>
+			Mijn interesses gaan uit naar <strong>webdesign</strong> volgens webstandaaden, <strong>vormgeving</strong>, <a href="http://nl.wikipedia.org/wiki/Cascading_Style_Sheets" title="Cascading Style Sheets" target="_blank">Css</a>, <a href="http://en.wikipedia.org/wiki/Xhtml" title="Extensible HyperText Markup Language" target="_blank">XHTML</a>
+			<a href="http://en.wikipedia.org/wiki/Unobtrusive_JavaScript" target="_blank">unobtrusive Javascripting</a> , <strong>PHP server-side</strong>  scripting, <strong>MySQL databases</strong>  en de <strong>Apache webserver</strong>.
+			Dat allemaal op <a href="http://www.apple.com/macosx/" target="_blank">Apple's Mac OS X</a>.
+		</p>
+		
+		<h3>Webdesite vervaardigen</h3>
+		
+		<p>	
+			Bij het vervaardigen van een website komt best veel kijken. Waar moet je op letten bij het schrijven van de <abbr title="eXtendable Hyper Tyxt Markup Language">XHTML</abbr> source-code en <abbr title="Cascading Style Sheets">Css</abbr>. En heel belangrijk gegeven is: Hoe ziet mijn website eruit in
+			andere web browsers, bijvoorbeeld <a href="http://www.apple.com/macosx/features/safari/" title="Apple's Safari" target="_blank">Apple Safari</a>, <a href="http://www.microsoft.com/windows/ie_intl/nl/" title="Microsoft Internet Explorer" target="_blank">Microsoft Internet Explorer</a>, 
+			<a href="http://www.mozilla.com/firefox/" title="Mozilla Firefox" target="_blank">Mozilla Firefox</a> en <a href="http://www.opera.com/" title="Operasoft Opera webbrowser" target="_blank">Opera</a>. Andere platformen dan Windows bijvoorbeeld Apple en Linux. Op de <strong>webdesign / boeken</strong>  pagina staat een <a href="/webdesign/boeken" title="Webdesign boeken">lijstje met boeken</a> die elke webdesigner / webdeveloper moeten lezen!
+		</p>		
+	
+		<h2>Aikido</h2>
+		<p>
+			Voor mijn sportschool <a href="http://www.goudaaikikai.nl/" title="Website van Gouda Aikikai" target="_blank">Gouda Aikikai</a> heb ik de website gemaakt ter promotie van de sportschool en de sport zelf.
+			Een aantal foto's, stage-data en veel informatie over de school en over Aikido zelf is daar te vinden. De website is gemaakt uit <strong>eigen initiatief</strong>, als hobby en liefde voor de sport, zonder daar enige (financi&euml;le) profijt van te verkrijgen.
+		</p>			
+	</div>	
+	
+	<div class="grid_6">	
+	
+		<h2>What's in a name?</h2>
+		<p>
+			De naam Atlantisdesign heb ik eigenlijk gewoon verzonnen. 'The treasure of Atlantis ...' is <strong>'kennis'</strong>. 
+			Ik wil graag m'n kennis delen met mensen die ook graag met de Mac werken of in webdesign en of vormgeving hun roeping herkennen.
+		</p>	
+
+		<h3 class="attention">Let op</h3>
+		<p>
+			Atlantisdesign heeft <strong>geen commerci&euml;le</strong> insteek en ook geen winstoogmerk. Het is puur bedoeld als <strong>speelhoek</strong> en 
+			om mijn <strong>creativiteit</strong> te kunnen uiten.
+		</p>	
+		
+		<h2>A List Apart | Survey 2008</h2>
+		<p>
+			<a href="http://alistapart.com/articles/survey2008" target="_blank"><img src="/img/i-took-the-2008-survey.gif" alt="Alistapart survey 2008" class="float_left" /></a>
+			Een soort wereldwijde enqu&#234;te voor mensen die websites bouwen of te maken hebben met websites.
+		</p>		
+
+		<h2>Mozilla Firefox 3 </h2>
+		<p>
+			<a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=0&amp;t=213"><img class="float_left" alt="Firefox 2" title="Firefox 2" src="/img/mozilla_get_firefox.png"/></a>
+			<a href="http://www.mozilla.com/firefox/" title="Mozilla Firefox" target="_blank">Mozilla Firefox</a> is in opmars!! Als ik niet achter een Mac zit is dit mijn favorite web browser Ik raad ook iedereen aan om deze web browser te gebruiken
+			en ook de e-mail cli&euml;nt <a href="http://www.mozilla.com/thunderbird/" title="Mozilla Thunderbird" target="_blank">Mozilla Thunderbird</a> te gebruiken in plaats van Microsoft Outlook (Express).
+		</p>		
+		
+		<p>Voor webdesigners heb ik een <a href="mozilla-firefox/#firefox_addons">favoriete lijst</a> gemaakt met add-ons (extenties).</p>
+	
+		<h2>Made on a Mac</h2>
+		<?PHP new page_inc("madeonamac.inc.html"); ?>	
+	</div>	
+</div>
+
+<?PHP new page_inc("footer.inc.html"); ?>
+
+</body>
+</html>

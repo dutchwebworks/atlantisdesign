@@ -1,0 +1,4 @@
+<!-- BEGIN CAT_DIV --><h3>{cat_heading}</h3><!-- END CAT_DIV -->
+<!-- BEGIN LINKS --><li><a href="{link_url}" title="{link_date}" target="_blank">{link_heading}</a></li>
+<!-- END LINKS -->
+

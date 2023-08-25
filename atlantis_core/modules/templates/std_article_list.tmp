@@ -1,0 +1,10 @@
+
+<!-- BEGIN ITEMS -->
+<div class="article">
+	<!-- BEGIN CAT_DIV --><h3>{cat_heading}</h3><!-- END CAT_DIV -->
+	<h4><a href="/artikel/{art_postname}">{art_heading}</a></h4>	
+	<p>{art_intro}</p>
+	<p class="date">{art_date_insert}</p>
+</div>
+<!-- END ITEMS -->
+

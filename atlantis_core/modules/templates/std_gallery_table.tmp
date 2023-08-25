@@ -1,0 +1,16 @@
+
+<table class="design" cellspacing="0" summary="Photo gallery">
+	<caption>Photo gallery</caption>
+	<!-- BEGIN GALLERY_LIST -->
+	<!-- BEGIN CAT_DIV -->
+	<tr>
+		<th colspan="3">{cat_heading}</th>
+	</tr>
+	<!-- END CAT_DIV -->	
+	<tr class="{row}" valign="top">
+		<td><a href="/{gal_img_large}" rel="lightbox[gallery]" title="{gal_body}"><img class="gallery_thumb" src="/{gal_img_thumb}" alt="{gal_heading}" /></a></td>
+		<td>{gal_heading}</td>
+		<td>{gal_insert_date}</td>
+	</tr>
+	<!-- END GALLERY_LIST -->
+</table>

@@ -1,0 +1,145 @@
+<?PHP include("atlantis_core/base.inc.php");	// Atlantis modules ?>
+<?PHP new page_inc("default-html-dtd.inc.html"); ?>
+<head>
+
+<?PHP new page_inc("default-html-head.inc.html"); ?>
+
+<meta name="description" content="Echt gave console gaming" />
+<meta name="keywords" content="nintendo, wii, game, console, we love wii" />
+
+<title><?php print($settings['main_title']); ?> &raquo; Nintendo Wii</title>
+
+</head>
+
+<body id="nintendo" class="">
+<p id="skipNav" class="hide non_print"><a href="#main" accesskey="2">Direct naar de tekst</a></p>
+
+<div id="wrapper" class="container_16 content">
+
+	<div id="nav" class="grid_16">
+		<?PHP new page_inc("main-nav.inc.html"); ?>
+	</div>
+
+	<div id="header" class="grid_16">
+		<h1><?php print($settings['main_title']); ?></h1>
+		<p><img class="hide" src="/img/atlantis_logo_print.gif" alt="<?php print($settings['main_title']); ?> logo" /></p>
+		<h2 id="tagline"><span class="head">WEBdesign</span> &amp; the Mac</h2>
+	</div>
+	
+	<div id="intro" class="grid_16">
+		<blockquote>
+			<p>
+				Heel lang heb ik geen console meer gehad. Maar tijd terug een Nintendo Wii gekocht. Geweldig ding!! Nog nooit zo'n veel plezier aan gamen gehad.
+				Ook verschillende type games. De controllers en Wii ervaring is echt leuk!!
+			</p>
+		</blockquote>				
+	</div>
+	
+	<div class="clear">&nbsp;</div>
+
+	<div id="side" class="grid_5">
+		<h2 class="headTitle">Links</h2>
+		
+		<ul>
+			<li><a href="http://nl.wii.com/" title="Nintendo website" target="_blank">Nederlandse Nintendo Wii website</a></li>
+			<li><a href="http://www.welovewii.nl/" title="Leuke website" target="_blank">We Love Wii</a></li>
+			<li><a href="http://www.wiidamage.com/" title="Wat kan er allemaal kapot" target="_blank">Wii damage!!</a></li>
+			<li><a href="http://www.wiihaveaproblem.com/" title="Erg leuk!" target="_blank">Wii have a problem</a></li>				
+			<li><a href="http://www.consoleshop.nl/" title="Consoleshop Rotterdam" target="_blank">Consoleshop</a></li>				
+			<li><a href="http://wiionly.nl/" title="Wii Only" target="_blank">Wii Only</a></li>
+			<li><a href="http://www.gamespot.com/wii/index.html?tag=nav-top;wii&amp;navclk=wii" title="GameSpot" target="_blank">GameSpot Wii</a></li>
+			<li><a href="http://wii.ign.com/" title="IGN website" target="_blank">IGN Wii</a></li>
+		</ul>		
+		
+		<h2>Game releases</h2>
+		<h3><a href="http://www.youtube.com/v/hUzVclcGwfQ" class="youtube" title="Metroid Prime 3 &raquo; Corruption">Metroid Prime 3 &raquo; Corruption</a></h3>
+		<p>Nu in de winkel verkrijgbaar!!</p>
+		
+		<p><a href="http://www.nl.bol.com/is-bin/INTERSHOP.enfinity/eCS/Store/nl/-/EUR/BOL_DisplayProductInformation-Start?BOL_OWNER_ID=1004004005514949&amp;Section=GAMES" title="Pre-order 'em bij Bol.com!!" target="_blank"><img src="/img/metroid_prime_3.jpg" alt="Metroid Prime 3 &raquo; Corruption" /></a></p>
+		
+
+		<h3><a href="http://www.youtube.com/v/3o4Bp8n73ew" class="youtube" title="Super Mario Galaxy">Super Mario Galaxy</a></h3>
+		<p>Nu verkrijgbaar in de winkels!!</p>	
+		
+		<p><a href="http://www.nl.bol.com/is-bin/INTERSHOP.enfinity/eCS/Store/nl/-/EUR/BOL_DisplayProductInformation-Start?BOL_OWNER_ID=1004004005599075&amp;Section=GAMES" title="Pre-order 'em bij Bol.com!!" target="_blank"><img src="/img/super_mario_galaxy.jpg" alt="Super Mario Galaxy" /></a></p>
+		
+		<h3><a href="http://www.youtube.com/v/T4DZ3hm3XJY" class="youtube" title="Dragon Ball Z  &raquo; Budokai Tenkaichi 3">Dragon Ball Z  &raquo; Budokai Tenkaichi 3</a></h3>
+		<p>Nu in de winkel verkrijgbaar!!</p>
+		
+		<p><img src="/img/dragon_ball_z_3.jpg" alt="Dragon Ball Z : Budokai Tenkaichi 3" /></p>
+		
+		<h3><a href="http://www.youtube.com/v/IDlmqLgiuFI" class="youtube" title="Star Wars The Force Unleashed">Star Wars &raquo; The Force Unleashed</a></h3>
+		<p>Verschijnt ergens in augustus 2008.</p>
+	</div>
+	
+	<div id="main" class="grid_11 omega">
+		<h1 class="headTitle">Nintendo Wii</h1>
+	
+		<p><img src="/img/nintendo_wii.jpg" alt="Nintendo Wii" /></p>		
+		
+		<h2 id="youTubeTitle">The latetst video</h2>
+		
+		<div id="swfPlayer">
+			<div id="youTubePlayer" class="youtubeVideo">
+				Deze pagina maakt gebruik van de <strong>gratis</strong>  <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&amp;promoid=BIOW" target="_blank">Adobe Flash player</a>.
+			</div>				
+		</div>
+		
+		<h2>Game trailers</h2>
+		
+		<dl class="youTubes">
+	
+			<dt><a href="http://www.youtube.com/v/RTkuCXRZnyM" id="startYouTube" class="youtube" title="Super Mario Bros. Super Show. Rond 1989 - 1991.">Super Mario Bros. Super Show</a>. Rond 1989 - 1991, old school cartoons!!</dt>					
+			<dd>
+				Aanstaande vrijdag is de nieuwste versie van Nintendo's parade paardje: <a href="http://www.youtube.com/v/3o4Bp8n73ew" class="youtube" title="Super Mario Galaxy">Super Mario Galaxy</a> eindelijk in de winkels te krijgen.
+				Niet veel mensen kennen de oude <a href="http://www.youtube.com/v/HKjWVUPKMLw" class="youtube" title="Super Mario Bros. Super Show. Rond  1989 - 1991.">Super Mario Bros. Super Show</a> van vroeger, tussen <a href="http://en.wikipedia.org/wiki/Super_Mario_Super_Show" target="_blank">1989 en 1991</a>.
+				Het was een heuze show met echte acteurs, humor en afgewisseld met cartoons over Mario en Luigi.
+				De intro van deze show was ook zo geweldig. Net als de herkenbare tunes van de <a href="http://www.youtube.com/v/65uNCLBTje0" class="youtube" title="Aftiteling Super Mario Bros. Super Show. Rond 1989 - 1991.">aftiteling</a>.
+				<strong>Andrew Gardikis</strong>  heeft Super Mario Bros. 1 (uitgebracht in 1987) <a href="http://www.youtube.com/v/Ie4E3Bmqb5w" class="youtube" title="Super Mario Bros. 1 uitgespeeld in 5 minuten!">uitgespeelt</a> in 5 minuten?
+			</dd>
+	
+			<dt><a href="http://www.youtube.com/v/IDlmqLgiuFI" class="youtube" title="Star Wars The Force Unleashed">Star Wars The Force Unleashed</a></dt>
+			<dd>
+				Dit zou heeeel erg vet zijn! De natte droom van elke Star Wars fan!!
+				Bekijk de grotere <a href="http://www.lucasarts.com/games/theforceunleashed/" target="_blank">game trailer</a> op de offici&euml;le website.
+				Het schijnt daadwerkelijk waar te zijn dat het deze game naar de <strong>Nintendo Wii</strong> komt.
+				Lees er meer over op de <a href="http://wii.ign.com/articles/820/820763p1.html" target="_blank">IGN website</a> en ook <a href="http://kotaku.com/gaming/wiimote-lightsaber/lucasarts-unleashes-the-force-on-the-wii-301065.php" target="_blank">hier</a>.
+				Ik ga zeker in de rij liggen voor deze game!! Amerikaase release date: 8 april 2008.
+			</dd>	
+		
+			<dt><a href="http://www.youtube.com/v/VuzFzs0hPKc" class="youtube" title="Nieuwe Star Wars besturing op de Wii?">YouTube: I want Star Wars to be like this...</a></dt>
+			<dd>Stel dat de Star Wars game zo gaat werken met de Wii-mote!!!</dd>
+	
+			<dt><a href="http://www.youtube.com/v/3o4Bp8n73ew" class="youtube" title="Super Mario Galaxy">Super Mario Galaxy</a></dt>
+			<dd>Paradepaardje van Nintendo!! Nu verkrijgbaar in de winkels.</dd>					
+			
+			<dt><a href="http://www.youtube.com/v/hfTbDeKT-kc" class="youtube" title="Resident Evil 4">Resident Evil 4</a></dt>
+			<dd>Deze is echt eng af en toe! Bekijk ook de <a href="http://www.gamefaqs.com/console/gamecube/file/535840/34675" title="Resident Evil 4 walktrough" target="_blank">walktrough</a> als je af en toe niet weet hoe je eindbazen moet verslaan.</dd>
+			
+			<dt><a href="http://www.youtube.com/v/z31DntVPPws" class="youtube" title="The Legend of Zelda &raquo; Twilight Princes">The Legend of Zelda &raquo; Twilight Princes</a></dt>
+			<dd>Leuk avonturen spel. Bekijk ook de <a href="http://guides.ign.com/guides/748589/page_3.html" title="Legend of Zelda Twilight Princes walktrough" target="_blank">walktrough</a> als je af en toe niet uit komt.</dd>
+			
+			<dt><a href="http://www.youtube.com/v/hUzVclcGwfQ" class="youtube" title="Metroid Prime 3 &raquo; Corruption">Metroid Prime 3 &raquo; Corruption</a></dt>
+			<dd>Nu in de winkel verkrijgbaar! Erg vette game!!</dd>
+			
+			<dt><a href="http://www.youtube.com/v/T4DZ3hm3XJY" class="youtube" title="Dragon Ball Z : Budokai Tenkaichi 3" >Dragon Ball Z &raquo; Budokai Tenkaichi 3</a></dt>
+			<dd>
+				Erg vette game!! Ik heb de anime tekenfilm serie jaren terug gevolgd. Maar die hielden er in Nederland ineens mee op. Versie 3 van de game is voor de Wii speciaal bijgewerkt voor de unieke controllers.
+				Release date is ergens in januari 2008. Dus nog even wachten totdat deze in de winkel ligt.
+			</dd>
+	
+		</dl>
+	
+		<h3>Star Wars &raquo; The Force Unleashed</h3>
+						
+		<p><img src="/img/starwars_force_unleashed.jpg" alt="Star Wars: The Force Unleashed" /></p>										
+	</div>	
+</div>
+
+<?PHP new page_inc("footer.inc.html"); ?>
+
+<script src="/themes/base/js/swfobject.js" type="text/javascript"></script>
+<script src="/themes/base/js/latest_youtubes.js" type="text/javascript"></script>
+
+</body>
+</html>

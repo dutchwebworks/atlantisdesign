@@ -1,9 +1,0 @@
-Webdesign
-
-Wat veel mensen niet begrijpen is dat er best veel bij komt kijken om een goede website te maken. Dat is niet alleen een mooi ontwerp, een goede layout, duidelijke interactie en een goede campagne of bekendheid voor de website. De onderliggende technieken moeten ook goed op elkaar afgestemt zijn.
-
-Een website kan er nog zo mooi uit zien maar als de broncode een zooi'tje is zal deze ook niet goed doorzoekbaar zijn in zoekmachines. Laat staan goed toegankelijk voor minder valide mensen.
-
-Al jaren worstelen de eerste webdesigners met deze issues en in de meeste gevallen werd er alleen naar het eind resultaat gekeken. De onderliggende code, die meer dan alleen maar dient om het op het scherm te laten zien, was zeker niet mooi. Veel smerige oplossingen werden er gevonden om het op het scherm er maar goed uit te laten zien.
-
-Een schot voor open doel is natuurlijk het gebruik van HTML tabellen voor de layout van een website. Daar zijn ze niet voor bedoelt. Elke HTML-tag heeft zo zijn plaats in een document. Er is een stricte hiarchie en daarmee een volgorde.

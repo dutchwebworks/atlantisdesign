@@ -1,0 +1,9 @@
+<ul class="clean">
+<!-- BEGIN GALLERY_LIST -->
+	<!-- BEGIN CAT_DIV -->
+	</ul>
+	<h2>{cat_heading}</h2>
+	<ul class="clean"><!-- END CAT_DIV -->
+	<li><a href="/portfolio/id/{gal_id}/category/{gal_cat}">{gal_heading}</a></li>
+<!-- END GALLERY_LIST -->
+</ul>

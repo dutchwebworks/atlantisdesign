@@ -1,0 +1,10 @@
+
+<h1>{art_heading}</h1>
+
+<!--<h3>Categorie: {cat_heading}</h3>-->
+
+<p class="date">{art_date_insert}</p>
+
+{art_body}
+
+<p class="date">{art_date_insert}</p>

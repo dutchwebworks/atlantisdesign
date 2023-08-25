@@ -1,0 +1,55 @@
+
+<!-- BEGIN CAT EDIT -->
+<p class="attention">{message}</p>
+
+
+<ul>
+	<li><a href="menu.php" target="_top">Menu</a></li>
+	<li><a href="article_edit.php" target="_top">New article</a></li>
+	<li><a href="article_list.php" target="_top">Article list</a></li>	
+	<li><a href="index.php?action=logout" target="_top">Logout</a></li>
+</ul>
+
+<ul>
+	<li><a href="?">Nieuw</a></li>
+</ul>
+
+
+<form name="edit_link" id="edit_link" method="post" action="">
+
+
+
+<table class="design" cellspacing="0">
+		<tr>
+				<th colspan="2">Edit categorie</th>
+		</tr>
+		<tr>
+				<td>Active</td>
+				<td><input type="checkbox" name="active" value="1" {active_checked} /></td>
+		</tr>
+		<tr>
+				<td>Heading</td>
+				<td><input name="insert_heading" type="text" id="insert_heading" value="{insert_heading}" size="40" /></td>
+		</tr>
+		<tr valign="top">
+				<td>Description</td>
+				<td><textarea name="insert_description" cols="37" rows="8" id="insert_discription">{insert_description}</textarea></td>
+		</tr>
+		<tr>
+				<td>URL</td>
+				<td><input name="insert_url" type="text" id="insert_url" value="{insert_url}" size="40" /></td>
+		</tr>
+		<tr>
+				<td>Categorie</td>
+				<td><select name="insert_categorie" id="insert_categorie">
+				<!-- BEGIN CAT --><option value="{cat_value}"{cat_checked}>{cat_label}</option>
+				<!-- END CAT -->
+				</select></td>
+		</tr>
+</table>
+<p>
+	<input type="hidden" name="update_id" value="{link_id}" />
+	<input type="submit" name="{button_name}" value="{button_value}" />
+</p>
+</form>
+<!-- END CAT EDIT -->

@@ -1,0 +1,9 @@
+
+<!-- BEGIN GALLERY_LIST -->
+<div class="gallery_list_item">
+	<!-- BEGIN CAT_DIV --><h2>{cat_heading}</h2><!-- END CAT_DIV -->
+	<h3>{gal_heading}</h3>
+	<p><a href="/portfolio/id/{gal_id}/category/{gal_cat}"><img class="gallery_thumb" src="/{gal_img_thumb}" alt="{gal_heading}" /></a></p>
+	<p class="date">{gal_insert_date}</p>
+</div>
+<!-- END GALLERY_LIST -->

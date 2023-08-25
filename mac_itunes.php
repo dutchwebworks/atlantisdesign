@@ -1,0 +1,227 @@
+<?PHP include("atlantis_core/base.inc.php");	// Atlantis modules ?>
+<?PHP new page_inc("default-html-dtd.inc.html"); ?>
+<head>
+
+<?PHP new page_inc("default-html-head.inc.html"); ?>
+
+<link rel="stylesheet" href="themes/base/css/lightbox.css" type="text/css" media="screen" />
+
+<meta name="description" content="Denk je dat je verstand hebt van webdesign? Lees de aangerade boeken" />
+<meta name="keywords" content="webdesign, javascript, php, mysql, unobtrusive, progressive enhancement, graceful degradation, jeremy keith, jeffrey zeldman, eric meyer" />
+
+<title><?php print($settings['main_title']); ?> &raquo; Mac &amp; iTunes</title>
+
+</head>
+
+<body id="mac" class="">
+<p id="skipNav" class="hide non_print"><a href="#main" accesskey="2">Direct naar de tekst</a></p>
+
+<div id="wrapper" class="container_16 content">
+
+	<div id="nav" class="grid_16">
+		<?PHP new page_inc("main-nav.inc.html"); ?>
+	</div>
+
+	<div id="header" class="grid_16">
+		<h1><?php print($settings['main_title']); ?></h1>
+		<p><img class="hide" src="/img/atlantis_logo_print.gif" alt="<?php print($settings['main_title']); ?> logo" /></p>
+		<h2 id="tagline"><span class="head">WEBdesign</span> &amp; the Mac</h2>
+	</div>
+	
+	<div id="intro" class="grid_16">
+		<blockquote>
+			<p>
+				De Mac blijft een plaatje. Het is mijn favoriete computermerk. De elegantie en stijl van Apple met een jaren door ontwikkelde solide Unix bodem.
+			</p>
+		</blockquote>
+	</div>
+	
+	<div class="clear">&nbsp;</div>
+
+	<div id="side" class="grid_5">
+		<h2 class="headTitle">iTunes!!</h2>
+		<div id="iTunesList">
+			<p>Mijn favorite iTunes artiesten.</p>
+		</div>	
+	
+		<h2>MacBuyers Guide</h2>
+		<p>Op de website van <a href="http://buyersguide.macrumors.com/" target="_blank" title="Mac Buyers Guide">MacRumors</a> kun je kijken wat de 'life-cycle' van bepaalde Apple producten is.
+		Goed om te weten dus wanneer je je nieuwe Apple product gaat aanschaffen of dat het toch handiger is om nog even te wachten.</p>
+
+		<h2>Made on a Mac</h2>
+		<?PHP new page_inc("madeonamac.inc.html"); ?>	
+	
+		<h2>Links</h2>
+		<?PHP
+			$link = new mod_link_list();
+			$link->link_list();
+		?>		
+	</div>
+	
+	<div id="main" class="grid_11 omega">
+			<h1 class="mainTitle">Apple Macintosh</h1>
+			<p>
+				Via mijn opleiding kwam ik al gauw in aanmerking met de <a href="http://www.apple.com/" title="Apple's website" target="_blank">Apple Macintosh</a>. Vanuit de grafisch wereld werd altijd gewerkt op de Mac.
+				Mijn interesse bleef groeien en op mijn toemalige stage adres had ik een keus om te werken achter een Windows computer of toch maar de Mac.
+				Ik koos natuurlijk voor de Mac en mijn voorliefde voor dit platform bleef groeien.
+			</p>
+			
+			<p>
+				Apple is enige tijd overgestapt op het <a href="http://nl.wikipedia.org/wiki/Unix" title="Wat is Unix?" target="_blank">Unix</a> platform met haar Mac OS X.
+				Het oude tijdperk van Mac OS 8 en 9 zijn voorgoed voorbij. Apple doet het goed in de grafische wereld en ook in het onderwijs wordt er veelvuldig gebruikt gemaakt
+				van Apple Mac's. Zo ook op het <a href="http://www.glr.nl/" title="Grafisch Lyceum Rotterrdam" target="_blank">Grafisch Lyceum Rotterdam</a> en in de grafische branche.
+			</p>
+			
+			<p>
+				Persoonlijk ben ik blij dat ik een aantal jaar geleden ben <strong>overgestapt</strong> van Windows op Mac OS X. Het platform werkt fantastisch en voor zover bekend 
+				zijn er geen virussen in omloop. Met Unix als onderlaag van het besturingssysteem is alles goed geregeld en het zit potdicht. Met gebruikers gemak en <strong>eenvoud</strong> van Apple
+				en de <strong>solide</strong> onderlaag van Unix maakt het de perfecte combinatie voor een goede computer om mee te werken. Zowel op grafisch gebied als op Unix nivo in combinatie met webservers.		</p>
+			<h2>Mac en virussen, spyware, mallware, wormen en ander gespuis!! </h2>
+				<p>Ja!! Daar gaan we weer. De bekende verhalen dat het Mac platform ook al overloopt van virussen en spy/mallware en wormen. Vanuit McAffee en andere antivirus software makers worden de Mac gebruikers aardig 'bang' gemaakt. Nergens voor nodig! </p>
+				<p class="center"><a href="http://www.macfriend.nl/" target="_blank" title="Macfriend"><img src="/img/macfriend_stop.jpg" alt="Macfriend - stop" /></a></p>
+				<p>Wil je een veilige computer? Koop een Mac!!</p>
+			<h2>Artikelen</h2>
+			<p>
+				Ik heb een aantal <a href="article.php" title="Artiekelen over de Mac en webservers">artikelen geschreven</a> hoe je van een Mac een <strong>webserver</strong> kunt maken. Zie de rechter zijkant. Deze pagina zal binnenkort nog verder worden uitgebreidt met sappige
+				informatie waarom ik iedereen aanraad over te stappen naar de Mac. Ik zal je vertellen wat er zo 'beter' is aan de Mac en waar u op moet letten als u overstapt. De voordelen zullen
+				uitgebreidt aan bod komen. Een Mac werkt gewoon prettiger. 
+			</p>
+				
+				
+			<h3 class="attention">Let op!</h3>
+			<p>
+				Atlantisdesign neemt geen verantwoording voor eventuele schade aan uw
+				bestaand systeem.
+			</p>
+			
+			<?PHP 
+				$art_list = new mod_article_list();
+				$art_list->template = "std_article_list_table.tmp";
+				$art_list->cat_split = true;
+				$art_list->short_intro = false;
+				$art_list->article_list();
+			?>			
+			
+			
+			<h1>Muziek beheerbaar maken</h1>	
+			
+			<p>
+				Vroeger heb ik veel programma'tje geprobeert om muziek mee te beheren. Zoals <a href="http://www.winamp.com/" title="WinAmp" target="_blank">WinAmp</a> 
+				bijvoorbeeld en zelfs de <a href="http://www.microsoft.com/windows/windowsmedia/default.mspx" title="Microsoft Windows Media Player" target="_blank">Windows Media Player</a>.
+				Ja, ik heb vroeger ook een Windows PC gehad!
+			</p>		
+			
+			<h3>Nadelen</h3>
+			<p>
+				Geen van alle kwam in de buurt van prettig werken met vele muziek bestanden. Het nadeel wat ik altijd vond is dat je elke keer weer van die play-listen
+				moet aanmaken en niet alle gegeven werden getoont. Daarbij kwam nog eens dat ik de interfaces erg onhandig vond.
+			</p>
+			
+			<p>
+				Bovendien ... heeft iemand ooit wel eens succesvol een audio cd kunnen branden met de Microsoft Media Player? Nou ik heb wel vijf cd's weg moeten gooien of de laaste paar 
+				nummers staan er niet een op.
+			</p>
+					
+			<h2>Apple iTunes</h2>
+		
+			<p>
+				Ik heb de eerste versies van Apple's iTunes mogen bekijken in het Mac OS 8 en 9 tijdperk. Het zag er veel belovend uit en was makkelijk te bedienen. Geen ingewikkelde
+				programma structuur. Ik hou er ook van als een programma in een oogopslag duidelijkheid toont. Ik heb een hekel aan zoeken of een programma leren kennen.
+			</p>
+			
+			<p class="center"><a href="http://www.apple.com/itunes" title="Apple iTunes"><img src="/img/itunes.jpg" alt="Apple iTunes" /></a></p>
+			
+			<p>
+				Ik adviseer iedereen, ook de Windows gebruikers, om <a href="http://www.apple.com/itunes/" title="Download Apple's iTunes!!" target="_blank">Apple's iTunes</a> te gebruiken voor muziek en online muziek downloads.
+				Het programma is helder, bevat opties voor een playlist en de mogelijkheid om zogenaamde <strong>smart playlist</strong> aan te maken. Deze lijsten zijn op basis van <strong>criteria</strong> vast te stellen.
+				Bijvoorbeeld de laatste gespeelde nummers van de afgelopen week. Of de nummers met jou eigen hoogst genoteerde waardering in de categorie Dance.
+			</p>
+			
+			<h2>iTunes Music Store</h2>
+			<p>
+				De beste online muziek winkel!! Het heeft een tijd geduurd maar er is een <strong>Nederlandse versie</strong> van de online muziek winkel.
+				Nu kan men dus ook Dance music vinden wat populair is in Europa. Er blijven natuurlijk verschillen in muziek voorkeur per continent.
+			</p>
+			
+			<h3>Goede persoonlijk muziek</h3>
+			<p>
+				Dit zijn een aantal cd's die ik goed vind en te verkrijgen zijn in de <strong>iTunes Music Store</strong>.
+				Als je op de link klikt opent iTunes zich automatisch en neemt u mee naar de Music Store waar u naar voorstukjes van het album kunt luisteren. Geheel gratis!!
+			</p>
+			<?PHP
+				$link = new mod_link_list();
+				$link->cat_show = 12;
+				$link->link_list();
+			?>		
+			
+			<h2>Veilig muziek downloaden met je bank- of girorekening</h2>
+			<p>
+				Het is mogelijk om <strong>zonder creditcard</strong> toch online muziek te downloaden van de iTunes Music Store. Hiervoor kun je je eigen bank- of girorekening voor gebruiken.
+				Via de website van <a href="http://www.clickandbuy.com/NL/nl/" title="Click 'N Buy" target="_blank">Firstgate</a> kunt u een online <strong>Click 'N Buy</strong> account aanmaken welke gekoppeld wordt aan uw bank- of girorekening.
+			</p>
+			
+			<p>
+				In iTunes maak je een account aanmaken en daarbij geef je aan dat je via Clik 'N Buy muziek wilt kopen. Vul de gegevens in die je van Firstgate krijgt en je kunt beginnen met <strong>legaal
+				online muziek te downloaden</strong>. De meeste muziek nummer kosten slechts &euro; 0,99 cent.
+			</p>
+			
+			<h3>Persoonlijke ervaring</h3>
+			<p>
+				Ik ben ook altijd huiverig geweest bij online betalingen. Maar ik moet zeggen dat alles perfect verloopt bij de aanschaf van online muziek via de iTunes Music Store.
+				In de Music Store kan ik gewoon muziek aanklikken en een boodschappen mantje aanmaken. Als ik tevreden ben koop het in &eacute;&eacute;n keer en het downloaden gaat ook heel vlot. Binnen
+				enkele minuten heb ik een nieuwe collectie muziek. <strong>Per email krijg je gelijk een bevestiging</strong> dat Firstgate de nota van de iTunes Music Store heeft ontvangen en dat het verschuldigde bedrag
+				binnen enkele werkdagen van mijn rekening zal worden afgeschreven. Het werkt gewoon perfect!!
+			</p>
+			
+			<h2>Apple iPod</h2>
+			<p>
+				<img class="float_left" src="/img/ipod.jpg" alt="Apple iPod Photo" />Een kleine twee jaar heb ik ook een <a href="http://www.apple.com/ipod/" title="Apple iPod" target="_blank">Apple iPod</a> aangeschaft. Een vierde generatie (net voor de iPod Photo). Ik heb ooit in mijn school periode een echt 'My first Sony' - walkman gehad. 
+				Maar de iPod is mijn tweede muziek speler. Ik moet zeggen dat ik eerst het nut er niet van inzag om zo'n ding elke keer mee te slepen. Maar de eenvoud en koppeling met iTunes is gewoon
+				verbazingwekkend. En de zojuist gekochte online muziek wordt zonder enige moeite op m'n iPod gezet en speelt voortreffelijk.
+			</p>
+			
+			<h3>Rage</h3>
+			<p>
+				Het begint een beetje een rage te worden om bezitter te zijn van een iPod. Als ik op straat loop kan ik tellen hoeveel mensen er een iPod in hun broekzak hebben zitten. Dat kun je
+				zien aan de witte oordopjes die heel erg opvallen. Ik ben er ook fan van geworden. Zeker omdat ik een beetje Apple fan/freak ben.
+			</p>			
+	</div>	
+</div>
+
+<?PHP new page_inc("footer.inc.html"); ?>
+
+<!-- begin lightbox scripts -->
+<script src="/themes/base/js/prototype.js" type="text/javascript" language="javascript"></script>
+<script src="/themes/base/js/scriptaculous.js?load=effects"type="text/javascript"  language="javascript"></script>
+<script src="/themes/base/js/lightbox.js" type="text/javascript" language="javascript"></script>
+<!-- end lightbox scripts -->
+
+<script src="/themes/base/js/swfobject.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript">
+// Flash UFO for iTunes list
+function iTunesList(){
+	if(!document.getElementById) return false;
+	if(!document.getElementsByTagName) return false;
+	
+	var flashvars = {
+		feed: "WebObjects%2FMZStoreServices.woa%2Fws%2FRSS%2Fmymostpurchasedartists%2Fartworkheight%3D53%2Fhtml%3Dfalse%2Fsf%3D143452%2Fuserid%3D104099770%2Fxml%3Fv0%3D7723&feedType=mostpurchased&cssPath=http://ax.phobos.apple.com.edgesuite.net/flash/myitunes/styles/darkblue.css&local=143452"
+	};
+	
+	var params = {
+		wmode: "transparent",
+		menu: "false",		
+		allowscriptaccess: "always",
+		scale: "noscale", 
+		salign: "lt", 
+		name: "my_itunes", 
+		align: "top"
+	};
+
+	// load embed code in div ID
+	swfobject.embedSWF("http://ax.phobos.apple.com.edgesuite.net/flash/myitunes/myitunes.swf", "iTunesList", "150", "330", "8.0.0","/swf/expressInstall.swf", flashvars, params, false);
+}
+addLoadEvent(iTunesList);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+
+<!-- login screen -->
+<form name="login" action="" method="post">
+<table class="design" cellspacing="0">
+	<tr>
+		<th colspan="2">{message}</th>
+	</tr>
+	<tr>
+		<td>Username</td>
+		<td><input type="text" name="username" size="20" /></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="password" size="20" /></td>
+	</tr>
+</table>
+<p><input type="submit" name="submit" value="Login" /></p>
+</form>
