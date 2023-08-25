@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomepageSideLeft from '../components/HomepageSideLeft.astro';
+import HomepageSideRight from '../components/HomepageSideRight.astro';
+import HomepageMain from '../components/HomepageMain.astro';
+---
+
+<Layout title="Atlantisdesign">
+	<div id="intro" class="grid_16">
+		<blockquote>
+			<p>
+				Atlantisdesign is een persoonlijke website voor een aantal ontwerp- en test projecten.  
+				Hier vind je diverse artikelen met betrekking tot de <strong>Apple Mac</strong> , <strong>webdesign</strong>, 
+				je eigen Mac als <strong>webserver</strong>  en dingen die ik interessant / leuk vind.
+				Een website gebouwd met <strong>webstandaarden</strong>.
+			</p>
+		</blockquote>		
+	</div>
+    
+    <div class="clear">&nbsp;</div>
+    
+	<HomepageSideLeft />
+    
+	<HomepageMain />
+
+	<HomepageSideRight />
+</Layout>
+
+<style is:global>
+
+</style>

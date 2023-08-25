@@ -1,0 +1,77 @@
+HTML templates bouwen met Server Side Includes
+
+webdesign, apache, ssi, server side includes, parsed, html
+
+Snel en eenvoudig templates maken en onderhouden. Hergebruik van HTML-blokken door middel van Server Side Includes.
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img]Bij het bouwen van (veel) templates voor een middel- tot grote website komt het vaak voor dat delen [b]hergebruikt[/b] worden. Een mooi overzichtlijstje van een prijzentabel, de reacties op een blog, een nieuwsoverzicht of de dummy tekst van een doorsnee lange tekst pagina. Maar natuurlijk ook de complete header-navigatie, de contact informatie in de footer en andere standaard elementen op een webpagina. Al deze elementen komen vaker voor in de vele templates die vooraf gaan aan de daadwerkelijke programmering van een website.
+
+Tijdens het bouwen van deze templates worden nog wel eens [b]wijzigingen gemaakt[/b]. Zoals de benamingen van CSS (Cascading StyleSheet) classes; deze worden ineens generieker benoemt of in het nieuwsoverzicht worden toch de koppen als een H3 element gestyled in plaats van een p-tag. Of men besluit toch het nieuwsoverzicht compleet anders op te bouwen van structuur omdat dit beter aansluit op wat de programmeur of beter is voor zoekmachine optimalisatie. Een andere doelstelling kan bijvoorbeeld he gebruik of toevoeging van microformats zijn.
+
+Dit kan [b]grote gevolgen[/b] hebben op de templates die al gemaakt zijn. Meestal worden de templates met de hand ŽŽn voor ŽŽn gemaakt. De nieuwsoverzichten zitten [b]hard-coded[/b] verwerkt in elke template en worden vaak [b]overgekopieerd[/b] van temlate naar template. Omdat deze er immers toch hetzelfde uitzien. Een dergelijke wijziging zou betekenen dat alle templates stuk voor stuk met de hand gewijzigd moeten worden.
+
+Het voordeel van CSS styling zorgt ervoor dat het uiterlijk van zo'n nieuwsoverzicht heel makkelijk gewijzigd kan worden. Mits de HTML structuur hetzelfde blijft. Ook al bevinden deze nieuwsoverzichten zich in vele templates, ze worden allemaal be•nvloed door hetzelfde stukje CSS. [b]Zou dit ook niet handig zijn voor de HTML-code?[/b] Wijzig in ŽŽn bestand de HTML-code en alle templates zijn ge-update.
+
+Het fenomeen 'include' is heel bekend bij programmeurs en kan ook op eenvoudige wijze toegepast worden op de frontend webdesign afdeling. Daar is geen ingewikkelde programmeer kennis voor nodig. De syntax is vrij simpel en vergt eigenlijk maar ŽŽn regel code.
+
+Een website kan zonder aanpassingen bij het het gebruik van deze Server Side Includes (afgekort [b]SSI[/b]) op zowel de [b]Apache[/b] webserver als de [b]Microsoft IIS[/b] webserver draaien. Standaard hebben beide webservers ondersteuning voor deze techniek waarbij de HTML bestanden bewaard moeten worden met de bestand extentie .shtml in plaats van .html.
+
+[h3]Apache Server Side Includes[/h3]
+
+Lees het artikel [article=apache-server-side-includes-ssi]Apache Server Side Includes SSI[/article] voor webservers die Apache gebruiken. Ook is meer informatie hierover te vinden op de [url=http://httpd.apache.org/docs/2.0/mod/mod_include.html]Apache documentatie pagina[/url].
+
+[h3]Wat men wil is simpel en eenvoudig[/h3]
+
+Deze techniek is vrij oud en vaak onderschat in de wereld van webdevelopment. Omdat men al gauw grijpt naar een voor sommige ingewikkeldere methode als gebruik van PHP of ASP programmeer talen. Voor een ([b]niet-programmeur[/b]) frontend webdesigner is dit echt niet noodzakkelijk en kan eerder beschouwd worden als [b]over-kill[/b]. 
+
+Het gene wat men wil is HTMl-code ŽŽn keer maken en daarna hergebruiken.
+
+[h2]Aan de slag met Server Side Includes[/h2]
+
+De pagina's die kleine stukjes HTML bevatten die uit andere HTML pagina's komen, de zogenaamde include files, moeten opgeslagen worden met de bestands extentie .shtml. 
+
+Maak een [b]index.shtml[/b] bestand aan met wat basis elementen, zoals een standaard header, een lang stuk tekst met een aantal koppen en een nieuwsoverzicht tabel. Geef de pagina wat standaard CSS styling en bekijk het resultaat in een webbrowser.
+
+[b]Knip[/b] nu de nieuwsoverzicht tabel eruit en plak dit in een nieuw document. Zonder de standaard HTML tags als head en body. Alleen het essenti‘le stuk wat je wilt hergebruiken.
+
+Bewaar deze include bestanden allemaal in dezelfde map: [b]includes/[/b] met als exra toevoeging van 'inc' in de bestandsnaam. Dit is niet noodzakelijk (ook niet voor de werking van SSI) maar dit is puur gedaan om de bestanden overzichtelijker te maken.
+
+[code]nieuwsoverzichten.inc.shtml[/code]
+
+Op de plek waar de nieuwsoverzicht tabel stond plaatsen we onderstaande SSI include syntax:
+
+[code]<!--#include file="includes/nieuwsoverzichten.inc.html" -->[/code]
+
+Hiermee maken we duidelijk aan de webserver dat we op deze plek het bestand [b]nieuwsoverzichten.inc.html[/b] uit de map [b]includes/[/b] willen hebben. Open nu de index.shtml pagina in een webbrowser.
+
+[h4]Via webserver[/h4]
+
+Let op! Bekijk deze index.shtml [b]niet door te dubbelklikken[/b] op dit bestand zodat deze geopend wordt door de webbrowser. Dan zal letterlijk de syntax tekst in beeld verschijnen. De SSI techniek werkt dan niet.
+
+Bekijk de index.shtml [b]via de webserver[/b] zelf. Op een Mac plaatsen we de bestanden in de eigen [b]Sites[/b] map, van een gebruiker. Open een webbrowser en typ onderstaande webadres in, vervang de fictieve naam [b]kees[/b] door je eigen korte gebruikersnaam (ofwel de naam van je thuismap):
+
+[code]http://localhost/~kees/index.shtml[/code]
+
+De pagina is weer compleet samen met de nieuwsoverzicht tabel op de juiste plek. Open de HTML-source code van de index.shtml pagina om het eindresultaat van deze samensmelting te controleren.
+
+[h2]Tips ter bevoordering van overzicht en duidelijkheid[/h2]
+
+[h4]Maak alleen unieke HTML blokken[/h4]
+
+Elke stukje / blokje HTML dat gemaakt is kan bewaard worden als een include file. Hierdoor kan het hergebruikt worden en dwing je jezelf ertoe dat je consquent bent in het styles van de verschillende templates.
+
+[h4]Alleen het macro-grid blijft over[/h4]
+
+De .shtml template bevat uiteindelijk alleen het [b]macro-grid[/b] (structuur doormiddel van div-tags) met heel veel van deze SSI include regels. Dit bevorderd het algemene overzicht van een template als een ander de website verder moet onwikkelen.
+
+[h4]Duidelijkheid door begin- en end-comments[/h4]
+
+Plaats in elke include file op de eerste en laatste regel een comment, zoals op de eerste regel van een include file:
+
+[code]<!-- begin include: nieuwsoverzicht.inc.html-->[/code]
+
+... hiertussen staat de HTML en onderaan sluiten we af met:
+
+[code]<!-- end include: nieuwsoverzicht.inc.html-->[/code]
+
+Een index.shtml pagina kan heel veel van deze include files bevatten. Het overzicht wordt hierdoor heel duidelijk voor team leden en programmeurs. In de [b]HTML-sourcecode[/b] kan je nu heel makkelijk zien waar een include bestand begint, wat het bevat, waar het eindigd en wat de naam van het include bestand is.

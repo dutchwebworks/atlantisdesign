@@ -1,0 +1,41 @@
+########################################
+## Default DAV settings
+########################################
+
+BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
+BrowserMatch "MS FrontPage" redirect-carefully
+BrowserMatch "^WebDrive" redirect-carefully
+BrowserMatch "^WebDAVFS/1.[0123]" redirect-carefully
+BrowserMatch "^gnome-vfs/1.0" redirect-carefully
+BrowserMatch "^XML Spy" redirect-carefully
+BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
+
+DavLockDB "/Library/WebServer/DavLocks/DavLock"
+
+DAVMinTimeout 600
+DAVDepthInfinity On
+
+########################################
+## Vogelwebsite DAV export
+########################################
+
+# URL
+Alias /dav/vogelfotografie "/Users/kees/Sites/vogelfotografie"
+
+# Disable .htaccess override and disable PHP if using this URL
+<location /dav/vogelfotografie>
+	AllowOverride None
+	php_value engine off
+</location>
+
+# Config
+<Directory "/Users/kees/Sites/vogelfotografie">
+	DAV On
+	AuthName "webDAV - Vogelfotografie"
+	AuthType Basic
+	AuthUserFile /etc/apache2/.passwd
+	
+	<Limit PUT POST DELETE PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK>
+		Require user kees
+	</Limit>
+</Directory>

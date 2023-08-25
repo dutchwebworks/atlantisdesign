@@ -1,0 +1,101 @@
+Subversion svnsync repository replication
+
+svn, svnsync, repository, backup, mirror, replication
+
+Met svnsync kan een slave-repository gesynchroniseerd worden met een master-repository. Een handige manier om een Subversion repository incrementeel te backupen. Dit kan naar een (externe) backup schijf of een andere computer over het netwerk.
+
+[img=float_right]atlantis_uploads/uploads/logo_svn.gif[/img]In het [url=http://svnbook.red-bean.com/en/1.4/svn-book.pdf]SVN-book[/url], hoofdstuk [b]Repository Replication[/b] (PDF vanaf pagina [b]155[/b]) wordt het niet helemaal duidelijk uitgelegd.
+
+Hier volgt een uitleg hoe een bestaande [b]master-repository[/b] gesynchroniseerd wordt naar een (lege) [b]slave-repository[/b]. De master repository moet via een authentication systeem (Apache of svnserve) geserveerd worden. Dit heeft te maken met zogenaamde svn hooks die toegang verlenen tot svn repositories. 
+
+[h3]Master-repository[/h3]
+De master-repository is te bereiken op onderstaande url. Lees het artikel over [article=subversion-svnserve-automatisch-opstarten]Subversion svnserve automatisch opstarten[/article] hoe je het [b]svn://[/b] protocol aan de praat krijgt. 
+
+[code]svn://mijn-mac.local/mijnwebsite[/code]
+
+[h4]Host bestand en lokaal nepdomein[/h4]
+Via het [b]/etc/hosts[/b] bestand wordt het [b]127.0.0.1[/b] IP nummer gekoppeld aan een fictieve [b]mijn-mac.local[/b] nepdomein. Met deze opzet wordt er naar een domeinnaam verwezen welke in feite onze eigen Mac is.
+
+[h3]Slave-repository (empty)[/h3]
+In dit voorbeeld willen we de master-repository backupen naar een [b]externe backupschijf[/b] welke direct aan de Mac hangt (bijvoorbeeld USB / Firewire). Deze repository is te bereiken via onderstaand pad met het normale [b]file://[/b] protocol:
+
+[code]file:///Volumes/Backupdisc/svn_sync/mijnwebsite[/code]
+
+[h2]Slave-repository aanmaken[/h2]
+De master-repository bestaat reeds en is al enige tijd mee gewerkt. De slave-repository moet leeg zijn voordat deze gebruikt kan worden als replication mirror.
+
+Maak een lege slave-repository aan op de backup schijf, maak eventueel ook de juiste mappen aan (svn_sync/). Open de [b]Terminal[/b] (/Applications/Utilities/Terminal)
+
+[h4]Lege slave-repository[/h4]
+[code]svnadmin create /Volumes/Backupdisc/svn_sync/mijnwebsite[/code]
+
+Deze slave-repository is nu leeg en klaar voor gebruik. [b]Gebruik deze repo. ook alleen voor synchronisatie doeleinden[/b]. Niet voor dagelijks gebruik of andere zaken. Anders kan deze repo. niet goed meer geschroniseerd worden.
+
+[h2]Hooks[/h2]
+In de hooks map van de slave-repository moeten 2 hookscripts geplaats worden. Deze wordt gestart door Subversion bij bepaalde acties zoals het vooraf gaan aan een [b]svn commit[/b] en [b]property-changes[/b].
+
+In beide gevallen wordt gecontroleerd of de synchronisatie door de [b]syncuser[/b] wordt uitgevoerd.
+
+[h3]start-commit (onderstaande is 1 regel)[/h3]
+Plaats dit voorbeeld [url=http://www.atlantisdesign.nl/public/svnsync_start-commit_hook.txt]start-commit[/url] hookscript in de volgende map met de juiste naam:
+
+[code]/Volumes/Backupdisc/svn_sync/mijnwebsite/hooks/start-commit[/code]
+
+En zet de Unix permission met de [b]Terminal[/b] zo dat dit script uitgevoerd kan worden (onderstaande is 1 regel).
+
+[code]chmod ugo+x /Volumes/Backupdisc/svn_sync/mijnwebsite/hooks/start-commit[/code]
+
+[h3]pre-revprop-change (onderstaande is 1 regel)[/h3]
+Plaats dit voorbeeld [url=http://www.atlantisdesign.nl/public/svnsync_pre-revprop-change_hook.txt]pre-revprop-change[/url] hookscript in de volgende map met de juiste naam:
+
+[code]/Volumes/Backupdisc/svn_sync/mijnwebsite/hooks/pre-revprop-change[/code]
+
+Ook hiervan zetten we de juiste Unix permissions (onderstaande is 1 regel):
+
+[code]chmod ugo+x /Volumes/Backupdisc/svn_sync/mijnwebsite/hooks/pre-revprop-change[/code]
+
+[h2]Usermanagement / password[/h2]
+De slave-repository wordt gebruikt om te synchorniseren. Deze maakt gebruik van bovenstaande hookscripts die controleren of een bepaalde gebruiker de syncrhonisatie mag uitvoeren. Namelijk de [b]syncuser[/b]. In een password bestand wordt deze gebruiker aangemaakt me een plain text-password.
+
+[h3]passwd (onderstaande is 1 regel)[/h3]
+Plaats dit voorbeeld [url=http://www.atlantisdesign.nl/public/svnsync_passwd.txt]passwd[/url] bestand in onderstaande map met de juiste naam:
+
+[code]/Volumes/Backupdisc/svn_sync/mijnwebsite/conf/passwd[/code]
+
+[h3]Repository configuratie[/h3]
+Nu moeten we voor de slave-repository nog aangeven hoe deze is geconfigureerd. Plaats dit voorbeeld [url=http://www.atlantisdesign.nl/public/svnsync_svnserve_conf.txt]svnserve.conf[/url] in de juist map met de juiste naam:
+
+[code]/Volumes/Backupdisc/svn_sync/mijnwebsite/conf/svnserve.conf[/code]
+
+In dit bestand kun je de slave-repository ook een goede naam geven:
+
+[code]realm = my slave-repo name[/code]
+
+[h2]Initialisatie[/h2]
+De setup is bijna klaar. We geven nu aan dat de slave-repository geinitialiseerd moet worden aan de master-repository. 
+
+Deze zal dat vanaf nu onthouden. Bij een synchronisatie commando weet de slave-repository welke master-repository deze moet [b]repliceren[/b] en waar deze de vorige keer is gebleven. Open de [b]Terminal[/b] en typ onderstaande:
+
+[h4]Onderstaande is 1 regel[/h4]
+[code]svnsync init file:///Volumes/Backupdisc/svn_sync/mijnwebsite svn://mijn-mac.local/mijnwebsite/[/code]
+
+In beeld verschijnt er een melding welke aangeeft dat de properties gekopieerd zijn van de master-repository.
+
+[code]Copied properties for revision 0. [/code]
+
+[h2]Synchroniseren[/h2]
+Met 1 commando naar de slave-repository geven we aan dat de master-repository alle [b]changesets[/b] moet repliceren naar de slave-repository. De slave-repository intepreteerd alle [b]changesets[/b] weer en maakt op die manier een exacte kopie van de master-repository. In de [b]Terminal[/b]:
+
+[code]svnsync sync file:///Volumes/Backupdisc/svn_sync/mijnwebsite[/code]
+
+De volgende keer dat er weer gesynchroniseerd moet worden pakt de slave-repository het punt weer op waar de is gebleven ten opzichte van de master-repository.
+
+[h3]Unix shell scripts en cron-achtige preiodieke taken[/h3]
+Op deze manier kun je de synchronisatie commando's allemaal verzamelen in bijvoorbeeld 1 Unix shell script. Voer dit script uit en alle svnsync acties worden uitgevoerd.
+
+MacOS X heeft uiteraard ook zoiets als periodieke taken. Het oude [url=http://en.wikipedia.org/wiki/Cron]Unix cron[/url] is uiteraard nog aanwezig. Apple heeft dit vervangen door [b]launchd[/b]. Met [url=http://developer.apple.com/macosx/launchd.html]launchd[/url] kun je ook dit soort shell scripts laten uitvoeren op bepaalde tijden.
+
+Op [b]YouTube[/b] staat ook een saai [url=http://www.youtube.com/watch?v=mLwn_TbBntI]filmpje over launchd[/url].
+
+[h2]Disclaimer[/h2]
+Atlantisdesign neemt geen verantwoording voor enige schade aan uw systeem.

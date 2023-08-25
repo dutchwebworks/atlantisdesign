@@ -1,0 +1,96 @@
+PureFTPd installeren op MacOSX Leopard
+
+ftp. mac, pureftpd. deamon
+
+Een betere, makkelijkere te onderhouden FTP server op Mac OS X. Met gebruik van virtual-users.
+
+[img=float_right]atlantis_uploads/uploads/logo_pureftpd.gif[/img]Dit is eigenlijk een soort nieuwe versie op de [article=pureftpd-installeren-op-macosx-tiger]Tiger editie[/article] van PureFTPd. In dit artikel gaan we PureFTPd installeren op [b]Mac OS X Leopard v10.5[/b]. Kijk op bovenstaand artikel voor de Tiger versie.
+
+Apple heeft in alle versies van Mac OS X een aardig werkende FTP server al ingebouwd. Via[b] Apple'tje > System Preferences > Sharing[/b] ... vink aan [b]File Sharing[/b], klik dan op [b]Options[/b]. kunnen we deze aanzetten en deels configureren. 
+
+[h3]Nadeel van de ingebouwde FTP server[/h3]
+Net als voorgaande varianten van Mac OS X heeft deze FTP server weinig opties te bieden. Een groot nadeel van deze FTP server is dat, zodra iemand vanaf een andere computer is ingelogd, de gehele Mac kan bekijken. Afhankelijk van het type Mac OS X account waarmee men inlog kan deze persoon [b]alle bestanden zien, bewerken en zelfs verwijderen![/b]
+
+Dit zou zeker niet handig zijn als we een FTP account aan een derde geven zodat deze bestanden kan uploaden naar de Mac. Bovendien als we ftp-only-users (gebruikers die geen echte Mac OS X account hebben) willen is dit wel mogelijk sinds Mac OS Leopard v10.5.
+
+[h3]Virtual ftp users[/h3]
+Beter zou zijn als we [b]virtual-ftp-users[/b] kunnen aanmaken. Dit zijn geen echte Mac OS X accounts, krijgen ook al die overbodige mappen niet in hun thuismap, hiermee blijven de echte Mac OS X accounts (mensen die fysiek achter de Mac kunnen inloggen) beperkt tot de mensen die echt werken achter de Mac.
+
+[h3]Waarom geen Mac OS X accounts?[/h3]
+Echte Mac OS X accounts hebben een eigen thuis map in de [b]/Users[/b] map op de Mac. Compleet met (voor ftp-only-users) overbodige mappen als [b]Library[/b], [b]Pictures[/b], [b]Sites[/b], [b]Documents[/b] en bijvoorbeeld [b]Desktop[/b]. Wat moeten deze ftp-only-users hiermee? Die willen alleen een mapje aangewezen krijgen op de Mac waar ze hun bestanden of een website kunnen uploaden.
+
+[h2]PureFTPd Manager[/h2]
+Dit is een [b]donation-ware[/b] ([b]gratis[/b], donaties zijn zeer welkom) van fransman [b]Jean Matthieu[/b]. De Mac OS X Leopard versie heeft een tijdje op zich laten wachten. Het bevat een bekende [url=http://www.pureftpd.org/]PureFTPd[/url] Unix ftp-server, welke veel gebruikt wordt in Unix en Linux webservers.
+
+[url=http://jeanmatthieu.free.fr/pureftpd/]PureFTPd Manager[/url] bevat speciaal voor Mac OS X (Tiger en Leopard) een manager om alle benodigde elementen te installeren en de bestaande Apple FTP server te vervangen door PureFTPd. Daarbij zit er een prachtig Mac programma (de Manager) om de PureFTPd server daadwerkelijk te beheren,[b] virtual-users aan te maken[/b] en deze mappen aan te wijzen op de Mac die fungeren als home directories.
+
+[h2]Het doel[/h2]
+Onderstaande klinkt moeilijk maar dat is het zeer zeker niet. Als we hiermeer klaar zijn kunnen we veel, heel veel, ftp-only-users aanmaken die speciaal bedoelt zijn om bestanden uit te wisselen met de Mac.
+
+[list]
+[*]De bestaande FTP server vervangen door PureFTPd
+[*]Virtual ftp-only gebruikers aanmaken met eigen home directory
+[*]Iets geavanceerdere authentication methode via een MySQL database
+[/list]
+
+[h2]Downloaden en installeren[/h2]
+[url=http://jeanmatthieu.free.fr/pureftpd/]Download PureFTPd Manager[/url]. Voordat je deze nieuwe FTP server installeerd moet je er zeker van zijn dat [b]de oude FTP server uit staat. Dit is belangrijk![/b]
+
+[h3]Bestaande FTP server uitzetten[/h3]
+Ga naar [b]Apple'tje > System Preferences > Sharing[/b] ... klik op [b]File Sharing[/b] en dan rechsonderin op [b]Options[/b]. Vink uit: [b]Share files and folder using FTP[/b].
+
+[h3]Installeren[/h3]
+Installeer nu de PureFTPd Manager package. Volg de aanwijzingen op het scherm. Het is aan te raden na de installatie het programma van de [b]/Applications[/b] map te verplaatsen naar de [b]/Applications/Utilities[/b] map.
+
+PureFTPd Manager is een meer utility om de FTP server te beheren en gebruikers aan te maken. Op deze manier blijven dit soort programma's goed georganiseerd bij elkaar.
+
+[h3]Volg de aanwijzingen op het scherm[/h3]
+Start nu PureFTPd Manager. Omdat een FTP server dingen in het Mac systeem moet veranderen, en gebruikers kan toevoegen, wordt elke keer om een Mac OS X administrator wachtwoord gevraagd. Volg de aanwijzingen op het scherm. Sla de stap voor [b]anonymous users[/b] over, dit hebben we niet nodig. We willen niet dat gebruikers kunnen inloggen [b]zonder username en password[/b].
+
+Aan het eind wordt gevraagd om de PureFTPd server daadwerkelijk te configureren. Hierdoor wordt de oude FTP server vervangen door PureFTPd.
+
+[h3]PureFTPd starten[/h3]
+In het hoofdscherm van PureFTPd klikken we rechtsonderin op [b]Start[/b]. Aan de linkeronderkant van het scherm kunnen we zien dat nu PureFTPd server draait.
+
+[h2]Testen[/h2]
+Start bijvoorbeeld een [b]FTP client[/b] als [url=http://www.fetchsoftworks.com/]Fetch[/url], [url=http://www.panic.com/transmit/]Transmit[/url], het [b]gratis[/b] [url=http://www.nchsoftware.com/classic/index.html]Classic FTP (for Mac)[/url] of het [b]gratis[/b] [url=http://cyberduck.ch/]CyberDuck[/url]. Typ bij het IP nummer het volgende in. Dit betekend gewoon 'je eigen Mac', ofwel deze Mac zelf.
+
+[code]localhost[/code]
+
+Gebruik vervolgens je [b]eigen Mac OS X account met username en password[/b]. Als het goed is zie je nu je eigen thuis map (ofwel home directory). Blader nu in het [b]console window[/b] (een lijst met commando's die worden uitgevoerd door het FTP programma) iets terug en we zien daar dat Mac OS X nu gebruik maakt van [b]PureFTPd[/b].
+
+[h2]Virtual users aanmaken[/h2]
+Bovenin het scherm van PureFTPd klikken we op de button [b]User Manager[/b]. PureFTPd kan op verschillende manieren gebruikers (users) bewaren. De meest gebruikte optie in PureFTPd is PureDb. Dat is een eigen indeling om gebruikers te bewaren en nog wat andere specifieke eigenschappen voor gebruikers in op te slaan.
+
+Klik bovenaan het scherm op de knop New. Aan de linkerkant verschijnt straks de username die we gaan aanmaken. Hier worden die virtual users aangemaakt. Vul de gevraagde gegevens in en [b]verzin zelf een username en password[/b] waarmee ingelogd moet worden.
+
+[h4]Home directory aanwijzen en restricties opleggen[/h4]
+Als deze gebruiker inlogd komt deze ergens in een map terecht op onze Mac. Dit kunnen we hier aangeven waar dat is. Let op! Het voordeel van dit alles is dat het elke map kan zijn die je maar wilt. [b]Zelfs op externe hardeschijven![/b]
+
+[h2]Restrict user access to his home directory[/h2]
+Vink aan [b]Restict user access to his home directory[/b]. Hiermee voorkom je dus waar het in het begin van dit artikel over ging. Dat deze gebruiker niet in de mappen structuur omhoog mag klimmen en naar andere delen van de Mac mag gaan.
+
+Samen met de virtual-users en het toekennen van een eigen home directory zijn dit de grootste argumenten om PureFTPd te installeren in plaats van gebruik te blijven maken van de bestaande ingebouwde Apple FTP server.
+
+Op dezelfe manier kunnen we nu de nieuwe FTP users gaan testen.
+
+[h2]MySQL authentication[/h2]
+In het artikel [article=mysql-op-macosx-leopard]MySQL op Mac OS X Leopard[/article] wordt uitgelegd hoe je een MySQL database kan installeren. PureFTPd kan met de MySQL database overweg om gebruikers gegevens in te bewaren. 
+
+Maak hiervoor, met bijvoorbeeld het [b]gratis[/b] [url=http://www.navicat.com/download.html]Navicat Lite[/url], een nieuwe database aan, die alleen gebruikt gaat worden door PureFTPd. 
+
+[h3]Eigen MySQL gebruiker[/h3]
+Eventueel kun je speciaal voor PureFTPd een eigen MySQL user aanmaken die alleen z'n eigen database mag beheren. Maar is voor deze opzet niet nodig. De reden waarom je dit zou doen is dat het wachtwoord waarmee PureFTPd inlogt op de MySQL database (en daar z'n gebruikers gegevens opvraagd en bewaard) gewoon als[b] plain-text[/b] op de harde schijf van de Mac bewaard in de map [b]/etc/pure-ftp/pure-ftpd-mysql.conf[/b]. 
+
+Het zou niet zo netjes zijn als een kwaadwillend persoon dit kan achterhalen en alle rechten op de MySQL databases kan uitvoeren.
+
+[h3]MySQL support aanzetten[/h3]
+In PureFTPd kun je via [b]Preferences[/b] ... kies dan [b]Authentication[/b] op de [b]Add[/b] button klikken. Vul bij [b]Server host[/b] in dat we de [b]localhost[/b] willen gebruiken. Zodat PureFTPd inlogd op de lokale MySQL server die op de Mac al draait. Vul ook de naam van de database in die PureFTPd mag gebruiken samen met de username en password van deze database. 
+
+[attention]Let op![/attention]
+Zorg ervoor dat als je een nieuwe / eigen gebruiker hebt aangemaakt, in MySQL, speciaal voor PureFTPd dat deze MySQL gebruiker lees ([b]select[/b]) maar zeker ook schrijf ([b]create / alter / update[/b]) rechten heeft in de desbetreffende MySQL database.
+
+Bij het bewaren vraagd PureFTPd Manager om de deamon (achter service) te herstarten. Zodat gebruik gemaakt wordt van de nieuwe instellingen.
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

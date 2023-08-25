@@ -1,0 +1,17 @@
+Subversion versie beheer op Mac OS X
+
+svn, subversion, open source, versie beheer, version control, cvs
+
+Open-source versie beheer. Ideaal voor gebruik in het bouwen van websites waar bestanden vaak worden toegevoegd, gewijzigd, scripts getest worden en misschien niet meer werken. Dan is het handig om versies van alle bestanden centraal en handig te bewaren.
+
+[img=float_right]atlantis_uploads/uploads/logo_svn.gif[/img]In dit artikel gaan we [url=http://subversion.tigris.org/]Subversion 1.5.1[/url] (afgekort SVN) installeren. 
+
+Er is een groot verschil tussen SVN 1.4 en 1.5. Het grote voordeel van SVN 1.5 is dat het mergen van branches vele malen makkelijker is dat in SVN 1.4. De revisie nummers, om mee te mergen, wordt automatisch bijgehouden door Subversion.
+
+[h2]Wat hebben we nodig?[/h2]
+[list]
+[*][b]Tigris Subversion 1.5.1[/b], voor Mac kun je het beste de makkelijke installers gebruiken van [url=http://homepage.mac.com/martinott/]Martin Ott[/url] of [url=http://versionsapp.com/redirect/svn15latest]download[/url] de laatste versie die meegeleverd word met het Mac Subversion programma [url=http://www.versionsapp.com/]Versions[/url].
+[*]Een Mac programma om met de [b]SVN Repository[/b] te kunnen communiceren. Een goed (bij dit schrijven nog beta) programma is [url=http://versionsapp.com/]Versions[/url].
+[*]Optioneel is er voor de Mac OS X [b]Finder[/b] een contextual-menu item genaamd [urlhttp://scplugin.tigris.org/servlets/ProjectDocumentList=]SCPlugin[/url] (ofwel een menu onder de rechtermuisttoets) speciaal voor simpele Subversion acties. Deze plugin is gemaakt naar het voorbeeld van een Windows variant genaamd [url=http://tortoisesvn.net/downloads]TortoiseSVN[/url].
+[*]Voor het geavanceerdere werk moeten we toch echt de Unix [b]Terminal[/b] gebruiken (/Applications/Utilities/Terminal). Subversion is een Unix command line programma en dit werkt het snelst in de Unix Terminal.
+[/list]

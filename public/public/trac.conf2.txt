@@ -1,0 +1,10 @@
+########################################
+## Nog een website
+########################################
+
+<Location "/trac/nog_een_website">
+  AuthType Basic
+  AuthName "Trac nog_een_website envirorment"
+  AuthUserFile /etc/apache2/passwords/.htpasswd
+  Require user piet
+</Location>

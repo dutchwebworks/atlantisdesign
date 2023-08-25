@@ -1,0 +1,78 @@
+Apache htaccess en mod_rewrite op MacOSX Leopard
+
+apache, htaccess, mod_rewrite, urls, herschrijven, mac, mac os x, nette url, seo, zoekmachine, leopard
+
+MacOS X Leopard heeft de Apache 2.x webserver. Ook hier gaan we de mod_rewrite module gebruiken. Eigelijk moet er maar 1 configuratie regel aangepast te worden.
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img]In het vorige artikel over [article=apache-htaccess-en-mod_rewrite-op-macosx-tiger]Apache .htaccess en mod_rewrite[/article] is uitgebreidt uitgelegt wat het allemaal precies is. [b]Hier volgt een update voor MacOSX Leopard v10.5[/b].
+
+Nu Apple MacOSX Leopard heeft uitgebracht gaan we natuurlijk dezelfde voodoo toepassen maar dan met de Apache 2.x webserver.
+
+[h2]Apache 2.x configuratie backup maken[/h2]
+Open de [b]Terminal[/b] applicatie (/Applications/Utilities/Terminal). We gaan eerst een backup maken van het Apache configuratie bestand. 
+
+[h4]Ga eerst naar de map waar het configuratie bestand staat[/h4]
+[code]cd /etc/apache2[/code]
+
+[h4]Vraag een lijst met bestanden op. Deze stap is perse nodig[/h4]
+[code]ls -l[/code]
+
+Hier zien we welk bestand we moeten hebben, namelijk [b]httpd.conf[/b]. Typ het volgende commando in en geef een administrator wachtwoord op.
+
+[h4]Backup maken[/h4]
+[code]sudo cp httpd.conf httpd.conf_backup[/code]
+
+Vraag met [b]ls -l[/b] opnieuw een lijst op en we zien dat er een backup bestand is gemaakt. Voor degene die met de Unix terminal overweg kunnen weten hoe ze met de commando's [b]rm[/b] en [b]mv[/b] de backup weer terug kunnen zetten.
+
+[h2]Apache 2.x override aanzetten[/h2]
+Standaard staat in deze versie van de Apache webserver bijna alles al goed qua configuratie. We moeten 1 regel aanpassen.
+
+Dat kan op 2 manieren: met de Unix vi editor of het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/]TextWrangler[/url] of de commerciele broer [url=http://www.barebones.com/products/bbedit/index.shtml]BBEdit[/url]. 
+
+[img=float_right]atlantis_uploads/uploads/logo_textwrangler.gif[/img]Start [b]TextWrangler[/b] (of BBEdit) en laat het de [b]command line tools[/b] installeren. We kunnen nu aan de slag. Als je gebruik maakt van [b]BBEdit[/b] is het commando om bestanden te bewerken (vanuit de Ternimal) '[b]bbedit[/b]' in plaats van '[b]edit[/b]' welke [b]TextWrangler[/b] gebruikt.
+
+[h3]Methode 1. Unix vi editor[/h3]
+Open het [b]Terminal[/b] programma (/Applications/Utilities/Terminal) en typ het volgende commando in, gevolgt door een adminitrator wachtwoord.
+
+[code]sudo vi /etc/apache2/httpd.conf[/code]
+
+Eerst drukken we op ESC en dan typen we onderstaande in om naar regel nummer 210 te gaan.
+[code]:210[/code]
+
+Daar staat een [b]directive[/b] hoe de webserver moet omgaan met [b]overrides[/b]. Met andere woorden [b]of[/b] een [b].htaccess[/b] bestand de standaard configuratie mag overschrijven.
+
+[code]AllowOverride None[/code]
+
+Dit gaan we veranderen in onderstaande. Verander het woord [b]None[/b] in [b]All[/b]
+[code]AllowOverride All[/code]
+
+Bewaar het document door eerst op [b]ESC[/b] te drukken en daarna het volgende in te typen.
+
+[code]:wq[/code]
+
+Wat wil zeggen dat we het file willen bewaren, ofwel [b]w[/b] van [b]write[/b] en dat we het programma vi willen afsluiten met [b]q[/b] van [b]quit[/b].
+
+[h3]Methode 2. via TextWrangler[/h3]
+Open de Terminal en typ onderstaande commando in
+[code]edit /etch/apache2/httpd.conf[/code]
+
+In TextWrangler gaan we met [b]Apple'tje + j[/b] naar regel [b]210[/b]. Daar voeren we precies hetzelfde uit als bij de vi editor versie.
+
+[code]AllowOverride None[/code]
+
+Dit gaan we veranderen in onderstaande. Verander het woord [b]None[/b] in [b]All[/b]
+[code]AllowOverride All[/code]
+
+Bewaar het bestand en geef een administrator wachtwoord op. Dit moet je doen omdat het een Unix beveiligd bestand is.
+
+[h2]Apache herstarten[/h2]
+Nu gaan we de Apache 2.x webserver herstarten. Dit kan door via[b] Apple'tje > System Preferences[/b], zoek [b]Sharing[/b] op en vink de [b]WebSharing[/b] uit en even later weer [b]aan[/b].
+
+Als we nog in de Terminal zitten voeren we het volgende commando uit
+
+[code]sudo apachectl graceful[/code]
+
+Hierdoor wordt de Apache server ge-herstart. We kunnen nu gebruik maken van .htaccess bestanden. De [b]mod_rewrite[/b] module staat standaard al aan en werkt dus al.
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

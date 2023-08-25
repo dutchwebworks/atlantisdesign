@@ -1,0 +1,133 @@
+Subversion svnserve automatisch opstarten
+
+svn, subversion, svnserve, launchd, ondemand, run at load, plist
+
+Subversion heeft ook een eigen svnserve deamon zodat het svn:// protocol gebruikt kan worden. Met een launchd plist (XML) bestand wordt bij het opstarten van de Mac automatisch  de svnserve daemon gestart.
+
+[img=float_right]atlantis_uploads/uploads/logo_svn.gif[/img]Dit artikel gaat ervan uit dat [article=subversion-versie-beheer-op-mac-os-x]Subversion al op de Mac draait[/article]. Plus dat er een vaste plek is waar de Subversion Repositories staan. In dit voorbeeld staan de repositories op de volgende locatie:
+
+[h4]Subversion repository pool[/h4]
+[code]/Library/Subversion/Repository[/code]
+
+Natuurlijk kun is deze plek niet verplicht.
+
+[h2]SVN repositories benaderen[/h2]
+
+Er zijn een aantal manier om een SVN repository te benaderen. Via het file-system zelf, als de repository op dezelfde computer staat als waar de working-copy staat. Dit gaat dan bijvoorbeeld via:
+
+[h3]Local file-system[/h3]
+Een SVN checkout ziet er dan als volgt uit:
+
+[code]svn checkout file:///Library/Subversion/Repository/mijn-project/trunk mijn-project/[/code]
+
+Op deze manier kun je heel snel verbinding maken met de lokale repository.
+
+[h3]Apache met mod_dav en mod_svn[/h3]
+
+Apache ondersteunt [url=http://en.wikipedia.org/wiki/WebDAV]webDAV[/url] en hiermee kun je ook een Subversion repositories beschikbaar maken via het HTTP protocol (port 80):
+
+[code]svn checkout http://ip-nummer-mac/svn/mijn-project/trunk mijn-project/[/code]
+
+Deze manier is wat langzamer omdat het eerst via Apache verbinding moet maken. Het voordeel is wel dat je met Apache de toegang tot de repositories kun beperken met een [b]usernames en passwords[/b].
+
+Voor deze opzet is een apart artikel geschreven: [article=subversion-beschikbaar-maken-via-apache]Subversion beschikbaar maken via Apache[/article].
+
+[h3]Via Subversions eigen svn:// protocol[/h3]
+Als Subversion is geinstalleerd wordt ook het [b]svnserve[/b] Unix programma mee geinstalleerd.
+
+Dit is een lichtgewicht achtergrond server / daemon waarmee je direct met een SVN repository kan communiceren. Het draait op z'n eigen protocol, namelijk [b]svn://[/b]. Een svn checkout zou er dan ongeveer zo uit kunnen zien:
+
+[code]svn checkout svn://ip-nummer-mac/mijn-project/trunk mijn-project/[/code]
+
+Dit is een snellere manier dan met Apache. Want je maakt direct verbinding met de repository. Bovendien kun je op deze manier ook usernames en passwords toekennen aan bepaalde svn repositories.
+
+[h3]Via snvserve en ssh[/h3]
+Er is nog een extra veiligheids techniek die toegepast kan worden op bovenstaande svn:// manier. Dat is svnserve toeganklijke maken via een SSH (secure shell) tunnel. Lees hiervoor de [url=http://svnbook.red-bean.com/]gratis  documentatie[/url] van Subversion. In de [url=http://svnbook.red-bean.com/en/1.4/svn-book.pdf]PDF versie[/url] vanaf [b]pagina 171[/b].
+
+[h2]Firewall en port nummer[/h2]
+Het voordeel van  de [b]Apache[/b] of [b]svnserve[/b] manier is dat je de SVN repositories beschikbaar kan maken via het netwerk. Dus ook aan Linux en Windows gebruikers.
+
+Uiteraard heeft dit ook weer te maken met de firewall en beveiliging op de Mac. De port nummer die svnserve gebruikt is [b]port nummer 3690[/b]. Met het shareware programma [url=http://opendoor.com/doorstop/]DoorstopX[/url] kun je makkelijk de ingebouwde Unix [url=http://en.wikipedia.org/wiki/Ipfirewall]ipfw firewall[/url] configureren.
+
+[h2]Configueren van svnserve[/h2]
+In dit artikel gaan we svnserve configureren en automatisch laten opstarten als de Mac opstart. Daarbij geven we aan welke hoofdmap (parent directory) we willen serveren via [b]svn://[/b]. Dit heeft als bijkomend voordeel dat de URL's (paden) korter worden en makkelijker te typen en onthouden zijn.
+
+[h3]Handmatig svnserve opstarten[/h3]
+Open de Terminal en typ onderstaande in. Vervang het laatste stuk met het pad waar de SVN repositories staan:
+
+[code]sudo svnserve -d -r /Library/Subversion/Repository[/code]
+
+Met [b]-d[/b] geef je aan dat je [b]svnserve[/b] als een Unix daemon (achtergrond programma / proces) wilt draaien. Met bovenstaand pad geef je met [b]-r[/b] aan waar de svn repository [b]parent-directory[/b] staat. De repositories staan dus een map verder, bijvoorbeeld:
+
+[code]/Library/Subversion/Repository/mijn-project[/code]
+
+Op deze manier zijn alle repositories die achter [b]-r[/b] vermeld staan bereikbaar via het eigen SVN protocol:
+
+[code]svn://ip-nummer-mac/mijn-project[/code]
+
+[code]svn://ip-nummer-mac/mijn-tweede-project[/code]
+
+Dit is aanzienlijk korter. 
+
+[h3]hosts file[/h3]
+Met het [url=http://en.wikipedia.org/wiki/Hosts_file]hosts file[/url] (Windows, Mac en Linux) kun je ook makkelijk zelf een soort [b]nepdomein[/b] aanmaken waardoor bovenstaande er zo uit kan zien:
+
+[code]svn://mijn-mac.local/mijn-project[/code]
+
+In het hosts bestand wordt het IP nummer van de Mac ge-mapped aan de naam [b]mijn-mac.local[/b]. Hier is het artikel te klein voor dus zoek op internet naar uitleg over het hosts bestand.
+
+In het artikel [article=apache-mod_vhost_alias-virtual-hosts]Apache mod_vhost_alias virtual hosts[/article] en [article=apache-virtual-hosts]Apache virtual hosts[/article] wordt dit concept ook uitgelegd.
+
+[h2]launchd[/h2]
+Natuurlijk is het een beetje vermoeiend en omslachtig om elke keer met de hand [b]svnserve met parameter[/b] te starten. Uiteraard heeft de Mac ook een soort manager die automatisch achtergrond programma's en Unix processen opstart, genaamd: [url=http://en.wikipedia.org/wiki/Launchd]launchd[/url].
+
+De configuratie bestanden, die launchd inleest, zijn allemaal in XML formaat en bevatten Unix commando's die bijvoorbeeld door de Unix root user uitgevoerd worden. Hiermee wordt bijvoorbeeld de Apache webserver, de MySQL database en vele andere Apple Mac gerelateerde achtergrond processen opgestart. 
+
+[h4]Lingon[/h4]
+Met het [b]gratis[/b] programma [url=http://lingon.sourceforge.net/]Lingon[/url] kunnen we ook zelf zo'n XML plist opstart bestand maken. Daar gaan we verder niet op in.
+
+Eigenlijk is alles al aanwezig nadat [article=subversion-versie-beheer-op-mac-os-x]Subversion is geinstalleerd[/article]. Het enige dat nodig is is een [url=http://en.wikipedia.org/wiki/Property_list]plist bestand[/url] ([b]property list[/b], welke in XML formaat is) om aan te geven welke commando's geladen moet worden tijdens het opstarten van de Mac.
+
+[h3]Voorbeeld plist bestand[/h3]
+Download het voorbeeld [url=http://www.atlantisdesign.nl/public/svnserve_launchd_plist.txt]org.tigris.subversion.svnserve.plist[/url] bestand en bewaar deze op de volgende locatie met de juiste naam:
+
+[code]/Library/LaunchDaemons/org.tigris.subversion.svnserve.plist[/code]
+
+In dit plist bestand staat in feite wat we net zelf hebben ingetyped in de Terminal. Met het [b]Terminal[/b] programma (/Applications/Utilities/Terminal) geven de juiste rechten aan dit bestand:
+
+[code]sudo chown root:wheel /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist[/code]
+
+[code]sudo chmod 644 /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist[/code]
+
+[h3]Herstarten[/h3]
+Nu staat het opstart bestand op de juist plek. Met een herstart kunnen we zien of de Mac het nu zelf heeft opgestart. Met het Apple [b]Activity Monitor[/b] programma (/Applications/Utilities/Activity Monitor) kunnen we zien of [b]svnserve[/b] ook daadwerkelijk automatisch is opgestart. Zoek rechtsbovenin naar [b]svnserve[/b].
+
+[h4]Unix commando[/h4]
+Dit kun je ook achterhalen met een Unix commando:
+
+[code]ps -ax | grep svnserve[/code]
+
+Als er twee regels in beeld komen (1 van grep en een andere) betekend dat het proces draaid.
+
+[h2]Handmatig opstarten launchd plist bestanden[/h2]
+Het plist xml bestand kunnen we ook handmatig in de Terminal in laden en laten starten. Al heb ik deze manier nog niet werkend gezien.
+
+[h4]Inladen plist bestand in launchd[/h4]
+
+Let op! Dit is 1 lange regel zonder afbrekingen.
+
+[code]sudo launchctl load /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist[/code]
+
+[h4]Handmatig starten van svnserve via launchd[/h4]
+
+Ook dit is 1 lange regel zonder afbrekingen.
+
+[code]sudo launchctl start /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist[/code]
+
+[h2]User management[/h2]
+Met svnserve draaiend en de repositories bereikbaar via snv:// kunnen we zelf users gaan aanmaken die (beperkte) toegang krijgen tot de SVN repositories.
+
+Lees hiervoor de gratis online (of download de [url=http://svnbook.red-bean.com/en/1.4/svn-book.pdf]PDF versie[/url], vanaf [b]pagina 169[/b], hoofdstuk [b]Built-in authentication and authorization[/b]) [url=http://svnbook.red-bean.com/]documentatie[/url] van Subversion. 
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

@@ -1,0 +1,299 @@
+/* Print style for http://www.atlantisdesign.nl/
+
+/* common tags
+============================================== */
+body {
+	background: #ffffff;
+	width: auto;
+	color: black;
+	margin-right: 5%;
+	margin-left: 5%;
+	font: 10pt 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+}
+ 
+a img {
+	border-style: none;
+}
+
+strong {
+	color: #d64f20;
+	font-weight: bold;
+}
+
+acronym {
+	font-weight: bold;
+	color: #771982;
+}
+	
+/* Header
+============================================== */
+
+#header {
+	background: none;
+}
+
+#header h1 {
+	display: none;
+}
+
+#header p {
+	text-align: center;
+}
+
+div#header h2#tagline {
+	font-family: "Trebuchet MS";
+	text-align: center;
+	font-size: 0.6em;
+	color: #0092d2;
+}
+
+div#header h2#tagline span.head {
+	font-family: Verdana;
+	color: #d64f20;
+	font-size: 1.5em;
+}
+	
+/* Nav
+============================================== */
+
+#nav {
+	display: none;
+}
+	
+/* Content
+============================================== */
+
+#content {
+	float: none !important;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content p, #content ul {
+	margin-top: 0;	
+	margin-right: 20px;
+	padding-bottom: 0;
+}
+
+/* Intro
+============================================== */
+
+#intro {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#intro p {
+	padding-top: 0;
+	color: #0092d2;
+}
+
+/* Content
+============================================== */
+
+#content h1 {
+	color: #d64f20;
+	margin-top: 20px;
+}
+
+#content h2 {
+	border-bottom: 1px solid #771982;
+	padding-bottom: 3px;
+	font-size: 17px;
+	color: #771982;
+	margin-top: 50px;
+
+}
+
+#content h3 {
+	font-size: 14px;
+	color: #771982;
+	margin-top: 30px;
+}
+
+#content h4 {
+	font-size: 12px;
+	padding-bottom: 0;
+	padding-top: 0;
+	color: #0d305a;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+#content p, #footer p {
+	line-height: 1.5em;
+	color: #0d305a;
+}
+
+#content td {
+	color: #0d305a;
+}
+
+#content ul li {
+	margin-left: 10px;
+	color: #0d305a;
+	list-style: square;
+}
+
+#content a {
+	color: #0675AB;
+	font-weight: bold;
+}
+
+#content a:hover {
+	text-decoration: none;
+	color: #d64f20;
+}
+
+#content p.date {
+	font-size: 9px;
+	color: #b781bd;
+	margin-top: 20px;
+	padding-top: 5px;
+}
+
+/* Links
+============================================== */
+
+#content .links {
+	margin-right: 20px;
+	margin-left: 10px;
+}
+
+#content .links h3 {
+	margin-bottom: 0;
+	color: #4d0073;
+	margin-left: 10px;
+}
+
+#content .links p {
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+#content .links a {
+}
+
+#content .links p.date {
+	text-align: right;
+	border-top: 1px solid #557f98;
+	margin-top: 10px;
+}
+
+/* Design table
+============================================== */
+
+table.design {
+	width: 100%;
+}
+
+table.design th {
+	padding-bottom: 5px;
+	padding-right: 5px;
+	border-bottom: 2px solid #f36747;
+	font-size: 14px;
+	color: #f36747;
+	text-align: left;
+	padding-top: 35px;
+}
+
+table.design td {
+	padding: 5px;
+	padding-right: 10px;
+}
+
+table.design tr.even {
+	background: #cde2e9;
+}
+
+table.design tr.odd {
+	background: #ffffff;
+}	
+
+
+#content table.design td img.gallery_thumb {
+	width: 75px;
+}
+	
+/* Common classes
+============================================== */
+
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.float_left {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+.float_right {
+	margin-left: 10px;
+	margin-bottom: 5px;
+	float: right;
+}
+
+.non_print {
+	display: none;
+}
+
+/* Footer
+============================================== */
+
+div#footer div#webBadges,
+div#footer ul{
+	display: none;
+}
+
+/* Side
+============================================== */
+
+#c1 {
+	display: none;	
+}
+
+
+/* Print
+============================================== */
+
+a[href]:after {
+   content: " (http://www.atlantisdesign.nl/" attr(href) ") ";
+   font-size: 90%;
+   font-style: italic;   
+}
+
+a[href^="http://"]:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+   font-style: italic;
+}
+   
+
+/* sIFR
+============================================== */
+   
+/* This is the print stylesheet to hide the Flash headlines from the browser... regular browser text headlines will now print as normal */
+
+.sIFR-flash, .sIFR-flash object, .sIFR-flash embed {
+	display: none !important;
+	height: 0;
+	width: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
+span.sIFR-alternate {
+	visibility: visible !important;
+	display: block !important;
+	position: static !important;
+	left: auto !important;
+	top: auto !important;
+}

@@ -1,0 +1,17 @@
+# Enable named virtual hosts
+NameVirtualHost *:80
+
+# Override the default httpd.conf directives.  Make sure to
+# use 'Allow from all' to prevent 403 Forbidden message.
+<Directory />
+	Options ExecCGI FollowSymLinks
+	AllowOverride all
+	Allow from all
+</Directory>
+
+# Kees z'n fotografie website
+<VirtualHost *:80>
+	ServerName vogelfotografie.local
+	ServerAlias vogelfotografie.mac
+	DocumentRoot /Users/kees/Sites/vogelfotografie
+</VirtualHost>

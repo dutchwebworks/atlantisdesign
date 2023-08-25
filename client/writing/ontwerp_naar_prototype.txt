@@ -1,0 +1,3 @@
+Van ontwerp tot prototype website
+
+Voordat men vaak aan de programmering van een website begin worden eerst templates gemaakt van de aangeleverde ontwerpen. Deze ontwerpen worden vaak gemaakt door speciale bureau's van grafisch vormgevers en interactie ontwerpers. Daarna worden de, meestal Photoshop, ontwerpen  opgeleverd aan het frontend webdesign team. Dit zijn specialisten om het gebied van structurele HTML, Cascading Stylesheet design en Javascripting. Zij bouwen van een aangeleverd ontwerp een werkend prototype van een website in HTML-code, CSS styling en basic Javascripting.

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+REPOS="$1"
+REV="$2"
+
+# Export an update on working copy
+export LANG="en_US.UTF-8"
+umask 002
+cd /Library/WebServer/vhosts/vogelfotografie_demo/httpdocs
+/usr/local/bin/svn cleanup
+/usr/local/bin/svn -q --non-interactive update

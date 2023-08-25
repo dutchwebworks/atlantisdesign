@@ -1,0 +1,36 @@
+BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
+BrowserMatch "MS FrontPage" redirect-carefully
+BrowserMatch "^WebDrive" redirect-carefully
+BrowserMatch "^WebDAVFS/1.[0123]" redirect-carefully
+BrowserMatch "^gnome-vfs/1.0" redirect-carefully
+BrowserMatch "^XML Spy" redirect-carefully
+BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
+
+########################################
+## Default
+########################################
+
+# Webdav and Subversion modules
+LoadModule dav_svn_module		libexec/apache2/mod_dav_svn.so
+LoadModule authz_svn_module		libexec/apache2/mod_authz_svn.so
+
+########################################
+## Websites
+########################################
+
+# Volelfotografie svn repository
+<Location /svn/vogelfotografie> 
+	DAV svn 
+	SVNPath /Library/Subversion/Repository/vogelfotografie
+
+	# Set auto mime-type conversion (for simple HTML mime-type headers)
+	ModMimeUsePathInfo on
+
+	# Basic Apache realm authentication
+	AuthType Basic 
+	AuthName "Vogelfotografie Subversion repository"
+	AuthUserFile /etc/apache2/passwords/.htpasswd 
+
+	# only authenticated users may access the repository 
+	Require valid-user	
+</Location>

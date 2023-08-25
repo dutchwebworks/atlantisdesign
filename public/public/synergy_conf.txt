@@ -1,0 +1,10 @@
+section: screens
+       screen1:
+       screen2:
+    end
+    section: links
+       screen1:
+           right = screen2
+       screen2:
+           left = screen1
+    end

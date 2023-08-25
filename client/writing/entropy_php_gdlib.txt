@@ -1,0 +1,96 @@
+Entropy PHP5 met GDLib op Leopard
+
+entropy, php5, gdlib, graphics, library, mac, mac os x, leopard
+
+De PHP 5.x versie op Entropy.ch (Marc Liyanage) bevat onder andere de [b]GDLib library[/b] waarmee dynamisch plaatje gegeneerd kunnen worden. Deze GDLib library staat helaas niet standaard op de default installatie van PHP die Apple ons biedt.
+
+[img=float_right]atlantis_uploads/uploads/logo_php.gif[/img]De Entorpy PHP5 versie is vele malen uitgebreider dan de standaard versie die Apple op de Mac heeft voor geinstalleerd.
+
+Bij het schrijven van dit artikel is er nog geen goede binary installer van [url=http://www.entropy.ch/software/macosx/php/]PHP 5.x[/url] met [url=http://nl2.php.net/gd]GDLib[/url] voor Mac OS X Leopard op de Entropy website. Via een [url=http://www.entropy.ch/phpbb2/viewtopic.php?t=2945]forum post[/url] wordt het een en ander al uitgelegd over een toekomstige versie.
+
+De standaard PHP installatie van Apple gaan we niet gebruiken. Deze gaan we vervangen door de Entropy versie. Bij het schrijven van dit artikel is dat [b]PHP 5.2.5[/b] beta 6 (op het [url=http://www.entropy.ch/phpbb2/viewtopic.php?t=2945]Entropy forum[/url]).
+
+[h3]Bron[/h3]
+Deze tutorial heb ik niet zelf uitgevonden maar ook van het [url=http://www.maltete.com/blog/index.php?pdf/388/]internet geplukt[/url]. Hier volgt de Nederlandse vertaling met wat meer uitleg.
+
+[h2]Huidige PHP versie uitzetten[/h2]
+Als de standaard PHP van Apple al wel werkt moet deze eerst uitgezet worden. Open de [b]Terminal[/b] (/Applications/Utilities/Terminal) en bewerk het Apache configuratie bestand, bijvoorbeeld met het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/index.shtml]TextWrangler's[/url] [b]edit[/b] commando.
+
+[code]edit /etc/apache2/httpd.conf[/code]
+
+Zoek onderstaande regel op (ongeveer op [b]regel 114[/b]):
+
+[code]LoadModule php5_module libexec/apache2/libphp5.so[/code]
+
+Zet er een hekje voor (comment), zodat deze versie van PHP het niet meer doet:
+
+[code]#LoadModule php5_module libexec/apache2/libphp5.so[/code]
+
+[h3]Oude Entropy versie verwijderen[/h3]
+In dit artikel gaan we ervan uit dat er nog nooit een Entropy versie van PHP op de Mac is geinstalleerd. Mocht dat wel het geval zijn moet deze eerst verwijderd worden.
+
+[code]sudo mv /usr/local/php ~/Desktop/php5.old[/code]
+
+Op de Desktop verschijnt nu de oude Entropy versie die we later weg kunnen gooien.
+
+[h2]Nieuwe Entropy versie downloaden[/h2]
+Download eerst de [url=http://www2.entropy.ch/download/php5-5.2.5-6-beta.tar.gz]PHP 5.2.5 (beta 6)[/url] versie van de Entropy website. De download is best groot.
+
+Pak het [b].tar.gz[/b] bestand uit door gewoonweg dubbelklikken. Zorg ervoor dat de map de volgende naam krijgt:
+
+[code]php5[/code]
+
+[h2]Verplaatsen[/h2]
+Open de [b]Terminal[/b] (/Applications/Utilitis/Terminal) en ga naar de map waar de nieuwe PHP is gedownload. Verplaats deze nu met een Unix commando naar de juist directory:
+
+[code]sudo mv php5 /usr/local/[/code]
+
+De Entropy PHP versie hoeft niet geinstalleerd te worden. Deze is direct bruikbaar voor MacOS X Leopard.
+
+[h2]PHP error display[/h2]
+Standaard in deze Entropy PHP5 versie staan de [b]error messages[/b] die PHP op het scherm zet uit. Bij een syntax error bijvoorbeeld. Dit is natuurlijk bijzonder vervelend bij het maken van een PHP website. We maken eerst een kopie van de bestaande Entropy [b]php.ini-recommended[/b]:
+
+[code]sudo cp /usr/local/php5/lib/php.ini-recmmended /usr/local/php5/lib/php.ini[/code]
+
+Bewerk nu deze nieuwe PHP configuratie met bijvoorbeeld het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/index.shtml]TextWrangler's[/url] edit:
+
+[code]edit /usr/local/php5/lib/php.ini[/code]
+
+[h4]Default error handling[/h4]
+Ga met (Apple'tje + j) naar [b]regel 341[/b] wat het level van error handling is en haal de [b];[/b] ervoor weg (comment):
+
+[code]error_reporting = E_ALL & ~E_NOTICE[/code]
+
+[h4]Te veel errors[/h4]
+Ga naar [b]regel 354[/b] en zet daar een [b];[/b] voor. Dit was de standaard manier van errors weergeven die iets te veel onnodige errors weergeeft:
+
+[code];error_reporting  =  E_ALL[/code]
+
+[h3]Display errors[/h3]
+Nu moeten we de nog aangeven dat we bovenstaande manier ook nog in beeld willen krijgen als er PHP errors optreden. Ga aar [b]regel 372[/b] en zet de display errors aan:
+
+[code]display_errors = On[/code]
+
+[h2]Apache configureren voor Entropy PHP5[/h2]
+Nu moeten we de Apache webserver laten weten dat het deze versie van PHP moet gebruiken. Met een Unix [b]symbolic link[/b] in de Apache map, zorgen we ervoor dat als Apache opnieuw opgestart wordt deze de nieuwe configuratie automatisch meeneemt.
+
+[code]sudo ln -s /usr/local/php5/entropy-php.conf /etc/apache2/other/+entropy-php.conf[/code]
+
+[h2]Apache herstarten[/h2]
+Met een herstart van Apache zorgen we ervoor dat deze nu de Entropy PHP5 versie [b]met onder andere GDLib[/b] gebruikt:
+
+[code]sudo apachectl graceful[/code]
+
+[h2]Testen[/h2]
+Maak een zogenaamd [b]phpinfo[/b] bestand aan. [url=http://www.atlantisdesign.nl/public/phpinfo.txt]Download dit voorbeeld[/url] en plaats deze in je eigen Sites map:
+
+[code]/Users/korte-bruikersnaam/Sites/phpinfo.php[/code]
+
+Open een webbrowser en typ onderstaande adres in. Vervang [b]korte-gebruikersnaam[/b] door de naam van je thuismap.
+
+[code]http://127.0.0.1/~korte-gebruikersnaam/phpinfo.php[/code]
+
+Er verschijnt een pagina met paarse balken en een bericht dat dit de Entropy versie van PHP is. Zoek nu naar [b]gd[/b].
+
+[h2]Disclaimer[/h2]
+Atlantisdesign neemt geen verantwoording voor enige schade aan uw systeem.

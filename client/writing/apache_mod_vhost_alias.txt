@@ -1,0 +1,257 @@
+Apache mod_vhost_alias virtual host
+
+apache, mod_vhost_alias, webserver, mac, apple, webserver, virtual, host
+
+Snel en makkelijk virtual-hosts gebruiken. Door simpelweg twee mappen aan te maken en een regel in het hosts file.
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img]In het artikel [article=apache-virtual-hosts]Apache Virtual hosts[/article] werd al uitgelegd hoe je via configuratie blokken makkelijk een nieuwe virtual host kan aanmaken. Daarbij maak je dan een nieuwe regel in de /etc/hosts file zodat de nieuwe virtual host naar je eigen Mac wijst. Apache herkent het [b]nep-domein[/b] en serveert de website vanuit de goede map.
+
+Deze eerste stap kan ook [b]geautomatiseerd[/b] worden. Immers ga je op je lokale Mac niet zoveel Apache wijzigingen maken die in een virtual host blok moeten staan. De configuratie van een website is meestal hetzelfde voor alle virtual-hosts voor lokale web-ontwikkeling.
+
+Met de Apache mod_vhost_alias module kun je snel en eenvoudig zo'n virtual host toevoegen. Massa's virtual hosts als je dat wilt! Daarom wordt het ook wel een oplossing genoemod voor [b]mass virtual-hosting[/b].
+
+Onderstaande opzet is getest op MacOS X Leopard v10.5. De werking hiervan is identiek voor MacOS X Tiger, al staat het Apache configuratie bestand van Tiger ergens anders: [b]/etc/apache/conf/httpd.conf[/b].
+
+[h3]Andere virtual-hosts configuraties[/h3]
+
+[attention]Let op! Mocht je volgens het andere artikel al virtual-hosts serveren dan kunnen er rare dingen optreden. Maak een keuze in het toepassen van een virtual-hosts techniek.[/attention]
+
+Als je voor deze mod_vhost_alias methode kiest kun je [b]naderhand wel[/b] kleine wijzigingen maken voor een specifieke virtual-host. Doe dit volgens de methode zoals besproken is in het andere artkel. Let er dan wel op dat je n[b]iet nogmaals een (andere) DocumentRoot aangeeft[/b].
+
+[h2]Het doel[/h2]
+
+Onderstaande is straks [b]de procedure[/b] om een nieuwe Apache virtual-host toe te voegen aan je eigen Mac. Dit werkt het snelst en je hoeft er naderhand niets voor aan te passen of te herstarten.
+
+Twee mappen maken op een specifieke plek en de laatste heeft een specifieke naam. Daarna voegen we slechts 1 regel toe aan het hosts file, zodat het nieuwe nep-domein naar onze eigen Mac.
+
+[h2]Host file[/h2]
+
+Met een hostfile ([b]/etc/hosts[/b]) kun je aangeven wat bijvoorbeeld een webbrowser als moet doen als er een URL ingetypt wordt. Eerst wordt het hosts file geraadpleegd, als hier geen aparte regel / verwijzing in staat voor deze URL dan pas gaat je computer deze URL vragen aan een DNS server op internet.
+
+[h2]Hoe werkt mod_vhost_alias?[/h2]
+
+Standaard staat deze module al geactiveerd in de Apache webserver. Het is een kwestie van de Apache webserver aanzetten via [b]Apple'tje > System Preferences > Sharing, aanvinken: WebSharing[/b].
+
+Met mod_vhost_alias [b]map[/b] (ofwel 'vertaal') je een hostname (of specifieke URL), of een deel ervan, naar een map op je eigen computer. 
+
+[h3]Voorbeeld wat we willen bereiken[/h3]
+
+Als voorbeeld neem ik een fictieve website over vogels: [b]vogelfotografie[/b]. Deze is op onze eigen Mac ontwikkeld en moeten we ook testen op onze eigen Mac. Daarnaast hebben we nog een website over [b]racewagens[/b]. Die we ook als virtual host willen gebruiken.
+
+We gaan maar [b]1x een configuratie[/b] wijziging maken in Apache en daarna worden de virtual-hosts automatisch geserveerd vanuit de goede map.
+
+In de [b]/etc/hosts[/b] file van onze Mac staat bijvoorbeeld een regel als:
+
+[code]127.0.0.1 vogelfotografie.local[/code]
+
+Dit betekend dat als we in een webbrowser op dezelfde Mac onderstaande URL intypen:
+
+[code]http://vogelfotografie.local/[/code]
+
+Dat de webbrowser deze website gaat vragen aan het IP nummer wat ervoor staat. In dit geval is dat een bekend IP nummer voor computers (Windows/Mac/Linux etc.) want dit IP nummer betekend '[b]deze computer[/b]'. Hij verwijst dus naar zichzelf.
+
+De Apache webserver krijgt dit verzoek ([b]request[/b]) binnen. Via de virtual-host configuratie serveerd Apache de website vanuit onderstaande map:
+
+[code]/Library/WebServer/vhosts/vogelfotografie/httpdocs/[/code]
+
+De werking van onze virtual hosts zijn [b]elke keer hetzelde[/b]. Nog een voorbeeld met de racewagen website.
+
+[code]http://racewagens.local/[/code]
+
+Deze website staat in de onderstaande map op onze Mac:
+
+[code]/Library/WebServer/vhosts/racewagens/httpdocs/[/code]
+
+Zoals je kunt zien veranderd eigenlijk alleen het [b]eerste stuk van de URL en de een na laatse map naam[/b] van waaruit Apache de website serveerd. Ofwel: [b]die naam komt overeen[/b].
+
+[h3]Apache mod_vhost_alias[/h3]
+
+Met een alias laten we een stukje van de URL overeen komen met een map naam op onze eigen Mac. Zolang we maar gebruik blijven maken van deze opzet (want anders werkt het niet correct):
+
+[list]
+[*]altijd dezelfde logica in URL's die naar onze eigen Mac wijzen (via het host file)
+[*]altijd dezelfde mappen structuur aanhouden, zodat het eerste deel van de URL overeen komt een map op onze eigen Mac
+[/list]
+
+Deze opzet wordt veelvuldig toegepast bij hosting bedrijven die heel veel virtual-hosts op hun (veelal Linux) computers hebben draaien.
+
+[h3]Voorbeelden die niet werken[/h3]
+
+[list]
+[*]http://testvogelfotogafie/
+[*]http://mijn.vogelfotogafie.local/
+[*]http://www.vogelfotografie.local/
+[/list]
+
+Deze URL logica komt niet overeen. Het eerst woord in de URL, wat voor een punt staat, komt overeen.
+
+[h2]Stap 1: juiste mappen structuur opzetten[/h2]
+
+Volgens bovenstaande opzet gaan we eerst een [b]generieke mappen structuur[/b] aanmaken. Zodat straks de URL's naar de juiste mappen verwijzen. In de Finder gaan we naar de volgende map toe;
+
+[code]/Library/WebServer[/code]
+
+Ofwel de Library map van onze opstartschijf en dan de WebServer map. Maak hier de juiste mappen aan voor de [b]vogelfotografie[/b] website. Het ziet er dan als volgt uit:
+
+[code]/Library/WebServer/vhosts/vogelfotografie/httpdocs[/code]
+
+In de laatst map (httpdocs) staan de bestanden voor de vogelfotografie website. Daar komt dus de index.html (of PHP bestand) te staan.
+
+[h3]Waarom helemaal op die plek?[/h3]
+
+Apple heeft deze structuur opgezet en serveerd vanuit die structuur ook de [b]Document[/b] map aan wat de [b]http://localhost/[/b] is. Hier staat ook een [b]CGI-Executables[/b] map waarin Perl scripts uitgevoerd kunnen worden.
+
+Een logishe opzet dus om hier dynamisch de virtual-hosts te plaatsen. Houd alles lekker bij elkaar!
+
+[h3]Website op project basis[/h3]
+
+Deze opzet vind ik prettig werken. Omdat je de [b]vogelfotografie map[/b] als een project kan zien met daarin de website zelf (httpdocs) samen met bijvoorbeeld andere mappen die bij het project horen.
+
+[list]
+[*]Een werkmap: /Library/WebServer/vhost/vogelfotografie/werkmap. 
+[*]Een backup map: /Library/WebServer/vhost/vogelfotografie/backup 
+[*]Documentatie: /Library/WebServer/vhost/vogelfotografie/docs
+[/list]
+
+1 geheel, 1 project, op 1 plek.
+
+Om makkelijk bij deze mappen te komen kun je [b]op het buroblad een alias[/b] (snelkoppeling) maken naar [b]/Library/WebServer/vhosts/[/b].
+
+[h2]Apache configuratie aanpassen[/h2]
+
+We voegen 1 regel toe aan het Apache configuratie bestand en zetten in een nieuw configuratie bestand de opzet zoals hierboven gedemonstreerd is met mod_vhost_alias.
+
+[h3]Unix bestanden bewerken met TextWrangler[/h3]
+[img=float_right]atlantis_uploads/uploads/logo_textwrangler.gif[/img]Download eerst het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/]TextWrangler[/url] of gebruik zijn commerciele broer [url=http://www.barebones.com/products/bbedit/]BBEdit[/url]. Hiermee kunnen we straks makkelijk aanpassingen maken aan Unix configuratie bestanden op onze Mac. TextWrangler of BBedit zijn echte Mac OS X text-editors. Hiermee kun je ook website met de hand maken, PHP programmeren en nog veel meer op het gebied van text-editten.
+
+Start [b]TextWrangler[/b] (of BBEdit) en laat het de [b]command line tools[/b] installeren. 
+
+Open de [b]Terminal[/b] (/Applications/Utilities/Terminal) en typ onderstaande in om het Apache configuratie bestand te openen in TextWrangler:
+
+[code]edit /etc/apache2/httpd.conf[/code]
+
+Ga (bijvoorbeeld met Apple'tje + j) naar [b]regel 461[/b]. Daar staat al iets over virtual-hosts. Plak onder deze regel het volgende:
+
+[code]Include /private/etc/apache2/extra/httpd-vhost-alias.conf[/code]
+
+Het bestand dat we hierboven willen [b]includen[/b] bestaat natuurlijk nog niet. Maak een nieuw bestand aan plak hierin dit [url=http://www.atlantisdesign.nl/public/apache_vhost_alias.txt]mod_vhost_alias voorbeeld[/url]. Bewaar dit bestand met de juiste naam op de juiste plek:
+
+[code]/private/etc/apache2/extra/httpd-vhost-alias.conf[/code]
+
+[h3]Finder truuk[/h3]
+
+Als je niet op die plek kunt komen met de Finder kun je ook [b]Apple'tje + shift + g[/b] intypen. Kopieer en plak het eerste stuk van het pad en vul daarna de bestandsnaam in om deze te bewaren. Dit werkt overigens ook in de Finder en alle [b]open / bewaar schermen[/b] van programma's.
+
+[h2]Uitleg van het nieuwe configuratie bestand[/h2]
+
+In het eerste stuk staat wat de [b]toegangs rechten[/b] zijn voor de /Library/WebServer/vhosts map. Dit geldt dan ongeveer voor alle onderliggende mappen vanaf dat punt.
+
+Het tweede stuk is eigenlijk waar het allemaal om draait. Met een [b]VirtualDocumentRoot[/b] geven we aan waar onze websites staan, ofwel wat onze [b]structuur[/b] is. De plek waar de variable [b]%1[/b] staat wordt dan [b]vervangen[/b] door het [b]eerste stuk (woord) van de URL[/b]. Samen vormt dit een pad op de harde schijf.
+
+Meer informatie over deze variablen zijn te vinden in de [url=http://httpd.apache.org/docs/2.0/mod/mod_vhost_alias.html]Apache mod_vhost_alias documentatie[/url] pagina's.
+
+[h3]Apache herstarten[/h3]
+
+Om deze configuratie te gebruiken moeten we de Apache webserver herstarten:
+
+[code]sudo apachectl graceful[/code]
+
+[h2]Stap 2: host file aanpassen[/h2]
+
+Apache snapt wat hij straks met de specifieke URL's moet doen. Nu moeten ervoor zorgen dat de [b]http://vogelfotografie.local/[/b] URL verwijst naar onze eigen Mac. In de [b]Terminal[/b] typen we het volgende in om de host file te bewerken in TextWrangler:
+
+[code]edit /etc/hosts[/code]
+
+Er opent zich een file dat betrekkelijk klein en leeg is. [b]Wees hier voorzichtig mee[/b]. Want alles wat van onze Mac aan het internet gevraagd wordt komt eerst hier langs.
+
+Op deze manier kun je bijvoorbeeld Google.nl naar heel andere website laten verwijzen. In de webbrowser blijft het orignele adres staan.
+
+Onderaan dit host file voegen de vogelfotogafie website toe:
+
+[code]127.0.0.1 vogelfotografie.local[/code]
+
+Ikzelf zet altijd [b]local[/b] er achter omdat deze URL op het internet zo goed als nooit voor komt. Daarnaast kun je zelf zien dat het dan om een [b]lokale website[/b] gaat. Bewaar het hosts bestand met een administrator wachtwoord.
+
+[h2]Testen[/h2]
+
+Open een webbrowser en typ de nieuwe virtual-host in:
+
+[code]http://vogelfotografie.local/[/code]
+
+De [b]vogelfotografie[/b] website wordt nu geserveerd op een dynamische manier met Apache mod_vhost_alias.
+
+[h3]Nog een website toevoegen[/h3]
+
+Dit was makkelijk! Maak nogmaals de juiste mappen structuur aan en plaats de [b]racewagen[/b] website hierin:
+
+[code]/Library/WebServer/vhosts/racewagens/httpdocs[/code]
+
+Open het host file nog een keer en voeg ook deze URL onderaan toe:
+
+[code]127.0.0.1 racewagens.local[/code]
+
+Open weer webbrowser en typ de nieuwe virtual host in:
+
+[code]http://racewagens.local[/code]
+
+Ook deze website wordt uit de juist map ([b]dynamisch[/b]) geserveerd. Daarvoor hebben we [b]niets moeten configureren of herstarten[/b]. 
+
+Op deze manier kun je veel websites toevoegen en een eigen nep-domeinnaam geven. Nu kun je ook paden naar bestanden [url=http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_15427]root-relative[/url] maken.
+
+[h2]Virtual-hosts requests in Apache log bestanden verwerken[/h2]
+[attention]Deze stap is optioneel voor degene die ook de Apache log bestanden wil bewerken / bekijken per virtual-host[/attention].
+
+Met Apple's [b]Console[/b] programma ([b]/Applications/Utilities/Console[/b]) kun je vele log bestanden op de Mac bekijken. Ook die van Apache. Deze houd alle [b]request[/b] en [b]errors[/b] bij in twee log bestanden. In deze log worden nu alle requests opgenomen, ongeacht of ze via een virtual-hosts aangevraagd worden.
+
+Open de [b]Console[/b] en in de linker lijst zoeken we de Apache [b]access_log[/b] ...
+
+[code]LOG FILES /var/log/apache2/access_log[/code]
+
+... en de [b]error_log[/b].
+
+[code]LOG FILES /var/log/apache2/error_log[/code]
+
+Hierin staan alle requests die Apache heeft gekregen. Van onze eigen webbrowser (localhost / virtual-hosts) of via het netwerk / internet. Zo ook het IP nummer van onze eigen (interne / lokale) Mac:
+
+[code]127.0.0.1[/code]
+
+Zoals je ziet staat hier [b]geen vermelding[/b] in dat we bepaalde requests via een virtual-host hebben gedaan. Alles komt van hetzelfde IP nummer.
+
+[h3]Apache configuratie aanpassen[/h3]
+We openen de Apache configuratie bestand weer met [b]TextWrangler[/b] via de Terminal. Of open het configuratie bestand direct in TextWrangler als je weet waar het staat.
+
+[code]edit /etc/apache2/httpd.conf[/code]
+
+We moeten een stukje toevoegen aan de [b]log-format regel[/b]. We gaan met Apple'tje + j naar [b]regel 274[/b] daar staat het volgende (in het [b]IfModule log_config_module[/b] blok).
+
+[code]LogFormat "%h %l %u %t \"%r\" %>s %b" common[/code]
+
+Dit is het [b]format[/b] hoe Apache specifieke regels schrijft in de log bestanden. Nu staat er niet bij dat Apache moet vermelden dat het ook de [b]Servername[/b] (ofwel virtual-host in dit geval [b]vogelfotografie.local[/b] of [b]racewagens.local[/b]) moet vermelden in dit log bestand. Met [b]%V[/b] vooraan in de regel zal Apache de naam van de virtual-host erbij zetten. Zodat we kunnen zien welke virtual-host de request heeft gemaakt.
+
+Plak onderstaande format regel op een [b]nieuwe regel[/b] onder de hier boven genoemde regel. Zet voor bovenstaande regel een hekje (dan is het een comment) zodat deze niet meer mee genomen wordt bij het loggen van requests.
+
+[code]LogFormat "%V %h %l %u %t \"%r\" %>s %b" vcommon[/code]
+
+We hebben [b]%V[/b] toegevoegd (dit staat voor de naam van de virtual-host) en achteraan [b]vcommon[/b] aangegeven als format variable. Verderop moeten we aangeven dat we het [b]nieuwe format[/b] (vcommon) willen gebruiken bij de Apache access_log. Zoek op:
+
+[code]CustomLog /private/var/log/apache2/access_log common[/code]
+
+Hier staat waar Apache het log bestand wegschrijft. Met de [b]Console[/b] kunnen we dit bestand dus weer bekijken. Achteraan (als variable) staat in welk [b]format[/b] dit log bestand beschreven zal worden. Hier moeten we dus aangeven dat we de [b]vcommon[/b] formattering willen gebruiken (zie laatste stuk):
+
+[code]CustomLog /private/var/log/apache2/access_log vcommon[/code]
+
+Bewaar het Apache configuratie bestaand met een administrator wachtwoord. [b]Herstart nu de Apache[/b] server zodat het nieuwe log formaat, met vermelding van de virtual-hosts, bekeken kan worden met Apple's Console programma.
+
+[code]sudo apachectl graceful[/code]
+
+Open een webbrowser en bekijk bijvoorbeeld de [b]vogelfotografie.local[/b] of [b]racewagens.local[/b] websites. Open nu de [b]Console[/b] weer en blader weer naar de Apache access_log. Nu wordt wel de naam van de virtual-host getoond per request.
+
+[h3]Log bestanden live in de Terminal bekijken[/h3]
+Voor de Unix freaks kun je ook log bestanden bekijken met het Unix [b]tail[/b] programma. Met [b]tail[/b] laat je altijd het 'laatste stuk' van een bestand zien. Ook als deze gewijzigd wordt, heel handig om log bestanden te zien.
+
+[code]tail -f /var/log/apache2/access_log[/code]
+
+Natuurlijk kun je hiermee ook het [b]error_log[/b] bestand bekijken. Met [b]ctrl + c[/b] sluit je het Unix [b]tail[/b] programma af en komt de Terminal promt weer terug. 
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

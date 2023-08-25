@@ -1,0 +1,65 @@
+De drie lagen van een website
+
+Een website kan opgedeeld worden in drie aparte lagen. Elk met hun eigen specifieke kenmerken en een eigen doel. Elke laag kan door een aparte afdeling binnen het webdesign team gemaakt worden. 
+
+Maar vaak komt het voor dat een of twee personen een aanzet maken in alle drie de lagen. In een later stadium wordt elke laag door een expert onder handen genomen om dit verder uit te werken.
+
+Laag 1: Structuur en semantic HTML
+
+Zonder structuur komen we niet ver. Dat geldt ook voor webdesign. Een webdesigner maakt de structuur van een website. Hij maakt een soort grid, een roadmap, hoe de website structureel in elkaar komt te zitten.
+
+Er wordt aandachtig naar de kopij, ofwel de tekst, gekeken die op de website gezet gaat worden. In overleg met een copy-writer wordt gekeken welke stukken tekst belangrijk zijn. Wat zijn de juist koppen en hoeveel wegen deze mee aan de betekenis van een webpagina.
+
+Net zoals een copy-writer dat doet, kiest ook een webdesigner de juiste manier om de tekst over te dragen aan de eind gebruikerk. Een copy-writer zoekt naar de juiste woorden die niet alleen de boodschap overdragen maar ook de betekenis van de zin, van de paragraaf en van het stuk tekst.
+
+Een webdesigner zoekt naar de juist verhouding in koppen, paragraven en opsommingen. Welke koppen moeten meer aandacht krijgen dan andere? Wat is belangrijk? De meeste webdesigners kijken daar niet naar en zien alleen maar een ontwerp waar een keer een lap tekst ingezet gaat worden. Het is meer een samenspel van copy-writer en webdesigner in deze eerste laag.
+
+Een mooi voorbeeld is het kiezen van de juiste HTML-tags bij een kop of een paragraaf. Gaan we daar een normale p-tag voor gebruiken of maken we daar toch een heading van, misschien een H1, of een H3? Welke heading gebruiken we dan? 
+
+Elk gebruik van headings (H1, H2, H3 etc.) geeft een soort gewicht en betekenis aan een kop of stuk tekst. Dit heeft nog niets te maken met hoe het er uiteindelijk uit komt te zien. 
+
+Een zoekmachine kan immers niet zien hoe een webpagina eruit ziet of bepalen wat de belangrijkste kop is. Dit moet aangegeven worden in de stuctuur van een webpagina. Een logische opsomming HTML elementen bestaande uit HTML-tags die zo goed mogelijk omschrijven wat er bedoelt wordt.
+
+Voor koppen kiezen we een van de zes headings, voor een paragraaf nemen we de p-tag. Voor een omsomming, al dan niet met een nummer vooraf gegaan, nemen een unorderd list-tag voor. Een overzicht van een lijst met meerdere kolommen aan data, die gerelateerd is aan elkaar, daar gebruiken we de table-tag voor. Zo krijgt elk stuk tekst de juiste waarde in een webpagina. Dat is de semantic waarde die gegeven wordt aan tekst op een pagina. Daarop kan een zoekmachine een goede inschatting maken hoe het deze webpagina kan indexeren.
+
+De eerste webdesigners gaven geen blijk van interesse in bovengenoemde opzet en aandacht aan een webpagina. Het ging immers om het eind resultaat en als het er maar snappy en goed uitziet.
+
+Een goede structuur zorgt automatisch voor orde en duidelijkheid, tot in de broncode van een website. Elk onderdeel van de pagina krijgt zijn eigen plek. Vaak werkt men met teams om een website in elkaar te zetten. Elk met zijn of haar eigen speciliteiten. Men moet het werk over kunnen dragen. Daarbij is een duidelijkheid nodig.
+
+Een goede structuur kan door een programmeur ook gegenereerd worden via server-side scripting. Toepassingen als verschillende dynamische pagina's laten zien, berekeningen maken, bewerkingen laten uitvoeren en formulieren laten verwerken.
+
+Laag 2: Presentatie
+
+Als de structuur in orde is kunnen we verder gaan met de volgende stap, de volgende laag die over een webpagina ligt. Hoe komen de verschillende elementen eruit te zien? De grootste kop, meestal de heading (ofwel H1) ziet er wel het grootste uit maar dat hoeft helemaal niet de grootste kop op de pagina te zijn. Heading 1 betekend niet dat we deze structurele betekenis moeten gebruiken voor visuele doeleinden.
+
+Dit is typisch voorbeeld van een misperceptie van beginnende webdesigners. De heading 1 tag ziet er groot en bold uit dus laten we die voor de grooste kop van onze pagina gebruiken. Toegegeven komt deze manier van denken wel overeen met de meeste designs die gemaakt worden. Maar achter de heading 1 zit meer een betekenis dan een visueel grote kop.
+
+Voor de presentatie wordt de stuctuur aangepast via stijlen die worden toegekend aan de individuele HTML-tags. De twee zijn los van elkaar te scheiden. De structuur behoudt zijn deel en de presentatie bepaald hoe elementen eruit komen te zien. 
+
+Een stijl loslaten op een gestructureerde pagina is een manier om de boodschap over te dragen. Maar de onderliggende stuctuur kan op deze manier hergebruikt worden in andere media. Denk bijvoorbeeld aan het printen van webpagina's. Dezelfde structuur met weer een andere stijl.
+
+Een heading 1, van een HTML element,  kan juist heel klein en onopvallend op het scherm geplaats worden. Terwijl de meest onbelangrijke delen van een webpagina de aandacht krijgen door ze groot en vet gedrukt te laten zien.
+
+Voor deze techiek wordt CSS, ofwel Cascading Style Sheets, gebruikt. Via stijlregels wordt bepaalt hoe de heading 1 tot en met 6 er uit moeten zien. Moeten deze allemaal even groot worden? Wordt de heading 1 blauw van kleur met veel ruimte aan de boven en onderkant?
+
+Elke webbrowser heeft zijn eigen stylesheet om HTML elementen weer te geven in hun standaard vorm. In de meeste webbrowsers is over het algemeen hetzelfde. Via nieuwe styelsheets, genaamd author-stylesheets, bepaald de webdesigner hoe elementen in de webbrowser weer gegeven moeten worden.
+
+De taak van de webdesigner is om de boodschap, die de structuur heeft, op de juiste visuele manier over te dragen aan de eindgebruiker van de webpagina. Pas hier komt een visueel ontwerp om de hoek kijken. 
+
+Hoe komt de webpagina eruit te zien? Wat voor kleuren worden er gebruikt? Wat is het lettertype en de afstanden tussen koppen, paragraven en hoe worden plaatjes getoond.
+
+Dit heet het design proces. Veel webdesigners beginnen met deze stap als ze een webpagina of website gaan bouwen. Er gaat dus nog een laag aan vooraf en zelfs dan komt er wat planning bij kijken hoe de hiearchie van een website wordt.
+
+Laag 3: Interactie
+
+De laatste laag, die over de voorgaande lagen gelegd wordt, respectievelijk zijn dat de structuur en presentatie laag, is de interactie laag.
+
+Deze laag werkt vaak samen met de twee onderste lagen. In laag 3 wordt aangegeven wat er gebeurt als men bepaalde acties onderneemt. Hier door kan de stijl van de pagina veranderen, of een deel daarvan. Het kan ook voor komen dat de structuur veranderd van de pagina. Teksten komen erbij, plaatjes komen in beeld, of deze worden zijn verwijderd of verplaats.
+
+Een vorm van interactie is ook het visueel laten zien dat men over bepaalde elementen heel beweegt met de muis. 
+
+De eindgebruiken moet zonder handleiding de webpagina kunnen bedienen. Zonder dat deze de weg kwijt raakt omdat men de navigatie van een webpagina niet begrijpt. 
+
+De interactie laag is in de meeste gevallen bestemt voor Javascript of Flash.
+
+Een andere vorm van interactie is het klikken op de verschillende links in een webpagina. Deze nemen de eindgebruiker van pagina naar pagina. Hiervoor is het van belang dat de structuur, laag 1, goed in elkaar zit. Een programmeur gaat hier creatief mee om en zo vormen veel pagina's samen een website.

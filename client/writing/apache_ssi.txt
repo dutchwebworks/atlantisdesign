@@ -1,0 +1,206 @@
+Apache Server Side Includes SSI
+
+apache, include, ssi, xbithack, embed, html, mac, leopard
+
+Je maakt voor een website bijvoorbeeld de navigatie in een apart HTML bestand. Dit is een stukje HTML dat je graag in andere pagina's elke keer wilt laten terug komen op een bepaalde plek. Bovendien wil je niet moeilijk gaan doen met bijvoorbeeld PHP. Met Apache SSI (Server-Side Includes) kun je makkelijk en snel bijvoorbeeld stukken HTML in andere pagina's laten terug komen / embedden.
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img][attention]Let op! Dit is getest op Mac OS X Leopard v10.5. Het zal ook werken op [b]eerdere[/b] versies van Mac OS X. Al bevinden de configuratie bestanden zich misschien op andere plekken.[/attention]
+
+Later in dit artikel wordt beschreven hoe je dit op een [b]online website[/b], waarschijnlijk draait deze op Linux, ook aan de praat kan krijgen.
+
+Apache Server-Side Includes, ofwel [b]SSI[/b] hoe het vanaf nu aan genoemd wordt, bestaat al heel lang. Er is geen rocket-science voor nodig om dit te begrijpen.  We gaan ook niks extra's installeren. We gaan alleen een paar kleine wijzigingen maken in de configuratie van de Apache webserver.
+
+[h2]Voorbeeld website[/h2]
+Als voorbeeld gaan we gebruik maken van een (al dan niet bestaande) website. Je hebt de website opgemaakt met HTML (.html) bestanden. Je hebt geen gebruik gemaakt van bijvoorbeeld PHP (.php). Dus puur HTML! 
+
+De navigatie van de website wordt wel eens gewijzigd en bestaat voor alle pagina's eigenlijk uit steeds [b]hetzelfde stukje HTML[/b]. Het is natuurlijk erg vervelend om dit voor alle pagina's elke keer aan te passen.
+
+[h3]Meer mogelijkheden[/h3]
+Natuurlijk kun je met SSI veel meer doen dan stukken HTML in andere pagina's laten terug komen. Kijk voor wat voorbeelden op de [url=http://httpd.apache.org/docs/2.0/mod/mod_include.html]Apache 2.x Server-Side Includes pagina.[/url] Zoals: datum van laaste bewerking laten zien, output van een cgi programma includen en bijvoorbeeld een simpel [b]IF, THEN, ELSE[/b] statements laten terug komen.
+
+[h2]Er zijn twee manier hoe je SSI kunt gebruiken[/h2]
+Voor de gangbare  werking van SSI moeten de HTML pagina's (waar deze speciale [b]directives[/b] staan) eindigen met de extentie [b].shtml[/b]. 
+
+Als SSI werkt en door de extentie [b].shtml[/b] te gebruiken vertellen we de Apache webserver dat deze pagina's eerst doorzocht moeten worden op speciale stukjes code (ofwel [b]directives[/b] genoemd).
+
+[h3]1) File extentie .shtml[/h3]
+Als het straks werkt kun je SSI op twee manier toepassen. De tweede manier is wat netter en makkelijker te implenteren op bestaande websites. Zoals al beschreven kun je de HTML pagina's waarin een ander stukje HTML opgenomen moet worden, voorzien van de file extentie [b].shtml[/b]. Bijvoorbeeld:
+
+[code]homepage.shtml[/code]
+
+In een ander bestand genaamd [b]navigatie.html[/b] staat alleen dat stukje HTML, bijvoorbeeld een paar a-tags met links naar pagina's binnen je websites, welk je in de [b]homepage.shtml[/b] wilt laten terug komen.
+
+[h3]2) Methode met de XBitHack en Unix chmod permission[/h3]
+De manier van [b].shtml[/b] bestanden te gebruiken is niet een standaard manier van websites bouwen, want normaal gesproken gebruiken we [b].html[/b]. 
+
+Dit bespreken we later in dit artikel. Want dan gaan we [b]geen gebruik[/b] maken van de file extentie [b].shtml[/b] maar gewoon [b].html[/b]. 
+
+[h2]Apache 2.x configuratie backup maken[/h2]
+Voordat we dingen eventueel stuk maken gaan we eerst een backup maken van de Apache webserver configuratie. Open de [b]Terminal[/b] applicatie (/Applications/Utilities/Terminal). We gaan eerst een backup maken van het Apache configuratie bestand. 
+
+[h4]Ga eerst naar de map waar het configuratie bestand staat[/h4]
+[code]cd /etc/apache2[/code]
+
+[h4]Vraag een lijst met bestanden op. Deze stap is niet perse nodig[/h4]
+[code]ls -l[/code]
+
+Hier zien we welk bestand we moeten hebben, namelijk [b]httpd.conf[/b]. Typ het volgende commando in en geef een administrator wachtwoord op.
+
+[h4]Backup maken[/h4]
+[code]sudo cp httpd.conf httpd.conf_backup[/code]
+
+Vraag met [b]ls -l[/b] opnieuw een lijst op en we zien dat er een backup bestand is gemaakt. Voor degene die met de Unix terminal overweg kunnen weten hoe ze met de commando's [b]rm[/b] en [b]mv[/b] de backup weer terug kunnen zetten.
+
+[h2]Unix bestanden bewerken met TextWrangler[/h2]
+[img=float_right]atlantis_uploads/uploads/logo_textwrangler.gif[/img]Download eerst het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/]TextWrangler[/url] of gebruik zijn commerciele broer [url=http://www.barebones.com/products/bbedit/]BBEdit[/url]. Hiermee kunnen we straks makkelijk aanpassingen maken aan Unix configuratie bestanden op onze Mac. TextWrangler of BBedit zijn echte Mac OS X text-editors. Hiermee kun je ook website met de hand maken, PHP programmeren en nog veel meer op het gebied van text-editten.
+
+Start [b]TextWrangler[/b] (of BBEdit) en laat het de [b]command line tools[/b] installeren. We kunnen nu aan de slag. Als je gebruik maakt van [b]BBEdit[/b] is het commando om bestanden te bewerken (vanuit de Ternimal) '[b]bbedit[/b]' in plaats van '[b]edit[/b]' welke [b]TextWrangler[/b] gebruikt.
+
+[h2]Methode 1: file extentie .shtml[/h2]
+Open de Terminal en typ het volgende commando in.
+
+[code]edit /etc/apache2/httpd.conf[/code]
+
+[b]TextWrangler[/b] (off [b]BBEdit[/b]) opent het configuratie bestand van de Apache webserver. Met [b]Apple'tje + j[/b] (ofwel command + j) gaan we naar [b]regel nummer 410[/b]. Daar staan twee regels die we  moeten [b]un-commenten[/b].
+
+[h4]SSI aanzetten[/h4]
+[code]#AddType text/html .shtml[/code]
+[code]#AddOutputFilter INCLUDES .shtml[/code]
+
+Haal de twee hekjes [b]#[/b] weg voor deze bovenstaande regels. In deze twee regels staat dat de Apache server met de file extentie [b].shtml[/b] dus iets speciaals moet doen. Namelijk [b]filteren[/b], na kijken of er speciale tags in je HTML staat waarmee eerst wat gedaan moet worden.
+
+[h2]SSI toelaten op onze webserver[/h2]
+We zijn bijna klaar. De Apache webserver weet nu dat we [b].shtml[/b] willen gebruiken als zijnde [b]Server-Side Includes[/b]. We moeten nu nog aangeven dat het ook daadwerkelijk toegelaten [b]is[/b] dit te gebruiken.
+
+We gaan met [b]Apple'tje + j[/b] naar [b]regel 173[/b]. Daar staat, voor de root directory van onze server, wat toegelaten is. Een van deze regels leest als volgt:
+
+[code]Options FollowSymLinks[/code]
+
+Deze regel gaan we aanvullen met [b]+Includes[/b]. Dus dan leest deze regels als volgt. Het laatste stukje dus.
+
+[code]Options FollowSymLinks +Includes[/code]
+
+Bewaar dit (httpd.conf) bestand met een administrator wachtwoord.
+
+[h2]Apache herstarten[/h2]
+Goed, we zijn bijna klaar. Nu moeten we de Apache webserver [b]herstarten[/b]. Zodat de Apache opnieuw het zojuist aangepaste configuratie bestand (httpd.conf) opnieuw binnen laad en de wijzigingen door voert.
+
+Dit kan op 2 manieren. 
+
+[h3]1) Via System Preferences[/h3]
+Open linksbovenin de [b]Apple > System Preferences[/b], zoek [b]Sharing[/b] op en vink [b]Websharing[/b] uit en even later weer aan.
+
+[h3]2) Via een Terminal commando[/h3]
+Open de Terminal en typ het volgende commando in met een aministrator wachtwoord.
+
+[code]sudo apachectl graceful[/code]
+
+[h2]En nu ... testen![/h2]
+Voor methode 1 zijn we klaar. Maak een nieuw HTML bestand met wat basis dingen erin. Bewaar deze in je eigen [b]Sites[/b] map, let dus op de file extentie!
+
+[code]homepage.shtml[/code]
+
+Op de plaats waar je onderstaand navigatie.html bestand wilt laten terug komen schrijf je de [url=http://www.atlantisdesign.nl/public/ssi_sample.txt] volgende SSI code[/url].
+
+Maak een nieuw HTML bestand aan, welke alleen als HTML de navigatie bevat, bewaar deze in dezelfde map als de [b]homepage.shtml[/b].
+
+[code]navigatie.html[/code]
+
+Dit bestand zal opgenomen worden in de [b]homepage.shtml[/b] en bevat alleen de navigatie voor de website. Natuurlijk kun je het pad naar de [b]navigatie.html[/b] wijzigen in de SSI code. Open nu bijvoorbeeld Safari en blader naar het zojuist gemaakte homepage.shtml pagina. 
+
+[h3]Testen via de Apache webserver[/h3]
+[attention]Let op! Doe dit dus via een adres wat op onderstaande lijkt, in dit geval moet je de naam [b]kees vervangen[/b] door de naam van je eigen thuis map. Open bijvoorbeeld de Safari webbrowser ... [/attention]
+[code]http://127.0.0.1/~kees/homepage.shtml[/code]
+
+[h3]Dus niet op deze manier, want dit werkt niet!![/h3]
+[code]file:///Users/kees/Sites/homepage.shtml[/code]
+
+[h3]Samen gevoegd[/h3]
+De twee bestanden worden nu eerst samen gevoegd en dan getoond in de webbrower. Helemaal cool!! [b]Look ma no PHP![/b] Dit biedt natuulijk makkelijk tot meer mogelijkheden. Kijk ook eens op de website van [url=http://httpd.apache.org/docs/2.0/mod/mod_include.html]Apache 2.x Server-Side Includes[/url], daar staan nog wat voorbeelden van leuke dingen die je hiermee kunt uithalen.
+
+[h2]Methode 2: XBitHack[/h2]
+Voor nieuwe websites kunnen we de HTML bestanden natuurlijk gaan bewaren als [b].shtml[/b]. Maar dat is niet zo mooi en bovendien ... als je een bestaande website hebt die allemaal bestaant uit [b].html[/b] bestanden zouden we alles moeten ombouwen naar [b].shtml[/b]. 
+
+Met methode 2 blijven we gebruik maken van de standaard [b].html[/b] extentie. Maar we moeten op een manier toch aan Apache door geven dat het HTML bestand dat we gebruiken eigenlijk een SSI bestand is.
+
+Methode 2 is wat makkelijker in te stellen als methode 1. We gaan terug naar het Apache configuratie bestand (/etc/apache2/httpd.conf). Zie het begin van [b]methode 1[/b]. We voorzien de [b]twee regels[/b] waarbij we het hekje [b]#[/b] hebben verwijderd weer van een [b]hekje[/b]. Zodat het dus weer comments worden.
+
+[h3]XBitHack aan zetten[/h3]
+Na de twee bovenstaande regels zetten onderstaande code op een nieuwe regel.
+
+[code]XBitHack on[/code]
+
+Deze optie staat [b]niet standaard[/b] in Apache maar wordt wel uitgebreidt beschreven op de [url=http://httpd.apache.org/docs/2.0/mod/mod_include.html#xbithack]documentatie website van Apache bij XBitHack[/url]. 
+
+Bewaar het Apache configuratie bestand weer en [b]herstart de Apache webserver[/b]. Als we nu dezelfde pagina weer herladen in onze webbrowser zien we dat het [b]niet meer werkt![/b]
+
+[h3]Unix chmod[/h3]
+Nu moeten we nog aangeven dat bepaalde HTML bestanden, in dit voorbeeld dus [b]hompage.html[/b], gebruikt moet worden als SSI HTML bestand. Dit gaan we doen via de Terminal met en het [url=http://en.wikipedia.org/wiki/Chmod]Unix commando chmod[/url]. De chmod staat voor [b]change mode[/b]. Waarmee de toegangs rechten (permissions) bepaald worden per bestand (file) op onze Mac (Unix/Linux).
+
+Ga met de Terminal eerst naar je eigen [b]Sites[/b] map toe.
+
+[code]cd Sites[/code]
+
+Vraag een lijst op met bestanden.
+
+[code]ls -l[/code]
+
+We zien hier ons [b]homepage.html[/b] bestand staan. Aan de linkerkant in de Terminal output staan een paar rare letters als: [b]rw-r-r[/b].
+
+[code]-rw-r--r--@ 1 kees  staff  1616 18 nov 13:23 homepage.html[/code]
+
+De eerste paar (rw, en een volgende letter) staan voor [b]bepaalde rechten[/b] die de gebruiker [b]kees[/b] mag uitvoeren op dit bestand. De 2 ander paren zijn voor Unix groepen en de rest van de 'wereld' gebruikers. We moeten aan Apache door geven dat ons [b]homepage.html[/b] bestand eerst uitgevoerd moet worden, ofwel gefilterd moet worden zodat deze de SSI directives leest in ons HTML bestand en de [b]navigatie.html[/b] eerst in de pagina opneemt.
+
+We geven aan dat [b]homepage.html[/b] de Unix executable (uitvoer) rechten krijgt. Daar staat de [b]X[/b] voor in de [b]XBitHack[/b]. In de Terminal geven we het volgende commando op.
+
+[code]chmod u+x homepage.html[/code]
+
+In bovenstaande Unix commando zeggen in feite dat de user [b]u[/b] (u, betekend in chmod eigenlijk de gebruiker die nu ingelogd is met deze Terminal, ofwel [b]JIJ[/b]) de e[b]X[/b]ecutable recht moet toevoegen (+) aan [b]homepage.html[/b]
+
+We vragen weer een lijst op om te zien of het gewenste effect is bereikt.
+
+[code]ls -l[/code]
+
+Als het goed is ziet het eruit als onderstaande. Let dus op de x in de eerste 3 paar rechten aan het begin van de regel.
+
+[code]-rwxr--r--@ 1 kees  staff  1616 18 nov 13:23 homepage.html[/code]
+
+[h3]Testen[/h3]
+We keren terug naar de webbrowser en herladen nogmaals de [b]homepage.html[/b]. We zien nu dat de SSI truuk weer werkt zoals in methode 1. Maar nu hebben het op een andere manier opgelost en blijven we gebruik maken van de [b].html[/b] file extentie.
+
+Heel mooi en vooral handig voor gebruik in niet dynamische websites (bijvoorbeeld PHP) maar die toch stukken HTML met elkaar delen.
+
+[h2]Op een online website gebruiken[/h2]
+De Apache webserver, die je eigen online website serveerd (meestal is dat een Linux systeem), heeft natuurlijk ook zo'n httpd.conf configuratie bestand. Deze [b]mag je niet bewerken[/b] van je hosting provider. Dat heeft natuurlijk grote beveilgings risico's.
+
+Hoe kunnen we dan toch gebruik maken van methode 2? Want methode 1 staat standaard al aan op de meeste online Linux webservers die Apache gebruiken.
+
+[h3].htaccess[/h3]
+De Apache webserver kent zogenaamde [b].htaccess configuratie bestanden[/b]. Hiermee kun je voor jouw eigen website een klein configuratie bestandje maken die alleen voor jou website geldt. Hierin kunnen we de [b]XBitHack[/b] aan zetten.
+
+Open TextWrangler met een nieuw leeg bestand en zet het volgende 2 regels code hierin.
+
+[code]Options All +Includes[/code]
+[code]XBitHack on[/code]
+
+Bewaar dit bestand als [b].htaccess[/b] in dezelfde map als waar je de [b]homepage.html[/b] en [b]navigatie.html[/b] bewaard hebt.
+
+[attention]Let op! Bestanden die vooraf gaan met een punt worden in Unix gezien als [b]verborgen[/b] (hidden) bestanden. Deze zien we ook niet meer terug in de MacOS X Finder.[/attention]
+
+[b]TextWrangler[/b] zal ook een waarschuwing geven of je zeker weet dat je het bestand wilt bewaren welke begint met een punt.
+
+[h2]Uploaden[/h2]
+Nu moeten we de 3 bestanden uploaden naar de website die online te bekijken is. We hebben alleen een probleem: [b]We zien het .htaccess bestand niet meer ... !![/b]
+
+In het voorbeeld maak ik gebruik van [url=http://www.panic.com/transmit/]Transmit[/url], een FTP client voor de Mac welke een optie heeft om verborgen bestanden weer te geven. Natuurlijk zullen er nog meer FTP clients zijn die verborgen bestanden ondersteunen.
+
+[h3]Let op die executable chmod[/h3]
+Upload de 3 bestanden naar je eigen website, desnoods in een submap. Zorg er dus voor dat ook op de FTP server van je website het bestand [b]homepage.html[/b] is voorzien van die [b]rwx chmod code[/b]. 
+
+In de meeste FTP clients kun je van een bestand de [b]info[/b] (of [b]permissions[/b]) opvragen. Zet hier de [b]chmod[/b] op de juiste manier zoals eerder beschreven. Open een webbrowser en ga naar de [b]homepage.html[/b].
+
+[h2]Conclusie[/h2]
+Deze truuk biedt meer mogelijkheden om [b]semi[/b] dynamische pagina's te maken voor je eigen website. Op de pagina van de [url=http://httpd.apache.org/docs/2.0/mod/mod_include.html]Apache SSI documentatie[/url] staan nog een aantal voorbeelden waaronder wat primitieve [b]IF, THEN, ELSE[/b] statements en andere leuke truuken.
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

@@ -1,0 +1,165 @@
+Apache htaccess en mod_rewrite op MacOSX Tiger
+
+apache, htaccess, mod_rewrite, urls, herschrijven, mac, mac os x, nette url, seo, zoekmachine
+
+Met Apache mod_rewrite kunnen we URL's netjes herschrijven zodat men aan het webadres kan zien waar de pagina over gaat. Dit is tevens heel goed voor SEO (Search Engine Friendly) url's, de vindbaarheid en content voorspelbaarheid van de webpagina. Hoe doen we dat op Mac OS X?
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img][attention]Let op![/attention] Er is een update op dit artikel beschikbaar voor [article=apache-htaccess-en-mod_rewrite-op-macosx-leopard] Apache .htacces en mod_rewrite op Apple's MacOSX Leopard v10.5[/article].
+
+Website optimalisatie en [b]SEO[/b] ([url=http://en.wikipedia.org/wiki/Search_engine_optimization]Search Engine Friendly[/url]) url's maken. Maar hoe zetten we deze techniek aan op onze eigen lokale Mac OS X Tiger (v10.4.x)?
+
+[h3][attention]Alle credits voor deze tutorial gaan uit naar [url=http://michaelkrol.com/2005/11/21/enable-mod_rewrite-on-os-x-104-tiger/] Michael Krol[/url].[/attention][/h3]
+
+De specifieke aanpassingen aan het Apache configuratie bestand heb ik niet zelf uitgevonden. Maar ik heb er een artikel omheen geschreven met uitleg en ervaringen in het Nederlands.
+
+[h2]Wat is Apache mod_rewrite? En wat kan ik ermee?[/h2]
+[url=http://httpd.apache.org/]Apache[/url] is natuurlijk de OpenSource HTTP webbserver die bij elke installatie op onze Mac al aanwezig is. Je kunt deze aanzetten in de [b]System Preferences > Sharing > Personal Web Sharing[/b]. Op internet wordt deze webserver veel vuldig gebruikt op Linux webservers. Het kan ook op Windows draaien.
+
+[h3]mod_rewrite[/h3]
+Het is een module (vandaar de naam 'mod_') die bij de standaard installatie van Apache wordt geleverd. Bij het opvragen van een webadres typt men een website naam in of je surf van link naar link op een website. Dit veranderd de URL in de webbrower.
+
+Hoe die URL eruit ziet verschilt nogal per website. Waar het bij mod_rewrite om gaat is hoe deze URL eruit komt te zien. Het is natuurlijk [b]slordig[/b] en vooral [b]lelijk[/b] als je website URL's in de adres regel heeft staan als:
+
+[h3]... niet mooi[/h3]
+[code]http://www.uwwebsite.nl/article_show.php?artikel_id=2[/code]
+
+Ten eerste kun je aan de URL [b]niet zien[/b] of raden waar de pagina over gaat. Bovendien kunnen zoekmachines ook deze URL niet goed indexeren ... want het 'zegt' niks over de pagina. Natuurlijk gaan zoekmachines de URL wel volgen en indexeren maar het kan vele malen beter.
+
+Het zou veel mooier zijn als de bovenstaande URL er als volgt uitziet. Dit worden ook wel [b]permalinks[/b] (permanente link) genoemd.
+
+[h3]Mooi!!![/h3]
+[code]http://www.uwwebsite.nl/artikel/apache-mod-rewrite[/code]
+
+[h2]Pure voodoo!! Hoe werkt het nou eigenlijk?[/h2]
+De mod_rewrite module kan, als een webadres wordt opgevraagd, de URL herschrijven. De webbrowser vraagt de [b]mooie URL[/b] aan de Apache webserver. De mod_rewrite module herschrijft de URL naar de [b]niet mooie URL[/b] maar laat de mooie URL wel in het webbrowser staan. In de achtergrond (op de Apache webserver) wordt de niet mooie URL aangevraagd. Daar zit, in dit voorbeeld, een PHP script die de URL met extra info (achter de URL) verwerkt en een resultaat terug stuurd naar webbrower.
+
+[h3]Voor het voorbeeld[/h3]
+In bovenstaand voorbeeld wordt [b]?artikel_id=2[/b] herschreven naar [b]apache-mod-rewrite[/b]. Natuurlijk is een nummer niet hetzelfde als een naam. Het is als voorbeeld gebruikt hoe dit beter gedaan kan worden. In dit geval zoekt het PHP script niet naar een nummer in de database maar gaat het naar de naam [b]apache-mod-rewrite[/b] zoeken.
+
+Het herschrijven (en de PHP) is moeilijk uitleggen maar het is o zo mooi voor een professionele website. Het zorgt er ook voor dat webadressen voorspelbaar worden en makkelijk onthouden worden.
+
+[h2]Meer informatie als het straks allemaal werkt[/h2]
+Als [b]straks[/b] de mod_rewrite module werkt (lees dit artikel vooral door!) ... hoe moet ik dan verder? Hoe pas ik het daadwerkelijk toe? U moet ondertussen een beetje begrijpen wat het kan en dat het om het vertalen van URL's gaat. Lees op de [url=http://httpd.apache.org/docs/1.3/mod/mod_rewrite.html]Apache pagina[/url] (in het engels) waar het eigenlijk om gaat. Een beetje kennis van [b]regex[/b] (Regular Expressions) kan ook heel handig zijn. Anders snapt u niet echt hoe [b]URL rewriting[/b] werkt. 
+
+Daar zijn veel website over te vinden op internet. Hier volgt een kort lijstje:
+[list]
+[*][url=http://www.naarvoren.nl/artikel/vriendelijke_urls/]Naar voren.nl - Vriendelijke URL's[/url]
+[*][url=http://tldp.org/LDP/Bash-Beginners-Guide/html/chap_04.html]Regular Expression beginners guide[/url]
+[*][url=http://www.alistapart.com/articles/urls/]Alistapart: URL's URL's URL's[/url]
+[*][url=http://www.alistapart.com/articles/slashforward/]Alistapart: Slashforward[/url]
+[*][url=http://www.alistapart.com/articles/succeed/]Alistapart: How to succeed with URL's[/url]
+[*][url=http://www.askapache.com/htaccess/apache-htaccess.html#chap4]Tips en truuks hoe je .htaccess file moet schrijven en diverse URL's en compleiteit kan herschrijven.[/url]
+[*][url=http://www.gnc-web-creations.com/301-redirect.htm]Permanent redirects[/url]
+[*][url=http://www.javascriptkit.com/howto/htaccess.shtml]Comprehensive guide to .htaccess[/url]
+[*][url=http://www.tools.dynamicdrive.com/password/].htaccess password generator[/url]
+[*][url=http://www.ilovejackdaniels.com/mod_rewrite_cheat_sheet.pdf].htaccess cheat sheet[/url]
+[*][url=http://rewrite.drbacchus.com/]Rewrite cookbook[/url]
+[*][url=http://www.sitepoint.com/article/guide-url-rewriting/4]Mod_rewrite a beginners guide[/url]
+[/list]
+
+[url=http://www.apress.com/book/view/1590595610/][img=float_left]atlantis_uploads/uploads/apress_mod_rewrite.gif[/img][/url]Het boek [url=http://www.apress.com/book/view/1590595610]The Definitive Guide To Apache mod_rewrite[/url] van uitgever [url=http://www.apress.com/]Apress[/url] is zeker een aanrader. ISBN10: 1590595610 | ISBN13: 9781590595619
+
+[h2]Hoe gaan we dit toepassen op onze eigen Mac?[/h2]
+In de standaard installatie van onze Mac z'n standaard Apache webserver zit deze module al inbegrepen. Het staat alleen [b]niet standaard aan[/b].
+
+[h3]Waarom zou ik dit op mijn eigen Mac willen?[/h3]
+Bijna alle websites kunnen gebruik maken van deze techniek. De Apache webserver staat bij hosting providers standaard geconfigureerd om deze techniek aan te bieden. Het wordt jammer genoeg niet altijd gebruikt. 
+
+Dus als u een [b]zelf gemaakte website[/b] heeft draaien op internet (en deze ook zelf onderhoud) heeft u vast de website ook op uw [b]eigen computer[/b] draaien. Zodat u lokaal (op uw eigen Mac) de website kan ontwerpen, aanpassen en misschien wel programmeren.
+
+Standaard is op de Mac (client versie, niet server versie) deze module wel aanwezig maar staat [b]niet standaard aan[/b]. Om mod_rewrite eens te proberen kunt u dat beter op uw eigen Mac doen en niet op een live website. 
+
+[h2]BBedit TextWrangler's command line tools[/h2]
+[img=float_right]atlantis_uploads/uploads/logo_textwrangler.gif[/img]We gaan de standaard configuratie van de al aanwezige Apache webserver iets aanpassen. Dit kan op twee manier gedaan worden: Via de [b]Terminal[/b] applicatie of we maken gebruik van de gratis code-text editor [url=http://www.barebones.com/products/textwrangler/]BBEdit TextWrangler[/url]. 
+
+Start [b]TextWrangler[/b] (of BBEdit) en laat het de [b]command line tools[/b] installeren. We kunnen nu aan de slag. Als je gebruik maakt van [b]BBEdit[/b] is het commando om bestanden te bewerken (vanuit de Ternimal) '[b]bbedit[/b]' in plaats van '[b]edit[/b]' welke [b]TextWrangler[/b] gebruikt.
+
+[h3]Waarom een code-text editor?[/h3]
+Als u bekend ben met Unix terminal commando's en de [b]vi editor[/b] (of Pico) hoeft u geen gebruik te maken van TextWrangler's [b]command line tools[/b]. Met de command line tools kunt u in de Terminal een tekst document bewerken met een Mac OS X teksteditor.
+
+Als u een (al dan niet verborgen Unix) file wilt bewerken typt u in: [b]sudo vi /etc/httpd/httpd.conf[/b]. Maar we gaan het text document openen met de TextWrangler command line tools. [url=http://www.barebones.com/products/textwrangler/download.shtml]Download[/url] daarom BBEdit TextWrangler, open het programma en laat het de command line tools installeren. Dit vergemakkelijkt het proces straks om Unix text documenten mee te bewerken. Als u de commerciele grote broer BBEdit al heeft kunt u BBEdit gebruiken in plaats van TextWrangler. De werking hieronder is precies hetzelfde.
+
+Zo ... heeft u ook gelijk een mooie gratis text editor voor bijvoorbeeld HTML / Css / Javascript / PHP etc.
+
+[h2]Apache configuratie aanpassen[/h2]
+Voordat we die geweldige command line tools kunnen gebruiken moeten we toch eerst in de Terminal duiken. Start daarom de Terminal applicatie op in de map [b]Applications > Utilities > Terminal[/b] vanaf onze Mac OS X schijf. En typ het volgende in en geef een enter:
+[code]cd /etc/httpd[/code]
+
+En vervolgens: 
+
+[code]ls -l[/code]
+
+We zien nu een lijst met bestanden die in deze map staan. Het bestand dat we gaan aanpassen heet [b]httpd.conf[/b]. Voor het gemak en goede orde maken we eerst een backup van dit bestand:
+
+[code]sudo cp httpd.conf httpd.conf_backup[/code]
+
+Met wat meer [url=http://www.helpdesk.ugent.be/account/unix.php]Unix kennis[/url] kunt u met [b]rm[/b] en [b]mv[/b] de backup weer terug zetten. 
+
+Nu gaan we de TextWrangler command line tools gebruiken om het Unix configuratie bestand van de Apache webserver te openen en te bewerken. Let op! Als u dus kennis heeft van de [b]vi[/b] editor kunt u ook gewoon [b]sudo vi httpd.conf[/b] in typen. Typ in:
+
+[code]edit httpd.conf[/code]
+
+TextWrangler opent zich met het Apache configuratie bestand. Als u goed kijkt is dit bestand [b]nog niet bewerkbaar[/b]. Dit kunt u zien aan het [b]potloodje met een streep[/b] er doorheen. Klik hierop en vul een administrator wachtwoord in. Dit configuratie bestand kan niet zomaar bewerkt worden vanwege [b]restricties / rechten[/b] (permissions) op het Unix systeem en de werking van Apache. We hebben een backup gemaakt en u gaat natuurlijk precies doen wat hieronder staat.
+
+Wat nu volgt is iets wat letterlijk overgenomen (maar vertaald) van de[url=http://michaelkrol.com/2005/11/21/enable-mod_rewrite-on-os-x-104-tiger/] Michael Krol website[/url].
+
+[h2]De mod_rewrite module aanzetten[/h2]
+We gaan een paar regeltjes aanpassen. De regel nummers worden genoemd waar [b]ongeveer[/b] in het text document de bewerking moet worden gemaakt. Let hier dus heel goed op wat u doet en zoek de goede regel op.
+
+Met TextWrangler (of BBEdit) voor ons gaan we [b](met Apple'tje + j)[/b] naar regel [b]223[/b] waar het volgende staat.
+
+[code]#LoadModule rewrite_module libexec/httpd/mod_rewrite.so[/code]
+
+Haal het hekje [b]#[/b] aan het begin van de regel weg. Dit heet wel [b]uncommenten[/b] wat vanaf nu in de rest van dit artikel zo genoemd wordt.
+
+Ga vervolgens naar regel [b]267[/b] en [b]uncomment[/b] de regel waar staat:
+
+[code]#AddModule mod_rewrite.c[/code]
+
+Nu naar regel [b]408[/b] waar staat [b]AllowOverride[/b]. Zorg ervoor dat deze regel zo geschreven staat:
+
+[code]AllowOverride All[/code]
+
+Uncomment regel [b]454[/b] waar onderstaande staat. Dit bepaalt hoe de bestanden heeten die we gaan gebruiken om de mod_rewrite module aan te sturen.
+
+[code]AccessFileName . htaccess[/code]
+
+Het bestand is niet direct te bewaren vanwege Unix permissies. Vul een adminitrator wachtwoord in (of klik op het potloodje) en bewaar het bestand.
+
+[h3]Uw eigen Sites map in uw thuis map[/h3]
+We zijn bijna klaar. De mod_rewrite module werkt nu (na een herstart van Apache) in de map [b]/Library/WebServer/Documents[/b] welke de hoofdmap is van onze webserver. In de [b]/etc/httpd[/b] map staat nog een specifieke '[b]users[/b]' map waar we ook twee dingen gaan veranderen. 
+
+Elke gebruiker op Mac OS X heeft een eigen [b]Sites[/b] map waar u zelf uw eigen website kunt bewaren en bekijken via [b]http://localhost/~uweigennaam/[/b] met bijvoorbeeld Safari. Vervang de tekst '[b]uweigennaam[/b]' in de naam van uw thuismap.
+
+Elke gebruiker heeft ook een soort [b]mini configuratie bestand[/b] voor Apache speciaal voor die Sites map. Deze gaan we ook aanpassen. Terug in de Terminal die nog open staat typen we in:
+
+[code]cd /etc/httpd/users[/code]
+
+En we willen een lijst zien: 
+
+[code]ls -l[/code]
+
+Hier staat een configuratie bestand met uw korte gebruikersnaam (ofwel de mapnaam van uw thuismap). Deze gaan we ook openen met TextWrangler (of BBEdit).
+
+[code]edit uwnaam.conf[/code]
+
+Vervang de '[b]uwnaam[/b]' door de naam van u korte gebruikersnaam. Het bestand bevat maar een paar regels. Verander de twee regels zodat het eruit ziet als onderstaande:
+
+[code]Options All[/code]
+
+En de regel ...
+
+[code]AllowOverride All[/code]
+
+[h3]Apache herstarten[/h3]
+Laat de rest van het bestand dus intact. Pas alleen die twee regels aan. Bewaar het bestand en we gaan nu de Apache webserver herstarten. Dit kan op twee manier. De makkelijkste manier is terug te gaan naar de [b]System Preferences > Sharing > Personal Web Sharing[/b] ... vink deze [b]uit[/b] en weer [b]aan[/b]. Maar als u toch in de Terminal bezig bent kunt u ook intypen:
+
+[code]sudo apachectl graceful[/code]
+
+De Apache webserver neemt nu de [b]mod_rewrite module mee[/b]. Nu kan de URL rewrite magie beginnen.
+
+[h2]Dank aan Michael Krol's webpagina[/h2]
+Naar deze tutorial was ik al enige tijd opzoek. Mijn dank ik is groot! Het herschrijven van URL's is zeker mooi in een website. Het aanzetten van de module is nu gedaan ... nu is het aan u om hiermee aan de slag te gaan. Lees er boeken over en zoek op internet hoe u het kunt toepassen. Hoe dit verder werkt met bijvoobeeld PHP scripting of MySQL databases is aan u.
+
+[h3]Disclaimer[/h3]
+Atlantisdesign neemt geen verantwoording voor enige schade aan uw systeem.

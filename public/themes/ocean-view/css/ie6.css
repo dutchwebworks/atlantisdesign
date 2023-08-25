@@ -1,0 +1,25 @@
+/* Screen style for http://www.atlantisdesign.nl/ */
+
+/* Win/IE6 css-bug-fixes
+============================================= */
+
+div#webBadges {
+	display: inline;
+}
+
+.container_12 .grid_11 {
+	width:200px !important;
+}
+
+div#footerContent {
+	padding-top: 40px;
+}
+
+.sIFR-flash {
+	width: 99%;
+}
+
+div.article h4 {
+	height: 1%;
+}
+

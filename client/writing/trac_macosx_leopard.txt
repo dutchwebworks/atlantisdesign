@@ -1,0 +1,273 @@
+Trac voor MacOS X Leopard
+
+trac, svn, subversion, issue, bug, tracking, apache, python, mac, apple
+
+Via een lokale website makkelijk Subversion repository en changesets bekijken. Geintegreerde Wiki, issue- bugtracking systeem. Precies kunnen aangeven, d.m.v. integratie met Subversion en een ticketsysteem, wat er in bepaalde bestanden veranderd is en welke gebruikers zaken moeten oplossen.
+
+[img=float_right]atlantis_uploads/uploads/logo_trac.gif[/img][url=http://trac.edgewall.org/]Trac[/url] is een [b]bugtracking / issue-tracking en Wiki systeem[/b] ineen dat via een webpagina te beheren is. Het is niet zomaar een issue tracking systeem want het integreerd heel makkelijk met [url=http://subversion.tigris.org/]Subversion[/url], wat op haar beurt een OpenSource [b]versie beheer[/b] systeem is. [url=http://en.wikipedia.org/wiki/Trac]WikiPedia: Trac[/url]. Deze twee worden samen veel vuldig gebruikt bij de ontwikkeling van software / websites.
+
+De integratie met [b]Subversion[/b] (of een ander versie beheer systeem) is echt geweldig. Men kan via Trac (wat gewoon een website interface is) de Subversion repository bekijken, revisies naast elkaar leggen en de verschillen zien tussen de bestanden, ofwel [b]changesets[/b]. 
+
+Via [b]tickets[/b] toekennen aan gebruikers kunnen meerdere mensen een project beheren en issues oplossen. Aan een ticket kan zo'n [b]changeset[/b] gehangen worden om heel mooi aan te geven wat men heeft veranderd of waar men naar moet kijken als het om een bug / issue gaat.
+
+[h3]Subversion[/h3]
+[img=float_right]atlantis_uploads/uploads/logo_svn.gif[/img]Dit artikel gaat ervan uit dat [article=subversion-versie-beheer-op-mac-os-x]Subversion al geinstalleerd[/article] is op de Mac. En dat men weet hoe Subversion een beetje werkt. Het zou ook handig zijn als er een [b]SVN repository[/b] aanwezig is. Als voorbeeld nemen we [b]/Library/Subversion/Repository/testwebsite[/b].
+
+[h4]Credits[/h4]
+
+[attention]Let op! Deze procedure heb ik [b]niet zelf uitgevonden[/b] maar gelezen op een Trac tutorial pagina waar dit uitgelegd wordt door ene [url=http://trac.edgewall.org/wiki/TracOnOsxNoFink#OSX10.5basicTracclearsilverbundledApache]Toby Thain[/url].[/attention] 
+
+Ik heb er een Nederlandse versie van gemaakt en tevens wat dingen [b]uitgelicht en uitgebreidt[/b] waar ikzelf tegenaan liep. Tevens is de URL waar het test Trac project draait [b]beveiligd door een Apache realm[/b] inlog venster.
+
+Deze Trac opzet is op Apple MacOS X Leopard v10.5.2 getest. Dezelfde procedure zou ook moeten werken op MacOS X Tiger v10.4.x.
+
+[h2]Wat hebben we nodig?[/h2]
+
+[list]
+[*][b]Subversion[/b], niet persee nodig maar de integratie hiermee is heel cool. Voor installatie zie het artikel [article=subversion-versie-beheer-op-mac-os-x]Subversion versie beheer op MacOS X[/article]
+[*][url=http://developer.apple.com/tools/xcode/]Apple xCode[/url], versie 3 (voor Leopard) is voldoende. Dit hebben we nodig omdat bij de installatie van xCode ook een GCC compiler geinstalleerd wordt. Die compiler hebben we nodig om wat extra componenten te kunnen installeren.
+[*][b]Apache 2.0.x[/b], wat al op de Mac staat
+[*][b]Python[/b], wat ook al op de Mac staat
+[*][url=http://trac.edgewall.org/wiki/ClearSilver]Clearsilver[/url], een template systeem voor Python
+[*][url=http://trac.edgewall.org/wiki/TracDownload]Trac[/url], het daadwerkenlijke issue tracking systeem
+[/list]
+[h2]Apple's xCode[/h2]
+
+[url=http://developer.apple.com/tools/xcode/]Download Apple xCode[/url] (ongeveer 300 MB) van de Developer website. Installer deze met de standaard opties. Eigenlijk hebben we niks aan xCode zelf maar we hebben een GCC compiler nodig om de Clearsilver source-code mee te compileren. Zo'n compiler staat niet standaard op de Mac. Compilen klinkt ingewikkeld maar valt reuze mee.
+
+[h2]Trac configureren en installeren[/h2]
+
+[url=http://trac.edgewall.org/wiki/TracDownload]Download Trac[/url], bij het schrijven van dit artikel is dit v0.11b2. Pak het bestand uit en open de Unix Terminal ([b]/Applications/Utilities/Terminal[/b]). 
+
+Met het Unix '[b]cd[/b]' commando gaan we naar de map waar Trac is uitgepakt. Je kunt ook intypen 'cd ' (met een spatie dus) en sleep nu de map vanuit de Finder op het Terminal venster, en druk op ENTER. Waarschlijnlijk heeft de map trac een versie nummer erachter staan.
+
+[code]cd ~/Downloads/trac[/code]
+
+Typ het volgende, gevolgd door een ENTER en een administrator wachtwoord:
+
+[code]sudo python ./setup.py install[/code]
+
+Python gaat een installatie uitvoeren en een hoop bestanden kopieren.
+
+[h2]Clearsilver compileren en installeren[/h2]
+
+[img=float_right]atlantis_uploads/uploads/logo_python.gif[/img]Trac is geprogrammeerd in [url=http://en.wikipedia.org/wiki/Python_(programming_language)]Python[/url] (ook een [b]OpenSource[/b] programmeer taal) welke gebruik maakt van het Clearsilver template systeem. [b]Download[/b] [url=http://trac.edgewall.org/wiki/ClearSilver]Clearsilver[/url] en pak deze uit.
+
+Met de [b]Terminal[/b] gaan we ook naar de map waar Clearsilver is [b]uitgepakt[/b]. Net als bij Trac staat er waarschijnlijk een versie nummer achter de map van clearsilver.
+
+[code]cd ~/Downloads/clearsilver[/code]
+
+Typ het volgende [b]compileer commando[/b] in gevolgd door ENTER en een administrator wachtwoord. Hier hadden we dus xCode voor nodig. 
+
+[code]sudo ./configure --with-python=`which python` --disable-ruby --disable-java --disable-perl --disable-apache --disable-csharp[/code]
+
+Als deze zonder foutmeldingen klaar is met '[b]checking[/b]' gaat hij de ruwe source code compileren. Typ daarna in:
+
+[code]sudo make[/code]
+
+Hiermee maak je het programma klaar om te installeren. Geef als laatste op dat het programma geinstalleerd moet worden:
+
+[code]sudo make install[/code]
+
+Nu moeten we een bestand verplaatsen naar de goede map.
+
+[code]mv /System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/site-packages/neo_cgi.so /Library/Python/2.5/site-packages[/code]
+
+[h2]Apache configureren[/h2]
+
+We kunnen Trac (wat in feite een website is) laten draaien onder de [b]Apache webserver[/b] die al op de Mac aanwezig is. Zorg dat deze aanstaat in de [b]Apple System Preferences[/b], onder [b]Sharing[/b].
+
+[h3]Unix bestanden bewerken met TextWrangler[/h3]
+[img=float_right]atlantis_uploads/uploads/logo_textwrangler.gif[/img]Download eerst het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/]TextWrangler[/url] of gebruik zijn commerciele broer [url=http://www.barebones.com/products/bbedit/]BBEdit[/url]. Hiermee kunnen we straks makkelijk aanpassingen maken aan Unix configuratie bestanden op onze Mac. TextWrangler of BBedit zijn echte Mac OS X text-editors. Hiermee kun je ook website met de hand maken, PHP programmeren en nog veel meer op het gebied van text-editten.
+
+Start [b]TextWrangler[/b] (of BBEdit) en laat het de [b]command line tools[/b] installeren. We kunnen nu aan de slag. Als je gebruik maakt van [b]BBEdit[/b] is het commando om bestanden te bewerken (vanuit de Ternimal) '[b]bbedit[/b]' in plaats van '[b]edit[/b]' welke [b]TextWrangler[/b] gebruikt.
+In de Terminal typen we het volgende:
+
+[h3]Apache FastCGI aanzetten[/h3]
+
+[code]edit /etc/apache2/httpd.conf[/code]
+
+Met '[b]edit[/b]' geven we aan dat we TextWrangler gaan gebruiken om bestanden te bewerken. TextWrangler opent het Apache configuratie bestand. We gaan (met [b]Apple'tje + j[/b]) naar [b]regel 115[/b].
+
+Daar halen we het hekje (comment) voor de regel weg waar staat:
+
+[code]LoadModule fastcgi_module     libexec/apache2/mod_fastcgi.so[/code]
+
+Bewaar het bestand weer met een administrator wachtwoord.
+
+In de Terminal moeten we een paar nog niet bestaande mappen aanmaken:
+
+[code]sudo mkdir -p /System/Library/Frameworks/Python.framework/Versions/2.5/share/trac/cgi-bin/[/code]
+
+Plaats nu het bestand [b]trac.fcgi[/b] in bovenstaande map. Dit [b]trac.fcgi[/b] bestand is te vinden in de map waar we Trac hebben uitgepakt. Dit kun je beter via de Ternimal doen. [b]Typ eerst (met een spatie erachter[/b]:
+
+[code]sudo cp[/code]
+
+[b]Sleep[/b] nu vanuit de Finder het [b]trac.fcgi[/b] bestand op de Terminal (nog geen ENTER geven), typ eerst een spatie. Typ of kopieer hiernaa het volgende erachteraan, zodat het er ongeveer als volgt uitziet.
+
+[code]sudo mv /Users/kees/Downlaods/trac/trac.fcgi /System/Library/Frameworks/Python.framework/Versions/2.5/share/trac/cgi-bin/[/code]
+
+Geef een ENTER en vul een administrator wachtwoord in. 
+
+[h4]Waarom zo ingewikkeld?[/h4]
+
+Via de Finder heb je geen rechten om dit bestand daar te plaatsen.
+
+[h2]Unix hardlink naar Apache CGI[/h2]
+
+Nu moeten we een Unix [b]hardlink[/b] maken van het trac.fcgi bestand naar de map waar de Apache webserver CGI bestanden kan uitvoeren. In de Terminal typen we in:
+
+[code]sudo ln /System/Library/Frameworks/Python.framework/Versions/2.5/share/trac/cgi-bin/trac.fcgi /Library/WebServer/CGI-Executables/[/code]
+
+Wat extra mappen aanmaken in de Terminal:
+
+[code]sudo mkdir - p /var/lib/apache2/fastcgi[/code]
+
+Daarna moeten we de [b]Unix rechten[/b] goed zetten van deze map.
+
+[code]sudo chown www:www /var/lib/apache2/fastcgi[/code]
+
+[h2]Trac configuratie aanmaken voor Apache[/h2]
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img]Om [b]Trac via Apache[/b] beschikbaar te maken moeten we eerst aangeven waar Trac zijn mappen heeft staan. Alle Trac projecten gaan we in een centrale map bewaren waarbij elk project in z'n eigen submap krijgt.
+
+[code]/Library/Trac[/code]
+
+We gaan terug naar [b]TextWrangler[/b], maak een leeg bestand aan en plak [url=http://www.atlantisdesign.nl/public/trac.conf.txt]dit bestand[/url] erin:
+
+Het eerste stuk geeft aan waar we onze Trac project omgevingen bewaren. Op deze manier kun je meerdere projecten in de map [b]/Library/Trac[/b] bewaren en via een webbrowser allemaal beheren.
+
+Het tweede stuk geeft aan dat we straks een testwebsite hebben die op een bepaalde URL te bereiken is. En is beveiligd met de username [b]kees[/b]. Tevens staat er waar het wachtwoord bestand staat.
+
+Bewaar dit configuratie bestand op de volgende locatie met als naam [b]trac.conf[/b]:
+
+[code]/etc/apache2/other/trac.conf[/code]
+
+[h2]Apache password file aanmaken[/h2]
+
+Zoals je kunt zien in het kleine stukje configuratie gaan we de Trac testwebsite beveiligen met een Apache realm. Zodat niet iedereen kan inloggen op ons testwebsite project.
+
+In de Terminal gaan we een password file maken voor de fictieve gebruiker [b]kees[/b]. Eerst een password map aanmaken, als die nog niet bestaat:
+
+[code]sudo mkdir /etc/apache2/passwords[/code]
+
+Maak nu een password file aan voor de fictieve gebruiker [b]kees[/b]. Onthoud deze gegevens voor later in dit artikel.
+
+[code]sudo htpasswd -c /etc/apache2/passwords/.htpasswd kees[/code]
+
+Met [b]-c[/b] geven we aan dat we het password file eerst aanmaken, want het bestand bestaat waarschijnlijk nog niet. Waar dit password file wordt bewaard hebben we hierboven al aangeven in de Apache configuratie bestand [b]trac.conf[/b]. 
+
+Vul eerst je Mac's [b]administrator wachtwoord[/b] (daar staat sudo voor) en vul daarna een nieuw wachtwoord in voor de gebruiker [b]kees[/b].
+
+Nu is de configuratie, en password file, voor Apache gereed en moeten we deze herstarten in de Terminal:
+
+[code]sudo apachectl graceful[/code]
+
+Door Apache te [b]herstarten[/b] wordt het [b]trac.conf[/b] configuratie bestand ook meegenomen.
+
+[h2]Trac omgeving opzetten[/h2]
+
+Apache is gereed en Trac is geinstalleerd. We moeten een map aanmaken waar Trac een omgeving heeft, per project, om mee te werken. 
+
+We plaatsen alle Trac gerelateerde projecten (bijvoorbeeld een website welke al in Subversion versie beheer staat) in de volgende map [b]/Library/Trac[/b], op onze eigen Mac. In de Terminal maken we deze map eerst aan:
+
+[code]mkdir -p /Library/Trac[/code]
+
+Ga naar de map ...
+
+[code]cd /Library/Trac[/code]
+
+Maak een [b]Trac omgeving[/b] aan voor het fictieve project [b]testwebsite[/b]:
+
+[code]trac-admin testwebsite/ initenv[/code]
+
+Trac gaat nu een omgeving opzetten ([b]initialiseren[/b]) met als naam [b]testwebsite[/b]. Er worden een aantal simpele vragen gesteld over het project. 
+
+Geef het project een naam voor gebruik binnen Trac, je kunt daar gewoon hoofdletters en spaties voor gebruiken, in dit geval:
+
+[code]Testwebsite[/code]
+
+En druk op Enter. Druk gewoon op ENTER als er gevraagd wordt om een '[b]Database string[/b]'. Standaard gebruikt Trac een SQLite database. En natuurlijk willen we [b]svn[/b], ofwel Subversion, gebruiken in dit project, druk op ENTER.
+
+Geef als laatste op waar de Subversion (svn) repository staat. In dit voorbeeld is dat:
+
+[code]/Library/Subversion/Repository/testwebsite[/code]
+
+Er verschijnen een hoop regels en uiteinlijk staat er een '[b]Congratulations![/b]' melding in beeld. We hebben nu een Trac omgeving gekoppeld aan de Subversion repository van [b]/Library/Subversion/Repository/testwebsite[/b].
+
+Nu moeten we aangeven dat Apache (ofwel de [b]www user[/b] op Unix) schrijf rechten heeft in de Trac [b]testwebsite[/b] mappen. Via een webbrowser gaan we namelijk het Trac project beheren.
+
+[code]sudo chmod 777 -R /Library/Trac/testwebsite[/code]
+
+[h2]Trac admin rechten[/h2]
+
+Binnen Trac zijn er ook gebruikers die verschillende rechten hebben. Zoals [b]issue tickets aanmaken en Wiki pagina's[/b] beheren. Als [b]beheerder[/b] van een project, onder Trac, geven we de fictieve gebruiker [b]kees[/b] (van daarnet) [b]admin[/b] rechten binnen Trac. We loggen in op de testwebsite met de Terminal:
+
+[code]trac-admin /Library/Trac/testwebsite[/code]
+
+We zitten nu Trac. We geven admin rechten / permissions aan de (nieuwe) gebruiker [b]kees[/b]:
+
+[code]permissions add TRAC_ADMIN kees[/code]
+
+We gaan weer uit Trac:
+
+[code]quit[/code]
+
+Open nu [b]Safari[/b] en ga naar onderstaande URL, welke op onze eigen Mac staat:
+
+[code]http://localhost/trac/testwebsite[/code]
+
+Een [b]Apache realm[/b] inlog venster verschijnt. Login met de zojuist aangemaakt fictieve Apache username [b]kees[/b]. 
+
+Trac neemt deze gebruikersnaam over. Binnen Trac zijn we dan de gebruiker [b]kees[/b]. Zojuist hebben we binnen Trac ook dezelfde gebruiker [b]kees[/b] admin rechten gegeven.
+
+Via de button [b]admin[/b] (helemaal rechts in beeld) kunnen we diverse zaken in Trac beheren. Lees meer over het gebruik van Trac in de ingebouwde Wiki en op [url=http://trac.edgewall.org/wiki/TracGuide]TracGuide[/url]. 
+
+[h3]Meerdere gebruikers[/h3]
+
+Via de admin pagina in Trac kunnen we meerdere gebruikers permissions geven. Via de Terminal en zo'n htpasswd password bestand kunnen we meerdere gebruikers aanmaken.
+
+[h2]Meerdere projecten onder Trac[/h2]
+
+In het [b]trac.conf[/b] bestand stond dat we een [b]parent directory[/b] hebben aangegeven voor Trac projecten. Wil je meerdere projecten onder Trac brengen is het een kwestie van een nieuwe Trac omgeving opzetten:
+
+[code]trac-admin /trac/nog_een_website[/code]
+
+Maak voor dit project ook weer een [b]Apache username en password[/b] aan, dit kan in hetzelfde password file. Of gebruik natuurlijk steeds dezelfde user in Trac projecten.
+
+[code]sudo htpasswd /etc/apache2/passwords/.htpasswd piet[/code]
+
+Geef het nieuew wachtwoord op voor de gebruiker [b]piet[/b]. In dit voorbeeld kunnen we [b]-c[/b] weglaten omdat het password bestand [b].htpasswd[/b] al bestaat.
+
+Kopieer nu het laatste stuk in [b]trac.conf[/b] naar een nieuwe regel en pas de paden aan naar het Trac project zich bevindt, zoals in [url=http://www.atlantisdesign.nl/public/trac.conf2.txt]dit bestand[/url].
+
+Zoals je kunt zien bij [b]Require user[/b] mag alleen de gebruiker 'piet' inloggen op deze Apache realm en daarmee op het Trac project. 
+
+Om [b]meerdere gebruikers[/b] te laten inloggen kun je deze regel (met spaties) uitvullen met meerdere gebruikers. Let op dat deze gebruikers dus in het [b]htpasswd bestand moeten voorkomen[/b]. Deze regel leest dan bijvoorbeeld als volgt:
+
+[code]Require user kees piet[/code]
+
+Geef de Trac [b]nog_een_website[/b] map weer de juiste Unix rechten:
+
+[code]sudo chmod -R 777 /Library/Trac/nog_een_website[/code]
+
+Log weer in in Trac ...
+
+[code]trac-admin /Library/Trac/nog_een_website[/code]
+
+... en geef de gebruiker [b]piet[/b] admin rechten binnen Trac
+
+[code]permissions add TRAC_ADMIN piet[/code]
+
+Open weer een webbrowser en ga naar ondertaande URL:
+
+[code]http://localhost/trac/nog_een_website[/code]
+
+Log in met de gegevens van gebruiker [b]piet[/b]. Op deze manier kun je heel veel projecten, die in Subversion staan, bekijken en gebruiken in Trac. Een leuke feature is een lijstje met Trac projecten, typ in een webbrowser:
+
+[code]http://localhost/trac[/code]
+
+Nu verschijnt er een [b]lijstje[/b] met de aanwezige Trac projecten.
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

@@ -1,0 +1,189 @@
+[h2]Wat is WebDAV?[/h2]
+WebDAV staat voor [b]Web-based Distributed Authoring and Versioning[/b]. Meer informatie kun je vinden op [url=http://nl.wikipedia.org/wiki/WebDAV]Wiki-Pedia[/url] en [url=http://www.webdav.org/]WebDAV.org[/url]. Het wordt gebruik om meerdere mensen (platform onafhankelijk) bestanden te laten delen via het internet. Natuurlijk ligt dit leuks allemaal achter wachtwoorden.
+
+Voor Mac gebruikers is het fenomeen iDisk (ofwel [url=http://www.apple.com/nl/dotmac/].Mac[/url], spreek uit als 'Dot Mac') wel bekend. Je hebt online een soort eigen folder die je op je Mac desktop kunt 'mounten' en die als netwerkschijf kan gebruiken om bestanden op te zetten.
+
+[h2]Wat heb ik er aan?[/h2]
+Als je als webdesigner / programmeur bezig ben kun je vanaf elke locatie, eventueel met meerdere mensen tegelijk, aan een website werken. Dit allemaal op afstand. Het WebDAV protocol is een extentie op het HTTP protocol en wordt ook ondersteunt door de Apache webserver die al op onze Mac aanwezig is.
+
+Het is een makkelijke manier om een map op onze Mac te delen via internet. Het allermooiste is weer dat alles al geinstalleerd staat op onze Mac! Onderstaande is een kleine procedure om het allemaal aan de praat te krijgen. Dat duurt echt niet lang!
+
+[h2]Apache 2.x configuratie backup maken[/h2]
+Voor deze opzet hebben we de Apache webserver nodig. Zet deze aan via [b]Apple'tje > System Preferences > Sharing[/b] en vink [b]Web Sharing[/b] aan. Voordat we dingen eventueel stuk maken gaan we eerst een backup maken van de Apache webserver configuratie. Open de [b]Terminal[/b] applicatie (/Applications/Utilities/Terminal). We gaan eerst een backup maken van het Apache configuratie bestand. 
+
+[h4]Ga eerst naar de map waar het configuratie bestand staat[/h4]
+[code]cd /etc/apache2[/code]
+
+[h4]Vraag een lijst met bestanden op. Deze stap is perse nodig[/h4]
+[code]ls -l[/code]
+
+Hier zien we welk bestand we moeten hebben, namelijk [b]httpd.conf[/b]. Typ het volgende commando in en geef een administrator wachtwoord op.
+
+[h4]Backup maken[/h4]
+[code]sudo cp httpd.conf httpd.conf_backup[/code]
+
+Vraag met [b]ls -l[/b] opnieuw een lijst op en we zien dat er een backup bestand is gemaakt. Voor degene die met de Unix terminal overweg kunnen weten hoe ze met de commando's [b]rm[/b] en [b]mv[/b] de backup weer terug kunnen zetten.
+
+[h2]Unix bestanden bewerken met TextWrangler[/h2]
+[img=float_right]atlantis_uploads/uploads/logo_textwrangler.gif[/img]Download eerst het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/]TextWrangler[/url] of gebruik zijn commerciele broer [url=http://www.barebones.com/products/bbedit/]BBEdit[/url]. Hiermee kunnen we straks makkelijk aanpassingen maken aan Unix configuratie bestanden op onze Mac. TextWrangler of BBedit zijn echte Mac OS X text-editors. Hiermee kun je ook website met de hand maken, PHP programmeren en nog veel meer op het gebied van text-editten.
+
+Start [b]TextWrangler[/b] (of BBEdit) en laat het de [b]command line tools[/b] installeren. We kunnen nu aan de slag. Als je gebruik maakt van [b]BBEdit[/b] is het commando om bestanden te bewerken (vanuit de Ternimal) '[b]bbedit[/b]' in plaats van '[b]edit[/b]' welke [b]TextWrangler[/b] gebruikt.
+
+[h2]Apache configuratie aanpassen[/h2]
+
+Open de Terminal en typ het volgende commando in:
+[code]edit /etc/apache2/httpd.conf[/code]
+
+TextWrangler opent het configuratie bestand van de Apache 2.x webserver. Ga met Apple'tje + j naar [b]regel 467[/b]. Daar staat onderstaande:
+
+[code]#Include /private/etc/apache2/extra/httpd-dav.conf[/code]
+
+Hier gaan we een extra regel onder plakken:
+
+[code]Include /private/etc/apache2/extra/httpd-webdav.conf[/code]
+
+[h3]WebDAV configuratie voorbeeld[/h3]
+Dit configuratie bestand bestaat nog niet. In TextWrangler maken we een nieuw bestand aan. Plak hierin dit [url=http://www.atlantisdesign.nl/public/apache_webdav_conf.txt]Apache webDAV[/url] configuratie voorbeeld.
+
+Bewaar het bestand met de juiste naam op de volgende locatie:
+
+[code]/etc/apache2/extra/httpd-webdav.conf[/code]
+
+In het 'bewaar' venster van TextWrangler (of elk ander open/bewaar scherm op MacOS X) typ je in [b]shift + Apple'tje (ofwel command)  + g[/b]. Er verschijnt een scherm waar je het eerste stuk van de locatie kan in typen (of plakken). Bewaar het bestand op de juiste plek.
+
+In het configuratie bestand staat dat we via de URL alias [b]/dav/vogelfotografie[/b], wat overeen komt met (127.0.0.1 of localhost is hetzelfde):
+
+[code]http://127.0.0.1/dav/vogelfotografie[/code]
+
+de volgende map onze Mac kunnen benaderen:
+
+[code]/Users/kees/Sites/vogelfotografie[/code]
+
+Straks moeten we de Apache server herstarten zodat deze de nieuwe configuratie voor webDAV inleest. Uiteraard de webDAV toegang nog beveiligen met een username en password.
+
+[h2]Uitleg van het directive[/h2]
+Bij de regel [b]Alias[/b] wordt vermeld welke map er gedeeld wordt. Het stukje bij [b]Location[/b] geeft aan dat [b].htaccess[/b] bestanden genegeerd moeten worden. Met een .htaccess bestand kun je de configuratie van de server aanpassen. De .htaccess bestanden moeten zeker genegeerd worden als er bijvoorbeeld gebruik wordt gemaakt van de [article=apache-htaccess-en-mod_rewrite-op-macosx-leopard]Apache mod_rewrite module[/article]. Anders kun je via webDAV zo'n map waar een .htaccess bestand in staat, niet bekijken.  
+
+Het stukje [b]Directory[/b] geven we aan wat Apache moet doen als deze toegang wil tot die map. De DAV module wordt geactiveerd en via een basic Apache realm authentication systeem wordt naar een [b]valid user[/b] gevraagd uit het password bestand. Die we nog moeten aanmaken.
+
+[h3]PHP uitschakelen voor webDAV[/h3]
+Ook het gebruik van PHP wordt vanaf deze URL uitgezet met [b]php_value engine off[/b]. Anders worden PHP bestanden direct uitgevoerd door Apache als ze opgevraagd worden.
+
+[h2]Apache password bestand aanmaken[/h2]
+Met een password bestand, waar een gebruikersnaam en gecodeerd wachtwoord in staat, kun je zelf verzonnen en zoveel gebruikers als je wilt instellen wie toegang heeft tot de webDAV map op de Mac.
+
+Voor Unix kenners: uiteindelijk is het wel de www user die bestanden aan het schrijven is op de webDAV map. En dus ook Unix rechten (permissions) moet hebben op die map.
+
+Open de Terminal en typ het volgende commando in. Dit zorgt ervoor dat er een Apache password bestand aangemaatk wordt op de plek waar we dat aangegeven hadden in het webDAV [b]directive[/b]. Dit doen we voor de gebruiker [b]kees[/b].
+
+[code]htpasswd -c /etc/apache2/.passwd kees[/code]
+
+In de Terminal wordt om het nieuwe wachtwoord gevraagd voor de gebruiker [b]kees[/b].
+
+[h4]Meerdere gebruikers aanmaken[/h4]
+In bovenstaand Unix commando wordt met de optie [b]-c[/b] (create) een nieuw password bestand aangemaakt. Als er meerdere gebruikers moeten worden toegevoegd aan hetzelfde password bestand, gebruik dan onderstaand Unix commando. Zonder de -c optie.
+
+[code]htpasswd /etc/apache2/.passwd piet[/code]
+
+[h2]DAV Locks map aanmaken[/h2]
+
+WebDAV moet een map hebben waar deze zijn [url=http://httpd.apache.org/docs/2.0/mod/mod_dav_fs.html#davlockdb]DavLocks[/url] kan neerzetten. In de Terminal typen we in:
+
+[code]mkdir /Library/WebServer/DavLocks/[/code]
+
+Nu moeten we nog de Unix rechten goed zetten, zodat Apache (webDAV) in deze map mag schrijven. Dit is de Unix www user.
+
+[code]sudo chown www:www /Library/WebServer/DavLocks/[/code]
+[code]sudo chmod 777 /Library/WebServer/DavLocks/[/code]
+
+In bovenstaande commando's geven we aan dat de map [b]DavLocks[/b] van de Unix gebruiker [b]www[/b] is, ofwel Apache. De tweede regel geeft aan dat Apache ook mag schrijven in deze map, ofwel de [b]lock database[/b] kan gebruiken die daar wordt bewaard. Met het Unix commando kunnen we dit ook controleren.
+
+[code]ls -l /Library/WebServer[/code]
+
+[h2]Apache herstarten[/h2]
+De configuratie is nu klaar. Apache moet herstart worden zodat deze de webDAV modules aanzet en de map deelt die we in het [b]directive[/b] hebben aangegeven. Eerst testen we de configuratie die we net hebben aangepast.
+
+[h4]Configuratie syntax testen[/h4]
+[code]sudo httpd -t[/code]
+
+Het command [b]sudo[/b] is niet altijd nodig. Als er geen fouten in beeld komen kunnen we de Apache server herstarten. Dit kan op twee manier, via [b]Apple'tje > System Preferences > Sharing[/b], en dan de optie [b]Web Sharing[/b] even uit en weer aan vinken. Of nog sneller via een Unix commando:
+
+[h4]Apache herstarten[/h4]
+[code]sudo apachectl graceful[/code]
+
+[h2]Unix rechten op de webDAV mappen[/h2]
+Er is nog een ding waar we rekening mee moeten houden: de Unix rechten op mappen. Elke map op de Mac, net als in Unix en Linux, heeft toegangs rechten. Normaal gesproken als je op de Mac een map aanmaakt is deze map van jou, ofwel je [b]korte gebruikersnaam[/b] (naam van je thuis map) met een aantal (chmod) rechten voor toegang en overschrijven van data. Zodat niemand ander aan jou bestanden mag komen.
+
+Mocht je denken dat als je in het password bestand dezelfde gebruiker aanmaakt als je eigen Mac account zul je het mis hebben. Alles wat via webDAV gedaan wordt gaat allemaal langs en door de [b]Apache[/b] webserver. Alle programma's, ook Apache en Mac accounts, zijn gebruikers op een Unix systeem met elk hun eigen rechten. Als de verbinding is opgezet, via webDAV, vanaf een andere computer naar de Mac ... zijn de bestanden die over en weer worden gestuurd van de Apache gebruiker. Ofwel de [b]www[/b] gebruiker wat we eerder in dit artikel gezien hebben. [b]Niet van de fictieve gebruiker kees[/b].
+
+Het kan dus voorkomen dat de map die we gespecifieerd hebben in het [b]directive[/b] nog niet toegankelijk zijn (Unix rechten) voor de Apache (www) gebruiker. Mocht je dus vanaf de andere Mac een bestand op de webDAV map gesleept hebben en een melding krijgen dat het niet naar de webDAV server gekopieerd mag worden, moeten we de rechten veranderen van de [b]vogelfotografie[/b] map. Open de Terminal en geef alle rechten aan de vogelfotografie map, zodat bestanden geplaats mogen worden door de Apache gebruiker (ofwel www user).
+
+[code]sudo chmod -R 777 /Users/kees/Sites/vogelfotografie[/code]
+
+Met [b]-R[/b] geef je aan dat je dit [b]recursief[/b] wilt toepassen op alle onder liggen de mappen en bestanden. Nu kun je vanaf een andere computer wel de bestanden lezen en schrijven.
+
+[h2]Verbinding maken via webDAV[/h2]
+Dit kunnen we op 2 manieren testen. Via onze eigen Mac of via een andere Mac. Als we op onze eigen Mac testen kunnen we een bekend IP nummer gebruiken: 127.0.0.1, dit betekend eigenlijk '[b]deze computer[/b]'. Als we het op een andere Mac testen moeten het IP nummer weten van de Mac waar webDAV opgezet is ([b]Apple'tje > System Preferences > Network[/b]).
+
+Op een andere Mac gaan we in de [b]Finder[/b] naar [b]Go > Connect to Server[/b]. Vul het IP nummer in van de webDAV Mac (hieronder wordt een voorbeeld IP nummer gebruikt):
+
+[code]http://192.168.1.201/dav/vogelfotografie[/code]
+
+De Mac zal om de gebruikers gegevens vragen, die in het [b]password[/b] bestand staan, dus niet een echte Mac account. Als deze goed zijn verschijnt er op het buroblad een webDAV server, ala iDisk.
+
+[b]Verbinding maken via webDAV doe je niet via een webbrowser. Daar is het protocol niet voor bedoelt.[/b]
+
+[h2]Meerdere mappen delen[/h2]
+
+Het is uiteraard mogelijk meerdere mappen te delen via webDAV. Kopieer daarvoor het stukje vanaf het grote comment blok nogmaals onderaan het configuratie bestand. Pas de relevantie stukken aan, controleer of de map die je wilt delen via webDAV ook bestaat en zet de Unix rechten (chmod 777) correct. Zodat de www users (ofwel Apache) bestanden mag schrijven in die map.
+
+Maak in het [b]password [/b]bestand nog meer gebruiker aan zoals eerder uitgelegd. Of gebruik steeds dezelfde gebruiker. Vergeet niet de Apache webserver te herstarten 
+
+[code]sudo apachectl graceful[/code]
+
+[h2]Verbinding maken vanaf Windows XP met de webDAV Mac[/h2]
+WebDAV is een uitbreiding, extention, op het [url=http://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol]HTTP protcol[/url] (Apache zeg maar). Andere computers (Unix, Linux, Mac en Windows) kunnen websites bekijken via de Apache webserver, maar nu ook met onze gedeelde map verbinding maken. 
+
+Op Windows XP gaat dat natuurlijk iets anders. Volg de aanwijzingen op [url=http://blog.dreamhosters.com/kbase/index.cgi?area=2913]deze website[/url]. Ofwel, even kort uitgelegd, ga naar het Windows netwerk, rechtsklik op het netwerk in de Verkenner, kies daar voor [b]Map network drive[/b], klik op de hyperlink tekst voor opslag op een ander soort netwerk of [b]online storage[/b] (achtig iets). Kies voor de optie [b]'choose other network location'[/b] en vul hetzelfde adres in zoals we op de andere Mac hebben gedaan maar [b]met een toevoeging[/b] (het IP nummer is een voorbeeld)!
+
+[code]http://192.168.1.201/dav/vogelfotografie/#[/code]
+
+Standaard snapt Windows XP deze opzet naar een webDAV verbinding niet. Natuurlijk Microsoft weer!! Let dus op de laatste [b]/#[/b] stukje. Het slaat eigenlijk nergens op maar als je dit niet toevoegd blijft Windows om het wachtwoord vragen, ofwel het wachtwoord is volgens Windows niet goed.
+
+Een andere methode is het vermelden van de port nummer bij het stukje over de host.
+
+[code]http://192.168.1.201:80/dav/vogelfotografie/[/code]
+
+Hier wordt expliciet vermeld dat we verbinding willen maken met dit IP nummer op [b]port nummer 80[/b].
+
+In de Windows Verkenner verschijnt op een zelfde soort manier een [b]netwerk map[/b] zoals op de Mac dit gebeurt. Het eigenaardige is weer dat je nu in staat bent om bestanden heen en weer te kopieren maar je kunt niet bestanden direct openen vanaf deze locatie!!
+
+[h3]Eigenwijze Windows[/h3]
+Microsoft zal Microsoft niet zijn om een stuk open-source implementatie [b]net niet helemaal goed te integreren[/b]. Er is namelijk een verschil in de werking van webDAV op Windows 2000 (waar het wel goed in werkt) en Windows XP waar het maar half in werkt.
+
+Mac's en Linux computers kunnen direct inloggen op de webDAV server en bestanden direct daar vanaf bewerken. Helaas kan Windows XP dat niet standaard. Met bovengenoemde wijze kun je wel bestanden zien staan, er naar toe kopieren en vanaf kopieren. Maar de [b]kracht van webDAV is het direct bewerken[/b] van bestanden op de webDAV server.
+
+[h4]WebDrive[/h4]
+Download [url=http://www.southrivertech.com/products/webdrive/index.html]WebDrive[/url], waarmee je op een goede verbinding kunt maken met een webDAV server. Nu is het wel mogelijk om bestanden te bewerken direct op de webDAV server. Dit is wel [b]trialware[/b] en zul je aan moeten schaffen.
+
+[h4]Netdrive[/h4]
+Je kunt ook een alternatief gebruiken genaamd Netdrive. Niet direct te verkrijgen maar via een [url=http://www.mathematics.jhu.edu/help/netdrive.exe]omweg[/url] kun je een oudere versie downloaden. Deze versie schijnt wel gratis te zijn. Bij bovenstaande link wordt ook [url=http://www.mathematics.jhu.edu/help/netuse-webdav.htm]uitgelegd hoe het werkt[/url].
+
+Met beide programma's is het mogelijk een [b]Windows drive-letter[/b] aan bijvoorbeeld een webDAV server (of FTP server) te [b]koppelen[/b].
+
+[h2]Conclusie[/h2]
+Op deze manier kun je thuis een Mac hebben staan, met deze opzet, en op het werk (Mac of Windows) verbinding maken met de Mac thuis om bestanden te delen. Het enige wat je moet weten is het externe IP nummer van de Mac thuis.
+
+[h3]iCal server[/h3]
+Op deze manier zou je dus een [b]eigen iCal server[/b] op kunnen zetten. Exporteer een iCal kalender (deze krijgt de bestands extentie .ics) en plaats deze in een map die gedeeld wordt via webDAV. En maak de juiste Apache configuratie aan (in [b]/etc/apache2/extra/http-webdav.conf[/b]). Vergeet niet de Apache server te herstarten ([b]sudo apachectl graceful[/b]).
+
+Op een andere Mac (in iCal) abonneer je je op zoiets als onderstaande (IP nummer is een voorbeeld):
+
+[code]http://192.168.1.201/ical/kees/mijn_kalender.ics[/code]
+
+In dit voorbeeld is de alias [b]/ical/kees[/b] in de Apache directive voor webDAV, in plaats van [b]/dav/vogelfotografie[/b].
+
+Let erop dat als je buiten je eigen netwerk zit dat je dan het externe IP nummer moet weten van de Mac. Deze kun je op internet heel makkelijk opvragen als je achter de bewuste webDAV Mac met [url=http://whatsmyip.org/]What's my IP[/url] bijvoorbeeld.
+
+[h2]Disclaimer[/h2]
+Natuurlijk neemt Atlantisdesign geen verantwoording aan enige door u zelf aangebrachte schade aan het Mac OS X systeem.

@@ -1,0 +1,18 @@
+########################################
+## Default
+########################################
+
+# Override the default httpd.conf directives.  Make sure to
+# use 'Allow from all' to prevent 403 Forbidden message.
+<Directory /Library/WebServer/vhosts>
+	Options ExecCGI FollowSymLinks
+	AllowOverride all
+	Allow from all
+</Directory>
+
+########################################
+## Dynamic creation of vhosts
+########################################
+
+UseCanonicalName Off
+VirtualDocumentRoot /Library/WebServer/vhosts/%1/httpdocs

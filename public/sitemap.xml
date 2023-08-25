@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.atlantisdesign.nl/</loc>
+  <priority>1.00</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikelen/</loc>
+  <priority>1.00</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/webdesign/</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/portfolio/</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/iphone/</loc>
+  <priority>0.40</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/apple-macintosh-itunes/</loc>
+  <priority>0.20</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/mozilla-firefox/</loc>
+  <priority>0.40</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/nintendo-wii/</loc>
+  <priority>0.40</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/fun/</loc>
+  <priority>0.40</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/contact/</loc>
+  <priority>0.20</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/subversion-svnsync-repository-replication</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/subversion-svnserve-automatisch-opstarten</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/synergy-delen-van-muis-en-toetsenbord</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/vnc-server-remote-desktop-op-macosx</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/subversion-post-commit-update-op-test-website</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/subversion-versie-beheer-op-mac-os-x</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/het-maken-van-een-iso-bestand</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/windows-e-mail-overzetten</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/entropy-php5-met-gdlib-op-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-deflate-en-expire-headers</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-mod_vhost_alias-virtual-hosts</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/trac-op-macos-x-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/pureftpd-installeren-op-macosx-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/subversion-beschikbaar-maken-via-apache</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/webdav-op-mac-os-x-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-server-side-includes-ssi</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-virtual-hosts</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/php5-op-macosx-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/mysql-op-macosx-leopard</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-tiger</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/webdav-op-mac-os-x-tiger</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/apache-protect</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/postfix-mail-server-op-macosx-tiger</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/php5-op-macosx-tiger</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/pureftpd-installeren-op-macosx-tiger</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/mysql-op-macosx-tiger</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/webdesign/boeken</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/webdesign/conditional-comments</loc>
+  <priority>0.64</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/webdesign/software-comparison</loc>
+  <priority>0.64</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/mozilla-firefox</loc>
+  <priority>0.64</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/artikel/3</loc>
+  <priority>0.64</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.atlantisdesign.nl/webdesign</loc>
+  <priority>0.64</priority>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>

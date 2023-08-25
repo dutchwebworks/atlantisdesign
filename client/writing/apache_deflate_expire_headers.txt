@@ -1,0 +1,87 @@
+Apache deflate en expire headers
+
+apache, mod_deflate, deflate, gzip, compressed, content, speedup, headers, expire, mod_expire
+
+Comprimeren van bepaalde bestandstypen voordat deze naar de eindgebruiker gestuurd worden. Daarbij kunnen we ook aangeven dat bepaalde bestanden voor langere tijd bewaard kunnen worden in de webbrowser cache.
+
+[img=float_right]atlantis_uploads/uploads/logo_apache.gif[/img]Een standaard module in Apache 2.x (MacOS X Leopard) is de [url=http://httpd.apache.org/docs/2.0/mod/mod_deflate.html]Apache mod_deflate module[/url]. In Apache 1.x wordt de mod_gzip module gebruikt met vergelijkbare werking.
+
+Elke keer als een webserver een bestand verstuurd wordt deze vooraf gegaan aan [b]header[/b] informatie. Hierin staat bijvoorbeeld wat voor soort bestand het is zodat de webbrowser weet wat deze ermee moet doen (plaatjes, video, Flash bestanden of platte HTML). Dit heet ook wel de [url=http://en.wikipedia.org/wiki/Internet_media_type]mime-type[/url] van een bestand. 
+
+[h3]Compressed content[/h3]
+In deze header informatie kan ook staan dat het bestand is gecomprimeerd met bijvoorbeeld [url=http://en.wikipedia.org/wiki/Gzip]gzip[/url]. Ook wordt de [b]expiratie datum[/b] van dit bestand vermeld en nog wat andere zaken. Zodat de webbrowser weet wanneer deze een nieuwe versie moet ophalen.
+
+Deze header informatie kunnen we ook beinvloeden.
+
+[h2]Safari developer tools[/h2]
+In de Safari webbrowser (Mac en Windows) zit een handige tool om te kijken of bepaalde content met de gzip-encoding is verstuurd. Standaard staan de Developer Tools in Safari uit. In de voorkeuren van Safari (v3.1) onder het tabblad [b]Advanced[/b] kunnen we dit aanzetten. 
+
+Voor Safari v2.x is er een [url=http://www.macosxhints.com/article.php?story=20030110063041629]Terminal commando[/url] om dit aan te zetten.
+
+[code]defaults write com.apple.Safari IncludeDebugMenu 1[/code]
+
+Ga naar een willekeurige website en open de Safari webinspector via [b]Develop > Show Web Inspector[/b]. Linksonderin zit een optie [b]Network[/b] waarmee we een soort [url=http://en.wikipedia.org/wiki/Gantt_chart]Gannt-chart[/url] kunnen zien van alle bestanden die bij de webpagina horen, in welke volgorde ze zijn binnen geladen en wat de bestandsgrote is. 
+
+Klik op een CSS of Javascript regel zodat de [b]file-header[/b] getoond worden. Daar zou kunnen staan dat de content-encoding is gedaan met [b]gzip[/b]. Het kan ook zijn dat daar niks over vermeld wordt. Blijf even zoeken dus op andere websites met de Web Inspector.
+
+[h2]YSlow extentie voor Firefox[/h2]
+Veel webdesigners en developrs gebruiken de geprezen [url=http://getfirebug.com/]Firebug[/url] plugin (ofwel add-on) voor het debuggen van CSS en Javascript code.
+
+Yahoo heeft voor de Firebug plugin ... een plugin gemaakt genaamd [url=http://developer.yahoo.com/yslow/]YSlow[/url]. Een extra'tje voor Firebug dus. Hiermee kun je makkelijk de bestand headers zien ([b]Components[/b] tabblad in [b]Firebug[/b]), hoe groot de bestanden zijn en of deze met gzip-encoding verstuurd zijn.
+
+[h2]Comprimeren[/h2]
+Het voordeel hiervan is dat de bestanden in de meeste gevallen zo'n 40% kleiner kunnen worden. Dit is zeker merkbaar bij grote websites waarbij een typisch CSS bestand als zo'n gauw 3000 regels bevat.
+
+[h3]Apache .htaccess[/h3]
+Met een .htaccess bestand kunnen we voor de website kleine (toegelaten) configuratie wijzigingen maken voor onze website.
+
+In dit [b].htaccess[/b] bestand gaan we aangeven dat we de CSS en Javascript bestanden willen comprimeren met [b]gzip[/b]. Dit type bestanden eindigen alijd met de extentie [b].css[/b] en [b].js[/b]. 
+
+Download dit [url=http://www.atlantisdesign.nl/public/apache_deflate_headers.txt]voorbeeld .htaccess bestand[/url] en plaats dit bestand met de correcte naam in de root van de website:
+
+[code]/Users/kees/Sites/vogelfotografie/.htaccess[/code]
+
+Als voorbeeld nemen we weer de vogelfotografie website van de fictieve gebruiker [b]kees[/b].
+
+[h3]Verborgen bestanden[/h3]
+Bestanden die met een punt beginnen (als eerste karakter) zullen verborgen zijn voor de Mac Finder. Gebruik dus bijvoorbeeld het [b]gratis[/b] [url=http://www.barebones.com/products/textwrangler/]TextWrangler[/url] om makkelijk deze (Unix) bestanden te openen en te bewaren.
+
+[h3]Apache mod_deflate[/h3]
+In het voorbeeld bestand staat vanaf [b]regel 6[/b] dat er eerst gekeken wordt of de mod_deflate module aanwezig is op de webserver. 
+
+Op [b]regel 6[/b] staan de bestandsextenties die met de mod_deflate module eerst gecomprimeerd worden. Pas daarna zullen dit type bestanden verstuurd worden.
+
+Het comprimeren op de server kost even tijd, je merkt er eigenlijk vrij weinig van. Dit wordt elke keer uitgevoerd bij het opvragen van dit type bestanden. De bekende webbrowsers (Internet Explorer, Firefox, Safari en Opera) ondersteunen allemaal gecomprimeerde content. CSS en javascript files zijn heel goede kandidaten hiervoor.
+
+[h2]Testen[/h2]
+Met het .htaccess bestand op de goede plaats kunnen we de [b]vogelfotografie[/b] website opnieuw bekijken. Eerst kijken of alles nog werkt.
+
+Open dan de Safari [b]Web Inspector[/b] of de [b]YSlow[/b] plugin in Firefox. Voor de CSS en Javascript kunnen we zien dat deze met gzip-content encoding verstuurd zijn. Aan de Gannt-chart kunnen we zien dat het bestand aanzienlijk kleiner is geworden.
+
+[h2]Expire headers in .htaccess[/h2]
+Met een .htaccess bestand ([url=http://www.atlantisdesign.nl/public/apache_expire_htaccess.txt]zie dit voorbeeld[/url]) in bijvoorbeeld de [b]/css/[/b] (Cascading Stylesheet) directory kunnen we aangeven wat de expiratie is van deze bestanden. In het voorbeeld wordt aangegeven dat dit 4 dagen is.
+
+Dit kun je dan ook doen voor de [b]/js/[/b] directories. Plaats daar ook hetzelfde .htaccess bestanden in en verander de [b]content-type[/b] per file type
+
+[h4]Javascripts[/h4]
+[code]application/x-javascript[/code]
+
+[h4]en / of[/h4]
+[code]application/javascript[/code]
+
+... en voor plaatjes in de [b]/img/[/b] directory.
+
+[h4]gif plaatjes[/h4]
+[code]ExpiresByType image/gif "access plus 4 days"[/code]
+
+[h4]jpg plaatjes[/h4]
+[code]ExpiresByType image/jpg "access plus 4 days"[/code]
+
+Met de [b]YSlow extentie[/b] kunnen we zien dat op deze typen bestanden een expiratie datum is vermeld. Dit helpt de webbrowser en webserver om te bepalen of de webbrowser een cached versie van hetzelfde plaatje kan ophalen. Dit voorkomt dat er meerdere onnodige requests van de webserver gevraagd worden.
+
+[h2]Conclusie[/h2]
+Als bepaalde typen bestanden van een website niet gauw veranderen (achtergrond plaatjes, css en javascripts) kunnen we de met expiratie-headers langer in de (server) cache laten staan. Het versneld de website enigszins omdat er minder van de webserver gevraagd wordt.
+
+Met de mod_deflate module worden bestanden compressed. Wat ervoor zorgt dat ze sneller bij de eindgebruiker komen.
+
+Atlantisdesign neemt geen verantwoording voor enige door u zelf aangebrachte schade aan het Mac OS X systeem.

@@ -1,0 +1,6 @@
+www.atlantisdesign.nl - todo for online files when uploaded
+
+- .htaccess: swap the comments on the lines local to online
+- .htaccess: uncomment the lines about hotlinking
+- /includes/google_analytics.tmp: uncomment the HTML Google Analytics lines
+- 2x .htacces files!! ook in blog dir.

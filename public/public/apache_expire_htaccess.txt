@@ -1,0 +1,8 @@
+########################################
+## Sent expire headers by type
+########################################
+
+ExpiresActive On
+
+# Expire after 4 days in client cache
+ExpiresByType text/css "access plus 4 days"

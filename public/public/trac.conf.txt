@@ -1,0 +1,22 @@
+########################################
+## Setting Trac parent dir.
+########################################
+
+ScriptAlias /trac /Library/WebServer/CGI-Executables/trac.fcgi
+
+<Location "/trac">
+  SetEnv TRAC_ENV_PARENT_DIR "/Library/Trac"
+</Location>
+
+FastCgiConfig -initial-env TRAC_ENV_PARENT_DIR=/Library/Trac
+
+########################################
+## Test website
+########################################
+
+<Location "/trac/testwebsite">
+  AuthType Basic
+  AuthName "Trac test envirorment"
+  AuthUserFile /etc/apache2/passwords/.htpasswd
+  Require user kees
+</Location>
