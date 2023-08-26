@@ -78,7 +78,7 @@ the Javascript if Flash is found to be present on the user's browser.</p>
 
 <p>You must call the <code>sifr.js</code> script on any page that will be replacing headlines. The following line in the <code>&lt;head&gt;</code> should do the trick:</p>
 
-<pre><code>&lt;script src="sifr.js" type="text/javascript"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="sifr.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <h2>Configuring sIFR</h2>
@@ -143,7 +143,7 @@ render faster.</p>
 
 <p>To save bandwidth you can put the replace statements in the JavaScript file, and then call <code>sIFR()</code> in the body. The exact code you have to use in the body in this case is:</p>
 
-<pre><code>&lt;script type="text/javascript"&gt;
+<pre><code>&lt;script&gt;
 
 if(typeof sIFR == "function"){
     sIFR();
