@@ -1,0 +1,87 @@
+[
+    {
+        "heading": "CSS Webdesign",
+        "items": [
+            {
+                "title": "AList Apart",
+                "url": "https://www.alistapart.com",
+                "blank": true
+            },
+            {
+                "title": "CSS Zen Garden",
+                "url": "https://www.csszengarden.com/",
+                "blank": true
+            },
+            {
+                "title": "MeyerWeb.com",
+                "url": "https://www.meyerweb.com/",
+                "blank": true
+            },
+            {
+                "title": "WASP",
+                "url": "https://www.webstandards.org/",
+                "blank": true
+            },
+            {
+                "title": "Zeldman.com",
+                "url": "https://www.zeldman.com/",
+                "blank": true
+            }
+        ]
+    },
+    {
+        "heading": "External websites",
+        "items": [
+            {
+                "title": "Adobe",
+                "url": "http://www.adobe.com/",
+                "blank": true
+            },
+            {
+                "title": "Apple",
+                "url": "https://www.apple.com/",
+                "blank": true
+            },
+            {
+                "title": "MacFreak",
+                "url": "https://www.macfreak.nl/",
+                "blank": true
+            },
+            {
+                "title": "MacOSX Hints",
+                "url": "https://www.macosxhints.com/",
+                "blank": true
+            },
+            {
+                "title": "https://www.macosx.nl/",
+                "url": "MacOSX.nl",
+                "blank": true
+            },
+            {
+                "title": "Mozilla Firefox",
+                "url": "https://www.mozilla.org/products/firefox",
+                "blank": true
+            },
+            {
+                "title": "Peachpit Press",
+                "url": "https://www.peachpit.com/",
+                "blank": true
+            },
+            {
+                "title": "Planet Internet",
+                "url": "https//www.planet.nl/",
+                "blank": true
+            },
+            {
+                "title": "Sensiblel.com",
+                "url": "https://www.sensible.com/",
+                "blank": true
+            },
+            {
+                "title": "We Love Wii",
+                "url": "https://www.welovewii.nl/",
+                "blank": true
+            }
+        ]
+    }
+]

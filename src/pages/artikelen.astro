@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MadeOnAMac from '../components/MadeOnAMac.astro';
+import links from '../data/links.json';
 ---
 
 <Layout title="Atlantisdesign » Artikelen">
@@ -16,28 +17,21 @@ import MadeOnAMac from '../components/MadeOnAMac.astro';
 
     <aside id="side" class="grid_5">
 		<h2 class="headTitle">Links</h2>
-		
-        <h3>Css webdesign</h3>
-        <ul class="clean">
-        <li><a href="http://www.alistapart.com/" title="Dinsdag 11 maart 2008" target="_blank" rel="link">AListApart</a></li>
-        <li><a href="http://www.csszengarden.com/" title="Zondag 21 augustus 2005" target="_blank" rel="link">Css Zen Garden</a></li>
-        <li><a href="http://www.meyerweb.com/" title="Zondag 21 augustus 2005" target="_blank" rel="link">Meyerweb.com</a></li>
-        <li><a href="http://www.webstandards.org/" title="Zondag 21 augustus 2005" target="_blank" rel="link">WASP</a></li>
-        <li><a href="http://www.zeldman.com/" title="Zondag 21 augustus 2005" target="_blank" rel="link">Zeldman.com</a></li>
-        </ul>
-        <h3>External websites</h3>
-        <ul class="clean">
-        <li><a href="http://www.adobe.com/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">Adobe</a></li>
-        <li><a href="http://www.apple.com/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">Apple</a></li>
-        <li><a href="http://www.macfreak.nl/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">MacFreak</a></li>
-        <li><a href="http://www.macosxhints.com/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">MacOSX Hints</a></li>
-        <li><a href="http://www.macosx.nl/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">MacOSX.nl</a></li>
-        <li><a href="http://www.mozilla.org/products/firefox" title="Zaterdag 06 oktober 2007" target="_blank" rel="link">Mozilla Firefox</a></li>
-        <li><a href="http://www.peachpit.com/" title="Zondag 23 juli 2006" target="_blank" rel="link">PeachPit Press</a></li>
-        <li><a href="http://www.planet.nl/" title="Zondag 27 november 2005" target="_blank" rel="link">Planet Internet</a></li>
-        <li><a href="http://www.sensible.com/" title="Zondag 23 juli 2006" target="_blank" rel="link">Sensible.com</a></li>
-        <li><a href="http://www.welovewii.nl/" title="Woensdag 29 augustus 2007" target="_blank" rel="link">We Love Wii</a></li>
-        </ul>
+
+        {
+            links.map(({heading, items}) => (
+                <h3>{heading}</h3>
+
+                <ul class="clean">
+                {
+                    items.map(({title, url, blank}) => (
+                        <li><a href={url} target="_blank">{title}</a></li>
+                    ))
+                }
+                </ul>
+            ))
+        }
+
         <h3>iTunes Music Store</h3>
         <ul class="clean">
         <li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78967460&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">James Blunt - Back to Bedlam</a></li>
