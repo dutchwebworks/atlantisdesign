@@ -1,16 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MadeOnAMac from '../components/MadeOnAMac.astro';
+import LinkList from '../components/LinkList.astro';
+import Intro from '../components/Intro.astro';
 ---
 
-<Layout title="Atlantisdesign » Portfolio">
-    <link href="/themes/base/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" slot="begin-head" />
+<link href="/themes/base/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" slot="begin-head" />
 
-    <article id="intro" class="grid_16">
-        <blockquote>
-            <p>Hieronder een greep uit mijn persoonlijke portfolio.</p>
-        </blockquote>
-    </article>
+<Layout title="Atlantisdesign » Portfolio">
+    <Intro id="intro" class="grid_16">
+        Hieronder een greep uit mijn persoonlijke portfolio.
+    </Intro>
 
     <aside id="side" class="grid_5">
 		<h2 class="headTitle">Opleiding</h2>
@@ -21,8 +21,7 @@ import MadeOnAMac from '../components/MadeOnAMac.astro';
 			Daarbij hoort vormgeving, HTML programmering en veel communicatie tussen vormgevers, programmeurs en klanten.
 		</p>
 		
-		<MadeOnAMac />
-		
+		<MadeOnAMac />	
 
 <div class="article">
 	<h3>Mac OS X</h3>
@@ -163,63 +162,8 @@ import MadeOnAMac from '../components/MadeOnAMac.astro';
 	
 		
 		<h2>Links</h2>
-		
-<h3>Css webdesign</h3>
-<ul class="clean">
-<li><a href="http://www.alistapart.com/" title="Dinsdag 11 maart 2008" target="_blank" rel="link">AListApart</a></li>
-<li><a href="http://www.csszengarden.com/" title="Zondag 21 augustus 2005" target="_blank" rel="link">Css Zen Garden</a></li>
-<li><a href="http://www.meyerweb.com/" title="Zondag 21 augustus 2005" target="_blank" rel="link">Meyerweb.com</a></li>
-<li><a href="http://www.webstandards.org/" title="Zondag 21 augustus 2005" target="_blank" rel="link">WASP</a></li>
-<li><a href="http://www.zeldman.com/" title="Zondag 21 augustus 2005" target="_blank" rel="link">Zeldman.com</a></li>
-</ul>
-<h3>External websites</h3>
-<ul class="clean">
-<li><a href="http://www.adobe.com/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">Adobe</a></li>
-<li><a href="http://www.apple.com/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">Apple</a></li>
-<li><a href="http://www.macfreak.nl/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">MacFreak</a></li>
-<li><a href="http://www.macosxhints.com/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">MacOSX Hints</a></li>
-<li><a href="http://www.macosx.nl/" title="Dinsdag 26 juli 2005" target="_blank" rel="link">MacOSX.nl</a></li>
-<li><a href="http://www.mozilla.org/products/firefox" title="Zaterdag 06 oktober 2007" target="_blank" rel="link">Mozilla Firefox</a></li>
-<li><a href="http://www.peachpit.com/" title="Zondag 23 juli 2006" target="_blank" rel="link">PeachPit Press</a></li>
-<li><a href="http://www.planet.nl/" title="Zondag 27 november 2005" target="_blank" rel="link">Planet Internet</a></li>
-<li><a href="http://www.sensible.com/" title="Zondag 23 juli 2006" target="_blank" rel="link">Sensible.com</a></li>
-<li><a href="http://www.welovewii.nl/" title="Woensdag 29 augustus 2007" target="_blank" rel="link">We Love Wii</a></li>
-</ul>
-<h3>iTunes Music Store</h3>
-<ul class="clean">
-<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78967460&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">James Blunt - Back to Bedlam</a></li>
-<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78922696&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Kraak &amp; Smaak - Boogie Angst</a></li>
-<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=17641181&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Massive Attack - Mezzanine</a></li>
-<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=18219190&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Soel - Memento</a></li>
-<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=118028886&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Thievery Corporation - Sound from the Thievery Hi-Fi</a></li>
-</ul>
-<h3>Mac OS X</h3>
-<ul class="clean">
-<li><a href="http://www.opendoor.com/doorstop/" title="Maandag 05 februari 2007" target="_blank" rel="link">Doorstop X Firewall</a></li>
-<li><a href="http://web.mac.com/simon_elliott/iWeb/simon_elliott%40mac.com/Software.html" title="Dinsdag 18 september 2007" target="_blank" rel="link">Gratis OpenSource Mac OS X software</a></li>
-<li><a href="http://www.joshbuhler.com/2005/07/05/setting-up-the-subversion-client-on-mac-os-x/" title="Vrijdag 16 juni 2006" target="_blank" rel="link">Subversion op Mac OS X Tiger</a></li>
-</ul>
-<h3>Webservers</h3>
-<ul class="clean">
-<li><a href="http://tigervittles.com/?p=9" title="Vrijdag 16 juni 2006" target="_blank" rel="link">Mac als Hosting provider</a></li>
-<li><a href="http://tigervittles.com/?p=10" title="Vrijdag 16 juni 2006" target="_blank" rel="link">WebDAV op Mac OS X Tiger</a></li>
-</ul>
-<h3>Widgets</h3>
-<ul class="clean">
-<li><a href="http://www.colourmod.com/" title="Donderdag 18 augustus 2005" target="_blank" rel="link">ColourMod</a></li>
-<li><a href="http://www.dashboardwidgets.com/" title="Donderdag 18 augustus 2005" target="_blank" rel="link">Dashboard Widgets.com</a></li>
-<li><a href="http://www.benkazez.com/icalevents.php" title="Donderdag 18 augustus 2005" target="_blank" rel="link">iCal events</a></li>
-<li><a href="http://www.dashboardwidgets.com/showcase/details.php?wid=628" title="Donderdag 18 augustus 2005" target="_blank" rel="link">iCal ToDo's</a></li>
-<li><a href="http://www.dashboardwidgets.com/showcase/details.php?wid=486" title="Donderdag 18 augustus 2005" target="_blank" rel="link">iTunes Lyrics</a></li>
-<li><a href="http://www.acdesigns.biz/itmsrss/" title="Donderdag 18 augustus 2005" target="_blank" rel="link">iTunes RSS</a></li>
-<li><a href="http://www.vanwilligen.nl/widgets.html" title="Vrijdag 19 augustus 2005" target="_blank" rel="link">NS Reisplanner en Mac nieuws</a></li>
-<li><a href="http://www.raggers.net/pathos/widgets.php" title="Donderdag 18 augustus 2005" target="_blank" rel="link">VanDale</a></li>
-<li><a href="http://www.widgetworld.nl/" title="Vrijdag 19 augustus 2005" target="_blank" rel="link">WidgetWorld</a></li>
-<li><a href="http://www.whatsinthehouse.com/widgets/" title="Donderdag 18 augustus 2005" target="_blank" rel="link">WikiPedia</a></li>
-</ul>
 
-
-	
+		<LinkList />
 	</aside>
 
     <main id="main" class="grid_11 omega">

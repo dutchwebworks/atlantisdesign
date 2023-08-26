@@ -1,0 +1,17 @@
+---
+import links from '../data/LinkList.json';
+---
+
+{
+    links.map(({heading, items}) => (
+        <h3>{heading}</h3>
+
+        <ul class="clean">
+        {
+            items.map(({title, url, blank}) => (
+                <li><a href={url} target="_blank">{title}</a></li>
+            ))
+        }
+        </ul>
+    ))
+}
