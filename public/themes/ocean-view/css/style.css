@@ -30,14 +30,14 @@ body.showGrid .container_12 {
 /* wrapper
 ============================================== */
 
-div#wrapper {
+#wrapper {
 	width: 960px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
 @media screen and (max-width: 960px) {
-	div#wrapper {
+	#wrapper {
 		width: auto;
 		margin: 0 10px;
 		overflow: visible;
@@ -75,7 +75,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #02436D;
-	background: #fff url("../img/mainbg.jpg") repeat-x center top; /* for less than Win/IE9 */
+	background: #fff url(../img/mainbg.jpg) repeat-x center top; /* for less than Win/IE9 */
 }
 
 @media screen and (max-width: 960px) {
@@ -86,7 +86,7 @@ body {
 
 @media screen and (min-width: 960px) {
 	body {
-		background: #fff url("../img/mainbg.jpg") repeat-x center top;
+		background: #fff url(../img/mainbg.jpg) repeat-x center top;
 		-webkit-background-size: 1700px 1345px; /* iPad scaling background bug-fix */
 	}
 }
@@ -145,7 +145,7 @@ h3.attention {
 .attention {
 	padding-left: 25px;
 	padding-top: 15px;
-	background: url("../img/attention.gif") no-repeat left 10px;
+	background: url(../img/attention.gif) no-repeat left 10px;
 }
 
 /* itunes lijst
@@ -200,30 +200,30 @@ form textarea {
 /* Header 
 ============================================== */
 
-div#header {
+#header {
 	height: 185px;
 	overflow: hidden;
 }
 
 @media screen and (max-width: 960px) {
-	div#header {
+	#header {
 		height: 217px;
 		position: relative;
 		left: -10px;
-		background:  url("../img/mainbg-small.jpg") repeat-x #fff left 0;
+		background:  url(../img/mainbg-small.jpg) repeat-x #fff left 0;
 	}
 }
 
-div#header p {
+#header p {
 	margin: 0;
 }
 
-div#header h1,
-div#header h2#tagline {
+#header h1,
+#header h2#tagline {
 	display: none;
 }
 
-div#header h2#tagline span.head {
+#header h2#tagline span.head {
 	font-family: Verdana;
 	color: #d64f20;
 	font-size: 2em;
@@ -232,14 +232,14 @@ div#header h2#tagline span.head {
 /* special links
 ============================================== */
 
-div.content a[rel="link"] {
+.content a[rel="link"] {
 	padding-right: 15px;
 	background-image: url(../img/external.gif);
 	background-position: center right;	
 	background-repeat: no-repeat;
 }
 
-div.content a[rel="link"]:hover {
+.content a[rel="link"]:hover {
 	background-image: url(../img/external_hover.gif);
 	background-repeat: no-repeat;	
 	background-position: center right;		
@@ -248,67 +248,67 @@ div.content a[rel="link"]:hover {
 /* NAV 
 ============================================== */
 
-div#nav {
+#nav {
 	height: 26px;
 	margin: 0 0 0px 10px;
 	padding: 8px 0 0;
 }
 
 @media screen and (max-width: 960px) {
-	div#nav {
+	#nav {
 		height: auto;
 		text-align: center;
 	}
 
-	div#nav li {
+	#nav li {
 		line-height: 2.5em;
 	}
 }
 
-div#nav ul {
+#nav menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-div#nav ul li {
+#nav li {
 	display: inline;
 	padding-right: 20px;
 }
 
-div#nav ul li a {
+#nav a {
 	font-size: 1.1em;
 	color: #014372;
 	text-decoration: none;
 	font-weight: bold;
 }
 
-div#nav ul li a:hover {
+#nav a:hover {
 	color: #d64f20;
 }
 
 /* Nav highlights 
 ============================================== */
 
-body#home a.nav1,
-body#artikelen a.nav2,
-body#webdesign a.nav3,
-body#blog a.nav4,
-body#portfolio a.nav5,
-body#mac a.nav6,
-body#firefox a.nav7,
-body#nintendo a.nav8,
-body#fun a.nav9,
-body#contact a.nav10, 
-body#iphone a.nav11 {
+#home a.nav1,
+#artikelen a.nav2,
+#webdesign a.nav3,
+#blog a.nav4,
+#portfolio a.nav5,
+#mac a.nav6,
+#firefox a.nav7,
+#nintendo a.nav8,
+#fun a.nav9,
+#contact a.nav10, 
+#iphone a.nav11 {
 	color: #d64f20;
 }
 
 /* Funny page YouTube video's
 ============================================== */
 
-div#swfPlayer,
-div.youtubeVideo {
+#swfPlayer,
+.youtubeVideo {
 	display: block;
 	height:395px;
 	margin: 40px 0 40px 10px;
@@ -319,24 +319,24 @@ div.youtubeVideo {
 
 /* Indent */
 /*
-div#main h3,
-div#main h4,
-div#main h5,
-div#main ul,
-div#main p,
-div#main table {
+#main h3,
+#main h4,
+#main h5,
+#main ul,
+#main p,
+#main table {
 	margin-left: 10px;
 }
 */
 
-div.content {
+.content {
 	width: 960px;
 	font-size: 1em;
 	margin: 0px 0px 20px 0px;
 	padding: 0px 0 0 0px;
 }
 
-div.content h1 {
+.content h1 {
 	color: #d64f20;
 	font-family: steak, Verdana, Helvetica, Arial, sans-serif;
 	font-size: 2.2em;
@@ -344,14 +344,6 @@ div.content h1 {
 	line-height: 1em;
 	margin-right: 10px;
 	margin-bottom: 20px;
-}
-
-div#main h1 {
-	visibility: hidden;
-}
-
-div#main h1.flir-replaced {
-	visibility: visible;
 }
 
 .sIFR-hasFlash h1 {
@@ -362,61 +354,61 @@ div#main h1.flir-replaced {
 	padding: 0 30px 0 0;
 }
 
-div.content h2 {
+.content h2 {
 	font-size: 1.4em;
 	font-weight: bold;
 	color: #fff;
 	margin: 0px 0 10px 0;
 	padding: 10px 5px 10px 10px;
 	clear: left;
-	background-image: url("../img/bar.gif");
+	background-image: url(../img/bar.gif);
 	background-position: left top;	
 }
 
 @media screen and (max-width: 960px) {
-	div.content h2 {
+	.content h2 {
 		padding-bottom: 6px;
 	}
 }
 
-div.content h3 {
+.content h3 {
 	font-size: 1.4em;
 	font-weight: bold;
 	margin-bottom: 5px;
 	color: #0092d2;
 }
 
-div.content h4 {
+.content h4 {
 	font-size: 1.2em;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
 
-div.content div#c2 h4 {
+.content #c2 h4 {
 	font-size: 1.1em;
 	font-weight: bold;
 	color: #0092d2;
 	margin: 0 0 10px 0;
 }
 
-div.content div#c1 h3 {
+.content #c1 h3 {
 	color: #D64F20;
 }
 
-div.content ul {
+.content ul {
 	margin-bottom: 30px;
 	margin-left: 10px;
 	line-height: normal;
 }
 
-div.content ul li {
+.content ul li {
 	list-style: square;
 	margin-bottom: 5px;
 	font-size: 1.1em;
 	line-height: 1.5em;
 }
 
-div.content p {
+.content p {
 	margin-top: 0;
 	margin-bottom: 20px;
 	margin-right: 10px;
@@ -424,61 +416,61 @@ div.content p {
 	line-height: 1.5em;
 }
 
-div.content p:hover {
+.content p:hover {
 	color: #000450;
 }
 
-div.content code {
+.content code {
 	font-size: 1.2em;
 	margin-left: 10px;
 }
 
-div.content p code {
+.content p code {
 	margin-left: 0px;
 }
 
-div#intro a:link,
-div.content a:link {
+#intro a:link,
+.content a:link {
 	color: #0092d2;
 	text-decoration: underline;
 	text-align: left;
 }
 
-div.content a:visited {
+.content a:visited {
 	color: #0d305a;
 }
 
-div#intro a:hover,
-div.content a:hover {
+#intro a:hover,
+.content a:hover {
 	text-decoration: none;
 }
 
-div.content a:active {
+.content a:active {
 	text-decoration: underline;
 }
 
-div.content h1 a:visited,
-div.content h2 a:visited,
-div.content h3 a:visited,
-div.content h4 a:visited {
+.content h1 a:visited,
+.content h2 a:visited,
+.content h3 a:visited,
+.content h4 a:visited {
 	color: #0d305a;
 	background-color: transparent;
 }
 
-div.content .date {
+.content .date {
 	font-size: 1em;
 	color: #771982;
 }
 
-div#main ul,
-div#side ul {
+#main ul,
+#side ul {
 	list-style: none;
 	margin-left: 10px;
 	padding: 0;
 }
 
-div#main ul li,
-div#side ul li {
+#main ul li,
+#side ul li {
 	list-style: none;
 	background-image:url(../img/arrow1.gif);
 	background-position:left 2px;
@@ -491,12 +483,12 @@ div#side ul li {
 /* homepage > article list
 ============================================== */
 
-div.article h3 {
+.article h3 {
 	color: #D64F20;
 	margin-top: 20px !important;
 }
 
-div.article h4 {
+.article h4 {
 	background-image: url(../img/arrow1.gif);
 	background-position: left 2px;
 	background-repeat: no-repeat;
@@ -581,31 +573,31 @@ table.design td a:hover {
 /* iPhone pics
 ======================= */
 
-div.photo {
+.photo {
 	width: 150px;
 	margin: 0 10px 10px 0;
 	float: left;
 }
 
-div.photo img {
+.photo img {
 	border: 1px solid #0D305A;
 }
 
 /* Books
 ======================= */
 
-div.bookReview {
+.bookReview {
 	margin: 10px 0 0px 0px;
 	padding: 0 0 0 0px;
 	border-bottom: 1px solid #771982;
 	overflow: hidden;
 }
 
-div.bookReview h3 {
+.bookReview h3 {
 	margin-top: 15px !important;
 }
 
-div.bookReview img {
+.bookReview img {
 	margin-bottom: 20px;
 }
 
@@ -628,41 +620,41 @@ img.gallery_large {
 	font-weight: bold;
 }
 
-div#content table.design td img.gallery_thumb {
+#content table.design td img.gallery_thumb {
 	width: 150px;
 }
 
 /* Intro 
 ============================================== */
 
-div#intro {
+#intro {
 	font-size: 1.1em;
 	line-height: 1em;
 	margin: 20px 0;
 }
 
-div#intro blockquote {
+#intro blockquote {
 	margin: 0 10px;
 	padding: 0;
 	padding-right: 20px;
 	
-	background: url("../img/qoute.gif") no-repeat right bottom;	
+	background: url(../img/qoute.gif) no-repeat right bottom;	
 }
 
-div#intro blockquote p {
+#intro blockquote p {
 	padding-left: 30px;
 	font-size: 1.2em;
 	font-weight: bold;
 	color: #0092d2;
 	line-height: 1.8em;
-	background: url("../img/qoute.gif") no-repeat left top;	
+	background: url(../img/qoute.gif) no-repeat left top;	
 }
 
-div#intro blockquote p:hover {
+#intro blockquote p:hover {
 	color: #0092d2;
 }
 
-div#intro p {
+#intro p {
 	line-height: 1.2em;
 	font-weight: bold;
 }
@@ -670,7 +662,7 @@ div#intro p {
 /* Footer 
 ============================================== */
 
-div#footer {
+#footer {
 	width: auto;
 	background: url(../img/footer.jpg) repeat-x center bottom;
 	color: #d9d9d9;
@@ -678,14 +670,14 @@ div#footer {
 	clear: both;
 }
 
-div#footerContent {
+#footerContent {
 	width: 960px;	
 	margin: 20px auto 0 auto;
 	padding: 40px 0 0 0px;
 }
 
 @media screen and (max-width: 960px) {
-	div#footerContent {
+	#footerContent {
 		width: auto;
 		padding-top: 30px;
 		padding-bottom: 0;
@@ -694,64 +686,64 @@ div#footerContent {
 	}
 }
 
-div#footerContent ul{
+#footerContent menu {
 	margin: 0;
 	padding: 0;
 	margin-left: 0px;
 }
 
-div#footerContent ul li {
+#footerContent li {
 	display: inline;
 	padding-right: 15px;
 }
 
 @media screen and (max-width: 960px) {
-	div#footerContent ul li {
+	#footerContent li {
 		line-height: 2em;
 	}
 }
-div#footerContent ul li a {
+#footerContent a {
 	font-size: 1.2em;
 	color: #1c75a4;
 	text-decoration: none;
 }
 
-div#footerContent ul li a:hover {
+#footerContent a:hover {
 	color: #fff;
 }
 
-body#home div#footerContent a.nav1,
-body#artikelen div#footerContent a.nav2,
-body#webdesign div#footerContent a.nav3,
-body#blog div#footerContent a.nav4,
-body#portfolio div#footerContent a.nav5,
-body#mac div#footerContent a.nav6,
-body#firefox div#footerContent a.nav7,
-body#nintendo div#footerContent a.nav8,
-body#fun div#footerContent a.nav9,
-body#contact div#footerContent a.nav10{
+#home #footerContent a.nav1,
+#artikelen #footerContent a.nav2,
+#webdesign #footerContent a.nav3,
+#blog #footerContent a.nav4,
+#portfolio #footerContent a.nav5,
+#mac #footerContent a.nav6,
+#firefox #footerContent a.nav7,
+#nintendo #footerContent a.nav8,
+#fun #footerContent a.nav9,
+#contact #footerContent a.nav10{
 	color: #fff !important;
 }
 
 
-div#footerContent p {
+#footerContent p {
 	margin: 20px 0 0 0px;
 }
 
 @media screen and (max-width: 960px) {
-	div#footerContent p {
+	#footerContent p {
 		margin: 0;
 	}
 }
 
-div#footerContent p:hover {
+#footerContent p:hover {
 	color: #fff;
 }
 
 /* webBadges
 ============================================== */
 
-div#webBadges {
+#webBadges {
 	float: left;
 	margin: 20px 0 20px 0px;
 	padding: 0;
@@ -759,13 +751,13 @@ div#webBadges {
 }
 
 @media screen and (max-width: 960px) {
-	div#webBadges {
+	#webBadges {
 		width: auto;	
 		display: none;
 	}
 }
 
-div#webBadges img {
+#webBadges img {
 	margin-right: 20px;
 }
 
@@ -773,72 +765,72 @@ div#webBadges img {
 /* Contact form
 ============================================== */
 
-form#contactForm div.formIndent {
+#contactForm .formIndent {
 	margin:20px 0 0 80px;
 }
 
-form#contactForm div.formIndent p {
+#contactForm .formIndent p {
 	margin:20px 0pt;
 }
 
 /* WordPress */
-form#commentform textarea {
+#commentform textarea {
 	width: 550px;
 }
 
-div#contactDisplay {
+#contactDisplay {
 	height: 335px;
 }
 
-div#contactDisplay {
+#contactDisplay {
 	height:400px;
 }
 
-form#contactForm {
+#contactForm {
 	margin-bottom: 20px;
 }
 
-form#contactForm p {
+#contactForm p {
 	margin: 0 0 5px 0;
 }
 
-form#contactForm label {
+#contactForm label {
 	display: block;
 	float: left;
 	width: 80px;
 }
 
-form#comment textarea {
+#comment textarea {
 	border: 1px solid #E2F1F7;
 }
 
-form#contactForm input[type=text] {
+#contactForm input[type=text] {
 	width: 400px;
 }
 
-form#contactForm textarea {
+#contactForm textarea {
 	width: 400px;
 	height: 100px;
 }
 
-form#contactForm input.validateRequired,
-form#contactForm textarea.validateRequired {
+#contactForm input.validateRequired,
+#contactForm textarea.validateRequired {
 	background: #d9f3ff;
 }
 
-form#contactForm img#captchaImg {
+#contactForm img#captchaImg {
 	border:1px solid #000000;
 }
 
 /* Common classes 
 ============================================== */
 
-ul.clean {
+.clean {
 	margin: 0;
 	padding: 0;
 }
 
-ul.clean li {
+.clean li {
 	list-style: none !important;
 }
 
