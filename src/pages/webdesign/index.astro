@@ -3,16 +3,14 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Atlantisdesign » Webdesign">
-	<div id="intro" class="grid_16">
+	<article id="intro" class="grid_16">
 		<blockquote>
 			<p>
 				In mijn dagelijks leven ben ik webdesigner / webdeveloper. Onderstaande boeken zijn aanraders voor iedereen die zich met webdesign bezig houdt. Hieronder een beschrijving van mijn visie voor het bouwen van websites.</p>
 		</blockquote>
-	</div>
-    
-    <div class="clear">&nbsp;</div>
+	</article>
 
-	<div id="side" class="grid_5">
+	<aside id="side" class="grid_5">
 		<h2>Pagina index</h2>
 		<ul>
 				<li><a href="#webbrowsers">Webbrowsers</a></li>
@@ -105,9 +103,9 @@ import Layout from '../../layouts/Layout.astro';
 
 
 		
-	</div>
+	</aside>
 
-	<div id="main" class="grid_11 omega">
+	<main id="main" class="grid_11 omega">
 			<h1>Webdesign &amp; webstandaarden</h1>
 			
 			<p>Webdesign hoeft niet moeilijk te zijn. Er zijn (op internet) al heel lang discussies gaande tussen webdesigners 'hoe' je een website het beste zou moeten maken. Hierbij gaat het alleen om de voorkant (front-end) van een website.
@@ -125,8 +123,8 @@ import Layout from '../../layouts/Layout.astro';
 
 					<h3><a href="http://www.stubbornella.org/content/2009/03/23/object-oriented-css-video-on-ydn/" target="_blank" rel="link">Object Oriented CSS: for high performance websites and web applications</a></h3>
 
-					<script src="/themes/base/js/swfobject.js" type="text/javascript" language="javascript"></script>					
-					<script type="text/javascript" language="javascript">
+					<script src="/themes/base/js/swfobject.js"></script>					
+					<script>
 						var flashvars = {
 							var1: "value1"
 						};
@@ -213,7 +211,7 @@ import Layout from '../../layouts/Layout.astro';
 			<h3>Boeken</h3>
 			<p><strong>Jeremy Keith</strong> heeft een geweldig boek geschreven voor mensen die al wat verstand van HTML en CSS hebben en graag de stap willen maken naar Javascripting. In zijn boek <a href="webdesign/boeken#jeremy-keith-domscripting">Dom-Scripting</a> legt hij vanuit dit oogpunt uit hoe je verder Javascript kan toepassen op een <strong>unobtrusive</strong> manier.</p>
 			<p>Als dit allemaal onder de knie is gaat <strong>John Resig</strong>, met het boek <a href="/webdesign/boeken#john-resig-pro-javascript-techniques">Pro Javascript Techniques</a>, een stapje verder, ook met het uitgangspunt van Dom-Scripting, maar vereenvoudigd een hoop zaken waardoor de gemaakte Javascripts vele malen korter in notering worden en snel toegepast kunnen worden.</p>
-		</div>
+		</main>
 </Layout>
 
 <style is:global>
