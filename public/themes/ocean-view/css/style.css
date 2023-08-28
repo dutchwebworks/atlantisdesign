@@ -709,7 +709,8 @@ img.gallery_large {
 	text-decoration: none;
 }
 
-#footerContent a:hover {
+#footerContent a:hover,
+#footerContent a.is-active {
 	color: #fff;
 }
 
