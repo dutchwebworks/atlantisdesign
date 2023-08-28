@@ -288,23 +288,6 @@ form textarea {
 	color: #d64f20;
 }
 
-/* Nav highlights 
-============================================== */
-
-#home a.nav1,
-#artikelen a.nav2,
-#webdesign a.nav3,
-#blog a.nav4,
-#portfolio a.nav5,
-#mac a.nav6,
-#firefox a.nav7,
-#nintendo a.nav8,
-#fun a.nav9,
-#contact a.nav10, 
-#iphone a.nav11 {
-	color: #d64f20;
-}
-
 /* Funny page YouTube video's
 ============================================== */
 
@@ -713,20 +696,6 @@ img.gallery_large {
 #footerContent a.is-active {
 	color: #fff;
 }
-
-#home #footerContent a.nav1,
-#artikelen #footerContent a.nav2,
-#webdesign #footerContent a.nav3,
-#blog #footerContent a.nav4,
-#portfolio #footerContent a.nav5,
-#mac #footerContent a.nav6,
-#firefox #footerContent a.nav7,
-#nintendo #footerContent a.nav8,
-#fun #footerContent a.nav9,
-#contact #footerContent a.nav10{
-	color: #fff !important;
-}
-
 
 #footerContent p {
 	margin: 20px 0 0 0px;
