@@ -22,7 +22,7 @@ const posts = (await getCollection('articles')).sort(
                     <tr>
                         <td><a href={'/artikelen/' + article.slug}>{article.data.title}</a></td>
                         <td>{article.data.description}</td>
-                        <td><FormattedDate date={article.data.pubDate} /></td>
+                        <td class="design__date"><FormattedDate date={article.data.pubDate} /></td>
                     </tr>    
                 ))
             }

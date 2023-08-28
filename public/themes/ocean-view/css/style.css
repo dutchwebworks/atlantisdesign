@@ -535,7 +535,7 @@ table.design th {
 	font-weight: bold;
 }
 
-table.design tr.even td {
+table.design tr:nth-child(odd) td {
 	background: #E2F1F7;
 }
 
@@ -554,6 +554,10 @@ table.design td a {
 
 table.design td a:hover {
 	background: transparent;
+}
+
+table.design td.design__date {
+	white-space: nowrap;
 }
 
 /* iPhone pics
