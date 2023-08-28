@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('articles')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<ul>
+    {
+        posts.map((article) => (
+            <li>
+                <a href={'/artikelen/' + article.slug}>{article.data.title}</a>
+            </li>
+        ))
+    }
+</ul>

@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MadeOnAMac from '../../components/MadeOnAMac.astro';
+import LinkList from '../../components/LinkList.astro';
+import Intro from '../../components/Intro.astro';
+import ArticlesTable from '../../components/ArticlesTable.astro';
+---
+
+<Layout title="Atlantisdesign » Artikelen">
+        <Intro> 
+            Graag deel ik mijn ervaring op het gebied van Mac OS X.
+            Ik vind het leuk om met  Unix te spelen op de Mac en daarmee mijn kennis verder uit te breiden.
+            Veel informatie kunt u hier vinden over het opzetten van een Mac webserver.
+        </Intro>
+
+        <aside id="side" class="grid_5">
+			<h2 class="headTitle">Links</h2>
+
+			<LinkList />            
+        </aside>
+
+        <main id="main" class="grid_11 omega">
+			<h1>Artikelen</h1>
+			<p>
+				<a href="http://www.apple.com/macosx/" title="Apple.com" target="_blank" rel="link">Apple's Mac OS X</a> is een Unix variant die goed gebruikt kan worden als webserver. Hier vind u
+				diverse artikelen voor het opzetten van een Mac webserver met PHP5, MySQL4 en PureFTPd.
+				Verder vind u handige extra's voor Mac OS X en andere zaken die te maken hebben met het Mac OS X systeem.
+			</p>
+			
+			<h3 class="attention">Let op!</h3>
+
+			<p>
+				Voor deze artikelen kan AtlantisDesign <strong>geen verantwoordelijkheid</strong> nemen voor eventuele schade aan uw 
+				eigen systeem. U bent zelf verantwoordelijk voor uw eigen systeem. Het is aan te raden backups te maken
+				van diverse Unix configuratie bestanden voordat u hieraan gaat sleutelen.
+			</p>
+			
+			<p>
+				AtlantisDesign geeft <strong>geen ondersteuning</strong> voor deze artikelen. De beschrijvingen bieden geen garantie tot succes.
+				Deze artikelen zijn geschreven en worden beschreven aan de hand van eigen 'trial-and-error' situaties. Er wordt een methode beschreven
+				wat het best uitpakt in een bepaalde situatie.
+			</p>
+                
+			<ArticlesTable />
+
+            <MadeOnAMac />
+        </main>
+</Layout>
+
+<style is:global>
+
+</style>

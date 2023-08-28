@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Intro from '../components/Intro.astro';
+import ArticlesList from '../components/ArticlesList.astro';
 ---
 
 <Layout title="Atlantisdesign » Webdesign » Conditional comments">
@@ -10,148 +11,12 @@ import Intro from '../components/Intro.astro';
 
     <aside id="side" class="grid_5">
 		<h2>Pagina index</h2>
+
 		<p><a href="/webdesign">« Webdesign</a></p>
 
 		<h2>Artikelen</h2>
-		
 
-<div class="article">
-	<h3>Mac OS X</h3>
-	<h4><a href="/artikel/subversion-svnsync-repository-replication">Subversion svnsync repository replication</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/subversion-svnserve-automatisch-opstarten">Subversion svnserve automatisch opstarten</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/synergy-delen-van-muis-en-toetsenbord">Synergy delen van muis en toetsenbord</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/vnc-server-remote-desktop-op-macosx">VNC server remote desktop op MacOSX</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/subversion-post-commit-update-op-test-website">Subversion post commit update op test website</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/subversion-versie-beheer-op-mac-os-x">Subversion versie beheer op Mac OS X</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/het-maken-van-een-iso-bestand">Het maken van een ISO bestand</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/windows-e-mail-overzetten">Windows e-mail overzetten</a></h4>	
-</div>
-
-<div class="article">
-	<h3>Webservers</h3>
-	<h4><a href="/artikel/entropy-php5-met-gdlib-op-leopard">Entropy PHP5 met GDLib op Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-deflate-en-expire-headers">Apache deflate en expire headers</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-mod_vhost_alias-virtual-hosts">Apache mod_vhost_alias virtual hosts</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/trac-op-macos-x-leopard">Trac op MacOS X Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/pureftpd-installeren-op-macosx-leopard">PureFTPd installeren op MacOSX Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/subversion-beschikbaar-maken-via-apache">Subversion beschikbaar maken via Apache</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/webdav-op-mac-os-x-leopard">WebDAV op Mac OS X Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-server-side-includes-ssi">Apache Server Side Includes SSI</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-virtual-hosts">Apache Virtual hosts</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-htaccess-en-mod_rewrite-op-macosx-leopard">Apache htaccess en mod_rewrite op MacOSX Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/php5-op-macosx-leopard">PHP5 op MacOSX Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/mysql-op-macosx-leopard">MySQL op MacOSX Leopard</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-htaccess-en-mod_rewrite-op-macosx-tiger">Apache htaccess en mod_rewrite op MacOSX Tiger</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/webdav-op-mac-os-x-tiger">WebDAV op Mac OS X Tiger</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/apache-protect">Apache Protect</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/postfix-mail-server-op-macosx-tiger">Postfix mail server op MacOSX Tiger</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/php5-op-macosx-tiger">PHP5 op MacOSX Tiger</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/pureftpd-installeren-op-macosx-tiger">PureFTPd installeren op MacOSX Tiger</a></h4>	
-</div>
-
-<div class="article">
-	
-	<h4><a href="/artikel/mysql-op-macosx-tiger">MySQL op MacOSX Tiger</a></h4>	
-</div>
-
-
-		
+		<ArticlesList />
 	</aside>
 
     <main id="main" class="grid_11 omega">
@@ -167,77 +32,78 @@ import Intro from '../components/Intro.astro';
 			</p>
 			
 			<table border="0" summary="Software verschillen" class="design stripe">
-					<tbody><tr class="odd">
-							<th scope="col">Type software</th>
-							<th scope="col">Windows</th>
-							<th scope="col">Mac (OpenSource)</th>
-					</tr>
-					<tr class="even">
-							<td>Besturingssysteem</td>
-							<td><a href="http://www.microsoft.com/windows/" target="_blank" rel="link">Microsoft Windows</a></td>
-							<td><a href="http://www.apple.com/macosx/" target="_blank" rel="link">Mac OS X</a> / <a href="http://en.wikipedia.org/wiki/Linux" target="_blank" rel="link">Linux</a></td>
-					</tr>
-					<tr class="odd">
-							<td>Webserver</td>
-							<td><a href="http://en.wikipedia.org/wiki/Internet_Information_Services" target="_blank" rel="link">Microsoft IIS</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Apache_%28HTTP_server%29" target="_blank" rel="link">Apache</a></td>
-					</tr>
-					<tr class="even">
-							<td>Server side scripting</td>
-							<td><a href="http://en.wikipedia.org/wiki/Active_Server_Pages" target="_blank" rel="link">Microsoft ASP</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Php" target="_blank" rel="link">PHP</a> / <a href="http://en.wikipedia.org/wiki/Cold_Fusion_programming_language" target="_blank" rel="link">ColdFusion</a></td>
-					</tr>
-					<tr class="odd">
-							<td>&nbsp;</td>
-							<td><a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29" target="_blank" rel="link">C#</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Perl" target="_blank" rel="link">Perl</a> / <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29" target="_blank" rel="link">Python</a> / <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29" target="_blank" rel="link">Ruby</a></td>
-					</tr>
-					<tr class="even">
-							<td>Webdevelopment frameworks</td>
-							<td><a href="http://en.wikipedia.org/wiki/.NET_Framework" target="_blank" rel="link">Microsoft .NET</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Ruby_on_rails" target="_blank" rel="link">Ruby on Rails</a></td>
-					</tr>
-					<tr class="odd">
-							<td>Database</td>
-							<td><a href="http://en.wikipedia.org/wiki/Mssql" target="_blank" rel="link">Microsoft SQL</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Mysql" target="_blank" rel="link">MySQL</a> / <a href="http://en.wikipedia.org/wiki/Postgresql" target="_blank" rel="link">PostgreSQL</a></td>
-					</tr>
-					<tr class="even">
-							<td>Version control</td>
-							<td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_SourceSafe" target="_blank" rel="link">Microsoft Visual Source Safe (VSS)</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank" rel="link">CollabNet Subversion (SVN)</a></td>
-					</tr>
-					
-					<tr class="odd">
-							<td>Integrated Development Environment (IDE)</td>
-							<td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank" rel="link">Microsoft Visual Studio</a></td>
-							<td><a href="http://www.apple.com/macosx/developertools/xcode.html" target="_blank" rel="link">Apple xCode</a> / <a href="http://en.wikipedia.org/wiki/Eclipse_ide" target="_blank" rel="link">Eclipse</a></td>
-					</tr>					
-					<tr class="even">
-							<td>Code editor</td>
-							<td><a href="http://www.ultraedit.com/" target="_blank" rel="link">UltraEdit</a></td>
-							<td><a href="http://www.barebones.com/products/bbedit/" target="_blank" rel="link">BBEdit</a> / <a href="http://macromates.com/" target="_blank" rel="link">TextMate</a></td>
-					</tr>
-					<tr class="odd">
-							<td>File / folder comparison</td>
-							<td><a href="http://www.scootersoftware.com/" target="_blank" rel="link">Beyond Compare</a></td>
-							<td><a href="http://www.changesapp.com/" target="_blank" rel="link">Changes</a></td>
-					</tr>
-					<tr class="even">
-							<td>FTP client</td>
-							<td><a href="http://filezilla-project.org/" target="_blank" rel="link">FileZilla</a> / <a href="http://www.wsftp.com/" target="_blank" rel="link">WS_FTP</a></td>
-							<td><a href="http://www.panic.com/transmit/" target="_blank" rel="link">Transmit</a> / <a href="http://fetchsoftworks.com/" target="_blank" rel="link">Fetch</a></td>
-					</tr>
-					<tr class="odd">
-							<td>Office productivity</td>
-							<td><a href="http://en.wikipedia.org/wiki/Microsoft_Office" target="_blank" rel="link">Microsoft Office</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Openoffice" target="_blank" rel="link">Sun OpenOffice.org</a></td>
-					</tr>					
-					<tr class="even">
-							<td>Design / Multimedia</td>
-							<td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
-							<td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
-					</tr>					
-			</tbody></table>
+				<tbody><tr class="odd">
+						<th scope="col">Type software</th>
+						<th scope="col">Windows</th>
+						<th scope="col">Mac (OpenSource)</th>
+				</tr>
+				<tr class="even">
+						<td>Besturingssysteem</td>
+						<td><a href="http://www.microsoft.com/windows/" target="_blank" rel="link">Microsoft Windows</a></td>
+						<td><a href="http://www.apple.com/macosx/" target="_blank" rel="link">Mac OS X</a> / <a href="http://en.wikipedia.org/wiki/Linux" target="_blank" rel="link">Linux</a></td>
+				</tr>
+				<tr class="odd">
+						<td>Webserver</td>
+						<td><a href="http://en.wikipedia.org/wiki/Internet_Information_Services" target="_blank" rel="link">Microsoft IIS</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Apache_%28HTTP_server%29" target="_blank" rel="link">Apache</a></td>
+				</tr>
+				<tr class="even">
+						<td>Server side scripting</td>
+						<td><a href="http://en.wikipedia.org/wiki/Active_Server_Pages" target="_blank" rel="link">Microsoft ASP</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Php" target="_blank" rel="link">PHP</a> / <a href="http://en.wikipedia.org/wiki/Cold_Fusion_programming_language" target="_blank" rel="link">ColdFusion</a></td>
+				</tr>
+				<tr class="odd">
+						<td>&nbsp;</td>
+						<td><a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29" target="_blank" rel="link">C#</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Perl" target="_blank" rel="link">Perl</a> / <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29" target="_blank" rel="link">Python</a> / <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29" target="_blank" rel="link">Ruby</a></td>
+				</tr>
+				<tr class="even">
+						<td>Webdevelopment frameworks</td>
+						<td><a href="http://en.wikipedia.org/wiki/.NET_Framework" target="_blank" rel="link">Microsoft .NET</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Ruby_on_rails" target="_blank" rel="link">Ruby on Rails</a></td>
+				</tr>
+				<tr class="odd">
+						<td>Database</td>
+						<td><a href="http://en.wikipedia.org/wiki/Mssql" target="_blank" rel="link">Microsoft SQL</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Mysql" target="_blank" rel="link">MySQL</a> / <a href="http://en.wikipedia.org/wiki/Postgresql" target="_blank" rel="link">PostgreSQL</a></td>
+				</tr>
+				<tr class="even">
+						<td>Version control</td>
+						<td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_SourceSafe" target="_blank" rel="link">Microsoft Visual Source Safe (VSS)</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank" rel="link">CollabNet Subversion (SVN)</a></td>
+				</tr>
+				
+				<tr class="odd">
+						<td>Integrated Development Environment (IDE)</td>
+						<td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank" rel="link">Microsoft Visual Studio</a></td>
+						<td><a href="http://www.apple.com/macosx/developertools/xcode.html" target="_blank" rel="link">Apple xCode</a> / <a href="http://en.wikipedia.org/wiki/Eclipse_ide" target="_blank" rel="link">Eclipse</a></td>
+				</tr>					
+				<tr class="even">
+						<td>Code editor</td>
+						<td><a href="http://www.ultraedit.com/" target="_blank" rel="link">UltraEdit</a></td>
+						<td><a href="http://www.barebones.com/products/bbedit/" target="_blank" rel="link">BBEdit</a> / <a href="http://macromates.com/" target="_blank" rel="link">TextMate</a></td>
+				</tr>
+				<tr class="odd">
+						<td>File / folder comparison</td>
+						<td><a href="http://www.scootersoftware.com/" target="_blank" rel="link">Beyond Compare</a></td>
+						<td><a href="http://www.changesapp.com/" target="_blank" rel="link">Changes</a></td>
+				</tr>
+				<tr class="even">
+						<td>FTP client</td>
+						<td><a href="http://filezilla-project.org/" target="_blank" rel="link">FileZilla</a> / <a href="http://www.wsftp.com/" target="_blank" rel="link">WS_FTP</a></td>
+						<td><a href="http://www.panic.com/transmit/" target="_blank" rel="link">Transmit</a> / <a href="http://fetchsoftworks.com/" target="_blank" rel="link">Fetch</a></td>
+				</tr>
+				<tr class="odd">
+						<td>Office productivity</td>
+						<td><a href="http://en.wikipedia.org/wiki/Microsoft_Office" target="_blank" rel="link">Microsoft Office</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Openoffice" target="_blank" rel="link">Sun OpenOffice.org</a></td>
+				</tr>					
+				<tr class="even">
+						<td>Design / Multimedia</td>
+						<td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
+						<td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
+				</tr>					
+			</tbody>
+		</table>
 	</main>
 </Layout>
