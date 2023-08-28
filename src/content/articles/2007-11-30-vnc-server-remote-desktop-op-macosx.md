@@ -1,7 +1,7 @@
 ---
 title: "VNC server remote desktop op MacOSX"
 description: "Natuurlijk bestaat er Apple Remote Desktop. Windows computers kunnen ook gebruik maken van RDP (Remote Desktop Connection). Maar het is ook mogelijk om vanaf een Windows computer, met VNC, een Mac of Linux computer te besturen."
-pubDate: 2007-11-31
+pubDate: 2007-11-30
 ---
 
 # VNC server remote desktop op MacOSX

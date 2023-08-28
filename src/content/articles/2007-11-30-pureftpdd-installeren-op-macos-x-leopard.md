@@ -1,7 +1,7 @@
 ---
 title: "PureFTPDd installeren op MacOS X Leopard"
 description: "Een betere, makkelijkere te onderhouden FTP server op Mac OS X. Met gebruik van virtual-users."
-pubDate: 2005-07-31
+pubDate: 2007-11-30
 ---
 
 # PureFTPDd installeren op MacOS X Leopard

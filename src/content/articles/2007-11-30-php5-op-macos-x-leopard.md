@@ -1,7 +1,7 @@
 ---
 title: "PHP5 op MacOS X Leopard"
 description: "Apple heeft in haar nieuwe vier voeter voor ons de PHP5 module al voor geinstalleerd. Deze gaan we met 1 terminal commando aanzetten."
-pubDate: 2005-07-31
+pubDate: 2007-11-30
 ---
 
 # PHP5 op MacOS X Leopard

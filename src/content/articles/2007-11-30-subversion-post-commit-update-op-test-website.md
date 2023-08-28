@@ -1,7 +1,7 @@
 ---
 title: "Subversion post commit update op test website"
-description: ""
-pubDate: 2005-07-31
+description: "Automatische deployment na een SVN commit"
+pubDate: 2007-11-30
 ---
 
 # Subversion post commit update op test website
