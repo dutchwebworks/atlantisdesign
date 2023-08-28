@@ -283,7 +283,8 @@ form textarea {
 	font-weight: bold;
 }
 
-#nav a:hover {
+#nav a:hover,
+#nav a.is-active {
 	color: #d64f20;
 }
 
