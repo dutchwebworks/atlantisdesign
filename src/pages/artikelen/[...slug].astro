@@ -1,9 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Intro from "../../components/Intro.astro";
-import LinkList from '../../components/LinkList.astro';
+import WebLinks from '../../components/WebLinks.astro';
 import { CollectionEntry, getCollection } from "astro:content";
 import FormattedDate from '../../components/FormattedDate.astro';
+import ArticlesList from '../../components/ArticlesList.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('articles');
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
 		props: post,
 	}));
 }
+
 type Props = CollectionEntry<'articles'>;
 
 const post = Astro.props;
@@ -24,9 +26,13 @@ const { Content } = await post.render();
 	</Intro>
 
 	<aside id="side" class="grid_5">
+		<h2 class="headTitle">Articlees</h2>
+		
+		<ArticlesList />
+
 		<h2 class="headTitle">Links</h2>
 
-		<LinkList />            
+		<WebLinks />            
 	</aside>
 
 	<main id="main" class="grid_11 omega">

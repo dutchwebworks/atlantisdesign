@@ -2,8 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import MadeOnAMac from '../components/MadeOnAMac.astro';
 import Intro from '../components/Intro.astro';
-import LinkList from '../components/LinkList.astro';
+import WebLinks from '../components/WebLinks.astro';
 import ArticlesTable from '../components/ArticlesTable.astro';
+import MacBuyersGuide from '../components/MacBuyersGuide.astro';
 ---
 
 <Layout title="Atlantisdesign » Mac & iTunes">
@@ -12,26 +13,17 @@ import ArticlesTable from '../components/ArticlesTable.astro';
 	</Intro>
 
     <aside id="side" class="grid_5">
-		<h2 class="headTitle">iTunes!!</h2>
-
-		<div id="iTunesList" style="visibility: visible;">
-			<p>Mijn favorite iTunes artiesten.</p>
-		</div>	
-	
-		<h2>MacBuyers Guide</h2>
-
-		<p>Op de website van <a href="http://buyersguide.macrumors.com/" target="_blank" title="Mac Buyers Guide" rel="link">MacRumors</a> kun je kijken wat de 'life-cycle' van bepaalde Apple producten is.
-		Goed om te weten dus wanneer je je nieuwe Apple product gaat aanschaffen of dat het toch handiger is om nog even te wachten.</p>
+		<MacBuyersGuide />		
 
 		<MadeOnAMac />
 	
 		<h2>Links</h2>
 
-		<LinkList />
+		<WebLinks />
 	</aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>Apple Macintosh</h1>
+		<h1>Apple Macintosh &amp; iTunes</h1>
 		
 		<p>
 			Via mijn opleiding kwam ik al gauw in aanmerking met de <a href="http://www.apple.com/" title="Apple's website" target="_blank" rel="link">Apple Macintosh</a>. Vanuit de grafisch wereld werd altijd gewerkt op de Mac.
@@ -48,18 +40,24 @@ import ArticlesTable from '../components/ArticlesTable.astro';
 		<p>
 			Persoonlijk ben ik blij dat ik een aantal jaar geleden ben <strong>overgestapt</strong> van Windows op Mac OS X. Het platform werkt fantastisch en voor zover bekend 
 			zijn er geen virussen in omloop. Met Unix als onderlaag van het besturingssysteem is alles goed geregeld en het zit potdicht. Met gebruikers gemak en <strong>eenvoud</strong> van Apple
-			en de <strong>solide</strong> onderlaag van Unix maakt het de perfecte combinatie voor een goede computer om mee te werken. Zowel op grafisch gebied als op Unix nivo in combinatie met webservers.		</p>
+			en de <strong>solide</strong> onderlaag van Unix maakt het de perfecte combinatie voor een goede computer om mee te werken. Zowel op grafisch gebied als op Unix nivo in combinatie met webservers.		
+		</p>
+		
 		<h2>Mac en virussen, spyware, mallware, wormen en ander gespuis!! </h2>
-			<p>Ja!! Daar gaan we weer. De bekende verhalen dat het Mac platform ook al overloopt van virussen en spy/mallware en wormen. Vanuit McAffee en andere antivirus software makers worden de Mac gebruikers aardig 'bang' gemaakt. Nergens voor nodig! </p>
-			<p class="center"><a href="http://www.macfriend.nl/" target="_blank" title="Macfriend" rel=""><img src="/img/macfriend_stop.jpg" alt="Macfriend - stop"></a></p>
-			<p>Wil je een veilige computer? Koop een Mac!!</p>
+
+		<p>Ja!! Daar gaan we weer. De bekende verhalen dat het Mac platform ook al overloopt van virussen en spy/mallware en wormen. Vanuit McAffee en andere antivirus software makers worden de Mac gebruikers aardig 'bang' gemaakt. Nergens voor nodig! </p>
+		
+		<p class="center"><a href="http://www.macfriend.nl/" target="_blank" title="Macfriend" rel=""><img src="/img/macfriend_stop.jpg" alt="Macfriend - stop"></a></p>
+		
+		<p>Wil je een veilige computer? Koop een Mac!!</p>
+
 		<h2>Artikelen</h2>
+		
 		<p>
 			Ik heb een aantal <a href="article.php" title="Artiekelen over de Mac en webservers">artikelen geschreven</a> hoe je van een Mac een <strong>webserver</strong> kunt maken. Zie de rechter zijkant. Deze pagina zal binnenkort nog verder worden uitgebreidt met sappige
 			informatie waarom ik iedereen aanraad over te stappen naar de Mac. Ik zal je vertellen wat er zo 'beter' is aan de Mac en waar u op moet letten als u overstapt. De voordelen zullen
 			uitgebreidt aan bod komen. Een Mac werkt gewoon prettiger. 
-		</p>
-			
+		</p>			
 			
 		<h3 class="attention">Let op!</h3>
 

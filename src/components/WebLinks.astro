@@ -1,15 +1,15 @@
 ---
-import links from '../content/lists/Links.json';
+import list from '../content/lists/WebLinks.json';
 ---
 
 {
-    links.map(({heading, items}) => (
+    list.map(({heading, items}) => (
         <h3>{heading}</h3>
 
         <ul class="clean">
         {
             items.map(({title, url, blank}) => (
-                <li><a href={url} target="_blank">{title}</a></li>
+                <li><a href={url} target={blank ? '_blank' : null}>{title}</a></li>
             ))
         }
         </ul>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import MadeOnAMac from '../../components/MadeOnAMac.astro';
-import LinkList from '../../components/LinkList.astro';
+import WebLinks from '../../components/WebLinks.astro';
 import Intro from '../../components/Intro.astro';
 import ArticlesTable from '../../components/ArticlesTable.astro';
 ---
@@ -16,11 +16,12 @@ import ArticlesTable from '../../components/ArticlesTable.astro';
         <aside id="side" class="grid_5">
 			<h2 class="headTitle">Links</h2>
 
-			<LinkList />            
+			<WebLinks />            
         </aside>
 
         <main id="main" class="grid_11 omega">
 			<h1>Artikelen</h1>
+
 			<p>
 				<a href="http://www.apple.com/macosx/" title="Apple.com" target="_blank" rel="link">Apple's Mac OS X</a> is een Unix variant die goed gebruikt kan worden als webserver. Hier vind u
 				diverse artikelen voor het opzetten van een Mac webserver met PHP5, MySQL4 en PureFTPd.
@@ -46,7 +47,3 @@ import ArticlesTable from '../../components/ArticlesTable.astro';
             <MadeOnAMac />
         </main>
 </Layout>
-
-<style is:global>
-
-</style>

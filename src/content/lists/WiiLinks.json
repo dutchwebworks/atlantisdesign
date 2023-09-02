@@ -1,0 +1,45 @@
+{
+    "heading": "Wii links",
+    "items": [
+        {
+            "title": "Nederlandse Nintendo Wii website",
+            "url": "http://nl.wii.com/",
+            "blank": true
+        },
+        {
+            "title": "We Love Wii",
+            "url": "http://www.welovewii.nl/",
+            "blank": true
+        },
+        {
+            "title": "Wii damage!!",
+            "url": "http://www.wiidamage.com/",
+            "blank": true
+        },
+        {
+            "title": "Wii have a problem",
+            "url": "http://www.wiihaveaproblem.com/",
+            "blank": true
+        },
+        {
+            "title": "Consoleshop",
+            "url": "http://www.consoleshop.nl/",
+            "blank": true
+        },
+        {
+            "title": "Wii Only",
+            "url": "http://wiionly.nl/",
+            "blank": true
+        },
+        {
+            "title": "GameSpot Wii",
+            "url": "http://www.gamespot.com/wii",
+            "blank": true
+        },
+        {
+            "title": "IGN Wii",
+            "url": "http://wii.ign.com/",
+            "blank": true
+        }
+    ]
+}

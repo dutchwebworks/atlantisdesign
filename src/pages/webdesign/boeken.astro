@@ -1,7 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LinkList from '../../components/LinkList.astro';
 import Intro from '../../components/Intro.astro';
+import WebdesignNav from '../../components/WebdesignNav.astro';
+import HappyWebbies from '../../components/HappyWebbies.astro';
+import Firebug from '../../components/Firebug.astro';
+import WebLinks from '../../components/WebLinks.astro';
 ---
 
 <Layout title="Atlantisdesign » Webdesign">
@@ -10,30 +13,24 @@ import Intro from '../../components/Intro.astro';
 	</Intro>
 
     <aside id="side" class="grid_5">
-		<h2>Pagina index</h2>
-		<p><a href="/webdesign">« Webdesign</a></p>
+		<WebdesignNav />
 
-		<h2>Happy webbies</h2>
-		<p>Leuke opzet van een website voor <strong>webnerds</strong>. Download 
-		<a href="http://www.happywebbies.com/download" title="Desktop achtergronden" target="_blank" rel="link">wallpapers</a> van je favoriete webguru.</p>
-	
-		<h2>Firebug</h2>
-			<p><a href="http://www.getfirebug.com/?link=2" title="Firebug is a free web development tool for Firefox">
-			<img src="/img/firebug2-trans.png" width="109" height="67" border="0" alt="Firebug - Web Development Evolved"></a></p>
-		<p>De tool voor webdesigners die met Css werken en bugs oplossen.</p>
+		<HappyWebbies />
 		
-		<h2>Links</h2>
+		<Firebug />		
 
-		<LinkList />		
+		<WebLinks />		
 	</aside>
 
     <main id="main" class="grid_11 omega">
 			<h1>Boeken</h1>
+
 			<p>
 				Onderstaand staat een rijtje boeken die elke webdesigner zou moeten lezen. Voor het maken van een goede website komen heel wat technieken kijken.
-			</p>
+			</p>s
 			
 			<h4>Css Zengarden</h4>
+
 			<p>
 				Neem zeker een kijkje op <a href="http://www.csszengarden.com/" title="Mooiste voorbeelden van Css gebruik" target="_blank" rel="link">Css Zengarden</a> en blader eens 
 				door de verschillende Css stylesheets. De meest mooie ontwerpen (allemaal gemaakt met Css) zijn hier te zien.
@@ -44,7 +41,7 @@ import Intro from '../../components/Intro.astro';
 			<article class="bookReview">
 				<h3 id="jeffrey-zeldman"><a href="http://www.zeldman.com/dwws/" title="Designing with web standards" target="_blank" rel="link">Jeffery Zeldman - Desiging with web standards (2e edition)</a></h3>
 				
-				<p>
+				<p>	
 					<a href="http://www.zeldman.com/dwws/" title="Designing with web standards" target="_blank" rel="">
 					<img class="float_right" src="/img/dwws2.jpg" alt="Boek cover - Desiging with web standards"></a>
 					Een goed boek dat iedere webdesigner / webdeveloper moet lezen is
@@ -84,6 +81,7 @@ import Intro from '../../components/Intro.astro';
 			
 			<article class="bookReview">
 				<h3 id="jeremy-keith-domscripting"><a href="http://www.domscripting.com/book/" title="DomScripting" target="_blank" rel="link">Jeremy Keith - DomScripting</a></h3>
+
 				<p>
 					<a href="http://www.domscripting.com/book/" title="DomScripting" target="_blank" rel="">
 					<img src="/img/domscripting.gif" class="float_right" alt="DomScripting by Jeremy Keith"></a>
@@ -148,6 +146,7 @@ import Intro from '../../components/Intro.astro';
 			
 			<article class="bookReview">
 				<h3 id="eric-meyer-cascading-style-sheets"><a href="http://www.oreilly.com/catalog/css2/" title="More Eric Meyer on Css!" target="_blank" rel="link">Eric Meyer - Cascading Style Sheets: The Definitive Guide (2e edition)</a></h3>
+				
 				<p>
 					<a href="http://www.oreilly.com/catalog/css2/" title="More Eric Meyer on Css!" target="_blank" rel="">
 					<img class="float_right" src="/img/css_oreilly.jpg" alt="Boek cover - Cascading Style Sheets: The Definitive Guide, Second Edition"></a>

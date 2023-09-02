@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MadeOnAMac from '../components/MadeOnAMac.astro';
-import LinkList from '../components/LinkList.astro';
+import WebLinks from '../components/WebLinks.astro';
 import Intro from '../components/Intro.astro';
 import ArticlesList from '../components/ArticlesList.astro';
+import Education from '../components/Education.astro';
 ---
 
 <link href="/themes/base/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" slot="begin-head" />
@@ -14,14 +15,7 @@ import ArticlesList from '../components/ArticlesList.astro';
     </Intro>
 
     <aside id="side" class="grid_5">
-		<h2 class="headTitle">Opleiding</h2>
-		
-		<p>
-			In het dagelijks leven ben ik een <strong>Multimedia Vormgever</strong> en heb mijn studie enige jaren geleden succesvol afgerond aan het 
-			<a href="https://www.glr.nl/" title="Grafisch Lyceum Rotterdam" target="_blank" rel="link">Grafisch Lyceum Rotterdam</a>.
-			Mijn dagelijks werkzaamheden bestaan uit het vervaardigen van websites. Van concept tot uitvoering en onderhoud.
-			Daarbij hoort vormgeving, HTML programmering en veel communicatie tussen vormgevers, programmeurs en klanten.
-		</p>
+		<Education />
 		
 		<MadeOnAMac />	
 		
@@ -31,7 +25,7 @@ import ArticlesList from '../components/ArticlesList.astro';
 		
 		<h2>Links</h2>
 
-		<LinkList />
+		<WebLinks />
 	</aside>
 
     <main id="main" class="grid_11 omega">
@@ -436,7 +430,6 @@ import ArticlesList from '../components/ArticlesList.astro';
 					</tr>	
 				</tbody>
 			</table>
-	
 		
 			<p>
 				De plaatjes die hierboven verschijnen zijn willekeurig van soort en komen uit verschillende categorieën.
@@ -449,7 +442,3 @@ import ArticlesList from '../components/ArticlesList.astro';
 		<script src="/themes/base/js/scriptaculous.js?load=effects" slot="end-body"></script>
 		<script src="/themes/base/js/lightbox.js" slot="end-body"></script>
 </Layout>
-
-<style is:global>
-
-</style>
