@@ -2,11 +2,16 @@
 import Layout from '@/layouts/Layout.astro';
 import Intro from '@/components/Intro.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
+
+const metaData = {
+    title: "HTTP 404 File not found",
+    description: "Pagina niet gevonden"
+}
 ---
 
-<Layout title="Atlantisdesign » HTTP 404 File not found">
+<Layout metaData={metaData}>
 	<Intro>
-		Error 404: File not found
+		{metaData.description}
 	</Intro>
 
     <aside id="side" class="grid_7">
@@ -16,8 +21,8 @@ import ArticlesList from '@/components/ArticlesList.astro';
 	</aside>
 
     <main id="main" class="grid_9 omega">
-		<h1>Pagina niet gevonden</h1>
+		<h1>{metaData.title}</h1>
 
-        <p>Deze pagina kan niet worden gevonden.</p>		
+        <p>{metaData.description}</p>		
 	</main>
 </Layout>

@@ -1,9 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Intro from '@/components/Intro.astro';
+
+const metaData = {
+    title: "Fun",
+    description: "This is the fun page",
+	canonical: "fun"
+}
 ---
 
-<Layout title="Atlantisdesign » Fun">
+<Layout metaData={metaData}>
 	<Intro>
 		Deze pagina bevat wat grappige dingen en onzinnige filmpjes. Natuurlijk blijft het leuk om als Mac fan alles 
 		wat met Microsoft heeft te maken te <a href="http://en.wikipedia.org/wiki/Bashing" target="_blank" rel="link">bashen</a> &hellip;

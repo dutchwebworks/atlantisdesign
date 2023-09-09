@@ -5,9 +5,15 @@ import WebLinks from '@/components/WebLinks.astro';
 import HappyWebbies from '@/components/HappyWebbies.astro';
 import Firebug from '@/components/Firebug.astro';
 import WebdesignNav from '@/components/WebdesignNav.astro';
+
+const metaData = {
+	title: "Webdesign",
+    description: "About my web design",
+    canonical: "webdesign"
+}
 ---
 
-<Layout title="Atlantisdesign » Webdesign">
+<Layout metaData={metaData}>
 	<Intro>
 		In mijn dagelijks leven ben ik webdesigner / webdeveloper. Onderstaande boeken zijn aanraders voor iedereen die zich met webdesign bezig houdt. Hieronder een beschrijving van mijn visie voor het bouwen van websites.
 	</Intro>

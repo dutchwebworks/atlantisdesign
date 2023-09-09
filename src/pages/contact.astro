@@ -4,9 +4,15 @@ import MadeOnAMac from '@/components/MadeOnAMac.astro';
 import WebLinks from '@/components/WebLinks.astro';
 import Intro from '@/components/Intro.astro';
 import ArticlesTable from '@/components/ArticlesTable.astro';
+
+const metaData = {
+	title: "Neem contact met mij op",
+    description: "Hoe kun je contact met mij opnemen",
+    canonical: "contact"
+}
 ---
 
-<Layout title="Atlantisdesign » Contact">
+<Layout metaData={metaData}>
     <Intro>
 		Al geef ik geen uitgebreide ondersteuning op artikelen die ik geschreven hebt kunt u wel contact opnemen.
 	</Intro>
@@ -20,10 +26,10 @@ import ArticlesTable from '@/components/ArticlesTable.astro';
 	</aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>Contact</h1>
+		<h1>{metaData.title}</h1>
 
 		<div id="contactDisplay" inert>
-			<form name="contactForm" id="contactForm" method="post" action="/atlantisMail.php">
+			<form name="contactForm" id="contactForm" method="post">
 				<p><label for="naam">Naam*</label><input type="text" id="naam" name="naam" class="validateRequired" value="Uw voor- en achternaam" title="Uw naam lijkt me toch wel verplicht" tabindex="1"></p>
 				
 				<p><label for="email">E-mail*</label><input type="text" id="email" name="email" class="validateEmail validateRequired" value="Een correct e-mail adres" title="Een correct e-mail adres zou ook handig zijn voor een reactie!" tabindex="2"></p>

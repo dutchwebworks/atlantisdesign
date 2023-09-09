@@ -3,9 +3,15 @@ import Layout from '@/layouts/Layout.astro';
 import Intro from '@/components/Intro.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
 import WebdesignNav from '@/components/WebdesignNav.astro';
+
+const metaData = {
+	title: "Webdesign » Conditional comments",
+    description: "About my web design",
+    canonical: "webdesign/software-comparison"
+}
 ---
 
-<Layout title="Atlantisdesign » Webdesign » Conditional comments">
+<Layout metaData={metaData}>
 	<Intro>
 		Voor webdevelopment wordt veel verschillende (server) software gebruikt.
 	</Intro>

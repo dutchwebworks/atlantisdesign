@@ -4,11 +4,7 @@ import Header from '@/components/Header.astro';
 import Nav from '@/components/Nav.astro';
 import Footer from '@/components/Footer.astro';
 
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+const { metaData } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,13 +12,7 @@ const { title } = Astro.props;
 	<head>
 		<slot name="begin-head" />
 
-		<Head />
-
-		<title>{title}</title>
-
-		<meta name="generator" content={Astro.generator} />
-
-		<meta name="author" content="Dennis Burger" />
+		<Head metaData={metaData} />	
 		
 		<script src="/themes/base/js/functions.js" defer></script>
 		
@@ -36,13 +26,13 @@ const { title } = Astro.props;
 
 		<p id="skipNav" class="hide non_print"><a href="#main" accesskey="2">Direct naar de tekst</a></p>
 
-		<div id="wrapper" class="container_16 content">
+		<section id="wrapper" class="container_16 content">
 			<Nav />
 
 			<Header />
 			
-			<slot />			
-		</div>
+			<slot />
+		</section>
 		
 		<Footer />
 

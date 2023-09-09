@@ -3,9 +3,15 @@ import Layout from '@/layouts/Layout.astro';
 import Intro from '@/components/Intro.astro';
 import WiiLinks from '@/components/WiiLinks.astro';
 import WiiGamesList from '@/components/WiiGamesList.astro';
+
+const metaData = {
+	title: "Nintendo Wii",
+    description: "It's all about the Nintendo Wii",
+    canonical: "nintendo-wii"
+}
 ---
 
-<Layout title="Atlantisdesign » Nintendo Wii">
+<Layout metaData={metaData}>
     <Intro>
 		Heel lang heb ik geen console meer gehad. Maar tijd terug een Nintendo Wii gekocht. Geweldig ding!! Nog nooit zo'n veel plezier aan gamen gehad.
 		Ook verschillende type games. De controllers en Wii ervaring is echt leuk!!
@@ -18,7 +24,7 @@ import WiiGamesList from '@/components/WiiGamesList.astro';
 	</aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>Nintendo Wii</h1>
+		<h1>{metaData.title}</h1>
 	
 		<p><img src="/img/nintendo_wii.jpg" loading="lazy" alt="Nintendo Wii"></p>		
 		

@@ -5,11 +5,17 @@ import WebLinks from '@/components/WebLinks.astro';
 import Intro from '@/components/Intro.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
 import Education from '@/components/Education.astro';
+
+const metaData = {
+	title: "Portfolio & fotografie",
+    description: "Over mijn Photoshop en fotografie skills",
+    canonical: "portfolio"
+}
 ---
 
-<link href="/themes/base/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" slot="begin-head" />
+<Layout metaData={metaData}>
+	<link href="/themes/base/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" slot="begin-head" />
 
-<Layout title="Atlantisdesign » Portfolio">
     <Intro id="intro" class="grid_16">
         Hieronder een greep uit mijn persoonlijke portfolio.
     </Intro>
@@ -29,7 +35,7 @@ import Education from '@/components/Education.astro';
 	</aside>
 
     <main id="main" class="grid_11 omega">
-			<h1>Portfolio &amp; fotografie</h1>
+			<h1>{metaData.title}</h1>
 	
 			<p>
 				Ik vind het leuk om collages te maken waardoor een hele nieuwe wereld gecreëerd wordt
