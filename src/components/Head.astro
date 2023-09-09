@@ -12,6 +12,8 @@ const { metaData } = Astro.props;
 
 <meta name="generator" content={Astro.generator} />
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+
 <link rel="canonical" href={`${Astro.site.href}${metaData?.canonical}`}>
 
 <meta name="author" content={AUTHOR} />
@@ -26,10 +28,14 @@ const { metaData } = Astro.props;
 
 <link href="/app.webmanifest" rel="manifest">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-
 <link rel="icon" type="image/x-icon" href="/themes/ocean-view/img/favicon.ico" />
 
 <link href="/themes/base/css/reset_960gs.min.css" rel="stylesheet" type="text/css" media="screen and (min-width: 960px)" />
 
 <link href="/themes/ocean-view/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script src="/themes/base/js/functions.js" defer></script>
+		
+<script src="/themes/base/js/common.js" defer></script>
+
+<script src="/register-sw.js" defer></script>
