@@ -13,6 +13,7 @@ workbox.precaching.precacheAndRoute([
   { url: "/themes/ocean-view/img/mainbg.jpg", revision: revision },
   { url: "/themes/ocean-view/img/qoute.gif", revision: revision },
   { url: "/themes/ocean-view/img/mainbg-small.jpg", revision: revision },
+  { url: "/fonts/OCRAStd.otf", revision: revision },
 ]);
 
 // Runtime - caching
