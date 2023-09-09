@@ -75,7 +75,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #02436D;
-	background: #fff url(../img/mainbg.jpg) repeat-x center top; /* for less than Win/IE9 */
+	background: #fff url(../img/mainbg.webp) repeat-x center top; /* for less than Win/IE9 */
 }
 
 @media screen and (max-width: 960px) {
@@ -86,7 +86,7 @@ body {
 
 @media screen and (min-width: 960px) {
 	body {
-		background: #fff url(../img/mainbg.jpg) repeat-x center top;
+		background: #fff url(../img/mainbg.webp) repeat-x center top;
 		-webkit-background-size: 1700px 1345px; /* iPad scaling background bug-fix */
 	}
 }
