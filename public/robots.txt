@@ -1,11 +1,2 @@
 User-agent: *
-Disallow: /atlantis_admin/
-Disallow: /atlantis_core/
-Disallow: /atlantis_uploads/
-Disallow: /Core/
-Disallow: /plesk-stat/
-Disallow: /themes/base/css/
-Disallow: /themes/base/js/
-Disallow: /themes/base/img/
-Disallow: /includes/
-Disallow: /public/
+Disallow: /themes/base/
