@@ -5,9 +5,15 @@ import WebdesignNav from '@/components/WebdesignNav.astro';
 import HappyWebbies from '@/components/HappyWebbies.astro';
 import Firebug from '@/components/Firebug.astro';
 import WebLinks from '@/components/WebLinks.astro';
+
+const metaData = {
+	title: "Webdesign » Boeken",
+    description: "Boeken over webdesign",
+    canonical: "webdesign/boeken"
+}
 ---
 
-<Layout title="Atlantisdesign » Webdesign">
+<Layout metaData={metaData}>
 	<Intro>
 		Een aantal boeken welke zeker een aanrader zijn voor elke webdesigner / webdeveloper
 	</Intro>
@@ -23,7 +29,7 @@ import WebLinks from '@/components/WebLinks.astro';
 	</aside>
 
     <main id="main" class="grid_11 omega">
-			<h1>Boeken</h1>
+			<h1>Webdesign boeken</h1>
 
 			<p>
 				Onderstaand staat een rijtje boeken die elke webdesigner zou moeten lezen. Voor het maken van een goede website komen heel wat technieken kijken.

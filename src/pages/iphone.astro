@@ -3,9 +3,15 @@ import Layout from '@/layouts/Layout.astro';
 import Intro from '@/components/Intro.astro';
 import IphoneLinks from '@/components/iPhoneLinks.astro';
 import IphoneAppLinks from '@/components/iPhoneAppLinks.astro';
+
+const metaData = {
+	title: "Apple iPhone 3G (White / 16GB)",
+    description: "Mijn favoriete smartphone",
+    canonical: "iphone"
+}
 ---
 
-<Layout title="Atlantisdesign » iPhone">
+<Layout metaData={metaData}>
 	<link href="/themes/base/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" slot="end-head" />
 
 	<Intro>
@@ -20,7 +26,7 @@ import IphoneAppLinks from '@/components/iPhoneAppLinks.astro';
 	</aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>Apple iPhone 3G (White / 16GB)</h1>
+		<h1>{metaData.title}</h1>
 		
 		<p>
 			Hieronder een foto impressie van mijn iPhone 3G. In plaats van de opgegeven 6 weken wachttijd was mijn iPhone gelukkig na 10 dagen 

@@ -2,9 +2,15 @@
 import Layout from '@/layouts/Layout.astro';
 import Intro from '@/components/Intro.astro';
 import ArticleList from '@/components/ArticlesList.astro';
+
+const metaData = {
+	title: "Mozilla Firefox",
+    description: "My favorite web browser",
+    canonical: "mozilla-firefox"
+}
 ---
 
-<Layout title="Atlantisdesign » Mozilla Firefox">
+<Layout metaData={metaData}>
 	<Intro>
 		Graag deel ik mijn ervaring op het gebied van Mac OS X.
 		Ik vind het leuk om met  Unix te spelen op de Mac en daarmee mijn kennis verder uit te breiden.

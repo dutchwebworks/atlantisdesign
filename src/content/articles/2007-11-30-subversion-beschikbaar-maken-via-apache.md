@@ -4,8 +4,6 @@ description: ""
 pubDate: 2007-11-31
 ---
 
-# Subversion beschikbaar maken via Apache
-
 Dit artikel is een uitbereiking op [Subversion versie beheer op Mac OS X](http://www.atlantisdesign.nl/artikel/subversion-versie-beheer-op-mac-os-x) en het artikel [WebDAV op Mac OS X Leopard](http://www.atlantisdesign.nl/artikel/webdav-op-mac-os-x-leopard).
 
 We gaan er vanuit dat je met behulp van bovenstaande artikelen dat Apache draait en Subversion server ingericht is. Als voorbeeld project nemen we weer de **vogelfotografie** website van de fictieve persoon `kees`.

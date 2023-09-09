@@ -6,6 +6,8 @@ import FormattedDate from '@/components/FormattedDate.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
 import { CollectionEntry, getCollection } from "astro:content";
 
+import { AUTHOR } from '@/consts';
+
 export async function getStaticPaths() {
 	const posts = await getCollection('articles');
 	return posts.map((post) => ({
@@ -18,11 +20,17 @@ type Props = CollectionEntry<'articles'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const metaData = {
+    title: post.data.title,
+    description: post.data.description,
+    canonical: `artikelen/${post.slug}`
+}
 ---
 
-<Layout  {...post.data}>
+<Layout metaData={metaData}>
 	<Intro> 
-		Door Dennis Burger, <FormattedDate date={post.data.pubDate} />
+		{metaData.description}
 	</Intro>
 
 	<aside id="side" class="grid_5">
@@ -36,6 +44,10 @@ const { Content } = await post.render();
 	</aside>
 
 	<main id="main" class="grid_11 omega">
+		<h1>{post.data.title}</h1>
+
+		<p><em>Geschreven door {AUTHOR} op <FormattedDate date={post.data.pubDate} /></em></p>
+
 		<Content />
 	</main>
 </Layout>

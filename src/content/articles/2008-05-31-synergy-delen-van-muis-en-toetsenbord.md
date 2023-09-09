@@ -4,8 +4,6 @@ description: "Stel je werkt op een Mac en daarnaast moet je ook wel eens op de W
 pubDate: 2008-05-31
 ---
 
-# Synergy delen van muis en toetsenbord
-
 Met het OpenSource [Synergy](http://synergy2.sourceforge.net/) wordt het mogelijk om met slechts 1 muis en toetsenbord bijvoorbeeld een Mac, Linux en Windows computer te besturen.
 
 Ga met de muis naar een zijkant van het ene scherm af en dan bestuur je de muis op de andere computer. Samen met het toestenbord kun je ook simpele dingen kopieren via het clipboard.

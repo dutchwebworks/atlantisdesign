@@ -4,8 +4,6 @@ description: "De PHP 5.x versie op Entropy.ch (Marc Liyanage) bevat onder andere
 pubDate: 2008-05-31
 ---
 
-# Entropy PHP5 met GDLib op Leopard
-
 De Entorpy PHP5 versie is vele malen uitgebreider dan de standaard versie die Apple op de Mac heeft voor geinstalleerd.
 
 Bij het schrijven van dit artikel is er nog geen goede binary installer van [PHP 5.x](http://www.entropy.ch/software/macosx/php/) met [GDLib](http://nl2.php.net/gd) voor Mac OS X Leopard op de Entropy website. Via een [forum post](http://www.entropy.ch/phpbb2/viewtopic.php?t=2945) wordt het een en ander al uitgelegd over een toekomstige versie.

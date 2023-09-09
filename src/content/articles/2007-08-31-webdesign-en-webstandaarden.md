@@ -4,8 +4,6 @@ description: "Mijn visie op web design en gebruik van web standaarden"
 pubDate: 2007-08-31
 ---
 
-# Webdesign & webstandaarden
-
 Webdesign hoeft niet moeilijk te zijn. Er zijn (op internet) al heel lang discussies gaande tussen webdesigners 'hoe' je een website het beste zou moeten maken. Hierbij gaat het alleen om de voorkant (front-end) van een website. De HTML, CSS en Javascript. Het punt is dat er geen één manier is hoe het goed doet.
 
 [Yahoo! - Object Oriented CSS video](http://www.stubbornella.org/content/2009/03/23/object-oriented-css-video-on-ydn/)

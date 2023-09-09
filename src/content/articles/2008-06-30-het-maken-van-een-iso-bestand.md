@@ -4,8 +4,6 @@ description: "Op het Windows platform wordt meer gebruik gemaakt van een .iso al
 pubDate: 2008-06-30
 ---
 
-# Het maken van een ISO bestand
-
 **Deze truuk werkt ook op Mac OS X Leopard v10.5!**
 
 Een [.iso file](http://en.wikipedia.org/wiki/Iso_%28file_format%29) is een net als een .dmg een ingepakte soort **volume**. Met het meegeleverde **Disc Utility** (`/Applications/Utilities`) hulp programama op onze Mac kun je zo'n .dmg volume ook zelf maken.

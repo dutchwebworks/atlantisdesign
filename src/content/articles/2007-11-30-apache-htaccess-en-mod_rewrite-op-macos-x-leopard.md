@@ -4,8 +4,6 @@ description: "MacOS X Leopard heeft de Apache 2.x webserver. Ook hier gaan we de
 pubDate: 2007-11-30
 ---
 
-# Apache htaccess en mod_rewrite op MacOS X Leopard
-
 In het vorige artikel over [Apache .htaccess en mod_rewrite](http://www.atlantisdesign.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-tiger) is uitgebreidt uitgelegt wat het allemaal precies is. **Hier volgt een update voor MacOSX Leopard v10.5**.
 
 Nu Apple MacOSX Leopard heeft uitgebracht gaan we natuurlijk dezelfde voodoo toepassen maar dan met de Apache 2.x webserver.

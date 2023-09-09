@@ -5,11 +5,17 @@ import Intro from '@/components/Intro.astro';
 import WebLinks from '@/components/WebLinks.astro';
 import ArticlesTable from '@/components/ArticlesTable.astro';
 import MacBuyersGuide from '@/components/MacBuyersGuide.astro';
+
+const metaData = {
+    title: "Apple macOS and iTunes",
+    description: "De Mac blijft een plaatje. Het is mijn favoriete computermerk. De elegantie en stijl van Apple met een jaren door ontwikkelde solide Unix bodem.",
+    canonical: "apple-macintosh-itunes"
+}
 ---
 
-<Layout title="Atlantisdesign » Mac & iTunes">
+<Layout metaData={metaData}>
 	<Intro>
-		De Mac blijft een plaatje. Het is mijn favoriete computermerk. De elegantie en stijl van Apple met een jaren door ontwikkelde solide Unix bodem.
+		{metaData.description}
 	</Intro>
 
     <aside id="side" class="grid_5">
@@ -23,7 +29,7 @@ import MacBuyersGuide from '@/components/MacBuyersGuide.astro';
 	</aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>Apple Macintosh &amp; iTunes</h1>
+		<h1>{metaData.title}</h1>
 		
 		<p>
 			Via mijn opleiding kwam ik al gauw in aanmerking met de <a href="http://www.apple.com/" title="Apple's website" target="_blank" rel="link">Apple Macintosh</a>. Vanuit de grafisch wereld werd altijd gewerkt op de Mac.

@@ -5,9 +5,15 @@ import WebdesignNav from '@/components/WebdesignNav.astro';
 import HappyWebbies from '@/components/HappyWebbies.astro';
 import Firebug from '@/components/Firebug.astro';
 import WebLinks from '@/components/WebLinks.astro';
+
+const metaData = {
+	title: "Webdesign » Conditional comments",
+    description: "About my web design",
+    canonical: "webdesign/conditional-comments"
+}
 ---
 
-<Layout title="Atlantisdesign » Webdesign » Conditional comments">
+<Layout metaData={metaData}>
 	<Intro>
 		Dit is een heel handige truuk om juist de Internet Explorer 6 en 7 webbrowsers iets extra's te geven zodat ze ook netjes meespelen in de wereld van webstandaarden.
 	</Intro>

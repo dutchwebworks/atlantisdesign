@@ -4,8 +4,6 @@ description: "Open-source versie beheer. Ideaal voor gebruik in het bouwen van w
 pubDate: 2007-11-30
 ---
 
-# Subversion versie beheer op MacOS X
-
 Bezig met webdesign / webdevelopement? Dan kan het wel eens voorkomen dat je aan een website bezig bent met veel scripts en losse bestanden die veel met elkaar te maken hebben. Werkt een website eenmaal dan wordt deze online gezet / ge-upload. De website zelf wordt misschien in een ZIP file bewaard met een naam als **website_versie_01.zip** en in een backup map gezet.
 
 Deze werkwijze is niet echt handig te noemen met veel, heel veel, aanpassingen (revisies) op websites.

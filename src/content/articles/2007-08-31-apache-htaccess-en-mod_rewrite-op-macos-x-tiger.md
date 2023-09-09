@@ -4,8 +4,6 @@ description: "MacOS X Leopard heeft de Apache 2.x webserver. Ook hier gaan we de
 pubDate: 2007-08-31
 ---
 
-# Apache htaccess en mod_rewrite op MacOS X Tiger
-
 **Let op!** Er is een update op dit artikel beschikbaar voor [Apache .htacces en mod_rewrite op Apple's MacOSX Leopard v10.5](http://www.atlantisdesign.nl/artikel/apache-htaccess-en-mod_rewrite-op-macosx-leopard).
 
 Website optimalisatie en **SEO** ([Search Engine Friendly](http://en.wikipedia.org/wiki/Search_engine_optimization)) url's maken. Maar hoe zetten we deze techniek aan op onze eigen lokale Mac OS X Tiger (v10.4.x)?

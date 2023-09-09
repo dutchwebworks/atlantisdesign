@@ -4,8 +4,6 @@ description: "Snel en makkelijk virtual-hosts gebruiken. Door simpelweg twee map
 pubDate: 2008-04-30
 ---
 
-# Apache mod_vhost_alias virtual hosts
-
 In het artikel [Apache Virtual hosts](http://www.atlantisdesign.nl/artikel/apache-virtual-hosts) werd al uitgelegd hoe je via configuratie blokken makkelijk een nieuwe virtual host kan aanmaken. Daarbij maak je dan een nieuwe regel in de /etc/hosts file zodat de nieuwe virtual host naar je eigen Mac wijst. Apache herkent het **nep-domein** en serveert de website vanuit de goede map.
 
 Deze eerste stap kan ook **geautomatiseerd** worden. Immers ga je op je lokale Mac niet zoveel Apache wijzigingen maken die in een virtual host blok moeten staan. De configuratie van een website is meestal hetzelfde voor alle virtual-hosts voor lokale web-ontwikkeling.

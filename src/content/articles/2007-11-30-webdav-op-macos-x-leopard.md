@@ -4,8 +4,6 @@ description: ""
 pubDate: 2007-11-30
 ---
 
-# webDAV op MacOS X Leopard
-
 ## Wat is WebDAV?
 
 WebDAV staat voor **Web-based Distributed Authoring and Versioning**. Meer informatie kun je vinden op Wiki-Pedia en WebDAV.org. Het wordt gebruik om meerdere mensen (platform onafhankelijk) bestanden te laten delen via het internet. Natuurlijk ligt dit leuks allemaal achter wachtwoorden.

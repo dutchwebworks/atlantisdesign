@@ -4,8 +4,6 @@ description: "Comprimeren van bepaalde bestandstypen voordat deze naar de eindge
 pubDate: 2008-05-31
 ---
 
-# Apache deflate en expire-headers
-
 Een standaard module in Apache 2.x (MacOS X Leopard) is de [Apache mod_deflate module](http://httpd.apache.org/docs/2.0/mod/mod_deflate.html). In Apache 1.x wordt de mod_gzip module gebruikt met vergelijkbare werking.
 
 Elke keer als een webserver een bestand verstuurd wordt deze vooraf gegaan aan **header** informatie. Hierin staat bijvoorbeeld wat voor soort bestand het is zodat de webbrowser weet wat deze ermee moet doen (plaatjes, video, Flash bestanden of platte HTML). Dit heet ook wel de [mime-type](http://en.wikipedia.org/wiki/Internet_media_type) van een bestand.

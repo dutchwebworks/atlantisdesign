@@ -4,9 +4,15 @@ import MadeOnAMac from '@/components/MadeOnAMac.astro';
 import WebLinks from '@/components/WebLinks.astro';
 import Intro from '@/components/Intro.astro';
 import ArticlesTable from '@/components/ArticlesTable.astro';
+
+const metaData = {
+    title: "Artikelen",
+    description: "Mijn artikelen over webdesign, macOS als web server voor development",
+    canonical: "artikelen"
+}
 ---
 
-<Layout title="Atlantisdesign » Artikelen">
+<Layout metaData={metaData}>
         <Intro> 
             Graag deel ik mijn ervaring op het gebied van Mac OS X.
             Ik vind het leuk om met  Unix te spelen op de Mac en daarmee mijn kennis verder uit te breiden.

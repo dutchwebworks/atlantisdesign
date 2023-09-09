@@ -4,8 +4,6 @@ description: "Als je de Mac gebruikt voor websites kun je met dit programma'tje 
 pubDate: 2006-01-31
 ---
 
-# Apache Protect
-
 Met het kleine programma'tje [Apache Protect](http://homepage.mac.com/onar/apacheprotect/) kun je bepaalde mappen voorzien van een zogenaamde **Realm Authentication** doormiddel van .htaccess bestanden. In een internet browser zie je een inlogscherm verschijnen, niet in HTML gemaakt, maar de website vraagt je om een username en password. Het kan goed gebruikt worden om bepaalde mappen op je Mac webserver te beveiligen.
 
 Dit werkt ook op elk ander platform (Windows en Linux/Unix) dat met Apache werkt. Echter is dit een programma'tje alleen voor de Mac waar je nu achter zit. Enige kennis van Apache en de Unix terminal is wel vereist. Maar stap voor stap wordt hier uitgelegd wat je moet veranderen. In princiepe heb je dit programma'tje niet nodig als je weet hoe Apache en .htaccess werkt. Maar wij werken op een Mac en daar kan het makkelijker mee natuurlijk.

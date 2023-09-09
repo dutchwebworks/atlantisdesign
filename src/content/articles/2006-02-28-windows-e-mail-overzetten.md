@@ -4,8 +4,6 @@ description: "Oke, je hebt nu je eigen Mac. Zou het niet handig zijn om je oude 
 pubDate: 2006-02-28
 ---
 
-# Windows e-mail overzetten
-
 We gaan de Pc Microsoft Outlook Express (kan volgens mij ook met de gowone versie) e-mail overzetten naar onze Mac. Het eindresultaat is dat alle e-mail van je oude Pc overgebracht is in Apple's Mail programma met een paar tussen truuks en een programma.
 
 Er zijn hier ook, misschien wel gratis, alternative kant en klare programma'tjes om dit doen maar hier volgt een manier die zeker werkt. Er is zelfs een commercieel programma **Little Machines** [O2M](http://www.littlemachines.com/) dat dit voor je kan doen.

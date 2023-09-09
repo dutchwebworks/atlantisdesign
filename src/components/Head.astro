@@ -1,15 +1,31 @@
+---
+import { SITE_TITLE, AUTHOR } from '@/consts';
+
+const { metaData } = Astro.props;
+---
+
 <meta charset="UTF-8">
+
+<title>{SITE_TITLE} » {metaData?.title}</title>
+
+<meta name="description" content={metaData?.description} />
+
+<meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href={`${Astro.site.href}${metaData?.canonical}`}>
+
+<meta name="author" content={AUTHOR} />
+
+<meta name="theme-color" content="#0092d2">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<link href="/app.webmanifest" rel="manifest">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 
-<meta name="google-site-verification" content="0XUuFZBsvpi5x-3cTbcFgVMJRvYALhVH2LMTDIkjAc8" />
-
-<link rel="Shortcut Icon" href="/themes/ocean-view/img/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/x-icon" href="/themes/ocean-view/img/favicon.ico" />
 
 <link href="/themes/base/css/reset_960gs.min.css" rel="stylesheet" type="text/css" media="screen and (min-width: 960px)" />
 
 <link href="/themes/ocean-view/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-
-<meta name="description" content="Atlantisdesign" />
-
-<meta name="keywords" content="webdesign, mac, macintosh, apple, webdevelopemnt, webserver, apache, php, mysql, mac os x, tiger" />
