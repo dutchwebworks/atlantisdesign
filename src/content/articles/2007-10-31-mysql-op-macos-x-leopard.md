@@ -4,8 +4,6 @@ description: "Er is bij het schrijven van dit artikelen nog geen officiele versi
 pubDate: 2007-10-31
 ---
 
-# MySQL op MacOS X Leopard
-
 * In een vorig artikel over [MySQL voor Tiger v10.4](http://www.atlantisdesign.nl/artikel/mysql-op-macosx-tiger) is uitgelegd hoe je MySQL v4.1.x aan de praat kan krijgen. Sinds enige tijd heeft Apple zijn nieuwste vier voeter los gelaten in het wild. **Hier volgt een update op dit artikel**.
 
 Apple heeft de Apache webserver ge-update naar versie 2 (die al een tijd uit is naturulijk) en heeft ons ook voorzien van een pre-installed PHP5 waar we prima mee uit de voeten kunnen.

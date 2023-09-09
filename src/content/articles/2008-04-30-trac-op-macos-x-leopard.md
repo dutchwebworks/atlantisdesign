@@ -4,8 +4,6 @@ description: "Via een lokale website makkelijk Subversion repository en changese
 pubDate: 2008-04-30
 ---
 
-# Trac op MacOS X Leopard
-
 [Trac](http://trac.edgewall.org/) is een **bugtracking / issue-tracking en Wiki systeem** ineen dat via een webpagina te beheren is. Het is niet zomaar een issue tracking systeem want het integreerd heel makkelijk met [Subversion](http://subversion.tigris.org/), wat op haar beurt een OpenSource **versie beheer** systeem is.[ WikiPedia: Trac](http://en.wikipedia.org/wiki/Trac). Deze twee worden samen veel vuldig gebruikt bij de ontwikkeling van software / websites.
 
 De integratie met **Subversion** (of een ander versie beheer systeem) is echt geweldig. Men kan via Trac (wat gewoon een website interface is) de Subversion repository bekijken, revisies naast elkaar leggen en de verschillen zien tussen de bestanden, ofwel **changesets**.

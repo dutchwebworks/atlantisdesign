@@ -4,8 +4,6 @@ description: "PHP is een Open-Source Server Side scripting taal welke zeer popul
 pubDate: 2005-07-31
 ---
 
-# PHP5 op MacOS X Tiger
-
 Let op! Er is een update op dit artikel beschikbaar voor PHP5 op Apple's [MacOSX Leopard v10.5](http://www.atlantisdesign.nl/artikel/php5-op-macosx-leopard).
 
 Op bijna alle versies van Mac OS X (ook de client versie) draait PHP4. PHP is een Server Side script taal welke een uitbereiding, module, is voor bijvoorbeeld de Apache webserver. Wat inhoud dat de scripts op de webserver uitgevoerd worden alvorens deze de HTML pagina naar de gebruiker stuurt. Hierdoor kunnnen HTML pagina's voorzien worden van **dynamische content**. Bijvoorbeeld met behulp van een database. Op de Nederlandse versie van [WikiPedia: PHP](http://nl.wikipedia.org/wiki/Php) kunt u lezen wat PHP nu eigenlijk inhoud.

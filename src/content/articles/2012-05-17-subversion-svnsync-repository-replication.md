@@ -4,8 +4,6 @@ description: "Met svnsync kan een slave-repository gesynchroniseerd worden met e
 pubDate: 2012-05-17
 ---
 
-# Subversion svnsync repository replication
-
 In het SVN-book, hoofdstuk **Repository Replication** (PDF vanaf pagina 155) wordt het niet helemaal duidelijk uitgelegd.
 
 Hier volgt een uitleg hoe een bestaande **master-repository** gesynchroniseerd wordt naar een (lege) **slave-repository**. De master repository moet via een authentication systeem (Apache of svnserve) geserveerd worden. Dit heeft te maken met zogenaamde svn hooks die toegang verlenen tot svn repositories.

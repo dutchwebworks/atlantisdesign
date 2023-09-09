@@ -4,8 +4,6 @@ description: "Een betere, makkelijkere te onderhouden FTP server op Mac OS X. Me
 pubDate: 2007-11-30
 ---
 
-# PureFTPDd installeren op MacOS X Leopard
-
 Dit is eigenlijk een soort nieuwe versie op de [Tiger editie](http://www.atlantisdesign.nl/artikel/pureftpd-installeren-op-macosx-tiger) van PureFTPd. In dit artikel gaan we PureFTPd installeren op **Mac OS X Leopard v10.5**. Kijk op bovenstaand artikel voor de Tiger versie.
 
 Apple heeft in alle versies van Mac OS X een aardig werkende FTP server al ingebouwd. Via `Apple'tje > System Preferences > Sharing` ... vink aan **File Sharing**, klik dan op **Options**. kunnen we deze aanzetten en deels configureren.

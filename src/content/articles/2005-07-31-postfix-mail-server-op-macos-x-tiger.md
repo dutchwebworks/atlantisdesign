@@ -4,8 +4,6 @@ description: "Activeer de ingebouwde mail server van Mac OS X. U kunt nu vanaf u
 pubDate: 2005-07-31
 ---
 
-# Postfix mail server op MacOS X Tiger
-
 De ingebouwde mail server van Mac OS X Panther en Tiger staat standaard uit. Sinds Panther en nu ook Tiger heeft Apple de [Postfix](http://en.wikipedia.org/wiki/Postfix_(software)) mail server in onze Mac's ingebouwd. Alle Unix, en dus ook Mac OS X, en Linux systemen hebben een ingebouwde mail server.
 
 Wat kan ik met deze **MTA** (Mail Transfer Agent)? Stel u heeft een iBook of Powerbook, u wisseld vaak van locaal netwerk en internet verbinding. U neemt uw laptop wel eens mee naar huis of naar een klant. U heeft een aantal websites draaien op uw eigen Mac die email versturen. Dan is het makkelijker om de mail server te gebruiken die al op uw Mac staat.

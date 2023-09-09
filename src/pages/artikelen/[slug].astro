@@ -30,7 +30,7 @@ const metaData = {
 
 <Layout metaData={metaData}>
 	<Intro> 
-		Door {AUTHOR}, <FormattedDate date={post.data.pubDate} />
+		{metaData.description}
 	</Intro>
 
 	<aside id="side" class="grid_5">
@@ -44,6 +44,10 @@ const metaData = {
 	</aside>
 
 	<main id="main" class="grid_11 omega">
+		<h1>{post.data.title}</h1>
+
+		<p><em>Geschreven door {AUTHOR} op <FormattedDate date={post.data.pubDate} /></em></p>
+
 		<Content />
 	</main>
 </Layout>

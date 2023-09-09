@@ -4,8 +4,6 @@ description: "Natuurlijk bestaat er Apple Remote Desktop. Windows computers kunn
 pubDate: 2007-11-30
 ---
 
-# VNC server remote desktop op MacOSX
-
 **VNC** (Wikipedia: [Virtual Network Computing](http://en.wikipedia.org/wiki/Virtual_Network_Computing)) bestaat al heel lang. Het steld de mogelijkheid om vanaf een andere computer de desktop te delen met een andere computer. Men ziet werkelijk de muis bewegen op het scherm alsof iemand er achter zit te werken. Deze persoon logt in via een **viewer** (programma waarmee verbinding gemaakt wordt met een remote desktop) om alle muis en toetsenbord handelingen over te nemen.
 
 Het voordeel van VNC is dat het **open-source** is en als server (en als viewer) zijnde is het **gratis** te gebruiken.

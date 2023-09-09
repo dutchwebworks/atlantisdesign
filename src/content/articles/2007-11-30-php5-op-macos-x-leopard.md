@@ -4,8 +4,6 @@ description: "Apple heeft in haar nieuwe vier voeter voor ons de PHP5 module al 
 pubDate: 2007-11-30
 ---
 
-# PHP5 op MacOS X Leopard
-
 Apple heeft in Leopard voor de **Apache 2.x** webserver gekozen. In voorgaande systemen stond daar nog de Apache 1.3 webserver op geinstalleerd. Ook heeft Apple deze Apache 2.x webserver al voorzien van een gangbare installatie van PHP5. Vorige systemen hadden nog PHP4.
 
 Echter staat deze niet standaard aan. In een voorgaand artikel over [PHP op MacOSX Tiger](http://www.atlantisdesign.nl/artikel/php5-op-macosx-tiger) heb ik al uitgelegd hoe we deze PHP module aan kunnen zetten.

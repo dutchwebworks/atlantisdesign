@@ -4,8 +4,6 @@ description: "Automatische deployment na een SVN commit"
 pubDate: 2007-11-30
 ---
 
-# Subversion post commit update op test website
-
 Dit is een vervolg op het artikel over Subversion versie beheer op Mac OS X. Dit artikel gaat er vanuit dat je Subversion hebt geinstalleerd en een beetje overweg kan met de working copies en de Apache webserver. Dit artikel zal hoogstwaarschijnlijk ook werken op Linux servers.
 
 ### Inspiratie

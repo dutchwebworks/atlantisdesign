@@ -4,8 +4,6 @@ description: "Het opzetten van een goede FTP server hoeft niet moeilijk te zijn.
 pubDate: 2005-07-31
 ---
 
-# PureFTPd installeren op MacOS X Tiger
-
 FTP staat voor **File Transport Protocol**. Meer informatie over FTP kunt u ook lezen op [Wikipedia: FTP](http://nl.wikipedia.org/wiki/FTP). Het is een best wel oude manier waarmee Unix machines vroeger bestanden konden uitwisselen over het internet. Vandaag de dag wordt het nog veelvuldig gebruikt om websites en andere bestanden op internet te zetten of om te versturen naar een publieke webserver.
 
 Dit artikelen is getest op Mac OS X Tiger client versie. Niet de server versie van Mac OS X. Als het goed is werkt dit ook op vorige versies van Mac OS X.

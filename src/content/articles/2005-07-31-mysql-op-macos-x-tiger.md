@@ -4,8 +4,6 @@ description: "PHP kan goed samenwerken met de MySQL database. Het wordt veel toe
 pubDate: 2005-07-31
 ---
 
-# MySQL op MacOS X Tiger
-
 **Let op!** Er is een update op dit artikel beschikbaar voor [MySQL op Apple's MacOSX Leopard v10.5](http://www.atlantisdesign.nl/artikel/mysql-op-macosx-leopard).
 
 We gaan MySQL installeren via een makkelijke installer package voor Mac OS X. **Mac OS X Panther en Tiger** zijn geschikt voor deze installer. Meer Nederlandse informatie over MySQL kunt u vinden op WikiPedia: MySQL.

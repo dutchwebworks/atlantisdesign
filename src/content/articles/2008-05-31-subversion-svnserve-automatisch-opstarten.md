@@ -4,8 +4,6 @@ description: "Subversion heeft ook een eigen svnserve deamon zodat het svn:// pr
 pubDate: 2008-05-31
 ---
 
-# Subversion svnserve automatisch opstarten
-
 Dit artikel gaat ervan uit dat [Subversion al op de Mac draait](http://www.atlantisdesign.nl/artikel/subversion-versie-beheer-op-mac-os-x). Plus dat er een vaste plek is waar de Subversion Repositories staan. In dit voorbeeld staan de repositories op de volgende locatie:
 
 ### Subversion repository pool

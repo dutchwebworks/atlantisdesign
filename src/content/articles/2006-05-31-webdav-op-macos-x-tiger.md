@@ -4,8 +4,6 @@ description: "Met webDAV kun je op een soort iDisk manier bestanden delen via he
 pubDate: 2006-05-31
 ---
 
-# webDAV op MacOS X Tiger
-
 Deze tutorial heb ik **niet zelf uitgevonden** maar het werkt geweldig. Alle credits en lof van dit artikel gaan uit naar naar de schrijver van dit artikel [ISP-In-A-Box: Building a WebDAV Server for Remote Access](http://tigervittles.com/?p=10). Hieronder beschrijf (vertaal) ik een verkorte procedure hoe je op je eigen Mac een WebDAV server kan opzetten.
 
 ## Wat is WebDAV?
