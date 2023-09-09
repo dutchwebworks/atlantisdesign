@@ -50,15 +50,14 @@ body.showGrid .container_12 {
 @media screen and (max-width: 960px) {
 	#skipNav {
 		display: block;
-		margin: 0 10px;
 		padding: 10px;
 		text-align:  center;
-		background: rgb(96, 20, 105);
-		background: linear-gradient(0deg, rgba(96, 20, 105, 1) 0%, rgba(119, 25, 130, 1) 100%);
+		background: #0092d2;
+		color: white;
 	}
 
 	#skipNav a {
-		color: #fff;
+		color: inherit;
 		font-size: 14px;
 		font-weight: bold;
 		text-decoration: none;
