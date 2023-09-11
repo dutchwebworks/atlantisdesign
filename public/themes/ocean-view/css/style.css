@@ -299,10 +299,8 @@ form textarea {
 /* Funny page YouTube video's
 ============================================== */
 
-.youtubeVideo {
-	display: block;
-	height:395px;
-	margin: 40px 0 40px 10px;
+#youTubePlayer {
+	aspect-ratio: 1.64;
 }
 
 /* Content 
@@ -843,4 +841,8 @@ img.gallery_large {
 
 .right {
 	text-align: right;
+}
+
+#youTubePlayer {
+	margin-block-end: 15px;
 }
