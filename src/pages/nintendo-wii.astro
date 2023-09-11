@@ -28,18 +28,14 @@ const metaData = {
 	
 		<p><img src="/img/nintendo_wii.jpg" loading="lazy" alt="Nintendo Wii"></p>		
 		
-		<h2 id="youTubeTitle">Super Mario Bros. Super Show. Rond 1989 - 1991.</h2>
+		<h2 id="youTubeTitle">Super Mario Bros. Super Show. Rond 1989 - 1991.</h2>		
 		
-		<div id="swfPlayer">
-			<div id="youTubePlayer" class="youtubeVideo" style="visibility: visible;">
-				Deze pagina maakt gebruik van de <strong>gratis</strong>  <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&amp;promoid=BIOW" target="_blank" rel="link">Adobe Flash player</a>.
-			</div>				
-		</div>
+		<div id="player"></div>
 		
 		<h2>Game trailers</h2>
 		
 		<dl class="youTubes">	
-			<dt><a href="http://www.youtube.com/v/RTkuCXRZnyM" id="startYouTube" class="youtube" title="Super Mario Bros. Super Show. Rond 1989 - 1991.">Super Mario Bros. Super Show</a>. Rond 1989 - 1991, old school cartoons!!</dt>					
+			<dt><a href="http://www.youtube.com/v/RTkuCXRZnyM" id="startYouTube" data-youtube-link class="youtube" title="Super Mario Bros. Super Show. Rond 1989 - 1991.">Super Mario Bros. Super Show</a>. Rond 1989 - 1991, old school cartoons!!</dt>					
 			
 			<dd>
 				Aanstaande vrijdag is de nieuwste versie van Nintendo's parade paardje: <a href="http://www.youtube.com/v/3o4Bp8n73ew" class="youtube" title="Super Mario Galaxy">Super Mario Galaxy</a> eindelijk in de winkels te krijgen.
@@ -49,7 +45,7 @@ const metaData = {
 				<strong>Andrew Gardikis</strong>  heeft Super Mario Bros. 1 (uitgebracht in 1987) <a href="http://www.youtube.com/v/Ie4E3Bmqb5w" class="youtube" title="Super Mario Bros. 1 uitgespeeld in 5 minuten!">uitgespeelt</a> in 5 minuten?
 			</dd>
 	
-			<dt><a href="http://www.youtube.com/v/IDlmqLgiuFI" class="youtube" title="Star Wars The Force Unleashed">Star Wars The Force Unleashed</a></dt>
+			<dt><a href="http://www.youtube.com/v/IDlmqLgiuFI" data-youtube-link class="youtube" title="Star Wars The Force Unleashed">Star Wars The Force Unleashed</a></dt>
 			
 			<dd>
 				Dit zou heeeel erg vet zijn! De natte droom van elke Star Wars fan!!
@@ -59,27 +55,27 @@ const metaData = {
 				Ik ga zeker in de rij liggen voor deze game!! Amerikaase release date: 8 april 2008.
 			</dd>	
 		
-			<dt><a href="http://www.youtube.com/v/VuzFzs0hPKc" class="youtube" title="Nieuwe Star Wars besturing op de Wii?">YouTube: I want Star Wars to be like this...</a></dt>
+			<dt><a href="http://www.youtube.com/v/VuzFzs0hPKc" data-youtube-link class="youtube" title="Nieuwe Star Wars besturing op de Wii?">YouTube: I want Star Wars to be like this...</a></dt>
 			
 			<dd>Stel dat de Star Wars game zo gaat werken met de Wii-mote!!!</dd>
 	
-			<dt><a href="http://www.youtube.com/v/3o4Bp8n73ew" class="youtube" title="Super Mario Galaxy">Super Mario Galaxy</a></dt>
+			<dt><a href="http://www.youtube.com/v/3o4Bp8n73ew" data-youtube-link class="youtube" title="Super Mario Galaxy">Super Mario Galaxy</a></dt>
 			
 			<dd>Paradepaardje van Nintendo!! Nu verkrijgbaar in de winkels.</dd>					
 			
-			<dt><a href="http://www.youtube.com/v/hfTbDeKT-kc" class="youtube" title="Resident Evil 4">Resident Evil 4</a></dt>
+			<dt><a href="http://www.youtube.com/v/hfTbDeKT-kc" data-youtube-link class="youtube" title="Resident Evil 4">Resident Evil 4</a></dt>
 			
 			<dd>Deze is echt eng af en toe! Bekijk ook de <a href="http://www.gamefaqs.com/console/gamecube/file/535840/34675" title="Resident Evil 4 walktrough" target="_blank" rel="link">walktrough</a> als je af en toe niet weet hoe je eindbazen moet verslaan.</dd>
 			
-			<dt><a href="http://www.youtube.com/v/z31DntVPPws" class="youtube" title="The Legend of Zelda » Twilight Princes">The Legend of Zelda » Twilight Princes</a></dt>
+			<dt><a href="http://www.youtube.com/v/z31DntVPPws" data-youtube-link class="youtube" title="The Legend of Zelda » Twilight Princes">The Legend of Zelda » Twilight Princes</a></dt>
 			
 			<dd>Leuk avonturen spel. Bekijk ook de <a href="http://guides.ign.com/guides/748589/page_3.html" title="Legend of Zelda Twilight Princes walktrough" target="_blank" rel="link">walktrough</a> als je af en toe niet uit komt.</dd>
 			
-			<dt><a href="http://www.youtube.com/v/hUzVclcGwfQ" class="youtube" title="Metroid Prime 3 » Corruption">Metroid Prime 3 » Corruption</a></dt>
+			<dt><a href="http://www.youtube.com/v/hUzVclcGwfQ" data-youtube-link class="youtube" title="Metroid Prime 3 » Corruption">Metroid Prime 3 » Corruption</a></dt>
 			
 			<dd>Nu in de winkel verkrijgbaar! Erg vette game!!</dd>
 			
-			<dt><a href="http://www.youtube.com/v/T4DZ3hm3XJY" class="youtube" title="Dragon Ball Z : Budokai Tenkaichi 3">Dragon Ball Z » Budokai Tenkaichi 3</a></dt>
+			<dt><a href="http://www.youtube.com/v/T4DZ3hm3XJY" data-youtube-link class="youtube" title="Dragon Ball Z : Budokai Tenkaichi 3">Dragon Ball Z » Budokai Tenkaichi 3</a></dt>
 			
 			<dd>
 				Erg vette game!! Ik heb de anime tekenfilm serie jaren terug gevolgd. Maar die hielden er in Nederland ineens mee op. Versie 3 van de game is voor de Wii speciaal bijgewerkt voor de unieke controllers.
@@ -92,6 +88,5 @@ const metaData = {
 		<p><img src="/img/starwars_force_unleashed.jpg" loading="lazy" alt="Star Wars: The Force Unleashed"></p>										
 	</main>
 
-    <script src="/themes/base/js/swfobject.js" slot="end-body"></script>
-    <script src="/themes/base/js/latest_youtubes.js" slot="end-body"></script>
+	<script src="/themes/base/js/hijack-youtube-links.js" defer slot="end-head"></script>
 </Layout>
