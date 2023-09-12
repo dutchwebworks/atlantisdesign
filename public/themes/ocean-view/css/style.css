@@ -20,6 +20,9 @@ Light blue bg	#E2F1F7		(code, background colors)
 	src: url(/fonts/OCRAStd.otf) format("opentype");
 }
 
+html {
+	scroll-behavior: smooth;
+}
 
 /* 960 grid
 ============================================== */
