@@ -20,6 +20,9 @@ Light blue bg	#E2F1F7		(code, background colors)
 	src: url(/fonts/OCRAStd.otf) format("opentype");
 }
 
+html {
+	scroll-behavior: smooth;
+}
 
 /* 960 grid
 ============================================== */
@@ -107,12 +110,16 @@ input {
 	font: 1em Verdana, Helvetica, Arial, sans-serif;	
 }
 
-a {
-	
-}
-
+iframe,
 img {
 	border: 0;
+	max-width: 100%;
+}
+
+iframe {
+	aspect-ratio: 1.78;
+	width: 100%;
+	height: auto;
 }
 
 a img {
