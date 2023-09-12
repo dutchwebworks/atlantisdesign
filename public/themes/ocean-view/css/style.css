@@ -110,12 +110,16 @@ input {
 	font: 1em Verdana, Helvetica, Arial, sans-serif;	
 }
 
-a {
-	
-}
-
+iframe,
 img {
 	border: 0;
+	max-width: 100%;
+}
+
+iframe {
+	aspect-ratio: 1.78;
+	width: 100%;
+	height: auto;
 }
 
 a img {
