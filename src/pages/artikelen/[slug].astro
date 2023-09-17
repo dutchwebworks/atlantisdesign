@@ -4,7 +4,7 @@ import Intro from "@/components/Intro.astro";
 import WebLinks from '@/components/WebLinks.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 import { AUTHOR } from '@/consts';
 
@@ -30,7 +30,7 @@ const metaData = {
 
 <Layout metaData={metaData}>
 	<Intro> 
-		{metaData.description}
+		{post.data.description}
 	</Intro>
 
 	<aside id="side" class="grid_5">
