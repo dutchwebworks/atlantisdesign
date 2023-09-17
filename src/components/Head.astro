@@ -8,32 +8,24 @@ const { metaData } = Astro.props;
 
 <title>{SITE_TITLE} » {metaData?.title}</title>
 
-<meta name="description" content={metaData?.description} />
-
-<meta name="generator" content={Astro.generator} />
-
+<meta name="description" content={metaData?.description}>
+<meta name="generator" content={Astro.generator}>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 
 <link rel="canonical" href={`${Astro.site.href}${metaData?.canonical}`}>
 
-<meta name="author" content={AUTHOR} />
-
+<meta name="author" content={AUTHOR}>
 <meta name="theme-color" content="#0092d2">
 
-<link rel="apple-touch-icon" href="/img/icons/icon-192x192.png" />
-
-<link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#0092d2" />
+<link rel="apple-touch-icon" href="/img/icons/icon-192x192.png">
+<link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#0092d2">
 
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <link href="/app.webmanifest" rel="manifest">
-
-<link rel="icon" type="image/x-icon" href="/themes/ocean-view/img/favicon.ico" />
-
-<link href="/themes/base/css/reset_960gs.min.css" rel="stylesheet" type="text/css" media="screen and (min-width: 960px)" />
-
-<link href="/themes/ocean-view/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-
+<link href="/themes/ocean-view/img/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/themes/base/css/reset_960gs.min.css" rel="stylesheet" type="text/css" media="screen and (min-width: 960px)">
+<link href="/themes/ocean-view/css/style.css" rel="stylesheet" type="text/css" media="screen">
 <link rel="preload" as="font" href="/fonts/OCRAStd.otf" type="font/opentype" crossorigin>
 
 <script src="/register-sw.js" defer></script>
