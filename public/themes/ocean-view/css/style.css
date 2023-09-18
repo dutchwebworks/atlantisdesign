@@ -308,6 +308,8 @@ form textarea {
 
 #youTubePlayer {
 	aspect-ratio: 1.64;
+	width: 640px;
+	height: 390px;
 }
 
 /* Content 
