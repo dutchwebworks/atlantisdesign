@@ -24,11 +24,16 @@ const { Content } = await post.render();
 const metaData = {
     title: post.data.title,
     description: post.data.description,
-    canonical: `artikelen/${post.slug}`
+	canonical: `artikelen/${post.slug}`
 }
 ---
 
 <Layout metaData={metaData}>
+	<meta property="og:title" content={post.data.title} slot="begin-head" />
+	<meta property="og:description" content={post.data.description} />
+	<meta property="og:type" content="article" slot="begin-head" />
+	<meta property="og:url" content={`${Astro.site.href}${`artikelen/${post.slug}`}`} slot="begin-head" />
+
 	<Intro> 
 		{post.data.description}
 	</Intro>
