@@ -34,12 +34,15 @@ const metaData = {
 			<p> Internet Explorer heeft af en toe wel eens een verkeerde interpretatie van bepaalde HTML en/of CSS toepassingen. Het komt dus wel eens voor dat onderstaande CSS goed en gewenst is voor webbrowsers als <strong>Mozilla Firefox</strong>, <strong>Apple's Safari </strong>en <strong>Opera</strong>.</p>
 			
 			<h4>Compliant webbrowser CSS waarde</h4>
-			
-			<!--code>
-			#mainContent {<br>
-			&nbsp;&nbsp; width: 230px;<br>
-			}
-			</code-->
+
+			<code>
+				<pre>
+<Fragment set:html=`
+#mainContent {
+	width: 230px;
+}` />
+				</pre>
+			</code>			
 			
 			<h3>Internet Explorer</h3>
 			
@@ -47,19 +50,22 @@ const metaData = {
 			
 			<h4>IE6/7 CSS waarde</h4>
 			
-			<!--code>
-			#mainContent {<br>
-			&nbsp;&nbsp; width: 225px;<br>
-			}	</code-->	
-			
+			<code>
+				<pre>
+<Fragment set:html=`
+#mainContent {
+	width: 225px;
+}` />
+				</pre>
+			</code>
 			
 			<h2 id="voorbeeld">Conditional comment, een voorbeeld</h2>
 			
 			<p>In de HTML-head van de pagina plaatsen we onderstaande regels. Let op! Dit moet <strong>na</strong> alle andere css-stylesheets geplaats worden.</p>
 			
-			<code> &lt;!--[if ie 6]&gt;<br>
-		&lt;link href="css/ie6.css" type="text/css" rel="stylesheet" media="screen" /&gt; <br>
-		&lt;![endif]--&gt;</code>
+<code><pre>&lt;!--[if ie 6]&gt;<br>
+&lt;link href="css/ie6.css" type="text/css" rel="stylesheet" media="screen" /&gt; <br>
+&lt;![endif]--&gt;</pre></code>
 		
 			<p>Goed, wat gebeurt hier? Na alle stylesheets wordt hier bekenen, alleen door Internet Explorer versies op het Windows platform, of de huidige Internet Explorer versie aan de <strong>IF</strong> statement voldoet. </p>
 			

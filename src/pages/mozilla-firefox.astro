@@ -85,11 +85,11 @@ const metaData = {
 			<li>Plak onderstaand Javascript in de 'location'.</li>
 		</ol>
 
-		<p>
-			<!--code>
-				javascript:void(function(){var i,a,s;a=document.getElementsByTagName('link');for(i=0;i&lt;a.length;i++){s=a[i];if(s.rel.toLowerCase().indexOf('stylesheet')&gt;=0&amp;&amp;s.href) {var h=s.href.replace(/(&amp;|%5C?)forceReload=d+/,'');s.href=h+(h.indexOf('?')&gt;=0?'&amp;':'?')+'forceReload='+(new Date().valueOf())}}})();				
-			</code -->
-		</p>
+		<code>
+			<pre>
+<Fragment set:html=`javascript:void(function(){var i,a,s;a=document.getElementsByTagName('link');for(i=0;i&lt;a.length;i++){s=a[i];if(s.rel.toLowerCase().indexOf('stylesheet')&gt;=0&amp;&amp;s.href) {var h=s.href.replace(/(&amp;|%5C?)forceReload=d+/,'');s.href=h+(h.indexOf('?')&gt;=0?'&amp;':'?')+'forceReload='+(new Date().valueOf())}}})();` />
+			</pre>
+		</code>		
 		
 		<p>
 			Deze handige truuk heb ik niet zelf uitgevonden maar is terug te vinden op onderstaande website. Het ontwikkelen van websites 
