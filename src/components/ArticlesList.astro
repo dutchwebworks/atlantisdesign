@@ -4,13 +4,18 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('articles')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const { heading } = Astro.props;
+const Tag = Astro.props.tag || "h2";
 ---
+
+{ heading && <Tag class="headTitle">{heading}</Tag> }
 
 <ul>
     {
-        posts.map((article) => (
+        posts.map((post) => (
             <li>
-                <a href={'/artikelen/' + article.slug}>{article.data.title}</a>
+                <a href={'/artikelen/' + post.slug}>{post.data.title}</a>
             </li>
         ))
     }

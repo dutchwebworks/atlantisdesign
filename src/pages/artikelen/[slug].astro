@@ -4,7 +4,7 @@ import Intro from "@/components/Intro.astro";
 import WebLinks from '@/components/WebLinks.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 import { AUTHOR } from '@/consts';
 
@@ -24,23 +24,24 @@ const { Content } = await post.render();
 const metaData = {
     title: post.data.title,
     description: post.data.description,
-    canonical: `artikelen/${post.slug}`
+	canonical: `artikelen/${post.slug}`
 }
 ---
 
 <Layout metaData={metaData}>
+	<meta property="og:title" content={post.data.title} slot="begin-head" />
+	<meta property="og:description" content={post.data.description} />
+	<meta property="og:type" content="article" slot="begin-head" />
+	<meta property="og:url" content={`${Astro.site.href}${`artikelen/${post.slug}`}`} slot="begin-head" />
+
 	<Intro> 
-		{metaData.description}
+		{post.data.description}
 	</Intro>
 
 	<aside id="side" class="grid_5">
-		<h2 class="headTitle">Artikelen</h2>
-		
-		<ArticlesList />
+		<ArticlesList heading="Artikelen" />
 
-		<h2 class="headTitle">Links</h2>
-
-		<WebLinks />            
+		<WebLinks heading="Links" />
 	</aside>
 
 	<main id="main" class="grid_11 omega">

@@ -1,6 +1,11 @@
 ---
 import list from '@/content/lists/WebLinks.json';
+
+const {heading} = Astro.props;
+const Tag = Astro.props.tag || "h2";
 ---
+
+{ heading && <Tag class="headTitle">{heading}</Tag> }
 
 {
     list.map(({heading, items}) => (
