@@ -1,0 +1,19 @@
+---
+import { AUTHOR } from '@/consts';
+const post = Astro.props;
+
+const jsonLd = { 
+	"@context": "https://schema.org", 
+	"@type": "BlogPosting",
+	"headline": post.data.title,
+	"description": post.data.description,
+	"author": {
+    	"@type": "Person",
+    	"name": AUTHOR,
+		"url": "https://dennisburger.nl"
+  	},
+	"datePublished": post.data.pubDate
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

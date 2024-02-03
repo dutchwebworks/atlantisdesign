@@ -4,6 +4,7 @@ import Intro from "@/components/Intro.astro";
 import WebLinks from '@/components/WebLinks.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
 import ArticlesList from '@/components/ArticlesList.astro';
+import BlogPostingJSONLD from "@/components/BlogPostingJSONLD.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 import { AUTHOR } from '@/consts';
@@ -20,6 +21,7 @@ type Props = CollectionEntry<'articles'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+const urlSlug = `${Astro.site.href}artikelen/${post.slug}`
 
 const metaData = {
     title: post.data.title,
@@ -28,11 +30,13 @@ const metaData = {
 }
 ---
 
-<Layout metaData={metaData}>
+<Layout metaData={metaData}>	
 	<meta property="og:title" content={post.data.title} slot="begin-head" />
 	<meta property="og:description" content={post.data.description} />
 	<meta property="og:type" content="article" slot="begin-head" />
-	<meta property="og:url" content={`${Astro.site.href}${`artikelen/${post.slug}`}`} slot="begin-head" />
+	<meta property="og:url" content={urlSlug} slot="begin-head" />
+
+	<BlogPostingJSONLD slot="begin-head" { ...Astro.props } />
 
 	<Intro> 
 		{post.data.description}
