@@ -36,7 +36,7 @@ const metaData = {
 	<meta property="og:type" content="article" slot="begin-head" />
 	<meta property="og:url" content={urlSlug} slot="begin-head" />
 
-	<BlogPostingJSONLD slot="begin-head" { ...Astro.props } />
+	<BlogPostingJSONLD slot="begin-head" { ...Astro.props } { urlSlug } />
 
 	<Intro> 
 		{post.data.description}

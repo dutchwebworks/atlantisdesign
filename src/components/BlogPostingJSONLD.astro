@@ -1,6 +1,7 @@
 ---
 import { AUTHOR } from '@/consts';
 const post = Astro.props;
+const blogPostUrl = `${Astro.site.href}artikelen/${post.slug}`
 
 const jsonLd = { 
 	"@context": "https://schema.org", 
@@ -10,7 +11,7 @@ const jsonLd = {
 	"author": {
     	"@type": "Person",
     	"name": AUTHOR,
-		"url": "https://dennisburger.nl"
+		"url": blogPostUrl
   	},
 	"datePublished": post.data.pubDate
 }
