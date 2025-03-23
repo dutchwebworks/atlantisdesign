@@ -1,14 +1,14 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://old.atlantisdesign.nl',
+    site: "https://old.atlantisdesign.nl",
     compressHTML: false,
-    trailingSlash: 'never',
+    trailingSlash: "never",
     markdown: {
         shikiConfig: {
-            theme: 'dracula',
-            wrap: true
-        }
-    }
+            theme: "dracula",
+            wrap: true,
+        },
+    },
 });

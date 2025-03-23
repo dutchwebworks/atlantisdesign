@@ -48,29 +48,29 @@ Wat wel willen bereiken is dat als er een commit gemaakt wordt in de repository 
 
 In deze map staan templates, voorbeelden, hoe je ze kunt gebruiken. Kopieer het volgende bestand.
 
-	post-commit.tmpl
+    post-commit.tmpl
 
 Hernoem het bestand naar ...
 
-	post-commit
+    post-commit
 
 Open dit bestand daarna in bijvoorbeeld [TextWrangler](http://www.barebones.com/products/textwrangler/) (of [BBEdit](http://www.barebones.com/products/bbedit/)) of een andere tekst-editor. Verwijder alles wat hierin staat, dit is toch maar een voorbeeld.
 
 ### Unix bash shell script
 
-Plaats vervolgens [dit stuk script](http://www.atlantisdesign.nl/public/svn_post_commit.txt) hierin. 
+Plaats vervolgens [dit stuk script](http://www.atlantisdesign.nl/public/svn_post_commit.txt) hierin.
 
-	#!/bin/sh
-	
-	REPOS="$1"
-	REV="$2"
-	
-	# Export an update on working copy
-	export LANG="en_US.UTF-8"
-	umask 002
-	cd /Library/WebServer/vhosts/vogelfotografie_demo/httpdocs
-	/usr/local/bin/svn cleanup
-	/usr/local/bin/svn -q --non-interactive update
+    #!/bin/sh
+
+    REPOS="$1"
+    REV="$2"
+
+    # Export an update on working copy
+    export LANG="en_US.UTF-8"
+    umask 002
+    cd /Library/WebServer/vhosts/vogelfotografie_demo/httpdocs
+    /usr/local/bin/svn cleanup
+    /usr/local/bin/svn -q --non-interactive update
 
 Dit is een klein stukje **Unix bash shell scripting**. Het enige wat het doet is naar een bepaalde map gaan, dan een `svn cleanup` actie uitvoeren een `svn update` naar de laaste (head) revisie uitvoeren op de desbetreffende **working copy**.
 
@@ -78,7 +78,7 @@ Dit is een klein stukje **Unix bash shell scripting**. Het enige wat het doet is
 
 In het klein stukje script wordt verwezen naar een bepaalde map, namelijk:
 
-	cd /Library/WebServer/vhosts/vogelfotografie_demo/httpdocs
+    cd /Library/WebServer/vhosts/vogelfotografie_demo/httpdocs
 
 Dit **pad** moet je natuurlijk veranderen naar het pad waar je de **test website** hebt staan, ofwel de **tweede checkout**. In dit voorbeeld een Apache virtual-host.
 
@@ -88,11 +88,11 @@ Het Unix bash script moet nu nog voorzien worden van de correcte uitvoer rechten
 
 Met spatie erachter:
 
-	cd 
+    cd
 
 Sleep nu de **hooks** map (die in de repository map staat) **op het Terminal venster** en druk op enter. Dit is een snelle manier om met de Terminal naar een bepaalde map te gaan (in plaats van het `cd` commando).Typ nu het volgende in om het **post-commit** bestand Unix uitvoer rechten te geven.
 
-	sudo chmod ugo+x post-commit
+    sudo chmod ugo+x post-commit
 
 ### Wat betekend dit hierboven allemaal?
 

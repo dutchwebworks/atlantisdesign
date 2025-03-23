@@ -1,118 +1,240 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Intro from '@/components/Intro.astro';
-import IphoneLinks from '@/components/iPhoneLinks.astro';
-import IphoneAppLinks from '@/components/iPhoneAppLinks.astro';
+import Layout from "@/layouts/Layout.astro";
+import Intro from "@/components/Intro.astro";
+import IphoneLinks from "@/components/iPhoneLinks.astro";
+import IphoneAppLinks from "@/components/iPhoneAppLinks.astro";
 
 const metaData = {
-	title: "Apple iPhone 3G (White / 16GB)",
+    title: "Apple iPhone 3G (White / 16GB)",
     description: "Mijn favoriete smartphone",
-    canonical: "iphone"
-}
+    canonical: "iphone",
+};
 ---
 
 <Layout metaData={metaData}>
-	<script src="/themes/vendor/fancybox.umd.js" slot="end-body"></script>
-	<link rel="stylesheet" href="/themes/vendor/fancybox.css" slot="end-body">
-	<script slot="end-body">Fancybox.bind("[data-fancybox]", {});</script>
+    <script src="/themes/vendor/fancybox.umd.js" slot="end-body"></script>
+    <link rel="stylesheet" href="/themes/vendor/fancybox.css" slot="end-body" />
+    <script slot="end-body">
+        Fancybox.bind("[data-fancybox]", {});
+    </script>
 
-	<Intro>
-		Op 11 juli 2008 introduceerde Apple de iPhone 3G in Nederland. Het was een drukte op die dag in Rotterdam.
-		Op die dag waren alle iPhone's natuurlijk direct uitverkocht. Dan maar een iPhone bestellen op de T-Mobile website.
-	</Intro>			
+    <Intro>
+        Op 11 juli 2008 introduceerde Apple de iPhone 3G in Nederland. Het was een drukte op die dag in Rotterdam. Op die dag waren alle iPhone's
+        natuurlijk direct uitverkocht. Dan maar een iPhone bestellen op de T-Mobile website.
+    </Intro>
 
     <aside id="side" class="grid_5">
-		<IphoneLinks />
+        <IphoneLinks />
 
-		<IphoneAppLinks />
-	</aside>
+        <IphoneAppLinks />
+    </aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>{metaData.title}</h1>
-		
-		<p>
-			Hieronder een foto impressie van mijn iPhone 3G. In plaats van de opgegeven 6 weken wachttijd was mijn iPhone gelukkig na 10 dagen 
-			al afgeleverd.
-		</p>
-		
-		<p>De iPhone was op 11 juli (launch day) binnen 3 uur uitverkocht. In heel Europa was de iPhone na 12 uur al uitverkocht.</p>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_04.jpg" data-fancybox="gallery" data-caption="Het pakketje van T-Mobile is gearriveerd">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_04.jpg" loading="lazy" width="150" height="113" alt="T-Mobile pakket">
-			</a>
-		</div>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_41.jpg" data-fancybox="gallery" data-caption="Het mooie kartonnen doosje van de Apple iPhone met embossed opdruk van de iPhone op de bovenkant">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_41.jpg" loading="lazy" width="150" height="113" alt="Doosje van de iPhone">
-			</a>
-		</div>
+        <h1>{metaData.title}</h1>
 
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_42.jpg" data-fancybox="gallery" data-caption="Altijd erg mooie hoe Apple z'n producten presenteerd">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_42.jpg" loading="lazy" width="150" height="113" alt="iPhone 3G in doosje">
-			</a>
-		</div>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_44.jpg" data-fancybox="gallery" data-caption="Het is de witte 16GB uitvoering van de iPhone 3G">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_44.jpg" loading="lazy" width="150" height="113" alt="Witte achterkant van de iPhone">
-			</a>
-		</div>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_57.jpg" data-fancybox="gallery" data-caption="Elke Apple fan laat dit even zien. Heel mooi!">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_57.jpg" loading="lazy" width="150" height="113" alt="Designed by Apple in California">
-			</a>
-		</div>
+        <p>
+            Hieronder een foto impressie van mijn iPhone 3G. In plaats van de opgegeven 6 weken wachttijd was mijn iPhone gelukkig na 10 dagen al
+            afgeleverd.
+        </p>
 
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_68.jpg" data-fancybox="gallery" data-caption="iPhone wordt gesynchroniseerd met de Mac. Alle muziek, foto's, adressen en kalenders">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_68.jpg" loading="lazy" width="150" height="113" alt="iPhone synchroniseren">
-			</a>
-		</div>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_59.jpg" data-fancybox="gallery" data-caption="T-Mobile Apple iPhone 3G">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_59.jpg" loading="lazy" width="150" height="113" alt="T-Mobile Apple iPhone 3G">
-			</a>
-		</div>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_49.jpg" data-fancybox="gallery" data-caption="Main iPhone scherm met wat extra ge-downloade programma's ">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_49.jpg" loading="lazy" width="150" height="113" alt="Hoofdscherm van de iPhone met wat extra programma's">
-			</a>
-		</div>		
+        <p>De iPhone was op 11 juli (launch day) binnen 3 uur uitverkocht. In heel Europa was de iPhone na 12 uur al uitverkocht.</p>
 
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_46.jpg" data-fancybox="gallery" data-caption="Coverflow (inclusief album-art) met alle iTunes muziek">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_46.jpg" loading="lazy" width="150" height="113" alt="Coverflow album-art">
-			</a>
-		</div>
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_04.jpg"
+                data-fancybox="gallery"
+                data-caption="Het pakketje van T-Mobile is gearriveerd"
+            >
+                <img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_04.jpg" loading="lazy" width="150" height="113" alt="T-Mobile pakket" />
+            </a>
+        </div>
 
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_47.jpg" data-fancybox="gallery" data-caption="Mijn eigen website ziet er bijna perfect uit op de iPhone Safari webbrowser">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_47.jpg" loading="lazy" width="150" height="113" alt="Eigen website op iPhone Safari webbrowser">
-			</a>
-		</div>
-		
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_54.jpg" data-fancybox="gallery" data-caption="Een PDF lezen op de iPhone met behulp van FileMagnet">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_54.jpg" loading="lazy" width="150" height="113" alt="PDF lezen op iPhone met FileMagnet">
-			</a>
-		</div>
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_41.jpg"
+                data-fancybox="gallery"
+                data-caption="Het mooie kartonnen doosje van de Apple iPhone met embossed opdruk van de iPhone op de bovenkant"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_41.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Doosje van de iPhone"
+                />
+            </a>
+        </div>
 
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_61.jpg" data-fancybox="gallery" data-caption="De Mac besturen met Mocha VNC Lite client (remote desktop)">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_61.jpg" loading="lazy" width="150" height="113" alt="Mocha VNC Lite, remote desktop van iPhone naar Mac">
-			</a>
-		</div>
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_42.jpg"
+                data-fancybox="gallery"
+                data-caption="Altijd erg mooie hoe Apple z'n producten presenteerd"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_42.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="iPhone 3G in doosje"
+                />
+            </a>
+        </div>
 
-		<div class="photo">
-			<a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_67.jpg" data-fancybox="gallery" data-caption="Google Maps met positie bepaling">
-				<img src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_67.jpg" loading="lazy" width="150" height="113" alt="Google Maps op de iPhone">
-			</a>
-		</div>	
-	</main>
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_44.jpg"
+                data-fancybox="gallery"
+                data-caption="Het is de witte 16GB uitvoering van de iPhone 3G"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_44.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Witte achterkant van de iPhone"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_57.jpg"
+                data-fancybox="gallery"
+                data-caption="Elke Apple fan laat dit even zien. Heel mooi!"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_57.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Designed by Apple in California"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_68.jpg"
+                data-fancybox="gallery"
+                data-caption="iPhone wordt gesynchroniseerd met de Mac. Alle muziek, foto's, adressen en kalenders"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_68.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="iPhone synchroniseren"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_59.jpg" data-fancybox="gallery" data-caption="T-Mobile Apple iPhone 3G">
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_59.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="T-Mobile Apple iPhone 3G"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_49.jpg"
+                data-fancybox="gallery"
+                data-caption="Main iPhone scherm met wat extra ge-downloade programma's "
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_49.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Hoofdscherm van de iPhone met wat extra programma's"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_46.jpg"
+                data-fancybox="gallery"
+                data-caption="Coverflow (inclusief album-art) met alle iTunes muziek"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_46.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Coverflow album-art"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_47.jpg"
+                data-fancybox="gallery"
+                data-caption="Mijn eigen website ziet er bijna perfect uit op de iPhone Safari webbrowser"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_47.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Eigen website op iPhone Safari webbrowser"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_54.jpg"
+                data-fancybox="gallery"
+                data-caption="Een PDF lezen op de iPhone met behulp van FileMagnet"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_54.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="PDF lezen op iPhone met FileMagnet"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_61.jpg"
+                data-fancybox="gallery"
+                data-caption="De Mac besturen met Mocha VNC Lite client (remote desktop)"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_61.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Mocha VNC Lite, remote desktop van iPhone naar Mac"
+                />
+            </a>
+        </div>
+
+        <div class="photo">
+            <a
+                href="/atlantis_uploads/gallery_large/iPhone_3G_aanschaf_67.jpg"
+                data-fancybox="gallery"
+                data-caption="Google Maps met positie bepaling"
+            >
+                <img
+                    src="/atlantis_uploads/gallery_thumb/iPhone_3G_aanschaf_67.jpg"
+                    loading="lazy"
+                    width="150"
+                    height="113"
+                    alt="Google Maps op de iPhone"
+                />
+            </a>
+        </div>
+    </main>
 </Layout>

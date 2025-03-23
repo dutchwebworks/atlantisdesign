@@ -61,6 +61,7 @@ Webdesign is ook de kunst van het goed, compliant schrijven van gestructureerde 
 Het woord 'design' is dan ook een beetje misleidend. Natuurlijk moet een website ook een beetje smoel hebben. Vaak wordt er een ontwerper (designer) gebruikt om de kleuren te bepalen, de compositie en de layout. Een copywriter gaat aan de slag om de juiste woorden te vinden die de boodschap duidelijk overdragen.
 
 ### Ultieme doel: seperatie
+
 Het ultieme doel van websites bouwen is de **complete seperatie** van de 3 lagen. Structuur scheiden van presentatie en scheiden van interactie (ofwel behaviour). Door goede seperatie van HTML, CSS en Javascripting kunnen niet alleen webbrowsers gebruik maken van het omvangrijke internet maar ook PDA's, web-mobieltjes.
 
 Daarmee helpen we ook de minder valide mens. Mensen die slect ziend zijn hebben meestal en hulp middel om internet pagina's voor te laten lezen. Om op deze manier toch informatie van het internet te verkrijgen. Deze mensen hebben het meeste aan laag 1 (structurele HTML). Een [screenreader](http://en.wikipedia.org/wiki/Screen_reader) leest de HTML voor aan de gebruiker, kijkt niet naar de opmaak (laag 2) en voert ookg een javascripting uit (laag 3).
@@ -87,11 +88,11 @@ Zonder deze gestructureerde basis laag hebben de volgende opzichzelf staande lag
 
 #### Onderstaande is goede HTML
 
-	<p>Deze paragraaf is netjes geschreven, dit <strong>woord</strong> is in bold gestyled</p>
+    <p>Deze paragraaf is netjes geschreven, dit <strong>woord</strong> is in bold gestyled</p>
 
 #### Deze HTML is fout geschreven
 
-	<p>Deze paragraaf is netjes geschreven, dit <div><font-weight:bold>woord</font></div> is in bold gestyled
+    <p>Deze paragraaf is netjes geschreven, dit <div><font-weight:bold>woord</font></div> is in bold gestyled
 
 ## Laag 2: Presentatie, ofwel Cascading Style Sheet (CSS)
 

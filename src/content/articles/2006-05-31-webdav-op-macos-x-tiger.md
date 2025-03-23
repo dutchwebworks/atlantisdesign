@@ -26,57 +26,57 @@ Zoals al beschreven is WebDAV een uitbreiding, extentie, van het HTTP protocol. 
 
 We gaan eerst de Apache server (die al op onze Mac staat) configureren zodat het WebDAV ondersteunt en gebruikt. Voor de mensen die bekend zijn met de terminal zou ik eerst een kopie maken van het `http.conf` file. Open een terminal scherm en typ in:
 
-	sudo pico /etc/httpd/httpd.conf
+    sudo pico /etc/httpd/httpd.conf
 
 Nu opent zich het Pico terminal text-editor scherm met het configuratie bestand van de Apache webserver. Zoek met `ctrl+w` naar het woord **headers** en druk op **enter**. Voor deze regels staan # symbolen. Dit betekend dat deze regel een comment is en niet meegenomen zal worden tijdens het starten van de Apache webserver.
 
 Nu moeten we voor vier van dit soort regels het # teken weghalen, ofwel 'uncommenten'. Dit geldt voor de volgende regels:
 
-* LoadModule headers_module libexec/httpd/mod_headers.so
-* LoadModule dav_module libexec/httpd/libdav.so
-* AddModule mod_headers.c
-* AddModule mod_dav.c
+- LoadModule headers_module libexec/httpd/mod_headers.so
+- LoadModule dav_module libexec/httpd/libdav.so
+- AddModule mod_headers.c
+- AddModule mod_dav.c
 
 ## Stap 2 - Toevoegen van de te delen mappen
 
 Nu de WebDAV module zal worden gestart samen met Apache moeten we nog wat extra dingen aangeven. Open de Terminal en typ in:
 
-	sudo pico /etc/httpd/httpd.conf
+    sudo pico /etc/httpd/httpd.conf
 
 Vul je wachtwoord in om het bestand als administrator te bewerken. Enige ervaring me de Terminal is wel vereist. Er opent zich een text-editor. Aan het **einde** van dit document gaan we de volgende tekst toevoegen. Kopieer en plak dit in het Terminal scherm.
 
 #### Kopieer en plak dit stuk aan het eind van het document
 
-	# WebDAV module
-	# http://tigervittles.com/?p=10
-	
-	# Set DAVLockDB for webdav support
-	#
-	
-	DAVLockDB /private/var/run/davlocks/DAVLockDB
-	
-	#Fix headers for WebDAV
-	BrowserMatch "^WebDAVFS/1.[012]" redirect-carefully
-	BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
-	BrowserMatch "Microsoft-WebDAV-MiniRedir/5.1.2600" redirect-carefully
-	BrowserMatch "^WebDrive" redirect-carefully
-	BrowserMatch "^WebDAVFS" redirect-carefully
-	
-	<IfModule mod_headers.c>
-		Header add MS-Author-Via "DAV"
-	</IfModule>
-	
-	#Set up WebDAV directory rules
-	Alias /map_naam "/Users/kort_naam/map_naam"
-	<location /map_naam>
-		DAV On
-		AuthType Basic
-		AuthName "WebDAV inlog"
-		AuthUserFile /usr/local/dav.pw
-		require valid-user
-		Order allow,deny
-		Allow from all
-	</location>
+    # WebDAV module
+    # http://tigervittles.com/?p=10
+
+    # Set DAVLockDB for webdav support
+    #
+
+    DAVLockDB /private/var/run/davlocks/DAVLockDB
+
+    #Fix headers for WebDAV
+    BrowserMatch "^WebDAVFS/1.[012]" redirect-carefully
+    BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
+    BrowserMatch "Microsoft-WebDAV-MiniRedir/5.1.2600" redirect-carefully
+    BrowserMatch "^WebDrive" redirect-carefully
+    BrowserMatch "^WebDAVFS" redirect-carefully
+
+    <IfModule mod_headers.c>
+    	Header add MS-Author-Via "DAV"
+    </IfModule>
+
+    #Set up WebDAV directory rules
+    Alias /map_naam "/Users/kort_naam/map_naam"
+    <location /map_naam>
+    	DAV On
+    	AuthType Basic
+    	AuthName "WebDAV inlog"
+    	AuthUserFile /usr/local/dav.pw
+    	require valid-user
+    	Order allow,deny
+    	Allow from all
+    </location>
 
 Bewaar het document met `ctrl + x`, typ in `y`.
 
@@ -104,11 +104,11 @@ Nu alles klaar is moeten we nog zogenaamd WebDAV accounts aanmaken. Alleen deze 
 
 Open de terminal en we gaan een zogenaamde **htpasswd file** aanmaken. Ga naar de map `/usr/local`.
 
-	cd /usr/local
+    cd /usr/local
 
 Vervolgens gaan we een password file aanmaken genaamd `dav.pw`
 
-	sudo htpasswd -c dav.pw admin
+    sudo htpasswd -c dav.pw admin
 
 Zoals je kunt zien staat in het script (zie hierboven) waar dit password file wordt bewaard. De `-c` parameter betekend **create**. Het woord **admin** is een zelf verzonnen naam voor de **username**. Je kunt dus hier zelf wat van maken.
 
@@ -120,7 +120,7 @@ Eerst zal om je **eigen wachtwoord** gevraagd worden van je Mac account. Dit kom
 
 Als je het gaat testen (zie hieronder) vraagt het inlogscherm om je username en password. Ofwel ... een valid-user. Om meerdere users aan te maken die in kunnen loggen moet je nogmaals het htpasswd Unix commando uitvoeren maar dan zoals hieronder.
 
-	sudo htpasswd -m dav.pw nieuw_gebruiker
+    sudo htpasswd -m dav.pw nieuw_gebruiker
 
 Met `-m` geef je aan dat je het bestaande password file, `dav.pw`, wilt **aanvullen** met meerdere gebruikers.
 
@@ -132,6 +132,6 @@ Als je in de een browser in typt `http://localhost/map_naam` (let op: map_naam m
 
 We kunnen nu bijvoorbeeld via een andere Mac met `Apple'tje + k` verbinding maken met de WebDAV (ala iDisk) Mac. Typ in het schermpje van Server Adress het IP nummer van de WebDAV mac in.
 
-	http://ip_nummer_van_de_mac/map_naam
+    http://ip_nummer_van_de_mac/map_naam
 
 De `map_naam` is weer de naam van de map die in het script is verwerkt.

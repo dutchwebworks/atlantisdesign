@@ -12,9 +12,9 @@ We gaan MySQL installeren via een makkelijke installer package voor Mac OS X. **
 
 Bij het schrijven van dit artikel is versie 4.1 de laatste stabiele versie. [Download](http://dev.mysql.com/downloads/mysql/4.1.html#Mac_OS_X) de Mac OS X versie van de MySQL Ab website. Hierin zitten een aantal bestanden verwerkt:
 
-* **MySQL 4.1 installer package**, dit is natuurlijk de MySQL database netjes verwerkt in een simpele installer.
-* Een '**prefPane**' bestand, hiermee kun je via Apple's System Preferences de database be?nvloeden.
-* Een **startupItem**, installeer dit bestand zodat de MySQL database opstart bij het opstarten van de Mac
+- **MySQL 4.1 installer package**, dit is natuurlijk de MySQL database netjes verwerkt in een simpele installer.
+- Een '**prefPane**' bestand, hiermee kun je via Apple's System Preferences de database be?nvloeden.
+- Een **startupItem**, installeer dit bestand zodat de MySQL database opstart bij het opstarten van de Mac
 
 ## Installeren
 
@@ -49,6 +49,7 @@ Er is ook een **gratis** [Navicat v7 Lite](http://www.navicat.com/download.html)
 Dit is een **gratis** programma om queries uit te voeren, tabellen te maken en records mee te beheren. MySQL Query Browser is bij het schrijven van dit artikel nog in vroege 1.x status. Persoonlijk vind het niet prettig werken want bij een update van een record die veel tekst bevat knalt het programma er nog wel eens uit.
 
 ### [MySQL Administrator](http://dev.mysql.com/downloads/administrator/)
+
 De makers van MySQL hebben tevens voor de Mac gebruikers een gratis MySQL Administrator voor u klaar staan. Hiermee kunt u databases exporteren, voor bijvoorbeeld backups, en gebruikers beheren via een programma. Het ziet er veel belovend uit maar echt practisch werkt het nog niet.
 
 ### [phpMyAdmin](http://www.phpmyadmin.net/)
@@ -65,10 +66,10 @@ Download de source bestanden ofwel de complete website van phpMyAdmin. Pak het g
 
 Zoek onderstaande regel op:
 
-	$cfg['Servers'][$i]['auth_type'] = 'config'
+    $cfg['Servers'][$i]['auth_type'] = 'config'
 
 Verander **config** in **http**. Maak de **root username en het wachtwoord** veld ook leeg. Sla het bestand op en open de Safari webbrowser. Blader vervolgens naar deze map:
 
-	http://localhost/~kortegebruikersnaam/phpmyadmin/
+    http://localhost/~kortegebruikersnaam/phpmyadmin/
 
 Vervang in bovenstaande URL de **kortegebruikersnaam** door de naam van uw thuismap. Vervolgens komt er een inlogscherm naar voren waar u uw root account gegevens moet invullen. Als dat is gebeurt kun u via deze web applicatie ook uw databases en gebruikers beheren.

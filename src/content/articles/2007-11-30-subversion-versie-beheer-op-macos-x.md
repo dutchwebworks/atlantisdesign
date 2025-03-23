@@ -18,10 +18,10 @@ De insteek van dit artikel is het opzetten van Subversion op Mac OS X (Tiger of 
 
 Subversion (afgekort tot **SVN**) is open-source en zeg maar **gratis**. Wordt veel toegepast op projecten waarbij oude versies van bestanden bewaard moeten blijven. Uitermate geschikt voor veel kleine bestanden die bij websites gebruikt worden. Wat hebben we nodig?
 
-* [Tigris Subversion](http://subversion.tigris.org/) server, download de handig te installeren [Mac OS X binary van Martin Ott](http://homepage.mac.com/martinott/)
-* Een client programma om met Subversion te communiceren. Bijvoorbeeld [svnX](http://www.lachoseinteractive.net/en/community/subversion/svnx/download/) (open-source, gratis) of [ZigVersion](http://zigzig.com/) (voor persoonlijk / thuis gebruik **gratis** met een license key te gebruiken).
-* Klein beetje kennis van de Unix Terminal, wat echt niet moeilijk is.
-* Eventueel de Mac OS X Finder contextual plugin [SCplugin](http://scplugin.tigris.org/servlets/ProjectDocumentList). Die het mogelijk maakt via de rechtermuisttoets allerlei Subversion acties in de Finder te maken. Maar is nog een beetje buggy.
+- [Tigris Subversion](http://subversion.tigris.org/) server, download de handig te installeren [Mac OS X binary van Martin Ott](http://homepage.mac.com/martinott/)
+- Een client programma om met Subversion te communiceren. Bijvoorbeeld [svnX](http://www.lachoseinteractive.net/en/community/subversion/svnx/download/) (open-source, gratis) of [ZigVersion](http://zigzig.com/) (voor persoonlijk / thuis gebruik **gratis** met een license key te gebruiken).
+- Klein beetje kennis van de Unix Terminal, wat echt niet moeilijk is.
+- Eventueel de Mac OS X Finder contextual plugin [SCplugin](http://scplugin.tigris.org/servlets/ProjectDocumentList). Die het mogelijk maakt via de rechtermuisttoets allerlei Subversion acties in de Finder te maken. Maar is nog een beetje buggy.
 
 ## Website als voorbeeld project
 
@@ -31,13 +31,13 @@ De website is ontwikkeld door een fictief persoon genaamd `kees`, de website wor
 
 #### Working copy
 
-	/Users/kees/Sites/vogelfotografie
+    /Users/kees/Sites/vogelfotografie
 
 We moeten ook een plek hebben, een map, ergens op de Mac waar we de revivies (**repository**) gaan bewaren. Een goede locatie voor deze repository is de system Library:
 
 #### Repository
 
-	/Library/Subversion/Repository/vogelfotografie
+    /Library/Subversion/Repository/vogelfotografie
 
 Dit is de Library map van de opstartschijf, niet de Library map je eigen thuis map. Je kunt hiervoor ook een andere map gebruiken of zelfs een externe harde schijf (zolang je het Unix pad maar goed noteerd).
 
@@ -111,16 +111,16 @@ Als je een repository hebt staan op je Mac kun je met dit scherm aangeven waar d
 
 We gaan eerst een lege repository aanmaken. Dit is de database waar de revivies in worden bewaard. Nu hebben we het **Terminal** programma nodig (`/Applications/Utilities/Terminal`). Typ de volgende Unix commando's in om naar de net aangemaakt map te gaan.
 
-	cd /Library/Subversion/Repository
+    cd /Library/Subversion/Repository
 
 Deze map is verder leeg en we gaan hier zo'n repository aanmaken.
 
-	svnadmin create vogelfotografie
+    svnadmin create vogelfotografie
 
 We gaan nu de **volgelfotografie** website in de **repository** zetten, ofwel **importeren**. Omdat svnX niet uitgebreidt is om dit voor ons te doen (het schijnt dat **ZigVersion** dit wel kan met drag-and-drop vanuit de Finder) gaan we dit doen met een simpel Unix commando.
 
-	svn import, alles hoort op 1 regel te staan in de Terminal
-	svn import /Users/kees/Sites/vogelfotografie file:///Library/Subversion/Repository/vogelfotografie -m "Eerste opzet"
+    svn import, alles hoort op 1 regel te staan in de Terminal
+    svn import /Users/kees/Sites/vogelfotografie file:///Library/Subversion/Repository/vogelfotografie -m "Eerste opzet"
 
 Druk op enter en er komen allerlei Unix regels voorbij. De website is nu toegevoegd aan de repository, als **revisie 1**.
 
@@ -142,7 +142,7 @@ Nu is het moeilijkste stuk gedaan. We willen nu natuurlijk zien dat ons project 
 
 Vul een naam in zodat deze in de lijst komt te staan: vogelfotografie. Klik op het vergrootglas en blader naar de map waar de repository staat.
 
-	/Library/Subversion/Repository/vogelfotografie
+    /Library/Subversion/Repository/vogelfotografie
 
 Dubbelklik nu op de **naam** (in de lijst) van de vogelfotografie repository. In dit scherm zien we een aantal dingen.
 
@@ -170,7 +170,7 @@ Verwijder de orginele map van de **vogelfotografie** website in Kees z'n Sites m
 
 In de Finder gaan we een **lege map** maken in Kees z'n Sites map. Hierin komt de, onder versie beheer staande, vogelfotografie website. Het ziet er dus als volgt uit.
 
-	/Users/kees/Sites/vogelfotografie
+    /Users/kees/Sites/vogelfotografie
 
 Dubbelklik op de naam **vogelfotografie** in het window van de Repositories. Bovenin het scherm staan 2 buttons, twee groene pijlen. **Klik op de button met het blauw svn icoontje eronder**, dit is de **checkout button**. De andere button doet bijna hetzelfde maar dat leg ik straks uit. Blader nu naar de lege **vogelfotografie** map in Kees z'n Sites map, zie hierboven.
 
@@ -180,11 +180,11 @@ Zodra je op **open** hebt geklikt komt het andere venster in svnX, de **Working 
 
 Maar nu onder Subversion versie beheer. In de Mac OS X Finder zie je aan de bestanden niet veel bijzonders. Echter als je in de Terminal naar de map gaat ...
 
-	cd /Users/kees/Sites/vogelfotografie
+    cd /Users/kees/Sites/vogelfotografie
 
 &hellip; en een lijst opvraagt, inclusief verborgen bestanden ...
 
-	ls -Fial
+    ls -Fial
 
 ### Verborgen .svn mappen
 
@@ -197,6 +197,7 @@ Kees gaat nu vrolijk verder met de website. Hij past een paar bestanden aan, maa
 Open svnX en dubbelklik nu in het **working copy** scherm op de juist naam. Er opent zich een scherm met aangepaste bestanden. Dit wordt vergeleken met de laatste revisie in de repository. Hier kun je precies zien wat Kees heeft aangepast.
 
 #### Modified
+
 Bestanden waar een **M** voorstaat staan voor **modified**. Hiervan is dus al een revisie aanwezig en zal worden geupdate naar een volgende revisie in de repository.
 
 #### New
@@ -204,6 +205,7 @@ Bestanden waar een **M** voorstaat staan voor **modified**. Hiervan is dus al ee
 Bestanden waar een **?** (vraagtegen) voorstaat zijn meestal **nieuw**. Voordat je op commit klikt moet je de nieuwe bestanden eerst selecteren en op de `Add` knop klikken. Zodat svnX weet wat ermee moet gebeuren. Voor deze nieuwe bestanden komt een **A** te staan, van Add.
 
 ### Commit
+
 Selecteer alle bestanden in het venster (of doe een Apple'tje + a). Druk nu op de **commit** button. Er verschijnt een leeg scherm waar je een **comment** (omschrijving) kwijt kunt bij deze revisie. Dit is eigenlijk hetzelfde als toen we een import actie gedaan hebben in de Terminal met het **-m "Eerst opzet"** stukje.
 
 Vul wat relevantie informatie in zodat je voor jezelf kun bijhouden wat er gebeurt is. Deze comment kun je ook weer terug lezen in het andere scherm: **repositories**. Dit is stap 4 uit de introductie.
@@ -212,7 +214,7 @@ Vul wat relevantie informatie in zodat je voor jezelf kun bijhouden wat er gebeu
 
 Keer terug naar het scherm van de repositories. Dubbeklik op de naam en je zult zien dat er nu **twee bullets** staan met een revisie nummer erachter. De vogelfotografie website heeft nu **2 revivies**. Je kunt nu op de bullets klikken van de revivies en onder het scherm kun je door de bestanden bladeren van deze revisies en de verschillen in bestands structuur zien.
 
-###	Revisie terug zetten
+### Revisie terug zetten
 
 Je kunt vanuit de Finder achtige onderkant nu (als je een keuze gemaakt hebt in revisie met de bullets) een bestandje terug slepen naar de vogelfotografie website. In feite haal je nu een oudere revisie van het bestand op en overschrijf je deze weer terug naar die revisie.
 

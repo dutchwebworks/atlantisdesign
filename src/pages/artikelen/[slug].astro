@@ -1,58 +1,58 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Intro from "@/components/Intro.astro";
-import WebLinks from '@/components/WebLinks.astro';
-import FormattedDate from '@/components/FormattedDate.astro';
-import ArticlesList from '@/components/ArticlesList.astro';
+import WebLinks from "@/components/WebLinks.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import ArticlesList from "@/components/ArticlesList.astro";
 import BlogPostingJSONLD from "@/components/BlogPostingJSONLD.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
-import { AUTHOR } from '@/consts';
+import { AUTHOR } from "@/consts";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('articles');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+    const posts = await getCollection("articles");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
 }
 
-type Props = CollectionEntry<'articles'>;
+type Props = CollectionEntry<"articles">;
 
 const post = Astro.props;
 const { Content } = await post.render();
-const urlSlug = `${Astro.site.href}artikelen/${post.slug}`
+const urlSlug = `${Astro.site.href}artikelen/${post.slug}`;
 
 const metaData = {
     title: post.data.title,
     description: post.data.description,
-	canonical: `artikelen/${post.slug}`
-}
+    canonical: `artikelen/${post.slug}`,
+};
 ---
 
-<Layout metaData={metaData}>	
-	<meta property="og:title" content={post.data.title} slot="begin-head" />
-	<meta property="og:description" content={post.data.description} />
-	<meta property="og:type" content="article" slot="begin-head" />
-	<meta property="og:url" content={urlSlug} slot="begin-head" />
+<Layout metaData={metaData}>
+    <meta property="og:title" content={post.data.title} slot="begin-head" />
+    <meta property="og:description" content={post.data.description} />
+    <meta property="og:type" content="article" slot="begin-head" />
+    <meta property="og:url" content={urlSlug} slot="begin-head" />
 
-	<BlogPostingJSONLD slot="begin-head" { ...Astro.props } { urlSlug } />
+    <BlogPostingJSONLD slot="begin-head" {...Astro.props} {urlSlug} />
 
-	<Intro> 
-		{post.data.description}
-	</Intro>
+    <Intro>
+        {post.data.description}
+    </Intro>
 
-	<aside id="side" class="grid_5">
-		<ArticlesList heading="Artikelen" />
+    <aside id="side" class="grid_5">
+        <ArticlesList heading="Artikelen" />
 
-		<WebLinks heading="Links" />
-	</aside>
+        <WebLinks heading="Links" />
+    </aside>
 
-	<main id="main" class="grid_11 omega">
-		<h1>{post.data.title}</h1>
+    <main id="main" class="grid_11 omega">
+        <h1>{post.data.title}</h1>
 
-		<p><em>Geschreven door {AUTHOR} op <FormattedDate date={post.data.pubDate} /></em></p>
+        <p><em>Geschreven door {AUTHOR} op <FormattedDate date={post.data.pubDate} /></em></p>
 
-		<Content />
-	</main>
+        <Content />
+    </main>
 </Layout>

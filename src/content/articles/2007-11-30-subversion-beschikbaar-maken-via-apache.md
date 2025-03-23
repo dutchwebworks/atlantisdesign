@@ -18,17 +18,17 @@ Voordat we dingen eventueel stuk maken gaan we eerst een backup maken van de Apa
 
 #### Ga eerst naar de map waar het configuratie bestand staat:
 
-	cd /etc/apache2
+    cd /etc/apache2
 
 #### Vraag een lijst met bestanden op. Deze stap is niet perse nodig:
 
-	ls -l
+    ls -l
 
 Hier zien we welk bestand we moeten hebben, namelijk `httpd.conf`. Typ het volgende commando in en geef een administrator wachtwoord op.
 
 #### Backup maken
 
-	sudo cp httpd.conf httpd.conf_backup
+    sudo cp httpd.conf httpd.conf_backup
 
 Vraag met `ls -l` opnieuw een lijst op en we zien dat er een backup bestand is gemaakt. Voor degene die met de Unix terminal overweg kunnen weten hoe ze met de commando's `rm` en `mv` de backup weer terug kunnen zetten.
 
@@ -42,17 +42,17 @@ Start **TextWrangler** (of BBEdit) en laat het de **command line tools** install
 
 Open de **Terminal** (`/Applications/Utilities/Terminal`) en voer het volgende Unix commando in om in TextWrangler het Apache configuratie bestand te openen. Dit kun je ook gewoon via `File > Open hidden` ... in **TextWrangler** doen, als je weet waar het bestand staat.
 
-	edit /etc/apache2/httpd.conf
+    edit /etc/apache2/httpd.conf
 
 Ga met `Apple'tje + j` naar **regel 467**. Daar staat de volgende regel. Deze moeten we un-commenten. Haal het haakje (**#**) weg voor deze regel.
 
 #### WebDAV aanzetten
 
-	Include /private/etc/apache2/extra/httpd-dav.conf
+    Include /private/etc/apache2/extra/httpd-dav.conf
 
 Nu zal WebDAV aangezet worden bij de volgende herstart van de Apache webserver. Open vervolgens dit nieuwe configuratie bestand. Daarin gaan we aangeven **welke Subversion repository** beschikbaar wordt via WebDAV en Apache. Dit kan in TextWrangler of met een Terminal commando.
 
-	edit /private/etc/apache2/extra/httpd-dav.conf
+    edit /private/etc/apache2/extra/httpd-dav.conf
 
 Dit is een basis configuratie bestand waar ook een voorbeeld in staat van een Subversion repository.
 
@@ -60,48 +60,48 @@ Dit is een basis configuratie bestand waar ook een voorbeeld in staat van een Su
 
 Vervang de inhoud van dit bestand met het volgende [voorbeeld configuratie bestand](http://www.atlantisdesign.nl/public/apache_svn_webdav.txt):
 
-	BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
-	BrowserMatch "MS FrontPage" redirect-carefully
-	BrowserMatch "^WebDrive" redirect-carefully
-	BrowserMatch "^WebDAVFS/1.[0123]" redirect-carefully
-	BrowserMatch "^gnome-vfs/1.0" redirect-carefully
-	BrowserMatch "^XML Spy" redirect-carefully
-	BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
-	
-	########################################
-	## Default
-	########################################
-	
-	# Webdav and Subversion modules
-	LoadModule dav_svn_module		libexec/apache2/mod_dav_svn.so
-	LoadModule authz_svn_module		libexec/apache2/mod_authz_svn.so
-	
-	########################################
-	## Websites
-	########################################
-	
-	# Volelfotografie svn repository
-	<Location /svn/vogelfotografie> 
-		DAV svn 
-		SVNPath /Library/Subversion/Repository/vogelfotografie
-	
-		# Set auto mime-type conversion (for simple HTML mime-type headers)
-		ModMimeUsePathInfo on
-	
-		# Basic Apache realm authentication
-		AuthType Basic 
-		AuthName "Vogelfotografie Subversion repository"
-		AuthUserFile /etc/apache2/passwords/.htpasswd 
-	
-		# only authenticated users may access the repository 
-		Require valid-user	
-	</Location>
+    BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
+    BrowserMatch "MS FrontPage" redirect-carefully
+    BrowserMatch "^WebDrive" redirect-carefully
+    BrowserMatch "^WebDAVFS/1.[0123]" redirect-carefully
+    BrowserMatch "^gnome-vfs/1.0" redirect-carefully
+    BrowserMatch "^XML Spy" redirect-carefully
+    BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
+
+    ########################################
+    ## Default
+    ########################################
+
+    # Webdav and Subversion modules
+    LoadModule dav_svn_module		libexec/apache2/mod_dav_svn.so
+    LoadModule authz_svn_module		libexec/apache2/mod_authz_svn.so
+
+    ########################################
+    ## Websites
+    ########################################
+
+    # Volelfotografie svn repository
+    <Location /svn/vogelfotografie>
+    	DAV svn
+    	SVNPath /Library/Subversion/Repository/vogelfotografie
+
+    	# Set auto mime-type conversion (for simple HTML mime-type headers)
+    	ModMimeUsePathInfo on
+
+    	# Basic Apache realm authentication
+    	AuthType Basic
+    	AuthName "Vogelfotografie Subversion repository"
+    	AuthUserFile /etc/apache2/passwords/.htpasswd
+
+    	# only authenticated users may access the repository
+    	Require valid-user
+    </Location>
 
 ### Vogelfotografie website van Kees
 
 Als voorbeeld nemen we weer de **vogelfotografie** website van **Kees**. In het bestandje staan de benodigde configuratie regels om webDAV aan te zetten en tevens een voorbeeld van een Subversion repository die beschikbaar wordt gesteld. Deze staat op de volgende locatie:
 
-	/Library/Subversion/Repository/vogelfotografie
+    /Library/Subversion/Repository/vogelfotografie
 
 ## Apache password bestand aanmaken
 
@@ -109,13 +109,13 @@ In het stukje `Location` wordt een autheticatie systeem opgenomen, een zogenaamd
 
 Maak de volgende map aan als deze nog niet bestaat.
 
-	mkdir /etc/apache2/passwords/
+    mkdir /etc/apache2/passwords/
 
 Als je nog geen password bestand heb gemaakt voeren we de volgende Unix code uit in de Termminal. Als er al een password bestand staat kun je **-c** weg laten. Als er al een user **kees** is zal het wachtwoord **overschreven** worden.
 
 #### Deze stap is niet perse nodig als je al een password bestand hebt staan.
 
-	htpasswd -c /etc/apache2/passwords/.htpasswd kees
+    htpasswd -c /etc/apache2/passwords/.htpasswd kees
 
 Het **htpasswd** programma zal voor de gebruiker `kees` om een wachtwoord aanmaak vragen.
 
@@ -125,11 +125,11 @@ In de Terminal gaan we de Apache configuratie eerst testen om te kijken of we ge
 
 #### Apache configuratie op syntax controleren
 
-	sudo httpd -t
+    sudo httpd -t
 
 Als er geen fouten in beeld komen kunnen we de Apache server **herstarten**.
 
-	apachectl graceful
+    apachectl graceful
 
 ## Testen op eigen Mac
 
@@ -137,7 +137,7 @@ Nu is de vogelfotografie repository beschikbaar via het IP nummer van onze Mac. 
 
 Open een webbrowser, bijvoorbeeld Safari en typ onderstaand adres hierin. Er zal een inlog scherm komen (de **realm**), vul de gegevens in van de zojuist aangemaakte gebruiker **kees** (Apache htpasswd van daarnet). Het IP nummer hieronder betekend eigenlijk '**de computer zelf**'.
 
-	http://127.0.0.1/svn/vogelfotografie
+    http://127.0.0.1/svn/vogelfotografie
 
 Als het goed is verschijnt er een lijstje in beeld, met een revisie nummer, van de Subversion repository. Onderin de webbrowser staat heel fancy dat het Powered by Subversion is. **Het werkt!!** Je kun hier doorheen bladeren en zelfs bestanden downloaden. Een gewone standaard (.html) website is zelfs op deze manier ook direct vanuit Subversion te bekijken als een echte website.
 
@@ -163,7 +163,7 @@ Maak bijvoorbeeld op de Windows desktop een lege map aan, genaamd **vogelfotogra
 
 Vul hier het IP nummer in van de Mac met de extra paden erachter. Vervang onderstaand IP nummer door het goede IP nummer van de Mac.
 
-	http://192.168.0.12/svn/vogelfotografie
+    http://192.168.0.12/svn/vogelfotografie
 
 Weer komt het inlog scherm in beeld. Voorzie dit scherm met de gebruikersnaam `kees` en het wachtwoord. In de Windows verkenner komen nu alle bestanden van Kees z'n vogelfotografie website te staan. Compleet met mooie icoontjes waaraan je kan zien of Subversion bestanden zijn aangepast.
 
@@ -182,4 +182,3 @@ Klik bovenaan in het working copy window op de groene button voor een **SVN Upda
 Hiervoor **kopieer** je het stuk `Location` van de vogelfotografie website in het configuratie bestand. Pas de paden aan naar de repositories en maak eventueel nieuwe (andere) gebruikers aan met het **htpasswd** programma in de Terminal.
 
 Vergeet vervolgens niet de Apache server te herstarten met `apachectl graceful`.
-

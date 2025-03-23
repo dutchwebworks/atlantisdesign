@@ -1,17 +1,21 @@
 {
-  "name": "atlantisdesign",
-  "type": "module",
-  "version": "0.0.1",
-  "license": "MIT",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.0.4",
-    "astro": "^4.1.1"
-  }
+    "name": "atlantisdesign",
+    "type": "module",
+    "version": "0.0.1",
+    "license": "MIT",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/sitemap": "^3.2.1",
+        "astro": "^5.4.3"
+    },
+    "devDependencies": {
+        "prettier": "3.5.3",
+        "prettier-plugin-astro": "0.14.1"
+    }
 }

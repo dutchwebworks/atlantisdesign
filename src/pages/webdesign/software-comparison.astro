@@ -1,115 +1,180 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Intro from '@/components/Intro.astro';
-import ArticlesList from '@/components/ArticlesList.astro';
-import WebdesignNav from '@/components/WebdesignNav.astro';
+import Layout from "@/layouts/Layout.astro";
+import Intro from "@/components/Intro.astro";
+import ArticlesList from "@/components/ArticlesList.astro";
+import WebdesignNav from "@/components/WebdesignNav.astro";
 
 const metaData = {
-	title: "Webdesign » Conditional comments",
+    title: "Webdesign » Conditional comments",
     description: "About my web design",
-    canonical: "webdesign/software-comparison"
-}
+    canonical: "webdesign/software-comparison",
+};
 ---
 
 <Layout metaData={metaData}>
-	<Intro>
-		Voor webdevelopment wordt veel verschillende (server) software gebruikt.
-	</Intro>
+    <Intro> Voor webdevelopment wordt veel verschillende (server) software gebruikt. </Intro>
 
     <aside id="side" class="grid_5">
-		<WebdesignNav />
-		
-		<h2>Artikelen</h2>
+        <WebdesignNav />
 
-		<ArticlesList />
-	</aside>
+        <h2>Artikelen</h2>
+
+        <ArticlesList />
+    </aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>Software Comparison</h1>
-		
-		<p>
-			Hier volgt een soort <strong>comparison chart</strong> met meest gebruikte webdevelopment- en server software op het Windows platform in vergelijking met Mac / Linux (OpenSource) platform. 
-			Veel van de software in deze lijst is ook een vergelijking met commerciele software waarvoor betaald moet worden. 
-		</p>
-		
-		<p>	
-			Dit in tegenstelling tot OpenSource (varianten) software wat je in de meeste gevallen gratis mag gebruiken.
-		</p>
-			
-		<table border="0" summary="Software verschillen" class="design stripe">
-			<tbody>
-				<tr class="odd">
-					<th scope="col">Type software</th>
-					<th scope="col">Windows</th>
-					<th scope="col">Mac (OpenSource)</th>
-				</tr>
-				<tr class="even">
-					<td>Besturingssysteem</td>
-					<td><a href="http://www.microsoft.com/windows/" target="_blank" rel="link">Microsoft Windows</a></td>
-					<td><a href="http://www.apple.com/macosx/" target="_blank" rel="link">Mac OS X</a> / <a href="http://en.wikipedia.org/wiki/Linux" target="_blank" rel="link">Linux</a></td>
-				</tr>
-				<tr class="odd">
-					<td>Webserver</td>
-					<td><a href="http://en.wikipedia.org/wiki/Internet_Information_Services" target="_blank" rel="link">Microsoft IIS</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Apache_%28HTTP_server%29" target="_blank" rel="link">Apache</a></td>
-				</tr>
-				<tr class="even">
-					<td>Server side scripting</td>
-					<td><a href="http://en.wikipedia.org/wiki/Active_Server_Pages" target="_blank" rel="link">Microsoft ASP</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Php" target="_blank" rel="link">PHP</a> / <a href="http://en.wikipedia.org/wiki/Cold_Fusion_programming_language" target="_blank" rel="link">ColdFusion</a></td>
-				</tr>
-				<tr class="odd">
-					<td>&nbsp;</td>
-					<td><a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29" target="_blank" rel="link">C#</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Perl" target="_blank" rel="link">Perl</a> / <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29" target="_blank" rel="link">Python</a> / <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29" target="_blank" rel="link">Ruby</a></td>
-				</tr>
-				<tr class="even">
-					<td>Webdevelopment frameworks</td>
-					<td><a href="http://en.wikipedia.org/wiki/.NET_Framework" target="_blank" rel="link">Microsoft .NET</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Ruby_on_rails" target="_blank" rel="link">Ruby on Rails</a></td>
-				</tr>
-				<tr class="odd">
-					<td>Database</td>
-					<td><a href="http://en.wikipedia.org/wiki/Mssql" target="_blank" rel="link">Microsoft SQL</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Mysql" target="_blank" rel="link">MySQL</a> / <a href="http://en.wikipedia.org/wiki/Postgresql" target="_blank" rel="link">PostgreSQL</a></td>
-				</tr>
-				<tr class="even">
-					<td>Version control</td>
-					<td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_SourceSafe" target="_blank" rel="link">Microsoft Visual Source Safe (VSS)</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank" rel="link">CollabNet Subversion (SVN)</a></td>
-				</tr>
-				
-				<tr class="odd">
-					<td>Integrated Development Environment (IDE)</td>
-					<td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank" rel="link">Microsoft Visual Studio</a></td>
-					<td><a href="http://www.apple.com/macosx/developertools/xcode.html" target="_blank" rel="link">Apple xCode</a> / <a href="http://en.wikipedia.org/wiki/Eclipse_ide" target="_blank" rel="link">Eclipse</a></td>
-				</tr>					
-				<tr class="even">
-					<td>Code editor</td>
-					<td><a href="http://www.ultraedit.com/" target="_blank" rel="link">UltraEdit</a></td>
-					<td><a href="http://www.barebones.com/products/bbedit/" target="_blank" rel="link">BBEdit</a> / <a href="http://macromates.com/" target="_blank" rel="link">TextMate</a></td>
-				</tr>
-				<tr class="odd">
-					<td>File / folder comparison</td>
-					<td><a href="http://www.scootersoftware.com/" target="_blank" rel="link">Beyond Compare</a></td>
-					<td><a href="http://www.changesapp.com/" target="_blank" rel="link">Changes</a></td>
-				</tr>
-				<tr class="even">
-					<td>FTP client</td>
-					<td><a href="http://filezilla-project.org/" target="_blank" rel="link">FileZilla</a> / <a href="http://www.wsftp.com/" target="_blank" rel="link">WS_FTP</a></td>
-					<td><a href="http://www.panic.com/transmit/" target="_blank" rel="link">Transmit</a> / <a href="http://fetchsoftworks.com/" target="_blank" rel="link">Fetch</a></td>
-				</tr>
-				<tr class="odd">
-					<td>Office productivity</td>
-					<td><a href="http://en.wikipedia.org/wiki/Microsoft_Office" target="_blank" rel="link">Microsoft Office</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Openoffice" target="_blank" rel="link">Sun OpenOffice.org</a></td>
-				</tr>					
-				<tr class="even">
-					<td>Design / Multimedia</td>
-					<td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
-					<td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
-				</tr>					
-			</tbody>
-		</table>
-	</main>
+        <h1>Software Comparison</h1>
+
+        <p>
+            Hier volgt een soort <strong>comparison chart</strong> met meest gebruikte webdevelopment- en server software op het Windows platform in vergelijking
+            met Mac / Linux (OpenSource) platform. Veel van de software in deze lijst is ook een vergelijking met commerciele software waarvoor betaald
+            moet worden.
+        </p>
+
+        <p>Dit in tegenstelling tot OpenSource (varianten) software wat je in de meeste gevallen gratis mag gebruiken.</p>
+
+        <table border="0" summary="Software verschillen" class="design stripe">
+            <tbody>
+                <tr class="odd">
+                    <th scope="col">Type software</th>
+                    <th scope="col">Windows</th>
+                    <th scope="col">Mac (OpenSource)</th>
+                </tr>
+                <tr class="even">
+                    <td>Besturingssysteem</td>
+                    <td><a href="http://www.microsoft.com/windows/" target="_blank" rel="link">Microsoft Windows</a></td>
+                    <td>
+                        <a href="http://www.apple.com/macosx/" target="_blank" rel="link">Mac OS X</a> / <a
+                            href="http://en.wikipedia.org/wiki/Linux"
+                            target="_blank"
+                            rel="link"
+                        >
+                            Linux
+                        </a>
+                    </td>
+                </tr>
+                <tr class="odd">
+                    <td>Webserver</td>
+                    <td><a href="http://en.wikipedia.org/wiki/Internet_Information_Services" target="_blank" rel="link">Microsoft IIS</a></td>
+                    <td><a href="http://en.wikipedia.org/wiki/Apache_%28HTTP_server%29" target="_blank" rel="link">Apache</a></td>
+                </tr>
+                <tr class="even">
+                    <td>Server side scripting</td>
+                    <td><a href="http://en.wikipedia.org/wiki/Active_Server_Pages" target="_blank" rel="link">Microsoft ASP</a></td>
+                    <td>
+                        <a href="http://en.wikipedia.org/wiki/Php" target="_blank" rel="link">PHP</a> / <a
+                            href="http://en.wikipedia.org/wiki/Cold_Fusion_programming_language"
+                            target="_blank"
+                            rel="link"
+                        >
+                            ColdFusion
+                        </a>
+                    </td>
+                </tr>
+                <tr class="odd">
+                    <td>&nbsp;</td>
+                    <td><a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29" target="_blank" rel="link">C#</a></td>
+                    <td>
+                        <a href="http://en.wikipedia.org/wiki/Perl" target="_blank" rel="link">Perl</a> / <a
+                            href="http://en.wikipedia.org/wiki/Python_%28programming_language%29"
+                            target="_blank"
+                            rel="link"
+                        >
+                            Python
+                        </a> / <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29" target="_blank" rel="link">Ruby</a>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Webdevelopment frameworks</td>
+                    <td><a href="http://en.wikipedia.org/wiki/.NET_Framework" target="_blank" rel="link">Microsoft .NET</a></td>
+                    <td><a href="http://en.wikipedia.org/wiki/Ruby_on_rails" target="_blank" rel="link">Ruby on Rails</a></td>
+                </tr>
+                <tr class="odd">
+                    <td>Database</td>
+                    <td><a href="http://en.wikipedia.org/wiki/Mssql" target="_blank" rel="link">Microsoft SQL</a></td>
+                    <td>
+                        <a href="http://en.wikipedia.org/wiki/Mysql" target="_blank" rel="link">MySQL</a> / <a
+                            href="http://en.wikipedia.org/wiki/Postgresql"
+                            target="_blank"
+                            rel="link"
+                        >
+                            PostgreSQL
+                        </a>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Version control</td>
+                    <td>
+                        <a href="http://en.wikipedia.org/wiki/Microsoft_Visual_SourceSafe" target="_blank" rel="link">
+                            Microsoft Visual Source Safe (VSS)
+                        </a>
+                    </td>
+                    <td><a href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank" rel="link">CollabNet Subversion (SVN)</a></td>
+                </tr>
+
+                <tr class="odd">
+                    <td>Integrated Development Environment (IDE)</td>
+                    <td><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" target="_blank" rel="link">Microsoft Visual Studio</a></td>
+                    <td>
+                        <a href="http://www.apple.com/macosx/developertools/xcode.html" target="_blank" rel="link">Apple xCode</a> / <a
+                            href="http://en.wikipedia.org/wiki/Eclipse_ide"
+                            target="_blank"
+                            rel="link"
+                        >
+                            Eclipse
+                        </a>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Code editor</td>
+                    <td><a href="http://www.ultraedit.com/" target="_blank" rel="link">UltraEdit</a></td>
+                    <td>
+                        <a href="http://www.barebones.com/products/bbedit/" target="_blank" rel="link">BBEdit</a> / <a
+                            href="http://macromates.com/"
+                            target="_blank"
+                            rel="link"
+                        >
+                            TextMate
+                        </a>
+                    </td>
+                </tr>
+                <tr class="odd">
+                    <td>File / folder comparison</td>
+                    <td><a href="http://www.scootersoftware.com/" target="_blank" rel="link">Beyond Compare</a></td>
+                    <td><a href="http://www.changesapp.com/" target="_blank" rel="link">Changes</a></td>
+                </tr>
+                <tr class="even">
+                    <td>FTP client</td>
+                    <td>
+                        <a href="http://filezilla-project.org/" target="_blank" rel="link">FileZilla</a> / <a
+                            href="http://www.wsftp.com/"
+                            target="_blank"
+                            rel="link"
+                        >
+                            WS_FTP
+                        </a>
+                    </td>
+                    <td>
+                        <a href="http://www.panic.com/transmit/" target="_blank" rel="link">Transmit</a> / <a
+                            href="http://fetchsoftworks.com/"
+                            target="_blank"
+                            rel="link"
+                        >
+                            Fetch
+                        </a>
+                    </td>
+                </tr>
+                <tr class="odd">
+                    <td>Office productivity</td>
+                    <td><a href="http://en.wikipedia.org/wiki/Microsoft_Office" target="_blank" rel="link">Microsoft Office</a></td>
+                    <td><a href="http://en.wikipedia.org/wiki/Openoffice" target="_blank" rel="link">Sun OpenOffice.org</a></td>
+                </tr>
+                <tr class="even">
+                    <td>Design / Multimedia</td>
+                    <td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
+                    <td><a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" target="_blank" rel="link">Adobe Creative Suite</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </Layout>

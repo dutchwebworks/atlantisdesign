@@ -4,7 +4,7 @@ description: "Er is bij het schrijven van dit artikelen nog geen officiele versi
 pubDate: 2007-10-31
 ---
 
-* In een vorig artikel over [MySQL voor Tiger v10.4](http://www.atlantisdesign.nl/artikel/mysql-op-macosx-tiger) is uitgelegd hoe je MySQL v4.1.x aan de praat kan krijgen. Sinds enige tijd heeft Apple zijn nieuwste vier voeter los gelaten in het wild. **Hier volgt een update op dit artikel**.
+- In een vorig artikel over [MySQL voor Tiger v10.4](http://www.atlantisdesign.nl/artikel/mysql-op-macosx-tiger) is uitgelegd hoe je MySQL v4.1.x aan de praat kan krijgen. Sinds enige tijd heeft Apple zijn nieuwste vier voeter los gelaten in het wild. **Hier volgt een update op dit artikel**.
 
 Apple heeft de Apache webserver ge-update naar versie 2 (die al een tijd uit is naturulijk) en heeft ons ook voorzien van een pre-installed PHP5 waar we prima mee uit de voeten kunnen.
 
@@ -38,13 +38,13 @@ In de Mac OS X **Terminal** (`/Applications/Utilities/Terminal`) gaan we de volg
 
 ### MySQL StartupItem een handje helpen met een Unix symbolic link
 
-	sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
+    sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
 
 #### Foutmelding?
 
 **Let op!** Als je een foutmelding krijgt dat de map `mysql` (nog) niet bestaat moet je deze eerst aanmaken, en geef een administrator wachtwoord op. Probeer nu bovenstaande symbolic link opnieuw.
 
-	sudo mkdir /var/mysql
+    sudo mkdir /var/mysql
 
 MySQL installeerd zich in een bepaalde map die afwijkt van de map waar bijvoorbeeld de door Apple pre-installed PHP5 en andere zaken de MySQL database zouden verwachen. Het stukje `ln -s` betekend vrij vertaald dat we een symbolische (permanente) Unix link / alias maken van de ene map of file naar de andere. Beide zijn dus te gebruiken door Mac OS X.
 
@@ -70,23 +70,23 @@ Start TextWrangler (of BBEdit) en laat het de command line tools installeren. We
 
 ### Methode 1. Via de Terminal
 
-	vi .bash_profile
+    vi .bash_profile
 
 ### Methode 2. Via TextWrangler of BBEdit
 
-	edit .bash_profile
+    edit .bash_profile
 
 Er opent zich een leeg scherm, of text file voor het geval je BBEdit of TextWrangler hebt gebruikt. Copy en Paste de onderstaande 2 regels in hetzelfde lege document.
 
 #### Plak onderstaande in het .bash_profile bestand
 
-	alias start_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM start"
+    alias start_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM start"
 
-	alias stop_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
+    alias stop_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
 
 Voor de Terminal versie bewaar je het document door eerst op **ESC** te drukken, typ dan een **dubbele punt** in, daarna de letter `w` en de letter `q` achter elkaar. Dus zoals onderstaande:
 
-	:wq
+    :wq
 
 Dat betekend vrij vertaald: Ga naar de command modus van de VI editor, bewaar het file ofwel w van 'write' en sluit de vi editor af ofwel de `q` van 'quit'.
 
@@ -100,7 +100,7 @@ Sluit het Terminal programma af en open het opnieuw, zodat de zojuist aangemaakt
 
 #### Start MySQL database
 
-	start_mysql
+    start_mysql
 
 Dit is de alias / shortcut die we zojuist hebben aangemaakt. In beeld zal de tekst verschijnen dat de MySQL database server bezig is met opstarten. Even wachten en de promt (knipperende cursor) komt terug.
 
@@ -114,7 +114,7 @@ Stoppen van de MySQL database server is ... je raad het al, net zo makkelijk als
 
 #### Stoppen van MySQL database
 
-	stop_mysql
+    stop_mysql
 
 ## Maar nu ... moet ik die commando's elke keer intypen?
 
@@ -129,4 +129,5 @@ Er zijn diverse programma's om de MySQL database te beheren. De bekendste is [ph
 Een aanrader is het **gratis** [Navicat v7 Lite](http://www.navicat.com/download.html). Hiermee kun je de basic dingen met MySQL doen zoals z'n commerciele variant. De commerciele versie heeft een interne optie op backups te maken. Dit heeft de lite versie niet maar je kunt wel SQL dump files (exports van je databases) mee maken.
 
 ### MySQL Query Browser en Administrator
+
 De mensen die MySQL onderhouden, MySQL AB, hebben ook 2 gratis tools ter beschikking gesteld. Met [MySQL Query Browser](http://www.mysql.com/products/tools/query-browser/) kun je SQL queries maken en los laten op je database. Met de [MySQL Administrator](http://www.mysql.com/products/tools/administrator/) kun je de databases beheren en backupen.

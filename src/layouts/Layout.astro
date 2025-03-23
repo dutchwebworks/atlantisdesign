@@ -1,41 +1,41 @@
---- 
-import Head from '@/components/Head.astro';
-import Header from '@/components/Header.astro';
-import Nav from '@/components/Nav.astro';
-import Footer from '@/components/Footer.astro';
+---
+import Head from "@/components/Head.astro";
+import Header from "@/components/Header.astro";
+import Nav from "@/components/Nav.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
-    metaData: Object
-} 
+    metaData: Object;
+}
 
 const { metaData } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
-	<head>
-		<slot name="begin-head" />
+    <head>
+        <slot name="begin-head" />
 
-		<Head metaData={metaData} />		
+        <Head metaData={metaData} />
 
-		<slot name="end-head" />
-	</head>
+        <slot name="end-head" />
+    </head>
 
-	<body>
-		<slot name="begin-body" />
+    <body>
+        <slot name="begin-body" />
 
-		<div id="skipNav" class="hide non_print"><a href="#main" accesskey="2">Direct naar de tekst</a></div>
+        <div id="skipNav" class="hide non_print"><a href="#main" accesskey="2">Direct naar de tekst</a></div>
 
-		<section id="wrapper" class="container_16 content">
-			<Nav />
+        <section id="wrapper" class="container_16 content">
+            <Nav />
 
-			<Header />
-			
-			<slot />
-		</section>
-		
-		<Footer />
+            <Header />
 
-		<slot name="end-body" />
-	</body>
+            <slot />
+        </section>
+
+        <Footer />
+
+        <slot name="end-body" />
+    </body>
 </html>

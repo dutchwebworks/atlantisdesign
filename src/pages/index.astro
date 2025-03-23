@@ -1,87 +1,139 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import MadeOnAMac from '@/components/MadeOnAMac.astro';
-import Intro from '@/components/Intro.astro';
-import ArticlesList from '@/components/ArticlesList.astro';
-import AListApartSurvey from '@/components/AListApartSurvey.astro';
+import Layout from "@/layouts/Layout.astro";
+import MadeOnAMac from "@/components/MadeOnAMac.astro";
+import Intro from "@/components/Intro.astro";
+import ArticlesList from "@/components/ArticlesList.astro";
+import AListApartSurvey from "@/components/AListApartSurvey.astro";
 
 const metaData = {
     title: "Atlantisdesign",
-    description: "A personal web site"
-}
+    description: "A personal web site",
+};
 ---
 
 <Layout metaData={metaData}>
     <Intro>
-        Atlantisdesign is een persoonlijke website voor een aantal ontwerp- en test projecten.  
-        Hier vind je diverse artikelen met betrekking tot de <strong>Apple Mac</strong> , <strong>webdesign</strong>, 
-        je eigen Mac als <strong>webserver</strong>  en dingen die ik interessant / leuk vind.
-        Een website gebouwd met <strong>webstandaarden</strong>.
+        Atlantisdesign is een persoonlijke website voor een aantal ontwerp- en test projecten. Hier vind je diverse artikelen met betrekking tot de <strong
+        >
+            Apple Mac
+        </strong> , <strong>webdesign</strong>, je eigen Mac als <strong>webserver</strong> en dingen die ik interessant / leuk vind. Een website gebouwd
+        met <strong>webstandaarden</strong>.
     </Intro>
-    
-	<aside id="side" class="grid_5">
+
+    <aside id="side" class="grid_5">
         <h2>Artikelen</h2>
-        
+
         <p>
-            <strong>Bezig met webdesign / webdevelopment op de Mac?</strong> Altijd al eens je eigen Mac beter willen 
-            inrichten als webserver? Uitleg in het Nederlands en helemaal toegespits op Mac OS X (Tiger en Leopard).
-        </p>                
+            <strong>Bezig met webdesign / webdevelopment op de Mac?</strong> Altijd al eens je eigen Mac beter willen inrichten als webserver? Uitleg in
+            het Nederlands en helemaal toegespits op Mac OS X (Tiger en Leopard).
+        </p>
 
         <ArticlesList />
     </aside>
-    
+
     <main id="main" class="grid_5">
         <h2>Mac &amp; webdesign</h2>
 
         <p>
-            Mijn interesses gaan uit naar <strong>webdesign</strong> volgens webstandaaden, <strong>vormgeving</strong>, <a href="http://nl.wikipedia.org/wiki/Cascading_Style_Sheets" title="Cascading Style Sheets" target="_blank" rel="link">Css</a>, <a href="http://en.wikipedia.org/wiki/Xhtml" title="Extensible HyperText Markup Language" target="_blank" rel="link">XHTML</a>
-            <a href="http://en.wikipedia.org/wiki/Unobtrusive_JavaScript" target="_blank" rel="link">unobtrusive Javascripting</a> , <strong>PHP server-side</strong>  scripting, <strong>MySQL databases</strong>  en de <strong>Apache webserver</strong>.
-            Dat allemaal op <a href="http://www.apple.com/macosx/" target="_blank" rel="link">Apple's Mac OS X</a>.
+            Mijn interesses gaan uit naar <strong>webdesign</strong> volgens webstandaaden, <strong>vormgeving</strong>, <a
+                href="http://nl.wikipedia.org/wiki/Cascading_Style_Sheets"
+                title="Cascading Style Sheets"
+                target="_blank"
+                rel="link"
+            >
+                Css
+            </a>, <a href="http://en.wikipedia.org/wiki/Xhtml" title="Extensible HyperText Markup Language" target="_blank" rel="link">XHTML</a>
+            <a href="http://en.wikipedia.org/wiki/Unobtrusive_JavaScript" target="_blank" rel="link">unobtrusive Javascripting</a> , <strong>
+                PHP server-side
+            </strong> scripting, <strong>MySQL databases</strong> en de <strong>Apache webserver</strong>. Dat allemaal op <a
+                href="http://www.apple.com/macosx/"
+                target="_blank"
+                rel="link"
+            >
+                Apple's Mac OS X
+            </a>.
         </p>
-        
+
         <h3>Webdesite vervaardigen</h3>
-        
-        <p>	
-            Bij het vervaardigen van een website komt best veel kijken. Waar moet je op letten bij het schrijven van de <abbr title="eXtendable Hyper Tyxt Markup Language">XHTML</abbr> source-code en <abbr title="Cascading Style Sheets">Css</abbr>. En heel belangrijk gegeven is: Hoe ziet mijn website eruit in
-            andere web browsers, bijvoorbeeld <a href="http://www.apple.com/macosx/features/safari/" title="Apple's Safari" target="_blank" rel="link">Apple Safari</a>, <a href="http://www.microsoft.com/windows/ie_intl/nl/" title="Microsoft Internet Explorer" target="_blank" rel="link">Microsoft Internet Explorer</a>, 
-            <a href="http://www.mozilla.com/firefox/" title="Mozilla Firefox" target="_blank" rel="link">Mozilla Firefox</a> en <a href="http://www.opera.com/" title="Operasoft Opera webbrowser" target="_blank" rel="link">Opera</a>. Andere platformen dan Windows bijvoorbeeld Apple en Linux. Op de <strong>webdesign / boeken</strong>  pagina staat een <a href="/webdesign/boeken" title="Webdesign boeken">lijstje met boeken</a> die elke webdesigner / webdeveloper moeten lezen!
-        </p>		
+
+        <p>
+            Bij het vervaardigen van een website komt best veel kijken. Waar moet je op letten bij het schrijven van de <abbr
+                title="eXtendable Hyper Tyxt Markup Language"
+            >
+                XHTML
+            </abbr> source-code en <abbr title="Cascading Style Sheets">Css</abbr>. En heel belangrijk gegeven is: Hoe ziet mijn website eruit in
+            andere web browsers, bijvoorbeeld <a
+                href="http://www.apple.com/macosx/features/safari/"
+                title="Apple's Safari"
+                target="_blank"
+                rel="link"
+            >
+                Apple Safari
+            </a>, <a href="http://www.microsoft.com/windows/ie_intl/nl/" title="Microsoft Internet Explorer" target="_blank" rel="link">
+                Microsoft Internet Explorer
+            </a>,
+            <a href="http://www.mozilla.com/firefox/" title="Mozilla Firefox" target="_blank" rel="link">Mozilla Firefox</a> en <a
+                href="http://www.opera.com/"
+                title="Operasoft Opera webbrowser"
+                target="_blank"
+                rel="link"
+            >
+                Opera
+            </a>. Andere platformen dan Windows bijvoorbeeld Apple en Linux. Op de <strong>webdesign / boeken</strong> pagina staat een <a
+                href="/webdesign/boeken"
+                title="Webdesign boeken"
+            >
+                lijstje met boeken
+            </a> die elke webdesigner / webdeveloper moeten lezen!
+        </p>
 
         <h2>Aikido</h2>
 
         <p>
-            Voor mijn sportschool <a href="http://www.goudaaikikai.nl/" title="Website van Gouda Aikikai" target="_blank" rel="link">Gouda Aikikai</a> heb ik de website gemaakt ter promotie van de sportschool en de sport zelf.
-            Een aantal foto's, stage-data en veel informatie over de school en over Aikido zelf is daar te vinden. De website is gemaakt uit <strong>eigen initiatief</strong>, als hobby en liefde voor de sport, zonder daar enige (financiële) profijt van te verkrijgen.
-        </p>			
+            Voor mijn sportschool <a href="http://www.goudaaikikai.nl/" title="Website van Gouda Aikikai" target="_blank" rel="link">Gouda Aikikai</a>
+            heb ik de website gemaakt ter promotie van de sportschool en de sport zelf. Een aantal foto's, stage-data en veel informatie over de school
+            en over Aikido zelf is daar te vinden. De website is gemaakt uit <strong>eigen initiatief</strong>, als hobby en liefde voor de sport,
+            zonder daar enige (financiële) profijt van te verkrijgen.
+        </p>
     </main>
 
     <aside class="grid_6">
         <h2>What's in a name?</h2>
 
         <p>
-            De naam Atlantisdesign heb ik eigenlijk gewoon verzonnen. 'The treasure of Atlantis &hellip;' is <strong>'kennis'</strong>. 
-            Ik wil graag m'n kennis delen met mensen die ook graag met de Mac werken of in webdesign en of vormgeving hun roeping herkennen.
-        </p>	
+            De naam Atlantisdesign heb ik eigenlijk gewoon verzonnen. 'The treasure of Atlantis &hellip;' is <strong>'kennis'</strong>. Ik wil graag
+            m'n kennis delen met mensen die ook graag met de Mac werken of in webdesign en of vormgeving hun roeping herkennen.
+        </p>
 
         <h3 class="attention">Let op</h3>
 
         <p>
-            Atlantisdesign heeft <strong>geen commerciële</strong> insteek en ook geen winstoogmerk. Het is puur bedoeld als <strong>speelhoek</strong> en 
-            om mijn <strong>creativiteit</strong> te kunnen uiten.
-        </p>	
-        
+            Atlantisdesign heeft <strong>geen commerciële</strong> insteek en ook geen winstoogmerk. Het is puur bedoeld als <strong>
+                speelhoek
+            </strong> en om mijn <strong>creativiteit</strong> te kunnen uiten.
+        </p>
+
         <AListApartSurvey />
 
-        <h2>Mozilla Firefox 3 </h2>
+        <h2>Mozilla Firefox 3</h2>
 
         <p>
-            <a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=0&amp;t=213"><img class="float_left" loading="lazy" alt="Firefox 2" title="Firefox 2" src="/img/mozilla_get_firefox.png"></a>
-            <a href="http://www.mozilla.com/firefox/" title="Mozilla Firefox" target="_blank" rel="link">Mozilla Firefox</a> is in opmars!! Als ik niet achter een Mac zit is dit mijn favorite web browser Ik raad ook iedereen aan om deze web browser te gebruiken
-            en ook de e-mail cliënt <a href="http://www.mozilla.com/thunderbird/" title="Mozilla Thunderbird" target="_blank" rel="link">Mozilla Thunderbird</a> te gebruiken in plaats van Microsoft Outlook (Express).
-        </p>		
-        
+            <a href="http://www.spreadfirefox.com/?q=affiliates&id=0&t=213">
+                <img class="float_left" loading="lazy" alt="Firefox 2" title="Firefox 2" src="/img/mozilla_get_firefox.png" />
+            </a>
+            <a href="http://www.mozilla.com/firefox/" title="Mozilla Firefox" target="_blank" rel="link">Mozilla Firefox</a> is in opmars!! Als ik niet
+            achter een Mac zit is dit mijn favorite web browser Ik raad ook iedereen aan om deze web browser te gebruiken en ook de e-mail cliënt <a
+                href="http://www.mozilla.com/thunderbird/"
+                title="Mozilla Thunderbird"
+                target="_blank"
+                rel="link"
+            >
+                Mozilla Thunderbird
+            </a> te gebruiken in plaats van Microsoft Outlook (Express).
+        </p>
+
         <p>Voor webdesigners heb ik een <a href="mozilla-firefox/#firefox_addons">favoriete lijst</a> gemaakt met add-ons (extenties).</p>
 
         <MadeOnAMac />
-	</aside>
+    </aside>
 </Layout>

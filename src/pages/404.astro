@@ -1,28 +1,28 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Intro from '@/components/Intro.astro';
-import ArticlesList from '@/components/ArticlesList.astro';
+import Layout from "@/layouts/Layout.astro";
+import Intro from "@/components/Intro.astro";
+import ArticlesList from "@/components/ArticlesList.astro";
 
 const metaData = {
     title: "HTTP 404 File not found",
-    description: "Pagina niet gevonden"
-}
+    description: "Pagina niet gevonden",
+};
 ---
 
 <Layout metaData={metaData}>
-	<Intro>
-		{metaData.description}
-	</Intro>
+    <Intro>
+        {metaData.description}
+    </Intro>
 
     <aside id="side" class="grid_7">
-		<h2>Artikelen</h2>
-		
-		<ArticlesList />
-	</aside>
+        <h2>Artikelen</h2>
+
+        <ArticlesList />
+    </aside>
 
     <main id="main" class="grid_9 omega">
-		<h1>{metaData.title}</h1>
+        <h1>{metaData.title}</h1>
 
-        <p>{metaData.description}</p>		
-	</main>
+        <p>{metaData.description}</p>
+    </main>
 </Layout>

@@ -1,170 +1,229 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Intro from '@/components/Intro.astro';
-import WebdesignNav from '@/components/WebdesignNav.astro';
-import HappyWebbies from '@/components/HappyWebbies.astro';
-import Firebug from '@/components/Firebug.astro';
-import WebLinks from '@/components/WebLinks.astro';
+import Layout from "@/layouts/Layout.astro";
+import Intro from "@/components/Intro.astro";
+import WebdesignNav from "@/components/WebdesignNav.astro";
+import HappyWebbies from "@/components/HappyWebbies.astro";
+import Firebug from "@/components/Firebug.astro";
+import WebLinks from "@/components/WebLinks.astro";
 
 const metaData = {
-	title: "Webdesign » Boeken",
+    title: "Webdesign » Boeken",
     description: "Boeken over webdesign",
-    canonical: "webdesign/boeken"
-}
+    canonical: "webdesign/boeken",
+};
 ---
 
 <Layout metaData={metaData}>
-	<Intro>
-		Een aantal boeken welke zeker een aanrader zijn voor elke webdesigner / webdeveloper
-	</Intro>
+    <Intro> Een aantal boeken welke zeker een aanrader zijn voor elke webdesigner / webdeveloper </Intro>
 
     <aside id="side" class="grid_5">
-		<WebdesignNav />
+        <WebdesignNav />
 
-		<HappyWebbies />
-		
-		<Firebug />		
+        <HappyWebbies />
 
-		<WebLinks />		
-	</aside>
+        <Firebug />
+
+        <WebLinks />
+    </aside>
 
     <main id="main" class="grid_11 omega">
-			<h1>Webdesign boeken</h1>
+        <h1>Webdesign boeken</h1>
 
-			<p>
-				Onderstaand staat een rijtje boeken die elke webdesigner zou moeten lezen. Voor het maken van een goede website komen heel wat technieken kijken.
-			</p>
-			
-			<h4>Css Zengarden</h4>
+        <p>
+            Onderstaand staat een rijtje boeken die elke webdesigner zou moeten lezen. Voor het maken van een goede website komen heel wat technieken
+            kijken.
+        </p>
 
-			<p>
-				Neem zeker een kijkje op <a href="http://www.csszengarden.com/" title="Mooiste voorbeelden van Css gebruik" target="_blank" rel="link">Css Zengarden</a> en blader eens 
-				door de verschillende Css stylesheets. De meest mooie ontwerpen (allemaal gemaakt met Css) zijn hier te zien.
-			</p>
-			
-			<h2>Boek reviews</h2>
-			
-			<article class="bookReview">
-				<h3 id="jeffrey-zeldman"><a href="http://www.zeldman.com/dwws/" title="Designing with web standards" target="_blank" rel="link">Jeffery Zeldman - Desiging with web standards (2e edition)</a></h3>
-				
-				<p>	
-					<a href="http://www.zeldman.com/dwws/" title="Designing with web standards" target="_blank" rel="">
-					<img class="float_right" loading="lazy" src="/img/dwws2.jpg" alt="Boek cover - Desiging with web standards"></a>
-					Een goed boek dat iedere webdesigner / webdeveloper moet lezen is
-					<a href="http://www.zeldman.com/" title="Jeffery Zeldman presents: The Daily Report" target="_blank" rel="link">Jeffery Zeldman's</a> - Desiging with web standards
-					<em>(nu in 2e edition)</em>.
-				</p>
-				
-				<p>
-					Het boek gaat niet in detail vertellen hoe je moet vormgeven of wat nodig hebt om een goede website te maken. 
-					<strong>Het legt waarom we webstandaarden moeten gebruiken</strong> en wat de overduidelijke voordelen er van zijn.
-					Ook wordt verteld hoe je andere (collega's, bazen en klanten) zal overtuigen van het gebruik van web standaarden.
-					Niet veel boeken die over websites bouwen gaan, HTML programmering en Css nemen alle web browser en platformen eens tegen het licht. 
-					De mensen die er echt verstand van hebben
-					blijven gelukkig niet allemaal op het Microsoft platform met Internet Explorer hangen.
-				</p>
-			</article>
-			
-			<article class="bookReview">
-				<h3 id="steve-krug"><a href="http://www.sensible.com/buythebook.html" title="Don't make me think" target="_blank" rel="link">Steve Krug - Don't make me think! (2e edition)</a></h3>
-				
-				<p>
-					<a href="http://www.sensible.com/buythebook.html" title="Don't make me think" target="_blank" rel="">
-					<img class="float_right" loading="lazy" src="/img/dmmt2.jpg" alt="Boek cover - Don't make me think"></a>
-					Geweldig en af en toe grappig boek over de manier waarop we het internet echt gebruiken. Hoe mensen meer <strong>pagina's scannen</strong> 
-					dan daadwerkelijk lezen. Hij verteld veel over
-					de dingen die eigenlijk heel normaal, gewoon en vooral voorspelbaar zijn in maken van een goede website.
-				</p>
-				
-				<p>
-					Hoe bepaalde elementen zich op een website zich voorspelbaar maken en gedragen. En ook op de goede plek staan. Maar vooral! <strong>Don't make me think</strong>.
-				</p>
-				
-				<p>	
-					Je gezonde verstand gebruiken en <strong>gebruikers van websites niet laten na denken</strong> over de navigatie of hoe bepaalde dingen werken op een website.
-				</p>
-			</article>
-			
-			<article class="bookReview">
-				<h3 id="jeremy-keith-domscripting"><a href="http://www.domscripting.com/book/" title="DomScripting" target="_blank" rel="link">Jeremy Keith - DomScripting</a></h3>
+        <h4>Css Zengarden</h4>
 
-				<p>
-					<a href="http://www.domscripting.com/book/" title="DomScripting" target="_blank" rel="">
-					<img src="/img/domscripting.gif" class="float_right" alt="DomScripting by Jeremy Keith"></a>
-					Voor webdesigners die al wat kennis van Css hebben maar ook graag JavaScript willen leren is dit een heel goed boek. Als je voorstander ben van 
-					webstandaarden, het scheiden van content, structuur, behaviour en presentation is een
-					goede aanvulling in deze gedachte gang. <a href="http://en.wikipedia.org/wiki/Progressive_enhancement" target="_blank" rel="link">Progressive enhancement</a> &amp; Graceful 
-					degradation zijn de sleutelwoorden en zoals ik graag website wil maken.
-				</p>
-			</article>
-			
-			<article class="bookReview">
-				<h3 id="jeremy-keith-bulletproof-ajax"><a href="http://bulletproofajax.com/" title="Bulletproof Ajax" target="_blank" rel="link">Jeremy Keith - Bulletproof Ajax</a></h3>
-				
-				<p>
-					<a href="http://www.bulletproofajax.com//" title="Bulletproof Ajax" target="_blank" rel="">
-					<img src="/img/bulletproof_ajax.gif" class="float_right" alt="DomScripting by Jeremy Keith"></a>
-					<a href="http://domscripting.com/blog/display/41" title="Jeremy Keith about Hijax" target="_blank" rel="link">Hijax</a>, een goede unobtrusive manier voor het 
-					implementeren van Ajax technieken.
-				</p>
-				
-				<p>
-					Ajax ... het <strong>buzzword</strong> van de laatste tijd op webdesign gebied. Er zijn veel voordelen maar net zoveel nadelen te noemen over deze 
-					techniek die toch al een aantal jaar bestaat.
-				</p>
-			</article>
-			
-			
-			<article class="bookReview">
-				<h3 id="john-resig-pro-javascript-techniques"><a href="http://jspro.org/" title="Pro Javascript Techniques" target="_blank" rel="link">John Resig - Pro Javascript Techniques</a></h3>
-				
-				<p>
-					<a href="http://jspro.org/" title="Pro Javascript Techniques" target="_blank" rel="">
-					<img src="/img/pro_javascript_book.jpg" class="float_right" alt="Pro Javascript Techniques by John Resig"></a>
-					Heel goed boek als volgende stap om te lezen na <strong>DomScripting</strong> . <a href="http://ejohn.org/" target="_blank" rel="link">John Resig</a> legt uit 
-					hoe je bepaalde routines kan vergemakkelijken en functies kan schrijven die elkaar aanvullen.
-				</p>	
-				<p>	
-					Op deze manier wordt je Javascript code heel kort en krachtig. Op de manier zoals hij het uitlegt kun je makkelijk de DOM tree aflopen. Het is een 
-					pittig boek na DomScripting maar heel goed te doen.
-				</p>
-				<p>
-					John Resig is ook de uitvinder, schrijven van <a href="http://jquery.com/" target="_blank" rel="link">jQuery</a>.
-				</p>
-			</article>		
-			
-			<article class="bookReview">
-				<h3 id="eric-meyer-more-eric-meyer-on-css"><a href="http://more.ericmeyeroncss.com/about-book.html" title="More Eric Meyer on Css" target="_blank" rel="link">Eric Meyer - More Eric Meyer on Css</a></h3>
-				
-				<p>	
-					<a href="http://more.ericmeyeroncss.com/about-book.html" title="More Eric Meyer on Css!" target="_blank" rel="">
-					<img class="float_right" loading="lazy" src="/img/more_e_meyer_css.jpg" alt="Boek cover - More Eric Meyer on Css!"></a>
-					Dit is ook al weer de <strong>2e editie</strong> van <a href="http://www.meyerweb.com/" target="_blank" rel="link">Eric Meyer</a> op het gebied van Css webdesign. 
-					Dit boek bevat leuke voorbeelden van het gebruik van Css.
-				</p>
-				
-				<p>
-					Een aantal praktijk voorbeelden worden hier gegeven op het gebied van Css. Het bouwen van een mooie photogallery, stylen van een raport en 
-					een goed voorbeeld van een redesign van een fictieve website. Hierin laat hij zien hoe het met old-school tabellen is gebouwd en hoe deze website
-					om te bouwen is naar Css.
-				</p>
-			</article>
-			
-			<article class="bookReview">
-				<h3 id="eric-meyer-cascading-style-sheets"><a href="http://www.oreilly.com/catalog/css2/" title="More Eric Meyer on Css!" target="_blank" rel="link">Eric Meyer - Cascading Style Sheets: The Definitive Guide (2e edition)</a></h3>
-				
-				<p>
-					<a href="http://www.oreilly.com/catalog/css2/" title="More Eric Meyer on Css!" target="_blank" rel="">
-					<img class="float_right" loading="lazy" src="/img/css_oreilly.jpg" alt="Boek cover - Cascading Style Sheets: The Definitive Guide, Second Edition"></a>
-					Hij is wel de <strong>koning</strong> op het gebied van Css. Hij heeft ook voor <a href="http://www.oreilly.com/" title="O'Reilly website" target="_blank" rel="link">O'Reilly</a> 
-					een aantal boeken geschreven over Css.
-				</p>
-				
-				<p>
-					Dit boek bevat vooral veel naslag werk en hoe de verschillende elementen van Css werken. Erg saai dus maar wel leerzaam.
-					Op <a href="http://meyerweb.com/eric/css/edge/" title="Complexe voorbeelden met Css" target="_blank" rel="link">css/edge</a> staan een paar complexe voorbeelden van het 
-					gebruik van Css in websites.
-				</p>
-			</article>	
-		</main>
+        <p>
+            Neem zeker een kijkje op <a href="http://www.csszengarden.com/" title="Mooiste voorbeelden van Css gebruik" target="_blank" rel="link">
+                Css Zengarden
+            </a> en blader eens door de verschillende Css stylesheets. De meest mooie ontwerpen (allemaal gemaakt met Css) zijn hier te zien.
+        </p>
+
+        <h2>Boek reviews</h2>
+
+        <article class="bookReview">
+            <h3 id="jeffrey-zeldman">
+                <a href="http://www.zeldman.com/dwws/" title="Designing with web standards" target="_blank" rel="link">
+                    Jeffery Zeldman - Desiging with web standards (2e edition)
+                </a>
+            </h3>
+
+            <p>
+                <a href="http://www.zeldman.com/dwws/" title="Designing with web standards" target="_blank" rel="">
+                    <img class="float_right" loading="lazy" src="/img/dwws2.jpg" alt="Boek cover - Desiging with web standards" />
+                </a>
+                Een goed boek dat iedere webdesigner / webdeveloper moet lezen is
+                <a href="http://www.zeldman.com/" title="Jeffery Zeldman presents: The Daily Report" target="_blank" rel="link">Jeffery Zeldman's</a> -
+                Desiging with web standards
+                <em>(nu in 2e edition)</em>.
+            </p>
+
+            <p>
+                Het boek gaat niet in detail vertellen hoe je moet vormgeven of wat nodig hebt om een goede website te maken.
+                <strong>Het legt waarom we webstandaarden moeten gebruiken</strong> en wat de overduidelijke voordelen er van zijn. Ook wordt verteld hoe
+                je andere (collega's, bazen en klanten) zal overtuigen van het gebruik van web standaarden. Niet veel boeken die over websites bouwen gaan,
+                HTML programmering en Css nemen alle web browser en platformen eens tegen het licht. De mensen die er echt verstand van hebben blijven
+                gelukkig niet allemaal op het Microsoft platform met Internet Explorer hangen.
+            </p>
+        </article>
+
+        <article class="bookReview">
+            <h3 id="steve-krug">
+                <a href="http://www.sensible.com/buythebook.html" title="Don't make me think" target="_blank" rel="link">
+                    Steve Krug - Don't make me think! (2e edition)
+                </a>
+            </h3>
+
+            <p>
+                <a href="http://www.sensible.com/buythebook.html" title="Don't make me think" target="_blank" rel="">
+                    <img class="float_right" loading="lazy" src="/img/dmmt2.jpg" alt="Boek cover - Don't make me think" />
+                </a>
+                Geweldig en af en toe grappig boek over de manier waarop we het internet echt gebruiken. Hoe mensen meer <strong>
+                    pagina's scannen
+                </strong>
+                dan daadwerkelijk lezen. Hij verteld veel over de dingen die eigenlijk heel normaal, gewoon en vooral voorspelbaar zijn in maken van een
+                goede website.
+            </p>
+
+            <p>
+                Hoe bepaalde elementen zich op een website zich voorspelbaar maken en gedragen. En ook op de goede plek staan. Maar vooral! <strong>
+                    Don't make me think
+                </strong>.
+            </p>
+
+            <p>
+                Je gezonde verstand gebruiken en <strong>gebruikers van websites niet laten na denken</strong> over de navigatie of hoe bepaalde dingen
+                werken op een website.
+            </p>
+        </article>
+
+        <article class="bookReview">
+            <h3 id="jeremy-keith-domscripting">
+                <a href="http://www.domscripting.com/book/" title="DomScripting" target="_blank" rel="link">Jeremy Keith - DomScripting</a>
+            </h3>
+
+            <p>
+                <a href="http://www.domscripting.com/book/" title="DomScripting" target="_blank" rel="">
+                    <img src="/img/domscripting.gif" class="float_right" alt="DomScripting by Jeremy Keith" />
+                </a>
+                Voor webdesigners die al wat kennis van Css hebben maar ook graag JavaScript willen leren is dit een heel goed boek. Als je voorstander
+                ben van webstandaarden, het scheiden van content, structuur, behaviour en presentation is een goede aanvulling in deze gedachte gang. <a
+                    href="http://en.wikipedia.org/wiki/Progressive_enhancement"
+                    target="_blank"
+                    rel="link"
+                >
+                    Progressive enhancement
+                </a> &amp; Graceful degradation zijn de sleutelwoorden en zoals ik graag website wil maken.
+            </p>
+        </article>
+
+        <article class="bookReview">
+            <h3 id="jeremy-keith-bulletproof-ajax">
+                <a href="http://bulletproofajax.com/" title="Bulletproof Ajax" target="_blank" rel="link">Jeremy Keith - Bulletproof Ajax</a>
+            </h3>
+
+            <p>
+                <a href="http://www.bulletproofajax.com//" title="Bulletproof Ajax" target="_blank" rel="">
+                    <img src="/img/bulletproof_ajax.gif" class="float_right" alt="DomScripting by Jeremy Keith" />
+                </a>
+                <a href="http://domscripting.com/blog/display/41" title="Jeremy Keith about Hijax" target="_blank" rel="link">Hijax</a>, een goede
+                unobtrusive manier voor het implementeren van Ajax technieken.
+            </p>
+
+            <p>
+                Ajax ... het <strong>buzzword</strong> van de laatste tijd op webdesign gebied. Er zijn veel voordelen maar net zoveel nadelen te noemen
+                over deze techniek die toch al een aantal jaar bestaat.
+            </p>
+        </article>
+
+        <article class="bookReview">
+            <h3 id="john-resig-pro-javascript-techniques">
+                <a href="http://jspro.org/" title="Pro Javascript Techniques" target="_blank" rel="link">John Resig - Pro Javascript Techniques</a>
+            </h3>
+
+            <p>
+                <a href="http://jspro.org/" title="Pro Javascript Techniques" target="_blank" rel="">
+                    <img src="/img/pro_javascript_book.jpg" class="float_right" alt="Pro Javascript Techniques by John Resig" />
+                </a>
+                Heel goed boek als volgende stap om te lezen na <strong>DomScripting</strong> . <a
+                    href="http://ejohn.org/"
+                    target="_blank"
+                    rel="link"
+                >
+                    John Resig
+                </a> legt uit hoe je bepaalde routines kan vergemakkelijken en functies kan schrijven die elkaar aanvullen.
+            </p>
+            <p>
+                Op deze manier wordt je Javascript code heel kort en krachtig. Op de manier zoals hij het uitlegt kun je makkelijk de DOM tree
+                aflopen. Het is een pittig boek na DomScripting maar heel goed te doen.
+            </p>
+            <p>
+                John Resig is ook de uitvinder, schrijven van <a href="http://jquery.com/" target="_blank" rel="link">jQuery</a>.
+            </p>
+        </article>
+
+        <article class="bookReview">
+            <h3 id="eric-meyer-more-eric-meyer-on-css">
+                <a href="http://more.ericmeyeroncss.com/about-book.html" title="More Eric Meyer on Css" target="_blank" rel="link">
+                    Eric Meyer - More Eric Meyer on Css
+                </a>
+            </h3>
+
+            <p>
+                <a href="http://more.ericmeyeroncss.com/about-book.html" title="More Eric Meyer on Css!" target="_blank" rel="">
+                    <img class="float_right" loading="lazy" src="/img/more_e_meyer_css.jpg" alt="Boek cover - More Eric Meyer on Css!" />
+                </a>
+                Dit is ook al weer de <strong>2e editie</strong> van <a href="http://www.meyerweb.com/" target="_blank" rel="link">Eric Meyer</a> op het
+                gebied van Css webdesign. Dit boek bevat leuke voorbeelden van het gebruik van Css.
+            </p>
+
+            <p>
+                Een aantal praktijk voorbeelden worden hier gegeven op het gebied van Css. Het bouwen van een mooie photogallery, stylen van een
+                raport en een goed voorbeeld van een redesign van een fictieve website. Hierin laat hij zien hoe het met old-school tabellen is
+                gebouwd en hoe deze website om te bouwen is naar Css.
+            </p>
+        </article>
+
+        <article class="bookReview">
+            <h3 id="eric-meyer-cascading-style-sheets">
+                <a href="http://www.oreilly.com/catalog/css2/" title="More Eric Meyer on Css!" target="_blank" rel="link">
+                    Eric Meyer - Cascading Style Sheets: The Definitive Guide (2e edition)
+                </a>
+            </h3>
+
+            <p>
+                <a href="http://www.oreilly.com/catalog/css2/" title="More Eric Meyer on Css!" target="_blank" rel="">
+                    <img
+                        class="float_right"
+                        loading="lazy"
+                        src="/img/css_oreilly.jpg"
+                        alt="Boek cover - Cascading Style Sheets: The Definitive Guide, Second Edition"
+                    />
+                </a>
+                Hij is wel de <strong>koning</strong> op het gebied van Css. Hij heeft ook voor <a
+                    href="http://www.oreilly.com/"
+                    title="O'Reilly website"
+                    target="_blank"
+                    rel="link"
+                >
+                    O'Reilly
+                </a>
+                een aantal boeken geschreven over Css.
+            </p>
+
+            <p>
+                Dit boek bevat vooral veel naslag werk en hoe de verschillende elementen van Css werken. Erg saai dus maar wel leerzaam. Op <a
+                    href="http://meyerweb.com/eric/css/edge/"
+                    title="Complexe voorbeelden met Css"
+                    target="_blank"
+                    rel="link"
+                >
+                    css/edge
+                </a> staan een paar complexe voorbeelden van het gebruik van Css in websites.
+            </p>
+        </article>
+    </main>
 </Layout>

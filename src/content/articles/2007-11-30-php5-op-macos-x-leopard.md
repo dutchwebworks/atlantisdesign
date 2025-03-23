@@ -14,17 +14,17 @@ Open de Terminal applicatie (/Applications/Utilities/Terminal). We gaan eerst ee
 
 #### Ga eerst naar de map waar het configuratie bestand staat:
 
-	cd /etc/apache2
+    cd /etc/apache2
 
 #### Vraag een lijst met bestanden op. Deze stap is perse nodig:
 
-	ls -l
+    ls -l
 
 Hier zien we welk bestand we moeten hebben, namelijk `httpd.conf`. Typ het volgende commando in en geef een administrator wachtwoord op.
 
 #### Backup maken
 
-	sudo cp httpd.conf httpd.conf_backup
+    sudo cp httpd.conf httpd.conf_backup
 
 Vraag met `ls -l` opnieuw een lijst op en we zien dat er een backup bestand is gemaakt. Voor degene die met de Unix terminal overweg kunnen weten hoe ze met de commando's `rm` en `mv` de backup weer terug kunnen zetten.
 
@@ -36,11 +36,11 @@ Nu kunnen we op 2 manier de PHP5 module aan zetten. De Terminal methode is het m
 
 Typ in de **Terminal** het volgende commando in en voer een administrator wachtwoord in. Dit is een Unix bestand wat beveiligd is met root rechten.
 
-	sudo vi httpd.conf
+    sudo vi httpd.conf
 
 Druk op **ESC** typ dan het volgende in waardoor het scherm naar **regel 114** springt.
 
-	:114
+    :114
 
 #### Methode 2. Met een gratis echt MacOS X text-editor
 
@@ -50,7 +50,7 @@ Start **TextWrangler** (of BBEdit) en laat het de **command line tools** install
 
 Nu kun je met een normaal MacOS X programma dit soort handelingen kan uitvoeren.
 
-	edit httpd.conf
+    edit httpd.conf
 
 Druk op `Apple'tje + j`, en typ regel nummer **114** in.
 
@@ -58,7 +58,7 @@ Druk op `Apple'tje + j`, en typ regel nummer **114** in.
 
 In beide gevallen hebben we nu de Apache configuratie file voor ons staan. met onderstaande regel.
 
-	#LoadModule php5_module libexec/apache2/libphp5.so
+    #LoadModule php5_module libexec/apache2/libphp5.so
 
 De Apache webserver laad in deze lijst haar modules in waaronder PHP5. Hier staan ook vele configuraties die je kunt aanpassen. Maar daar gaan we niet aan zitten.
 
@@ -68,7 +68,7 @@ Zoals je aan het **#** (hekje ofwel een comment in programmeer taal) kunt zien w
 
 Met de vi editor gaan de cursor op het hekje zetten en drukken dan de letter x (dat betekend delete). Bewaar het document weer door eerst op **ESC** te drukken, typ dan ondertaande in:
 
-	:wq
+    :wq
 
 Wat betekend dit allemaal? De letter `w` staat voor '**write**' en de letter `q` staat voor '**quit**'. Dus snel achter elkaar betekend het: bewaar dit bestand en sluit de vi editor af.
 
@@ -86,7 +86,7 @@ Ga naar linksboven van het scherm: `Apple'tje > System Preferences`, zoek dan '*
 
 Als je gewent ben in Unix te werken kan ook onderstaant commando de Apache webserver herstarten.
 
-	sudo apachectl graceful
+    sudo apachectl graceful
 
 ## PHP testen
 
@@ -94,10 +94,10 @@ De PHP module draait nu mee met de Apache webserver. Hoe testen we dat? PHP heef
 
 Open TextWrangler of BBEdit. [En plak deze tekst erin](http://www.atlantisdesign.nl/public/phpinfo.txt):
 
-	<?php phpinfo(); ?>
+    <?php phpinfo(); ?>
 
 Bewaar dit PHP script als **phpinfo.php** in uw `Sites` map in uw eigen thuis map. Open nu Safari of een andere browser. Typ onderstaand adres in en vervang **kortegebruikersnaam** door de naam van uw home map ofwel uw korte gebruikersnaam.
 
-	http://localhost/~kortegebruikersnaam/phpinfo.php
+    http://localhost/~kortegebruikersnaam/phpinfo.php
 
 In uw browser verschijnt een lange pagina met paarse balken. Het ovale PHP logo staat in beeld met de daarbij behorende versie nummer. De PHP5 module is nu actief op de Apache 2.x webserver en klaar voor gebruik.

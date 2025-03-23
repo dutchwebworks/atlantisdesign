@@ -20,11 +20,11 @@ Open het programma'tje en het zal vragen of het iets mag veranderen in de standa
 
 Het is één kleine wijziging die het moet maken in de Unix configuratie van Apache. Voor geënteresseerde is het de
 
-	AllowOverride
+    AllowOverride
 
 directive welke wordt voorzien van de 'AuthConfig' parameter dat in het bestand
 
-	/etc/httpd/httpd.conf
+    /etc/httpd/httpd.conf
 
 staat. Hierdoor zal Apache naar de .htaccess bestanden zoeken. Enige vertraging in de webserver zal wel optreden. Maar of je daar echt wat van merkt op je eigen Mac?
 
@@ -60,12 +60,12 @@ sudo pico /etc/httpd/users/<korte_gebruikersnaam>.conf
 
 Het bestand ziet er als volgt uit. Vervang AllowOverride **None** door **AllowOverrride** AuthConfig. Hierdoor laat je toe dat alle mappen in je thuis map, die voorzien zijn van zo'n .htaccess bestand, de configuratie kunnen veranderen van de Apache webserver. Druk op `ctrl+x` en druk op `y`. Sluit de terminal af en probeer het opnieuw in Safari.
 
-	<Directory "/Users/<korte_gebruikersnaam>/Sites/">
-		Options Indexes MultiViews
-		AllowOverride AuthConfig
-		Order allow,deny
-		Allow from all
-	</Directory>
+    <Directory "/Users/<korte_gebruikersnaam>/Sites/">
+    	Options Indexes MultiViews
+    	AllowOverride AuthConfig
+    	Order allow,deny
+    	Allow from all
+    </Directory>
 
 ## Hoe verwijder ik zo'n beveiliging?
 
@@ -77,7 +77,7 @@ Open wederom de terminal en blader naar de beveiligde map. Het handigste om daar
 
 Om het te verwijderen typ je in sudo `rm .htaccess` en druk vervolgens op **enter**. Geef het admin wachtwoord op en het bestand is verwijderd. Controleer dit nogmaals door
 
-	ls -Fial
+    ls -Fial
 
 in te typen. **Let op!** Het bestand zal direct verwijderd worden door Unix in tegenstelling tot de Finder die het eerst in de prullenbak zet. Heel goed opletten wat je doet met het Unix rm commando want zonder restricties kun je heel veel schade aanrichten als je het verkeerd in typt.
 
@@ -88,4 +88,3 @@ Als je het programma'tje afsluit en later weer eens wilt gebruiken moet je de ee
 Op het [MacFreak forum](http://macfreak.nl/cgi-bin/forums/topic.cgi?forum=8&topic=1814) is nog meer te lezen wat de gebreken zijn aan het programam'tje met diverse meningen van Mac gebruikers.
 
 Meer informatie over [.htaccess](http://httpd.apache.org/docs/1.3/howto/htaccess.html) is natuurlijk te vinden op de Apache website.
-

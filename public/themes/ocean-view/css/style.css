@@ -32,7 +32,7 @@ body.showGrid {
 }
 
 body.showGrid .container_16 {
-	background: url(../img/16_col.gif)  repeat-y top center !important;
+	background: url(../img/16_col.gif) repeat-y top center !important;
 }
 
 body.showGrid .container_12 {
@@ -63,7 +63,7 @@ body.showGrid .container_12 {
 	#skipNav {
 		display: block;
 		padding: 10px;
-		text-align:  center;
+		text-align: center;
 		background: #0092d2;
 		color: white;
 	}
@@ -81,13 +81,14 @@ body.showGrid .container_12 {
 ============================================== */
 
 body {
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;	
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	font-size: 65.5%;
 	text-align: left;
 	margin: 0;
 	padding: 0;
 	color: #02436D;
-	background: #fff url(../img/mainbg.webp) repeat-x center top; /* for less than Win/IE9 */
+	background: #fff url(../img/mainbg.webp) repeat-x center top;
+	/* for less than Win/IE9 */
 }
 
 @media screen and (max-width: 960px) {
@@ -99,7 +100,8 @@ body {
 @media screen and (min-width: 960px) {
 	body {
 		background: #fff url(../img/mainbg.webp) repeat-x center top;
-		-webkit-background-size: 1700px 1345px; /* iPad scaling background bug-fix */
+		-webkit-background-size: 1700px 1345px;
+		/* iPad scaling background bug-fix */
 	}
 }
 
@@ -107,7 +109,7 @@ td,
 textarea,
 select,
 input {
-	font: 1em Verdana, Helvetica, Arial, sans-serif;	
+	font: 1em Verdana, Helvetica, Arial, sans-serif;
 }
 
 iframe,
@@ -127,9 +129,13 @@ a img {
 	margin: 0;
 }
 
+.astro-code {
+	margin-block-end: 20px;
+}
+
 code {
 	font-family: Courier New, Courier, monospace;
-	color: #000;
+	color: inherit;
 	font-weight: bold;
 	font-size: 1.3em;
 	padding: 10px;
@@ -192,7 +198,7 @@ dl.youTubes dt {
 dl.youTubes dt a {
 	color: #D64F20 !important;
 	font-size: 1.2em;
-	font-weight:bold;
+	font-weight: bold;
 }
 
 dl.youTubes dd {
@@ -225,7 +231,7 @@ form textarea {
 		height: 217px;
 		position: relative;
 		left: -10px;
-		background:  url(../img/mainbg-small.jpg) repeat-x #fff left 0;
+		background: url(../img/mainbg-small.jpg) repeat-x #fff left 0;
 	}
 }
 
@@ -250,14 +256,14 @@ form textarea {
 .content a[rel="link"] {
 	padding-right: 15px;
 	background-image: url(../img/external.gif);
-	background-position: center right;	
+	background-position: center right;
 	background-repeat: no-repeat;
 }
 
 .content a[rel="link"]:hover {
 	background-image: url(../img/external_hover.gif);
-	background-repeat: no-repeat;	
-	background-position: center right;		
+	background-repeat: no-repeat;
+	background-position: center right;
 }
 
 /* NAV 
@@ -471,12 +477,12 @@ form textarea {
 #main ul li,
 #side ul li {
 	list-style: none;
-	background-image:url(../img/arrow1.gif);
-	background-position:left 2px;
-	background-repeat:no-repeat;
-	line-height:normal;
-	margin:0pt 0pt 0pt 00px;
-	padding:0pt 0pt 10px 15px;
+	background-image: url(../img/arrow1.gif);
+	background-position: left 2px;
+	background-repeat: no-repeat;
+	line-height: normal;
+	margin: 0pt 0pt 0pt 00px;
+	padding: 0pt 0pt 10px 15px;
 }
 
 /* homepage > article list
@@ -519,8 +525,8 @@ span.sIFR-alternate {
 }
 
 /* Hide Adblock Object tab: the text should show up just fine, not poorly with a tab laid over it. */
-.sIFR-flash + div[adblocktab=true] {
-  display: none !important;
+.sIFR-flash+div[adblocktab=true] {
+	display: none !important;
 }
 
 /* Design table 
@@ -543,7 +549,7 @@ table.design th {
 	text-align: left;
 	border-bottom: 1px solid #d64f20;
 	color: #d64f20;
-	padding: 20px 10px 5px 5px;	
+	padding: 20px 10px 5px 5px;
 	font-size: 1.4em;
 	font-weight: bold;
 }
@@ -640,8 +646,8 @@ img.gallery_large {
 	margin: 0 10px;
 	padding: 0;
 	padding-right: 20px;
-	
-	background: url(../img/qoute.gif) no-repeat right bottom;	
+
+	background: url(../img/qoute.gif) no-repeat right bottom;
 }
 
 #intro blockquote p {
@@ -650,7 +656,7 @@ img.gallery_large {
 	font-weight: bold;
 	color: #0092d2;
 	line-height: 1.8em;
-	background: url(../img/qoute.gif) no-repeat left top;	
+	background: url(../img/qoute.gif) no-repeat left top;
 }
 
 #intro blockquote p:hover {
@@ -674,7 +680,7 @@ img.gallery_large {
 }
 
 #footerContent {
-	width: 960px;	
+	width: 960px;
 	margin: 20px auto 0 auto;
 	padding: 40px 0 0 0px;
 }
@@ -705,6 +711,7 @@ img.gallery_large {
 		line-height: 2em;
 	}
 }
+
 #footerContent a {
 	font-size: 1.2em;
 	color: #1c75a4;
@@ -742,7 +749,7 @@ img.gallery_large {
 
 @media screen and (max-width: 960px) {
 	#webBadges {
-		width: auto;	
+		width: auto;
 		display: none;
 	}
 }
@@ -756,11 +763,11 @@ img.gallery_large {
 ============================================== */
 
 #contactForm .formIndent {
-	margin:20px 0 0 80px;
+	margin: 20px 0 0 80px;
 }
 
 #contactForm .formIndent p {
-	margin:20px 0pt;
+	margin: 20px 0pt;
 }
 
 /* WordPress */
@@ -773,7 +780,7 @@ img.gallery_large {
 }
 
 #contactDisplay {
-	height:400px;
+	height: 400px;
 }
 
 #contactForm {
@@ -809,7 +816,7 @@ img.gallery_large {
 }
 
 #contactForm img#captchaImg {
-	border:1px solid #000000;
+	border: 1px solid #000000;
 }
 
 /* Common classes 
@@ -841,7 +848,7 @@ img.gallery_large {
 .float_right {
 	float: right;
 	margin-left: 10px;
-	margin-bottom: 5px;	
+	margin-bottom: 5px;
 }
 
 .left {

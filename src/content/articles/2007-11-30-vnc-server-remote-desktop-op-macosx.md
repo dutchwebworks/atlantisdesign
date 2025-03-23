@@ -137,8 +137,8 @@ In Vine Server laten we vervolgens de VNC server als achtergrond programma start
 In het bestandje ziet het er dan ongeveer als volgt uit:
 
 #### .vnc_start
-	
-	/Applications/Utilities/Vine\ Server.app/osxvnc-server -rfbport 0 -desktop IP-NUMMER-VAN-DE-MAC -rfbauth /Users/MIJN-NAAM/.vinevncauth -nevershared -restartonuserswitch N -UnicodeKeyboard 0 -keyboardLoading N -pressModsForKeys N -EventTap 3 -swapButtons -rendezvous Y &
+
+    /Applications/Utilities/Vine\ Server.app/osxvnc-server -rfbport 0 -desktop IP-NUMMER-VAN-DE-MAC -rfbauth /Users/MIJN-NAAM/.vinevncauth -nevershared -restartonuserswitch N -UnicodeKeyboard 0 -keyboardLoading N -pressModsForKeys N -EventTap 3 -swapButtons -rendezvous Y &
 
 Natuurlijk zijn 2 dingen in bovenstaande regel veranderd. Dat is het **IP nummer** van de Mac en waar het VNC password bestand staat op je eigen Mac. Voor de oplettende kijker kun je hier ook zien dat het VNC server programma in de `/Applications/Utilities` map bewaard wordt. Pas deze paden dus goed aan!
 
@@ -146,13 +146,13 @@ In het stop bestandje zetten we onderstaande shell scripting.
 
 #### .vnc_stop
 
-	sudo killall osxvnc-server
+    sudo killall osxvnc-server
 
 ## Wat te doen als VNC server crashed of we krijgen geen verbinding meer
 
 Je kan natuurlijk via SSH inloggen op de Mac met het **Terminal** programma (`/Applications/Utilities/Terminal`). En met een reboot commando de Mac laten herstarten zodat deze de VNC system server weer opstart.
 
-	sudo reboot
+    sudo reboot
 
 Dit is nogal **overkill** en gaan we niet doen. We gaan de VNC server (de achtergrond 'service' ofwel deamon) opnieuw opstarten met de zojuist gemaakte **uitvoer scriptjes**.
 
@@ -160,11 +160,11 @@ Dit is nogal **overkill** en gaan we niet doen. We gaan de VNC server (de achter
 
 Zodra we inlogt zijn op de Mac voeren we de volgende commando's uit om er zeker van te zijn dat **VNC niet mee draait**. Dit kun je natuurlijk ook gebruiken om zelf de VNC server te stoppen. En geef een Mac OS X administrator wachtwoord op.
 
-	sudo ./.vnc_stop
+    sudo ./.vnc_stop
 
 Nu kunnen we de VNC server weer **opstarten** door simpel weg het start bestandje te starten.
 
-	sudo ./.vnc_start
+    sudo ./.vnc_start
 
 Het Unix [sudo](http://en.wikipedia.org/wiki/Sudo) (super user do) commando is misschien niet altijd nodig. De **punt en slash voor de bestandsnamen** betekend dat we deze willen **uitvoeren / starten** vanaf de command line. Met even geduld komen er wat Unix log meldingen voorbij en de promt is weer terug. De VNC server draait weer. Nu kunnen we met de VNC viewer weer inloggen op de Mac.
 
