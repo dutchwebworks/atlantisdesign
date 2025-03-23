@@ -1,15 +1,19 @@
 ---
-import list from '@/content/lists/iPhoneLinks.json';
+import list from "@/content/lists/iPhoneLinks.json";
 
-const {heading, items} = list;
+const { heading, items } = list;
 ---
 
 <h2>{heading}</h2>
 
 <ul class="clean">
-{
-    items.map(({title, url, blank}) => (
-        <li><a href={url} target={blank ? '_blank' : null}>{title}</a></li>
-    ))
-}
+    {
+        items.map(({ title, url, blank }) => (
+            <li>
+                <a href={url} target={blank ? "_blank" : null}>
+                    {title}
+                </a>
+            </li>
+        ))
+    }
 </ul>

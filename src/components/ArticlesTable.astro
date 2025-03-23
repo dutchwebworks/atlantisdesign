@@ -1,10 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from './FormattedDate.astro';
+import { getCollection } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
 
-const posts = (await getCollection('articles')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection("articles")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <section class="articles">
@@ -20,10 +18,14 @@ const posts = (await getCollection('articles')).sort(
             {
                 posts.map((article) => (
                     <tr>
-                        <td><a href={'/artikelen/' + article.slug}>{article.data.title}</a></td>
+                        <td>
+                            <a href={"/artikelen/" + article.slug}>{article.data.title}</a>
+                        </td>
                         <td>{article.data.description}</td>
-                        <td class="design__date"><FormattedDate date={article.data.pubDate} /></td>
-                    </tr>    
+                        <td class="design__date">
+                            <FormattedDate date={article.data.pubDate} />
+                        </td>
+                    </tr>
                 ))
             }
         </tbody>

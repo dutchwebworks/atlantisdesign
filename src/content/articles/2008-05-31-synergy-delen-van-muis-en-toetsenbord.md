@@ -34,16 +34,16 @@ Pak het Synergy `.tgz` bestand uit (dubbelklikken) en op en het `synergy.conf` c
 
 Kopieer en plak het **Unix or MacOS X** voorbeeld zoals aangegeven staat op de `Documentation > Using Synergy` pagina of gebruik [deze voorbeeld](http://www.atlantisdesign.nl/public/synergy_conf.txt) versie welke precies hetzelfde is.
 
-	section: screens
-	       screen1:
-	       screen2:
-	    end
-	    section: links
-	       screen1:
-	           right = screen2
-	       screen2:
-	           left = screen1
-	    end
+    section: screens
+           screen1:
+           screen2:
+        end
+        section: links
+           screen1:
+               right = screen2
+           screen2:
+               left = screen1
+        end
 
 Zoals in de documentatie staat vermeld moeten we de **hostname** van de Mac invullen op de plek waar nu **screen1** staat. Synergy ziet screen1 als de server en **screen2** (en volgende nummres) als client(s).
 
@@ -53,7 +53,7 @@ Als je de hostname van je Mac niet weet kun je dit opzoeken in `Apple'tje > Syst
 
 Of typ onderstaande in de **Terminal** (`/Applications/Utitilies/Terminal`) wat sneller is:
 
-	hostname
+    hostname
 
 ### Hostname van de Windows computer opzoeken
 
@@ -61,11 +61,11 @@ In het configuratie bestand op de Mac moeten voor zowel de server (screen1 ofwel
 
 Op de Windows computer werkt dit precies hetzelfde in de **MS-Dos promt**. Als je de hostname van de Windows computer niet weet klik dan op `Start > Run` (of uitvoeren op z'n Hollands) en typ het volgende in (ofwel command) gevolgt door een enter:
 
-	cmd
+    cmd
 
 Dan volgt een MS-Dos promt (vergelijk met de MacOS X / Unix Terminal) en vragen we de Windows hostname op:
 
-	hostname
+    hostname
 
 In het configurtie bestand vullen we bij **screen1** de hostname van de **Mac** (server) in en bij **screen2** vullen we de hostname in van de Windows computer (client) in. Doe dit respectievelijk voor elk vermelding van screen1 en screen2.
 
@@ -91,11 +91,11 @@ De configuratie op de Mac is klaar. Nu kunnen we de Synergy Server starten. Open
 
 Sleep vanuit de **Synergy download map** het bestand **synercys** (dit is de server versie van Synergy) op het Terminal venster gevolgd door een spatie (dit is belangrijk). En typ het volgende er achteraan met een spatie als laatste!
 
-	-t --config
+    -t --config
 
 Sleep nu het configuratie bestand op het Terminal venster. Dit lijkt allemaal ingewikkeld maar hiermee geven we aan dat we Synergy willen starten met het opgegeven configuratie bestand. Het ziet er uiteindelijk ongeveer zo uit (zonder enters ertussen, het is 1 lange zin):
 
-	/Users/korte_gebruikersnaam/Downloads/synergy-1.3.1/synergys -f --config /Users/korte_gebruikersnaam/Downloads/synergy-1.3.1/synergy.conf
+    /Users/korte_gebruikersnaam/Downloads/synergy-1.3.1/synergys -f --config /Users/korte_gebruikersnaam/Downloads/synergy-1.3.1/synergy.conf
 
 In dit voorbeeld is **korte_gebruikersnaam** de naam van je thuis map. Geef een enter en er zullen een paar Unix regels komen die laten zien dat de server draait!
 
@@ -133,11 +133,11 @@ Open de **Activity Montitor** (`/Applications/Utilities/Activity Monitor`) en zo
 
 In de Terminal gaat het allemaal veel makkelijker en sneller. Zoek eerst het proces ID op (ofwel PID):
 
-	ps -ax | grep synergy
+    ps -ax | grep synergy
 
 De PID id staat aan het begin van de regel vermeld. Onthoud dit nummer en vul het achteraan het volgende commando in, bijvoorbeeld:
 
-	sudo kill 285
+    sudo kill 285
 
 Waarbij **285** de PID ID zou kunnen van het Synergy proces. Dit nummer kun je ook terug vinden in de **Activity Monitor**.
 
@@ -151,18 +151,18 @@ Uiteindelijk kun je het allemaal makkelijker maken voor jezelf. Zoals het volgen
 
 Maak een .bash_profile bestand aan (bewaar deze in de root van je eigen thuis map):
 
-	~/.bash_profile
+    ~/.bash_profile
 
 Dit gaat het makkelijks met bijvoorbeeld een goede code-editor als het gratis [TextWrangler](http://www.barebones.com/products/textwrangler/).
 
-De inhoud van dit bestand wordt direct uitgevoerd als de Terminal applicatie gestart wordt. Plaats hierin een [Unix shell alias](http://en.wikipedia.org/wiki/Alias_(Unix_shell)):
+De inhoud van dit bestand wordt direct uitgevoerd als de Terminal applicatie gestart wordt. Plaats hierin een [Unix shell alias](<http://en.wikipedia.org/wiki/Alias_(Unix_shell)>):
 
-	alias start_synergy="~/.bin/synergys -f --config ~/.bin/synergy.conf &"
+    alias start_synergy="~/.bin/synergys -f --config ~/.bin/synergy.conf &"
 
 In dit voorbeeld is een verborgen map (begint met een punt) aangemaakt genaamd **.bin** (staat voor binary ofwel Unix programma's) welk in de eigen `/Users/korte_gebruikersnaam` map staat (`~/`). Daarin staat het Unix Synergy server programma (synergys) en het configuratie bestand (synergy.conf) wat daarbij hoort.
 
 De volgende keer als je Synergy wilt gebruiken hoef je in de Terminal alleen maar de alias naam in te typen om **Synergy server** te starten.
 
-	start_synergy
+    start_synergy
 
 Dan verschijnen dezelfde Unix regels. Daarna kun je het Terminal venster sluiten (deze geeft een waarschuwing maar dat geeft niet).

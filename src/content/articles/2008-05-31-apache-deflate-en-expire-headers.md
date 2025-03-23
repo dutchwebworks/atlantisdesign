@@ -20,7 +20,7 @@ In de Safari webbrowser (Mac en Windows) zit een handige tool om te kijken of be
 
 Voor Safari v2.x is er een [Terminal commando](http://www.macosxhints.com/article.php?story=20030110063041629) om dit aan te zetten.
 
-	defaults write com.apple.Safari IncludeDebugMenu 1
+    defaults write com.apple.Safari IncludeDebugMenu 1
 
 Ga naar een willekeurige website en open de Safari webinspector via `Develop > Show Web Inspector`. Linksonderin zit een optie **Network** waarmee we een soort [Gannt-chart](http://en.wikipedia.org/wiki/Gantt_chart) kunnen zien van alle bestanden die bij de webpagina horen, in welke volgorde ze zijn binnen geladen en wat de bestandsgrote is.
 
@@ -42,40 +42,40 @@ Met een .htaccess bestand kunnen we voor de website kleine (toegelaten) configur
 
 In dit **.htaccess** bestand gaan we aangeven dat we de CSS en Javascript bestanden willen comprimeren met **gzip**. Dit type bestanden eindigen alijd met de extentie `.css` en `.js`.
 
-Download dit [voorbeeld .htaccess bestand](http://www.atlantisdesign.nl/public/apache_deflate_headers.txt) 
+Download dit [voorbeeld .htaccess bestand](http://www.atlantisdesign.nl/public/apache_deflate_headers.txt)
 
-	########################################
-	## Compress these file-types before sending
-	########################################
-	
-	<IfModule mod_deflate.c>
-		<FilesMatch "\.(js|css)$">
-			SetOutputFilter DEFLATE
-		</FilesMatch>
-	</IfModule>
-	
-	########################################
-	## Sent default expire headers
-	########################################
-	
-	ExpiresActive On
-	ExpiresDefault "access plus 4 days"
-	
-	########################################
-	## Caching
-	########################################
-	
-	<FilesMatch "\.(xml|txt|html|js|css)$">
-		Header append Cache-Control "proxy-revalidate"
-	</FilesMatch>
-	
-	<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
-		Header append Cache-Control "public"
-	</FilesMatch>
+    ########################################
+    ## Compress these file-types before sending
+    ########################################
+
+    <IfModule mod_deflate.c>
+    	<FilesMatch "\.(js|css)$">
+    		SetOutputFilter DEFLATE
+    	</FilesMatch>
+    </IfModule>
+
+    ########################################
+    ## Sent default expire headers
+    ########################################
+
+    ExpiresActive On
+    ExpiresDefault "access plus 4 days"
+
+    ########################################
+    ## Caching
+    ########################################
+
+    <FilesMatch "\.(xml|txt|html|js|css)$">
+    	Header append Cache-Control "proxy-revalidate"
+    </FilesMatch>
+
+    <FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+    	Header append Cache-Control "public"
+    </FilesMatch>
 
 &hellip; en plaats dit bestand met de correcte naam in de root van de website:
 
-	/Users/kees/Sites/vogelfotografie/.htaccess
+    /Users/kees/Sites/vogelfotografie/.htaccess
 
 Als voorbeeld nemen we weer de vogelfotografie website van de fictieve gebruiker `kees`.
 
@@ -101,26 +101,26 @@ Open dan de Safari **Web Inspector** of de **YSlow** plugin in Firefox. Voor de 
 
 Met een .htaccess bestand (zie dit voorbeeld):
 
-	########################################
-	## Sent expire headers by type
-	########################################
-	
-	ExpiresActive On
-	
-	# Expire after 4 days in client cache
-	ExpiresByType text/css "access plus 4 days"
- 
-  &hellip; in bijvoorbeeld de `/css/` (Cascading Stylesheet) directory kunnen we aangeven wat de expiratie is van deze bestanden. In het voorbeeld wordt aangegeven dat dit 4 dagen is.
+    ########################################
+    ## Sent expire headers by type
+    ########################################
+
+    ExpiresActive On
+
+    # Expire after 4 days in client cache
+    ExpiresByType text/css "access plus 4 days"
+
+&hellip; in bijvoorbeeld de `/css/` (Cascading Stylesheet) directory kunnen we aangeven wat de expiratie is van deze bestanden. In het voorbeeld wordt aangegeven dat dit 4 dagen is.
 
 Dit kun je dan ook doen voor de `/js/` directories. Plaats daar ook hetzelfde .htaccess bestanden in en verander de **content-type** per file type
 
 #### Javascripts
 
-	application/x-javascript
+    application/x-javascript
 
 en / of
 
-	application/javascript
+    application/javascript
 
 &hellip; en voor plaatjes in de `/img/` directory.
 
@@ -130,6 +130,6 @@ en / of
 
 #### jpg plaatjes
 
-	ExpiresByType image/jpg "access plus 4 days"
+    ExpiresByType image/jpg "access plus 4 days"
 
 Met de **YSlow extentie** kunnen we zien dat op deze typen bestanden een expiratie datum is vermeld. Dit helpt de webbrowser en webserver om te bepalen of de webbrowser een cached versie van hetzelfde plaatje kan ophalen. Dit voorkomt dat er meerdere onnodige requests van de webserver gevraagd worden.

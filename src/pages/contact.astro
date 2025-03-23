@@ -1,60 +1,119 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import MadeOnAMac from '@/components/MadeOnAMac.astro';
-import WebLinks from '@/components/WebLinks.astro';
-import Intro from '@/components/Intro.astro';
-import ArticlesTable from '@/components/ArticlesTable.astro';
+import Layout from "@/layouts/Layout.astro";
+import MadeOnAMac from "@/components/MadeOnAMac.astro";
+import WebLinks from "@/components/WebLinks.astro";
+import Intro from "@/components/Intro.astro";
+import ArticlesTable from "@/components/ArticlesTable.astro";
 
 const metaData = {
-	title: "Neem contact met mij op",
+    title: "Neem contact met mij op",
     description: "Hoe kun je contact met mij opnemen",
-    canonical: "contact"
-}
+    canonical: "contact",
+};
 ---
 
 <Layout metaData={metaData}>
-    <Intro>
-		Al geef ik geen uitgebreide ondersteuning op artikelen die ik geschreven hebt kunt u wel contact opnemen.
-	</Intro>
+    <Intro> Al geef ik geen uitgebreide ondersteuning op artikelen die ik geschreven hebt kunt u wel contact opnemen. </Intro>
 
-    <aside id="side" class="grid_5">		
+    <aside id="side" class="grid_5">
         <MadeOnAMac />
-	
-		<h2>Links</h2>
 
-		<WebLinks />		
-	</aside>
+        <h2>Links</h2>
+
+        <WebLinks />
+    </aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>{metaData.title}</h1>
+        <h1>{metaData.title}</h1>
 
-		<div id="contactDisplay" inert>
-			<form name="contactForm" id="contactForm" method="post">
-				<p><label for="naam">Naam*</label><input type="text" id="naam" name="naam" class="validateRequired" value="Uw voor- en achternaam" title="Uw naam lijkt me toch wel verplicht" tabindex="1"></p>
-				
-				<p><label for="email">E-mail*</label><input type="text" id="email" name="email" class="validateEmail validateRequired" value="Een correct e-mail adres" title="Een correct e-mail adres zou ook handig zijn voor een reactie!" tabindex="2"></p>
-				
-				<p><label for="website">Website</label><input type="text" id="website" name="website" class="validateUrl" title="Een correcte webadres, met 'http://' zou helpen" value="Heeft u een website?" tabindex="3"></p>			
-				
-				<p><label for="onderwerp">Onderwerp*</label><input type="text" id="onderwerp" name="onderwerp" class="validateRequired" value="Waar heeft uw vraag of opmerking betrekking op?" title="Wat is het onderwerp van uw vraag / opmerking?" tabindex="4"></p>							
-				
-				<p><label for="bericht">Bericht*</label><textarea id="bericht" name="bericht" class="validateRequired" title="Heeft u geen vragen of niks te vertellen?" cols="20" rows="8" tabindex="5">... en uw vraag / opmerking is ...</textarea></p>
-				
-				<p><label for="user_code">Code*</label><input type="text" class="validateRequired" title="Typ de juiste code over van het plaatje" id="user_code" name="user_code" value="Typ de code hierboven over"></p>				
-				
-				<div class="formIndent">
-					<p>
-						<input class="formButton" type="submit" id="submit" name="submit" value="Verzend" tabindex="6">
-						<input class="formButton" type="reset" name="reset" id="reset" value="Overnieuw beginnen" tabindex="7">
-					</p>
-					
-					<p><em>Licht gekleurde velden (met een sterretje) zijn verplicht.</em></p>					
-				</div>
-			</form>	
-		</div>
-		
-		<h2>Artikelen</h2>
+        <div id="contactDisplay" inert>
+            <form name="contactForm" id="contactForm" method="post">
+                <p>
+                    <label for="naam">Naam*</label><input
+                        type="text"
+                        id="naam"
+                        name="naam"
+                        class="validateRequired"
+                        value="Uw voor- en achternaam"
+                        title="Uw naam lijkt me toch wel verplicht"
+                        tabindex="1"
+                    />
+                </p>
 
-		<ArticlesTable />	
-	</main>
+                <p>
+                    <label for="email">E-mail*</label><input
+                        type="text"
+                        id="email"
+                        name="email"
+                        class="validateEmail validateRequired"
+                        value="Een correct e-mail adres"
+                        title="Een correct e-mail adres zou ook handig zijn voor een reactie!"
+                        tabindex="2"
+                    />
+                </p>
+
+                <p>
+                    <label for="website">Website</label><input
+                        type="text"
+                        id="website"
+                        name="website"
+                        class="validateUrl"
+                        title="Een correcte webadres, met 'http://' zou helpen"
+                        value="Heeft u een website?"
+                        tabindex="3"
+                    />
+                </p>
+
+                <p>
+                    <label for="onderwerp">Onderwerp*</label><input
+                        type="text"
+                        id="onderwerp"
+                        name="onderwerp"
+                        class="validateRequired"
+                        value="Waar heeft uw vraag of opmerking betrekking op?"
+                        title="Wat is het onderwerp van uw vraag / opmerking?"
+                        tabindex="4"
+                    />
+                </p>
+
+                <p>
+                    <label for="bericht">Bericht*</label><textarea
+                        id="bericht"
+                        name="bericht"
+                        class="validateRequired"
+                        title="Heeft u geen vragen of niks te vertellen?"
+                        cols="20"
+                        rows="8"
+                        tabindex="5"
+                    >
+                        ... en uw vraag / opmerking is ...
+                    </textarea>
+                </p>
+
+                <p>
+                    <label for="user_code">Code*</label><input
+                        type="text"
+                        class="validateRequired"
+                        title="Typ de juiste code over van het plaatje"
+                        id="user_code"
+                        name="user_code"
+                        value="Typ de code hierboven over"
+                    />
+                </p>
+
+                <div class="formIndent">
+                    <p>
+                        <input class="formButton" type="submit" id="submit" name="submit" value="Verzend" tabindex="6" />
+                        <input class="formButton" type="reset" name="reset" id="reset" value="Overnieuw beginnen" tabindex="7" />
+                    </p>
+
+                    <p><em>Licht gekleurde velden (met een sterretje) zijn verplicht.</em></p>
+                </div>
+            </form>
+        </div>
+
+        <h2>Artikelen</h2>
+
+        <ArticlesTable />
+    </main>
 </Layout>

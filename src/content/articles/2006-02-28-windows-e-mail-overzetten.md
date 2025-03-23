@@ -10,9 +10,9 @@ Er zijn hier ook, misschien wel gratis, alternative kant en klare programma'tjes
 
 ## Wat hebben we hierbij nodig?
 
-* De Pc met Outlook Express
-* Een manier om tussen de Pc de Mac bestanden over te zetten, zoals een netwerk, USB stick of gewoon een ouderwets cd'tje bakken
-* De trail ofwel **test-drive** versie van [Microsoft Office 2004](http://www.microsoft.com/mac/default.aspx?pid=office2004td) voor Mac
+- De Pc met Outlook Express
+- Een manier om tussen de Pc de Mac bestanden over te zetten, zoals een netwerk, USB stick of gewoon een ouderwets cd'tje bakken
+- De trail ofwel **test-drive** versie van [Microsoft Office 2004](http://www.microsoft.com/mac/default.aspx?pid=office2004td) voor Mac
 
 Microsoft Entourage (Microsofts nieuwe Office versie van Outlook voor Mac OS X) gaan we gebruiken als tussen programma om het uiteindelijk in Apple's Mail te importeren. De manier waarop de verschillde mail programma's hun opslaan verschilt nogal. Apple heeft ervoor gekozen om elke mailtje als een aparte file op te slaan op de harde schijf. Zie de map `~/Library/Mail/<pop account>/INBOX.mbox/messages/` (de ~ staat voor je eigen thuis map) daar staan allemaal zogenaamde .emlx bestanden.
 

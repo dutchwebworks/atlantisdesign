@@ -1,172 +1,332 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Intro from '@/components/Intro.astro';
-import WebLinks from '@/components/WebLinks.astro';
-import HappyWebbies from '@/components/HappyWebbies.astro';
-import Firebug from '@/components/Firebug.astro';
-import WebdesignNav from '@/components/WebdesignNav.astro';
+import Layout from "@/layouts/Layout.astro";
+import Intro from "@/components/Intro.astro";
+import WebLinks from "@/components/WebLinks.astro";
+import HappyWebbies from "@/components/HappyWebbies.astro";
+import Firebug from "@/components/Firebug.astro";
+import WebdesignNav from "@/components/WebdesignNav.astro";
 
 const metaData = {
-	title: "Webdesign",
+    title: "Webdesign",
     description: "About my web design",
-    canonical: "webdesign"
-}
+    canonical: "webdesign",
+};
 ---
 
 <Layout metaData={metaData}>
-	<Intro>
-		In mijn dagelijks leven ben ik webdesigner / webdeveloper. Onderstaande boeken zijn aanraders voor iedereen die zich met webdesign bezig houdt. Hieronder een beschrijving van mijn visie voor het bouwen van websites.
-	</Intro>
+    <Intro>
+        In mijn dagelijks leven ben ik webdesigner / webdeveloper. Onderstaande boeken zijn aanraders voor iedereen die zich met webdesign bezig
+        houdt. Hieronder een beschrijving van mijn visie voor het bouwen van websites.
+    </Intro>
 
     <aside id="side" class="grid_5">
-		<WebdesignNav />
+        <WebdesignNav />
 
-		<h2>Links</h2>
+        <h2>Links</h2>
 
-		<WebLinks />
+        <WebLinks />
 
-		<HappyWebbies />
-		
-		<Firebug />		
+        <HappyWebbies />
 
-		<WebLinks />		
-	</aside>
+        <Firebug />
 
-	<main id="main" class="grid_11 omega">
-			<h1>Webdesign &amp; webstandaarden</h1>
-			
-			<p>
-				Webdesign hoeft niet moeilijk te zijn. Er zijn (op internet) al heel lang discussies gaande tussen webdesigners 'hoe' je een website het beste zou moeten maken. Hierbij gaat het alleen om de voorkant (front-end) van een website.
-				De HTML, CSS en Javascript. Het punt is dat er geen één manier is hoe het goed doet.
-			</p>
-			
-			<h2>Yahoo! - Object Oriented CSS video</h2>
+        <WebLinks />
+    </aside>
 
-			<div id="youTubePlayer">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/D2L1Mevv7co?si=LuhZHQz28AQpcdaB" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-			</div>
+    <main id="main" class="grid_11 omega">
+        <h1>Webdesign &amp; webstandaarden</h1>
 
-			<h2 id="webbrowsers">Webbrowsers</h2>
-			
-			<p>
-				De bekendste is natuurlijk <strong>Microsoft Internet Explorer </strong>(afgekort: IE) op het Windows platform. 
-				Maar bij lange na niet de beste, zeker niet met <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong> en <strong><abbr title="Cascading Style Sheets">CSS</abbr></strong> webstandaarden ondersteuning en zijn eigen eigenaardigheden op het gebied van incompatible <strong>Javascript</strong>.
-			</p>
-			
-			<p>Vanuit een webdesigners / webdevelopment (HTML/CSS/Javascript, webstandaarden) oogpunt is het een <strong>schande</strong> dat deze webbrowser juist het grootste marktaandeel heeft. De doorsnee beginner die zich op internet waagt denkt vaak dat Internet Explorer 'het' internet is. </p>
-		
-			<h3>Browser Wars</h3>
-			
-			<p><a href="http://browser.netscape.com/" target="_blank" rel="link">Netscape Navigator</a> had voor de tijd van de <a href="http://en.wikipedia.org/wiki/Browser_wars" target="_blank" rel="link">browser wars</a> (rond 1995) het grootste marktaandeel maar verloor deze strijd tegen <strong>Microsoft's Internet Explorer</strong>. Deze werd standaard  geinstalleerd en gratis meegeleverd op elke nieuw Windows besturingssysteem.</p>
-			
-			<p>
-				Natuurlijk met de meeste features maar ook met de meeste HTML/CSS bugs.
-				Maar er zijn natuurlijk nog meer webbrowser bijvoorbeeld <a href="http://www.mozilla.com/" title="Download Mozilla Firefox vandaag nog!" target="_blank" rel="link"><strong>Mozilla Firefox</strong></a> , <a href="http://www.apple.com/macosx/leopard/features/safari.html" title="Apple's Safari" target="_blank" rel="link"><strong>Apple's Safari</strong></a> en <a href="http://www.opera.com/" title="Opera webbrower" target="_blank" rel="link"><strong>Operasoft's Opera</strong></a>. Dit zijn wel een beetje de bekendste alternatieven. Elk met hun eigen voordelen en nadelen, op het gebied van webstandaarden. <strong>Geen enkele webbrowsers doet het perfect</strong>.
-			</p>
-			
-			<h3>Wat  Internet Explorer 6 mist ten opzichte van andere webbrowsers</h3>
-			
-			<p>IE6 miste een paar  essentiele zaken  op het gebied van CSS ondersteuning (CSS level 2, en CSS level 3). Denk hierbij aan een aantal vormen van <a href="http://www.w3.org/TR/REC-CSS2/selector.html" target="_blank" rel="link">css selectors</a>, <strong><abbr title="Portable Network Graphic">PNG</abbr></strong> transparantie en bijvoorbeeld de mogelijkheid om alle HTML elementen te voorzien van een <abbr title="Met een mouse-over een effect te laten zien">:hover</abbr> effect. Daarbij interpreteerd IE6 sommige HTML en CSS waardes anders dan andere webbrowsers.</p>
-			
-			<p>Al met al geen pretje dus om een website te bouwen voor Internet Explorer. Vorige versies (IE5.5 bijvoorbeeld) sloegen de plank al helemaal mis op nog meer gebieden wat webstandaarden heet.</p>
-			
-			<h3>Microsoft Internet Explorer 7</h3>
-			
-			<p>Internet Explorer 6 kwam in 2001 uit en heeft et grootste webbrowser marktaandeel. Windows gebruikers moesten dus zo'n<strong> 5 jaar</strong> wachten tot eind 2006  voordat er eindelijk een nieuwe, verbeterde, meer compliant webbrowser uit kwam</p>
-			
-			<p>Gelukkig maakt IE7 een hoop goed op gebied van webdesign, compliant HTML en CSS. Een hoop bugs zijn verholpen. </p>
-			
-			<h2 id="mozilla-firefox">Mozilla Firefox</h2>
-			
-			<p>Voor een webdesigner / webdeveloper zijn een aantal factoren van belang voor het maken van een goede website. Dan gaat het even alleen om de HTML/Css en Javascripting en alles maken volgens de W3C regels (validatie). In ieder geval een goede webbrowser die zich aan de <strong>W3C HTML specificaties</strong> houdt.</p>
-			
-			<h3>Waarom Firefox?</h3>
-			
-			<p>Het feit dat Internet Explorer het grootste marktaandeel heeft wil niet zeggen dat je voor die browser moet beginnen met het opzetten van je website. IE houdt zich niet altijd aan de HTML en CSS regels. Soms komen er rare bugs te voorschijn die je veel tijd kosten om op te lossen. Bekijk je je website vervolgens in een andere browser en kun je er achter komen dat sommige dingen niet goed uitgelijnd staan dat bepaalde truuken die je hebt toegepast gewoon niet werken.</p>
-			
-			<p>Daarom, gebruik een webbrowser die zich zo veel mogelijk aan de W3C HTML regels houdt. Dat doen IE6 en in sommige gevallen IE7 dus niet. Webbrowsers als <strong>Mozilla Firefox</strong>, <strong>Apple's Safari</strong> en de <strong>Opera</strong> webbrowser zijn over het algemeen heel goed in deze specificatie en het ondersteunen van webstandaarden.</p>
-			
-			<h3>Productie tijd</h3>
-			
-			<p>Bouw je website juist voor compliant webbrowser die allemaal HTML standaarden ondersteunen. Halverwege tijdens het bouwproces kun je eens gaan testen in IE6 en IE7. Mochten daar nog rare dingen naar voren komen kun je die meestal met weinig extra moeite ook oplossen. Dit <strong>scheelt een hoop tijd</strong> en met deze methode is de website, gemaakt met webstandaarden, voor de meest gangbare webbrowsers.</p>
-			
-			<p>Een hele mooie oplossing hiervoor zijn <a href="/webdesign/conditional-comments">conditional comments</a>.</p>
-			
-			<h3>Extra voordeel bij het gebruik van Mozilla Firefox</h3>
-			
-			<p>Firefox is uit te breiden met vele <a href="https://addons.mozilla.org/en-US/firefox/" target="_blank" rel="link">add-ons</a>. Dit maakt het leven van een webdesign / webdeveloper vele malen makkelijker om CSS / Javascripts bugs op te lossen. Of om te kijken waarom en ontwerp niet goed past. Of om fouten op te lossen in de HTML.</p>
-			
-			<p>Op Atlantisdesign staat ook een speciale pagina over Mozilla Firefox en de meest handige <a href="/mozilla-firefox#firefox-addons">Firefox Add-ons</a>.</p>
-			
-			<h2 id="drie-lagen-van-een-website">De 3 lagen van een website</h2>
-			
-			<p> Webdesign is ook de kunst van het goed, compliant schrijven van gestructureerde HTML. Dat begrijpen sommige (beginnende) webdesigners, of klanten, niet helemaal. Een website bestaat uit verschillende lagen. </p>
-			
-			<p>Het woord 'design' is dan ook een beetje misleidend. Natuurlijk moet een website ook een beetje smoel hebben. Vaak wordt er een  ontwerper (designer) gebruikt om de kleuren te bepalen, de compositie en de layout. Een copywriter gaat aan de slag om de juiste woorden te vinden die de boodschap duidelijk overdragen.</p>
-			
-			<h3>Ultieme doel: seperatie</h3>
-			
-			<p>Het ultieme doel van websites bouwen is de <strong>complete seperatie</strong> van de 3 lagen. Structuur scheiden van presentatie en scheiden van interactie (ofwel behaviour). Door goede seperatie van HTML, CSS en Javascripting kunnen niet alleen webbrowsers gebruik maken van het omvangrijke internet maar ook PDA's, web-mobieltjes. </p>
-			
-			<p>Daarmee helpen we ook de minder valide mens. Mensen die slect ziend zijn hebben meestal en hulp middel om internet pagina's voor te laten lezen. Om op deze manier toch informatie van het internet te verkrijgen. Deze mensen hebben het meeste aan laag 1 (structurele HTML). Een <a href="http://en.wikipedia.org/wiki/Screen_reader" target="_blank" rel="link">screenreader</a> leest de HTML voor aan de gebruiker, kijkt niet naar de opmaak (laag 2) en voert ookg een javascripting uit (laag 3). </p>
-			
-			<p>Op basis van de voorgelezen tekst maakt de minder valide persoon een keus om verder te klikken op pagina's. Als de website een grote soep is aan tabellen en onzinnige HTML wordt het er voor die mensen ook niet duidelijker op.</p>
-			
-			<h3>En het design dan?</h3>
-			
-			<p>Het design van een website is ook onderdeel van het traject. Apart gezien van het design komen er natuurlijk veel meer factoren bij kijken.</p>
-			
-			<p>Hieronder een versimpelde uitleg over de 3 lagen van een website.</p>
-			
-			<h2>Laag 1:  Structuur, semantic, compliant HTML</h2>
-			
-			<p>Het W3C heeft altijd gezegd dat haar HTML specificaties een 'recomendation' zijn voor webbrowsers. De makers van webbrowsers gaven hier in de tijd van de browser wars hun eigen intepretatie aan. Waardoor er veel onzinnige HTML-tags en javascripting bedacht werd wat natuurlijk incompatible was met de andere webbrowsers.</p>
-			
-			<p>Het komt er op neer dat HTML volgens de W3C regels geschreven wordt. Geschreven wordt naar de  <strong>betekenis</strong> van een HTML-element (<strong>semantic</strong>). Een HTML <strong>H1 element</strong> wordt niet zomaar gebruikt omdat deze nou juist groot en bold is. Het H1 element heeft een betekenis, namelijk dat het de belangrijkste kop is op een HTML pagina. Met CSS kun je ervoor zorgen dat deze, bij standaard, grote kop juist heel klein met een niet opvallende kleur.</p>
-			
-			<h3>Waar dient het voor?</h3>
-			
-			<p>De bedoeling van de eerste laag is een <strong>gestructuureerde road-map</strong> (ofwel <strong><abbr title="Document Object Model">DOM</abbr></strong>-tree) te maken waarop de volgende lagen hun specifieke toepassing op kunnen uit oefenen. Namelijk <strong>CSS</strong> (Cascading Style Sheets) en <strong>Javascripting</strong>. </p>
-			
-			<p>Zonder deze gestructureerde basis laag hebben de volgende opzichzelf staande lagen niet veel nut. Schrijf de HTML zo netjes mogelijk. Zorg voor goede HTML nesting: geen block-level elementen in inline-elementen plaatsen.</p>
-			
-			<h4>Onderstaande is goede HTML</h4>
-			
-			<code>
-			&lt;p&gt;Deze paragraaf is netjes geschreven, dit &lt;strong&gt;woord&lt;/strong&gt; is in bold gestyled&lt;/p&gt;
-			</code>			
-			
-			<h4>Deze HTML is fout geschreven</h4>
-		<code>
-			&lt;p&gt;Deze paragraaf is netjes geschreven, dit &lt;div&gt;&lt;font-weight:bold&gt;woord&lt;/font&gt;&lt;/div&gt; is in bold gestyled</code>	
-			<h2>Laag 2:  Presentatie, ofwel Cascading Style Sheet (CSS)</h2>
-			
-			<p>De basis kennis voor deze laag kan verassend simpel zijn. Door gebruik te maken van stylen en deze toe te kennen aan HTML elementen vormt zich een consistent geheel wat heel snel en makkelijk te onderhouden is.</p>
-			
-			<h3>Waar dient het voor?</h3>
-			
-			<p>Deze laag wordt ook wel de <strong>presentatie laag</strong> van een HTML pagina genoemd. Het bepaald 'hoe' HTML elementen eruit ziet. Het bepaalt hoe groot de tekst is, wat de kleur is, wat de onderliggend relatie is met naast gelegen HTML element. Zo ook lichte vorm van effecten bij interactie met de muis.</p>
-			
-			<p>Het mooiste is als de CSS apart in een extern bestand wordt bewaard en aan de HTML pagina's gelinked wordt. </p>
-			
-			<p>Met een paar regels CSS is de gehele website te stylen over ontelbare pagina's. Als de klant toch besluit om alle links in de website niet blauw maar rood te laten maken is het een kwestie van 1 regels CSS aanpassen. Dit wordt door de hele website doorgevoerd.</p>
-			
-			<h3>Boeken</h3>
-			
-			<p><a href="http://meyerweb.com/" target="_blank" rel="link">Eric Meyer</a>, de koning van CSS genoemd, heeft een aantal <a href="/webdesign/boeken#eric-meyer-more-eric-meyer-on-css">goede boeken</a> hierover geschreven. Aan de hand van praktijk voorbeelden laat hij een re-design van een doorsnee website zien. Eerst de manier zoals het op de oude manier gemaakt zou zijn en daarna op de manier van gestructureerde HTML en CSS voor opmaak.</p>
-			
-			<h2>Laag 3: Interactie, ofwel Javascripting</h2>
-			
-			<p>Met Javascripting kunnen interactive elementen in een HTML pagina gebruikt worden. Met interactie van de gebruiker kunnen verschillende effecten gerealiseerd worden. Van het simpel weg een plaatje vervangen door een andere, verborgen HTML elementen laten tonen tot complexe vormen en functies toekennen aan bepaalde elementen waarop geklikt kan worden. Zelfs animatie hoort tot de mogelijkheden.</p>
-			
-			<h3>Waar dient het voor?</h3>
-			
-			<p>Deze laag zorgt voor interactie, verandering en vernieuwing. Zonder de eerste laag (gestructureerde HTML) kan deze laag zijn werk niet doen. Javascripting zelf heeft de <strong>DOM-tree</strong> nodig om bepaalde HTML elementen te veranderen, te vernieuwen, bij te bouwen, weg te halen en bepaalde effecten te bereiken. Dit kan niet zonder structuur van de eerste laag.</p>
-			
-			<h3>Boeken</h3>
-			
-			<p><strong>Jeremy Keith</strong> heeft een geweldig boek geschreven voor mensen die al wat verstand van HTML en CSS hebben en graag de stap willen maken naar Javascripting. In zijn boek <a href="webdesign/boeken#jeremy-keith-domscripting">Dom-Scripting</a> legt hij vanuit dit oogpunt uit hoe je verder Javascript kan toepassen op een <strong>unobtrusive</strong> manier.</p>
-			
-			<p>Als dit allemaal onder de knie is gaat <strong>John Resig</strong>, met het boek <a href="/webdesign/boeken#john-resig-pro-javascript-techniques">Pro Javascript Techniques</a>, een stapje verder, ook met het uitgangspunt van Dom-Scripting, maar vereenvoudigd een hoop zaken waardoor de gemaakte Javascripts vele malen korter in notering worden en snel toegepast kunnen worden.</p>
-		</main>
+        <p>
+            Webdesign hoeft niet moeilijk te zijn. Er zijn (op internet) al heel lang discussies gaande tussen webdesigners 'hoe' je een website het
+            beste zou moeten maken. Hierbij gaat het alleen om de voorkant (front-end) van een website. De HTML, CSS en Javascript. Het punt is dat er
+            geen één manier is hoe het goed doet.
+        </p>
+
+        <h2>Yahoo! - Object Oriented CSS video</h2>
+
+        <div id="youTubePlayer">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/D2L1Mevv7co?si=LuhZHQz28AQpcdaB"
+                loading="lazy"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            >
+            </iframe>
+        </div>
+
+        <h2 id="webbrowsers">Webbrowsers</h2>
+
+        <p>
+            De bekendste is natuurlijk <strong>Microsoft Internet Explorer</strong>(afgekort: IE) op het Windows platform. Maar bij lange na niet de
+            beste, zeker niet met <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong> en <strong>
+                <abbr title="Cascading Style Sheets">CSS</abbr>
+            </strong> webstandaarden ondersteuning en zijn eigen eigenaardigheden op het gebied van incompatible <strong>Javascript</strong>.
+        </p>
+
+        <p>
+            Vanuit een webdesigners / webdevelopment (HTML/CSS/Javascript, webstandaarden) oogpunt is het een <strong>schande</strong> dat deze webbrowser
+            juist het grootste marktaandeel heeft. De doorsnee beginner die zich op internet waagt denkt vaak dat Internet Explorer 'het' internet is.
+        </p>
+
+        <h3>Browser Wars</h3>
+
+        <p>
+            <a href="http://browser.netscape.com/" target="_blank" rel="link">Netscape Navigator</a> had voor de tijd van de <a
+                href="http://en.wikipedia.org/wiki/Browser_wars"
+                target="_blank"
+                rel="link"
+            >
+                browser wars
+            </a> (rond 1995) het grootste marktaandeel maar verloor deze strijd tegen <strong>Microsoft's Internet Explorer</strong>. Deze werd
+            standaard geinstalleerd en gratis meegeleverd op elke nieuw Windows besturingssysteem.
+        </p>
+
+        <p>
+            Natuurlijk met de meeste features maar ook met de meeste HTML/CSS bugs. Maar er zijn natuurlijk nog meer webbrowser bijvoorbeeld <a
+                href="http://www.mozilla.com/"
+                title="Download Mozilla Firefox vandaag nog!"
+                target="_blank"
+                rel="link"
+            >
+                <strong>Mozilla Firefox</strong>
+            </a> , <a href="http://www.apple.com/macosx/leopard/features/safari.html" title="Apple's Safari" target="_blank" rel="link">
+                <strong>Apple's Safari</strong>
+            </a> en <a href="http://www.opera.com/" title="Opera webbrower" target="_blank" rel="link"><strong>Operasoft's Opera</strong></a>. Dit
+            zijn wel een beetje de bekendste alternatieven. Elk met hun eigen voordelen en nadelen, op het gebied van webstandaarden. <strong>
+                Geen enkele webbrowsers doet het perfect
+            </strong>.
+        </p>
+
+        <h3>Wat Internet Explorer 6 mist ten opzichte van andere webbrowsers</h3>
+
+        <p>
+            IE6 miste een paar essentiele zaken op het gebied van CSS ondersteuning (CSS level 2, en CSS level 3). Denk hierbij aan een aantal vormen
+            van <a href="http://www.w3.org/TR/REC-CSS2/selector.html" target="_blank" rel="link">css selectors</a>, <strong>
+                <abbr title="Portable Network Graphic">PNG</abbr>
+            </strong> transparantie en bijvoorbeeld de mogelijkheid om alle HTML elementen te voorzien van een <abbr
+                title="Met een mouse-over een effect te laten zien"
+            >
+                :hover
+            </abbr> effect. Daarbij interpreteerd IE6 sommige HTML en CSS waardes anders dan andere webbrowsers.
+        </p>
+
+        <p>
+            Al met al geen pretje dus om een website te bouwen voor Internet Explorer. Vorige versies (IE5.5 bijvoorbeeld) sloegen de plank al
+            helemaal mis op nog meer gebieden wat webstandaarden heet.
+        </p>
+
+        <h3>Microsoft Internet Explorer 7</h3>
+
+        <p>
+            Internet Explorer 6 kwam in 2001 uit en heeft et grootste webbrowser marktaandeel. Windows gebruikers moesten dus zo'n<strong>
+                5 jaar
+            </strong> wachten tot eind 2006 voordat er eindelijk een nieuwe, verbeterde, meer compliant webbrowser uit kwam
+        </p>
+
+        <p>Gelukkig maakt IE7 een hoop goed op gebied van webdesign, compliant HTML en CSS. Een hoop bugs zijn verholpen.</p>
+
+        <h2 id="mozilla-firefox">Mozilla Firefox</h2>
+
+        <p>
+            Voor een webdesigner / webdeveloper zijn een aantal factoren van belang voor het maken van een goede website. Dan gaat het even alleen om
+            de HTML/Css en Javascripting en alles maken volgens de W3C regels (validatie). In ieder geval een goede webbrowser die zich aan de <strong
+            >
+                W3C HTML specificaties
+            </strong> houdt.
+        </p>
+
+        <h3>Waarom Firefox?</h3>
+
+        <p>
+            Het feit dat Internet Explorer het grootste marktaandeel heeft wil niet zeggen dat je voor die browser moet beginnen met het opzetten van
+            je website. IE houdt zich niet altijd aan de HTML en CSS regels. Soms komen er rare bugs te voorschijn die je veel tijd kosten om op te
+            lossen. Bekijk je je website vervolgens in een andere browser en kun je er achter komen dat sommige dingen niet goed uitgelijnd staan dat
+            bepaalde truuken die je hebt toegepast gewoon niet werken.
+        </p>
+
+        <p>
+            Daarom, gebruik een webbrowser die zich zo veel mogelijk aan de W3C HTML regels houdt. Dat doen IE6 en in sommige gevallen IE7 dus niet.
+            Webbrowsers als <strong>Mozilla Firefox</strong>, <strong>Apple's Safari</strong> en de <strong>Opera</strong> webbrowser zijn over het algemeen
+            heel goed in deze specificatie en het ondersteunen van webstandaarden.
+        </p>
+
+        <h3>Productie tijd</h3>
+
+        <p>
+            Bouw je website juist voor compliant webbrowser die allemaal HTML standaarden ondersteunen. Halverwege tijdens het bouwproces kun je eens
+            gaan testen in IE6 en IE7. Mochten daar nog rare dingen naar voren komen kun je die meestal met weinig extra moeite ook oplossen. Dit <strong
+            >
+                scheelt een hoop tijd
+            </strong> en met deze methode is de website, gemaakt met webstandaarden, voor de meest gangbare webbrowsers.
+        </p>
+
+        <p>Een hele mooie oplossing hiervoor zijn <a href="/webdesign/conditional-comments">conditional comments</a>.</p>
+
+        <h3>Extra voordeel bij het gebruik van Mozilla Firefox</h3>
+
+        <p>
+            Firefox is uit te breiden met vele <a href="https://addons.mozilla.org/en-US/firefox/" target="_blank" rel="link">add-ons</a>. Dit maakt
+            het leven van een webdesign / webdeveloper vele malen makkelijker om CSS / Javascripts bugs op te lossen. Of om te kijken waarom en
+            ontwerp niet goed past. Of om fouten op te lossen in de HTML.
+        </p>
+
+        <p>
+            Op Atlantisdesign staat ook een speciale pagina over Mozilla Firefox en de meest handige <a href="/mozilla-firefox#firefox-addons">
+                Firefox Add-ons
+            </a>.
+        </p>
+
+        <h2 id="drie-lagen-van-een-website">De 3 lagen van een website</h2>
+
+        <p>
+            Webdesign is ook de kunst van het goed, compliant schrijven van gestructureerde HTML. Dat begrijpen sommige (beginnende) webdesigners, of
+            klanten, niet helemaal. Een website bestaat uit verschillende lagen.
+        </p>
+
+        <p>
+            Het woord 'design' is dan ook een beetje misleidend. Natuurlijk moet een website ook een beetje smoel hebben. Vaak wordt er een ontwerper
+            (designer) gebruikt om de kleuren te bepalen, de compositie en de layout. Een copywriter gaat aan de slag om de juiste woorden te vinden
+            die de boodschap duidelijk overdragen.
+        </p>
+
+        <h3>Ultieme doel: seperatie</h3>
+
+        <p>
+            Het ultieme doel van websites bouwen is de <strong>complete seperatie</strong> van de 3 lagen. Structuur scheiden van presentatie en scheiden
+            van interactie (ofwel behaviour). Door goede seperatie van HTML, CSS en Javascripting kunnen niet alleen webbrowsers gebruik maken van het
+            omvangrijke internet maar ook PDA's, web-mobieltjes.
+        </p>
+
+        <p>
+            Daarmee helpen we ook de minder valide mens. Mensen die slect ziend zijn hebben meestal en hulp middel om internet pagina's voor te laten
+            lezen. Om op deze manier toch informatie van het internet te verkrijgen. Deze mensen hebben het meeste aan laag 1 (structurele HTML). Een <a
+                href="http://en.wikipedia.org/wiki/Screen_reader"
+                target="_blank"
+                rel="link"
+            >
+                screenreader
+            </a> leest de HTML voor aan de gebruiker, kijkt niet naar de opmaak (laag 2) en voert ookg een javascripting uit (laag 3).
+        </p>
+
+        <p>
+            Op basis van de voorgelezen tekst maakt de minder valide persoon een keus om verder te klikken op pagina's. Als de website een grote soep
+            is aan tabellen en onzinnige HTML wordt het er voor die mensen ook niet duidelijker op.
+        </p>
+
+        <h3>En het design dan?</h3>
+
+        <p>
+            Het design van een website is ook onderdeel van het traject. Apart gezien van het design komen er natuurlijk veel meer factoren bij
+            kijken.
+        </p>
+
+        <p>Hieronder een versimpelde uitleg over de 3 lagen van een website.</p>
+
+        <h2>Laag 1: Structuur, semantic, compliant HTML</h2>
+
+        <p>
+            Het W3C heeft altijd gezegd dat haar HTML specificaties een 'recomendation' zijn voor webbrowsers. De makers van webbrowsers gaven hier in
+            de tijd van de browser wars hun eigen intepretatie aan. Waardoor er veel onzinnige HTML-tags en javascripting bedacht werd wat natuurlijk
+            incompatible was met de andere webbrowsers.
+        </p>
+
+        <p>
+            Het komt er op neer dat HTML volgens de W3C regels geschreven wordt. Geschreven wordt naar de <strong>betekenis</strong> van een HTML-element
+            (<strong>semantic</strong>). Een HTML <strong>H1 element</strong> wordt niet zomaar gebruikt omdat deze nou juist groot en bold is. Het H1
+            element heeft een betekenis, namelijk dat het de belangrijkste kop is op een HTML pagina. Met CSS kun je ervoor zorgen dat deze, bij standaard,
+            grote kop juist heel klein met een niet opvallende kleur.
+        </p>
+
+        <h3>Waar dient het voor?</h3>
+
+        <p>
+            De bedoeling van de eerste laag is een <strong>gestructuureerde road-map</strong> (ofwel <strong>
+                <abbr title="Document Object Model">DOM</abbr>
+            </strong>-tree) te maken waarop de volgende lagen hun specifieke toepassing op kunnen uit oefenen. Namelijk <strong>CSS</strong> (Cascading
+            Style Sheets) en <strong>Javascripting</strong>.
+        </p>
+
+        <p>
+            Zonder deze gestructureerde basis laag hebben de volgende opzichzelf staande lagen niet veel nut. Schrijf de HTML zo netjes mogelijk. Zorg
+            voor goede HTML nesting: geen block-level elementen in inline-elementen plaatsen.
+        </p>
+
+        <h4>Onderstaande is goede HTML</h4>
+
+        <code>&lt;p&gt;Deze paragraaf is netjes geschreven, dit &lt;strong&gt;woord&lt;/strong&gt; is in bold gestyled&lt;/p&gt;</code>
+
+        <h4>Deze HTML is fout geschreven</h4>
+        <code>
+            &lt;p&gt;Deze paragraaf is netjes geschreven, dit &lt;div&gt;&lt;font-weight:bold&gt;woord&lt;/font&gt;&lt;/div&gt; is in bold gestyled
+        </code>
+        <h2>Laag 2: Presentatie, ofwel Cascading Style Sheet (CSS)</h2>
+
+        <p>
+            De basis kennis voor deze laag kan verassend simpel zijn. Door gebruik te maken van stylen en deze toe te kennen aan HTML elementen vormt
+            zich een consistent geheel wat heel snel en makkelijk te onderhouden is.
+        </p>
+
+        <h3>Waar dient het voor?</h3>
+
+        <p>
+            Deze laag wordt ook wel de <strong>presentatie laag</strong> van een HTML pagina genoemd. Het bepaald 'hoe' HTML elementen eruit ziet. Het
+            bepaalt hoe groot de tekst is, wat de kleur is, wat de onderliggend relatie is met naast gelegen HTML element. Zo ook lichte vorm van effecten
+            bij interactie met de muis.
+        </p>
+
+        <p>Het mooiste is als de CSS apart in een extern bestand wordt bewaard en aan de HTML pagina's gelinked wordt.</p>
+
+        <p>
+            Met een paar regels CSS is de gehele website te stylen over ontelbare pagina's. Als de klant toch besluit om alle links in de website niet
+            blauw maar rood te laten maken is het een kwestie van 1 regels CSS aanpassen. Dit wordt door de hele website doorgevoerd.
+        </p>
+
+        <h3>Boeken</h3>
+
+        <p>
+            <a href="http://meyerweb.com/" target="_blank" rel="link">Eric Meyer</a>, de koning van CSS genoemd, heeft een aantal <a
+                href="/webdesign/boeken#eric-meyer-more-eric-meyer-on-css"
+            >
+                goede boeken
+            </a> hierover geschreven. Aan de hand van praktijk voorbeelden laat hij een re-design van een doorsnee website zien. Eerst de manier zoals
+            het op de oude manier gemaakt zou zijn en daarna op de manier van gestructureerde HTML en CSS voor opmaak.
+        </p>
+
+        <h2>Laag 3: Interactie, ofwel Javascripting</h2>
+
+        <p>
+            Met Javascripting kunnen interactive elementen in een HTML pagina gebruikt worden. Met interactie van de gebruiker kunnen verschillende
+            effecten gerealiseerd worden. Van het simpel weg een plaatje vervangen door een andere, verborgen HTML elementen laten tonen tot complexe
+            vormen en functies toekennen aan bepaalde elementen waarop geklikt kan worden. Zelfs animatie hoort tot de mogelijkheden.
+        </p>
+
+        <h3>Waar dient het voor?</h3>
+
+        <p>
+            Deze laag zorgt voor interactie, verandering en vernieuwing. Zonder de eerste laag (gestructureerde HTML) kan deze laag zijn werk niet
+            doen. Javascripting zelf heeft de <strong>DOM-tree</strong> nodig om bepaalde HTML elementen te veranderen, te vernieuwen, bij te bouwen, weg
+            te halen en bepaalde effecten te bereiken. Dit kan niet zonder structuur van de eerste laag.
+        </p>
+
+        <h3>Boeken</h3>
+
+        <p>
+            <strong>Jeremy Keith</strong> heeft een geweldig boek geschreven voor mensen die al wat verstand van HTML en CSS hebben en graag de stap willen
+            maken naar Javascripting. In zijn boek <a href="webdesign/boeken#jeremy-keith-domscripting">Dom-Scripting</a> legt hij vanuit dit oogpunt uit
+            hoe je verder Javascript kan toepassen op een <strong>unobtrusive</strong> manier.
+        </p>
+
+        <p>
+            Als dit allemaal onder de knie is gaat <strong>John Resig</strong>, met het boek <a
+                href="/webdesign/boeken#john-resig-pro-javascript-techniques"
+            >
+                Pro Javascript Techniques
+            </a>, een stapje verder, ook met het uitgangspunt van Dom-Scripting, maar vereenvoudigd een hoop zaken waardoor de gemaakte Javascripts
+            vele malen korter in notering worden en snel toegepast kunnen worden.
+        </p>
+    </main>
 </Layout>

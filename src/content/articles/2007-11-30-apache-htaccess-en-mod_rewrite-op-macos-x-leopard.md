@@ -14,17 +14,17 @@ Open de **Terminal** applicatie (`/Applications/Utilities/Terminal`). We gaan ee
 
 Ga eerst naar de map waar het configuratie bestand staat
 
-	cd /etc/apache2
+    cd /etc/apache2
 
 Vraag een lijst met bestanden op. Deze stap is perse nodig
 
-	ls -l
+    ls -l
 
 Hier zien we welk bestand we moeten hebben, namelijk `httpd.conf`. Typ het volgende commando in en geef een administrator wachtwoord op.
 
 #### Backup maken
 
-	sudo cp httpd.conf httpd.conf_backup
+    sudo cp httpd.conf httpd.conf_backup
 
 Vraag met `ls -l` opnieuw een lijst op en we zien dat er een backup bestand is gemaakt. Voor degene die met de Unix terminal overweg kunnen weten hoe ze met de commando's `rm` en `mv` de backup weer terug kunnen zetten.
 
@@ -40,23 +40,23 @@ Start **TextWrangler** (of BBEdit) en laat het de **command line tools** install
 
 Open het **Terminal** programma (`/Applications/Utilities/Terminal`) en typ het volgende commando in, gevolgt door een adminitrator wachtwoord.
 
-	sudo vi /etc/apache2/httpd.conf
+    sudo vi /etc/apache2/httpd.conf
 
 Eerst drukken we op ESC en dan typen we onderstaande in om naar regel nummer 210 te gaan.
 
-	:210
+    :210
 
 Daar staat een **directive** hoe de webserver moet omgaan met **overrides**. Met andere woorden **of** een .htaccess bestand de standaard configuratie mag overschrijven.
 
-	AllowOverride None
+    AllowOverride None
 
 Dit gaan we veranderen in onderstaande. Verander het woord `None` in `All`
 
-	AllowOverride All
+    AllowOverride All
 
 Bewaar het document door eerst op **ESC** te drukken en daarna het volgende in te typen.
 
-	:wq
+    :wq
 
 Wat wil zeggen dat we het file willen bewaren, ofwel `w` van **write** en dat we het programma vi willen afsluiten met `q` van **quit**.
 
@@ -64,15 +64,15 @@ Wat wil zeggen dat we het file willen bewaren, ofwel `w` van **write** en dat we
 
 Open de Terminal en typ onderstaande commando in;
 
-	edit /etch/apache2/httpd.conf
+    edit /etch/apache2/httpd.conf
 
 In TextWrangler gaan we met `Apple'tje + j` naar **regel 210**. Daar voeren we precies hetzelfde uit als bij de vi editor versie.
 
-	AllowOverride None
+    AllowOverride None
 
 Dit gaan we veranderen in onderstaande. Verander het woord `None` in `All`
 
-	AllowOverride All
+    AllowOverride All
 
 Bewaar het bestand en geef een administrator wachtwoord op. Dit moet je doen omdat het een Unix beveiligd bestand is.
 
@@ -82,6 +82,6 @@ Nu gaan we de Apache 2.x webserver herstarten. Dit kan door via `Apple'tje > Sys
 
 Als we nog in de Terminal zitten voeren we het volgende commando uit
 
-	sudo apachectl graceful
+    sudo apachectl graceful
 
 Hierdoor wordt de Apache server ge-herstart. We kunnen nu gebruik maken van .htaccess bestanden. De **mod_rewrite** module staat standaard al aan en werkt dus al.

@@ -82,8 +82,8 @@ Nu alles gereed is kunt u met een FTP programma uw nieuwe, verbeterde, FTP serve
 
 Op **twee dingen** moeten we hier letten.
 
-* Gebruikt de Mac nu PureFTPd als FTP server?
-* Kunnen we niet meer uit onze home map klimmen?
+- Gebruikt de Mac nu PureFTPd als FTP server?
+- Kunnen we niet meer uit onze home map klimmen?
 
 Zoek in het FTP programma, waarmee u verbinding heeft gemaakt met uw Mac, naar de '**console**'. Hier kunt u zien welke commando's het FTP programma naar de Mac FTP server stuurt. Hierin moet de naam van het FTP server programma vermeld staan. Als het goed is gebruikt onze Mac nu '**PureFTPd**'. Kijk of u niet meer uit uw home map kunt klimmen (een map hoger kunt komen). Dit is een optie die u kunt instellen voor elke virturele gebruiker van de FTP server.
 

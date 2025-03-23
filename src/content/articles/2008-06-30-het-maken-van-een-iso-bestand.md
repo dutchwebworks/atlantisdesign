@@ -28,27 +28,27 @@ Open de terminal en ga naar de map (met het `cd` commando) waar een map staat di
 
 #### Het Unix commando
 
-	hdiutil makehybrid -iso -joliet -o mijn_iso_bestand.iso map_naam/
+    hdiutil makehybrid -iso -joliet -o mijn_iso_bestand.iso map_naam/
 
 #### Bovenstaand commando bestaat uit 3 stukken
 
-* De parameters **-iso** en **-joliet** geven aan dat je een hybride cd-image wil maken met de [ISO standaard](http://en.wikipedia.org/wiki/Iso_%28file_format%29). [Joliet](http://en.wikipedia.org/wiki/Joliet_%28file_system%29) betekend dat je ook een Windows indeling wilt.
-* Het stukje -o betekend dat hier de **output** volgt, ofwel waar je het .iso bestand (met naam) wilt bewaren. In bovenstaand voorbeeld is dat dus **mijn_iso_bestand.iso**. Je kunt hier dus direct een pad opgeven waar je het wilt bewaren.
-* Als laatste in het Unix commando geeft aan 'van-welke-map' (of coversie van een .dmg) je een .iso wilt maken. In bovenstaand voorbeeld wordt van de map **map_naam** een .iso bestand gemaakt.
- 
+- De parameters **-iso** en **-joliet** geven aan dat je een hybride cd-image wil maken met de [ISO standaard](http://en.wikipedia.org/wiki/Iso_%28file_format%29). [Joliet](http://en.wikipedia.org/wiki/Joliet_%28file_system%29) betekend dat je ook een Windows indeling wilt.
+- Het stukje -o betekend dat hier de **output** volgt, ofwel waar je het .iso bestand (met naam) wilt bewaren. In bovenstaand voorbeeld is dat dus **mijn_iso_bestand.iso**. Je kunt hier dus direct een pad opgeven waar je het wilt bewaren.
+- Als laatste in het Unix commando geeft aan 'van-welke-map' (of coversie van een .dmg) je een .iso wilt maken. In bovenstaand voorbeeld wordt van de map **map_naam** een .iso bestand gemaakt.
+
 In de laatste stap wordt de naam van de map de naam van de cd, die je uiteindelijk gaat branden. Je kunt dit ook zien door het zojuist gemaakte .iso bestand te openen op de Mac. Op de Desktop zie je dan een witte soort harde schijf (volume) te voorschijn komen. De inhoud van de map staat dan in de root van de cd.
 
 ###Spaties in de namen
 
 Als de map_naam of de naam van je .iso bestand spaties moet bevatten moet je deze namen commenten, dus dan wordt het commando iets als:
 
-	hdiutil makehybrid -iso -joliet -o "mijn iso bestand met spaties.iso" "map naam met spaties"
+    hdiutil makehybrid -iso -joliet -o "mijn iso bestand met spaties.iso" "map naam met spaties"
 
 ### Manual
 
 Door het woord `man` (manual) voor een Unix commando / programma te typen kom je meer informatie te weten over het commando.
 
-	man hdiutil
+    man hdiutil
 
 ## Uitwisselen
 
@@ -62,13 +62,12 @@ Open **Automator** (`/Applications/Automator`) en kies voor Run Shellscript. Pla
 
 ### Code
 
-	for f in "$@" 
-		do
-			[ -d "$f" ] && hdiutil makehybrid -iso -joliet -o "$f.iso" "$f" 
-		done
+    for f in "$@"
+    	do
+    		[ -d "$f" ] && hdiutil makehybrid -iso -joliet -o "$f.iso" "$f"
+    	done
 
 #### Het ziet er dan ongeveer zo uit
-
 
 ##Als Finder plugin bewaren
 

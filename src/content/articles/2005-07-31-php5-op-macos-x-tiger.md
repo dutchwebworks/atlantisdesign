@@ -22,17 +22,17 @@ Als u nog in PHP4 bent geinteresseerd volgt hier een aanwijzing hoe u deze kunt 
 
 De Apache server is verantwoordelijk voor veel websites op internet. Als u een adres in uw browser intikt is negen van de tien keer de achterliggende webserver uitgerust met Apache en draait op Linux. Open de Mac OS X **Terminal** (`/Applications/Utilities`) en typ het volgende commando in gevolgd door een enter:
 
-	sudo pico /etc/httpd/httpd.conf
+    sudo pico /etc/httpd/httpd.conf
 
-Voor leken en beginners gebruiken we de Unix Pico tekst editor. Zoek, met behulp van `ctrl+w`, naar *php4*. De cursor springt naar een regel waar dit voorkomt. Aan het begin van deze regel staat een hekje **#**. Dit betekend dat de regel een 'comment' is welke niet mee genomen wordt met het opstarten van de Apache webserver (via het Web Sharing voorkeuren paneel op de Mac). Dit hekje halen we weg door er eerst met de cursor bovenop te gaan staan. Druk op 'delete' om het hekje te verwijderen.
+Voor leken en beginners gebruiken we de Unix Pico tekst editor. Zoek, met behulp van `ctrl+w`, naar _php4_. De cursor springt naar een regel waar dit voorkomt. Aan het begin van deze regel staat een hekje **#**. Dit betekend dat de regel een 'comment' is welke niet mee genomen wordt met het opstarten van de Apache webserver (via het Web Sharing voorkeuren paneel op de Mac). Dit hekje halen we weg door er eerst met de cursor bovenop te gaan staan. Druk op 'delete' om het hekje te verwijderen.
 
 Deze regel ziet er als volgt uit. Haal het hekje weg aan het begin van de regel:
 
-	#LoadModule php4_module libexec/httpd/libphp4.so
+    #LoadModule php4_module libexec/httpd/libphp4.so
 
-Dit voeren we nogmaals uit op onderstaande regel. Zoek nogmaals (met `ctrl+w`) een paar keer naar *php4*. Op onderstaande regel moet ook het hekje ook verwijderd worden.
+Dit voeren we nogmaals uit op onderstaande regel. Zoek nogmaals (met `ctrl+w`) een paar keer naar _php4_. Op onderstaande regel moet ook het hekje ook verwijderd worden.
 
-	#AddModule mod_php4.c
+    #AddModule mod_php4.c
 
 ###Bewaren en Apache opnieuw opstarten
 
@@ -44,11 +44,11 @@ De PHP module draait nu mee met de Apache webserver. Hoe testen we dat? PHP heef
 
 Open TextWrangler of BBEdit. [En plak deze tekst erin](http://www.atlantisdesign.nl/public/phpinfo.txt):
 
-	<?php phpinfo(); ?>
+    <?php phpinfo(); ?>
 
 Bewaar dit PHP script als `phpinfo.php` in uw **Sites** map in uw eigen thuis map. Open nu Safari of een andere browser. Typ onderstaand adres in en vervang **kortegebruikersnaam** door de naam van uw home map ofwel uw korte gebruikersnaam.
 
-	http://localhost/~kortegebruikersnaam/phpinfo.php
+    http://localhost/~kortegebruikersnaam/phpinfo.php
 
 In uw browser verschijnt een lange pagina met paarse balken. Het ovale PHP logo staat in beeld met de daarbij behorende versie nummer. Standaard staat op elke Mac OS X Mac PHP4 geinstalleerd. De PHP module is nu actief.
 
@@ -59,15 +59,18 @@ U kunt PHP5 downloaden van de [PHP.net](http://www.php.net/) website. Daarna kun
 Deze installer package is gemaakt door **Marc Liyanage** speciaal voor Mac OS X. Alles is al voor ge-compiled en in een handige Mac OS X installer package gestopt.
 
 #### GDLib
+
 Bij deze package is GDLib inbegrepen. Waarom is deze library handig? Met PHP kunnen on-the-fly grafieken gemaakt worden. Denk hierbij aan statistieken of andere zaken die het gebruik van server-side-graphics vereisen. Deze plaatjes worden gemaakt aan de hand van variablen binnen PHP. Dit is een veel gebruikte extensie op PHP. Voor ons gemak is de extra toevoeging al inbegrepen.
 
 #### Downloaden
+
 Download de [Entropy PHP5 package](http://www.entropy.ch/software/macosx/php/#install) voor Apache 1.3. Deze package is afgestemd op de huidige Apache webserver die we via `Appel'tje > System Preferences > Sharing` en dan '**Personal Web Sharing**' kunnen activeren.
 
 #### Installeren en testen
+
 Installeer de PHP5 package en volg de aanwijzingen van de installer. Om PHP5 te testen, en te zien welke versie we nu gebruiken, kunt u hetzelfde script gebruiken zoals we hierboven hebben gebruikt. Na de installatie opent u wederom Safari en bladert weer naar hetzelfde bestand.
 
-	http://localhost/~kortegebruikersnaam/phpinfo.php
+    http://localhost/~kortegebruikersnaam/phpinfo.php
 
 Nu zien we dat de Mac PHP5 gebruikt. De melding wordt gemaakt dat dit een Entropy PHP versie is. Gefeliciteerd!! U heeft een update van PHP4 naar PHP5 op uw Mac draaien.
 
@@ -77,11 +80,11 @@ Het is niet vereist dat u deze stap volgt. Het is alleen voor de geinteresseerde
 
 We gaan weer terug naar de terminal en kijken nogmaals in het bestand waar u hierboven de PHP4 module heeft geactiveerd. Typ in:
 
-	sudo pico /etc/httpd/httpd.conf
+    sudo pico /etc/httpd/httpd.conf
 
 Blader helemaal onderaan (met ctrl+v) in het document. Daar staat een regeltje welk de PHP5 module laad in plaats van de PHP4 module.
 
-	Include /usr/local/php5/httpd.conf.php
+    Include /usr/local/php5/httpd.conf.php
 
 De PHP5 installer heeft tevens de twee PHP4 regels, die we zojuist aangezet hebben, weer voorzien van een hekje aan het begin van de regel.
 
@@ -93,15 +96,15 @@ Goed, nu de PHP5 module actief is kunnen we ten alle tijden nog terug naar PHP4.
 
 U moet er voor zorgen dat de twee eerste PHP4 regels, zie helemaal aan het begin van dit artikel, niet voorzien zijn van een hekje. Dat wil dus zeggen dat de Apache server weer de PHP4 module moet laden. Hier volgen beide regels nogmaals zonder hekjes:
 
-	LoadModule php4_module libexec/httpd/libphp4.so
+    LoadModule php4_module libexec/httpd/libphp4.so
 
-	AddModule mod_php4.c
+    AddModule mod_php4.c
 
 #### PHP5 weer uitzetten
 
 Als laatste zorgen we ervoor dat PHP5 weer uitgezet wordt. Voorzie de volgende regel van een hekje:
 
-	#Include /usr/local/php5/httpd.conf.php
+    #Include /usr/local/php5/httpd.conf.php
 
 U slaat het document weer op (met ctrl+x, zie hierboven) en herstart de Apache server weer in het **Personal Web Sharing** voorkeuren paneel. Herlaad de `phpinfo.php` pagina in uw Safari webbrowser om te kijken of de Mac nu weer PHP4 gebruikt.
 

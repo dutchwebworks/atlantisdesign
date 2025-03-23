@@ -1,172 +1,283 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import MadeOnAMac from '@/components/MadeOnAMac.astro';
-import Intro from '@/components/Intro.astro';
-import WebLinks from '@/components/WebLinks.astro';
-import ArticlesTable from '@/components/ArticlesTable.astro';
-import MacBuyersGuide from '@/components/MacBuyersGuide.astro';
+import Layout from "@/layouts/Layout.astro";
+import MadeOnAMac from "@/components/MadeOnAMac.astro";
+import Intro from "@/components/Intro.astro";
+import WebLinks from "@/components/WebLinks.astro";
+import ArticlesTable from "@/components/ArticlesTable.astro";
+import MacBuyersGuide from "@/components/MacBuyersGuide.astro";
 
 const metaData = {
     title: "Apple macOS and iTunes",
-    description: "De Mac blijft een plaatje. Het is mijn favoriete computermerk. De elegantie en stijl van Apple met een jaren door ontwikkelde solide Unix bodem.",
-    canonical: "apple-macintosh-itunes"
-}
+    description:
+        "De Mac blijft een plaatje. Het is mijn favoriete computermerk. De elegantie en stijl van Apple met een jaren door ontwikkelde solide Unix bodem.",
+    canonical: "apple-macintosh-itunes",
+};
 ---
 
 <Layout metaData={metaData}>
-	<Intro>
-		{metaData.description}
-	</Intro>
+    <Intro>
+        {metaData.description}
+    </Intro>
 
     <aside id="side" class="grid_5">
-		<MacBuyersGuide />		
+        <MacBuyersGuide />
 
-		<MadeOnAMac />
-	
-		<h2>Links</h2>
+        <MadeOnAMac />
 
-		<WebLinks />
-	</aside>
+        <h2>Links</h2>
+
+        <WebLinks />
+    </aside>
 
     <main id="main" class="grid_11 omega">
-		<h1>{metaData.title}</h1>
-		
-		<p>
-			Via mijn opleiding kwam ik al gauw in aanmerking met de <a href="http://www.apple.com/" title="Apple's website" target="_blank" rel="link">Apple Macintosh</a>. Vanuit de grafisch wereld werd altijd gewerkt op de Mac.
-			Mijn interesse bleef groeien en op mijn toemalige stage adres had ik een keus om te werken achter een Windows computer of toch maar de Mac.
-			Ik koos natuurlijk voor de Mac en mijn voorliefde voor dit platform bleef groeien.
-		</p>
-		
-		<p>
-			Apple is enige tijd overgestapt op het <a href="http://nl.wikipedia.org/wiki/Unix" title="Wat is Unix?" target="_blank" rel="link">Unix</a> platform met haar Mac OS X.
-			Het oude tijdperk van Mac OS 8 en 9 zijn voorgoed voorbij. Apple doet het goed in de grafische wereld en ook in het onderwijs wordt er veelvuldig gebruikt gemaakt
-			van Apple Mac's. Zo ook op het <a href="http://www.glr.nl/" title="Grafisch Lyceum Rotterrdam" target="_blank" rel="link">Grafisch Lyceum Rotterdam</a> en in de grafische branche.
-		</p>
-		
-		<p>
-			Persoonlijk ben ik blij dat ik een aantal jaar geleden ben <strong>overgestapt</strong> van Windows op Mac OS X. Het platform werkt fantastisch en voor zover bekend 
-			zijn er geen virussen in omloop. Met Unix als onderlaag van het besturingssysteem is alles goed geregeld en het zit potdicht. Met gebruikers gemak en <strong>eenvoud</strong> van Apple
-			en de <strong>solide</strong> onderlaag van Unix maakt het de perfecte combinatie voor een goede computer om mee te werken. Zowel op grafisch gebied als op Unix nivo in combinatie met webservers.		
-		</p>
-		
-		<h2>Mac en virussen, spyware, mallware, wormen en ander gespuis!! </h2>
+        <h1>{metaData.title}</h1>
 
-		<p>Ja!! Daar gaan we weer. De bekende verhalen dat het Mac platform ook al overloopt van virussen en spy/mallware en wormen. Vanuit McAffee en andere antivirus software makers worden de Mac gebruikers aardig 'bang' gemaakt. Nergens voor nodig! </p>
-		
-		<p class="center"><a href="http://www.macfriend.nl/" target="_blank" title="Macfriend" rel=""><img src="/img/macfriend_stop.jpg" loading="lazy" alt="Macfriend - stop"></a></p>
-		
-		<p>Wil je een veilige computer? Koop een Mac!!</p>
+        <p>
+            Via mijn opleiding kwam ik al gauw in aanmerking met de <a
+                href="http://www.apple.com/"
+                title="Apple's website"
+                target="_blank"
+                rel="link"
+            >
+                Apple Macintosh
+            </a>. Vanuit de grafisch wereld werd altijd gewerkt op de Mac. Mijn interesse bleef groeien en op mijn toemalige stage adres had ik een
+            keus om te werken achter een Windows computer of toch maar de Mac. Ik koos natuurlijk voor de Mac en mijn voorliefde voor dit platform
+            bleef groeien.
+        </p>
 
-		<h2>Artikelen</h2>
-		
-		<p>
-			Ik heb een aantal <a href="article.php" title="Artiekelen over de Mac en webservers">artikelen geschreven</a> hoe je van een Mac een <strong>webserver</strong> kunt maken. Zie de rechter zijkant. Deze pagina zal binnenkort nog verder worden uitgebreidt met sappige
-			informatie waarom ik iedereen aanraad over te stappen naar de Mac. Ik zal je vertellen wat er zo 'beter' is aan de Mac en waar u op moet letten als u overstapt. De voordelen zullen
-			uitgebreidt aan bod komen. Een Mac werkt gewoon prettiger. 
-		</p>			
-			
-		<h3 class="attention">Let op!</h3>
+        <p>
+            Apple is enige tijd overgestapt op het <a href="http://nl.wikipedia.org/wiki/Unix" title="Wat is Unix?" target="_blank" rel="link">
+                Unix
+            </a> platform met haar Mac OS X. Het oude tijdperk van Mac OS 8 en 9 zijn voorgoed voorbij. Apple doet het goed in de grafische wereld en ook
+            in het onderwijs wordt er veelvuldig gebruikt gemaakt van Apple Mac's. Zo ook op het <a
+                href="http://www.glr.nl/"
+                title="Grafisch Lyceum Rotterrdam"
+                target="_blank"
+                rel="link"
+            >
+                Grafisch Lyceum Rotterdam
+            </a> en in de grafische branche.
+        </p>
 
-		<p>
-			Atlantisdesign neemt geen verantwoording voor eventuele schade aan uw
-			bestaand systeem.
-		</p>
+        <p>
+            Persoonlijk ben ik blij dat ik een aantal jaar geleden ben <strong>overgestapt</strong> van Windows op Mac OS X. Het platform werkt fantastisch
+            en voor zover bekend zijn er geen virussen in omloop. Met Unix als onderlaag van het besturingssysteem is alles goed geregeld en het zit potdicht.
+            Met gebruikers gemak en <strong>eenvoud</strong> van Apple en de <strong>solide</strong> onderlaag van Unix maakt het de perfecte combinatie
+            voor een goede computer om mee te werken. Zowel op grafisch gebied als op Unix nivo in combinatie met webservers.
+        </p>
 
-		<ArticlesTable />				
-			
-		<h1>Muziek beheerbaar maken</h1>
-		
-		<p>
-			Vroeger heb ik veel programma'tje geprobeert om muziek mee te beheren. Zoals <a href="http://www.winamp.com/" title="WinAmp" target="_blank" rel="link">WinAmp</a> 
-			bijvoorbeeld en zelfs de <a href="http://www.microsoft.com/windows/windowsmedia/default.mspx" title="Microsoft Windows Media Player" target="_blank" rel="link">Windows Media Player</a>.
-			Ja, ik heb vroeger ook een Windows PC gehad!
-		</p>		
-		
-		<h3>Nadelen</h3>
+        <h2>Mac en virussen, spyware, mallware, wormen en ander gespuis!!</h2>
 
-		<p>
-			Geen van alle kwam in de buurt van prettig werken met vele muziek bestanden. Het nadeel wat ik altijd vond is dat je elke keer weer van die play-listen
-			moet aanmaken en niet alle gegeven werden getoont. Daarbij kwam nog eens dat ik de interfaces erg onhandig vond.
-		</p>
-		
-		<p>
-			Bovendien &hellip; heeft iemand ooit wel eens succesvol een audio cd kunnen branden met de Microsoft Media Player? Nou ik heb wel vijf cd's weg moeten gooien of de laaste paar 
-			nummers staan er niet een op.
-		</p>
-				
-		<h2>Apple iTunes</h2>
-	
-		<p>
-			Ik heb de eerste versies van Apple's iTunes mogen bekijken in het Mac OS 8 en 9 tijdperk. Het zag er veel belovend uit en was makkelijk te bedienen. Geen ingewikkelde
-			programma structuur. Ik hou er ook van als een programma in een oogopslag duidelijkheid toont. Ik heb een hekel aan zoeken of een programma leren kennen.
-		</p>
-		
-		<p class="center"><a href="http://www.apple.com/itunes" title="Apple iTunes"><img src="/img/itunes.jpg" loading="lazy" alt="Apple iTunes"></a></p>
-		
-		<p>
-			Ik adviseer iedereen, ook de Windows gebruikers, om <a href="http://www.apple.com/itunes/" title="Download Apple's iTunes!!" target="_blank" rel="link">Apple's iTunes</a> te gebruiken voor muziek en online muziek downloads.
-			Het programma is helder, bevat opties voor een playlist en de mogelijkheid om zogenaamde <strong>smart playlist</strong> aan te maken. Deze lijsten zijn op basis van <strong>criteria</strong> vast te stellen.
-			Bijvoorbeeld de laatste gespeelde nummers van de afgelopen week. Of de nummers met jou eigen hoogst genoteerde waardering in de categorie Dance.
-		</p>
-		
-		<h2>iTunes Music Store</h2>
+        <p>
+            Ja!! Daar gaan we weer. De bekende verhalen dat het Mac platform ook al overloopt van virussen en spy/mallware en wormen. Vanuit McAffee
+            en andere antivirus software makers worden de Mac gebruikers aardig 'bang' gemaakt. Nergens voor nodig!
+        </p>
 
-		<p>
-			De beste online muziek winkel!! Het heeft een tijd geduurd maar er is een <strong>Nederlandse versie</strong> van de online muziek winkel.
-			Nu kan men dus ook Dance music vinden wat populair is in Europa. Er blijven natuurlijk verschillen in muziek voorkeur per continent.
-		</p>
-		
-		<h3>Goede persoonlijk muziek</h3>
+        <p class="center">
+            <a href="http://www.macfriend.nl/" target="_blank" title="Macfriend" rel="">
+                <img src="/img/macfriend_stop.jpg" loading="lazy" alt="Macfriend - stop" />
+            </a>
+        </p>
 
-		<p>
-			Dit zijn een aantal cd's die ik goed vind en te verkrijgen zijn in de <strong>iTunes Music Store</strong>.
-			Als je op de link klikt opent iTunes zich automatisch en neemt u mee naar de Music Store waar u naar voorstukjes van het album kunt luisteren. Geheel gratis!!
-		</p>
-			
-		<h3>iTunes Music Store</h3>
+        <p>Wil je een veilige computer? Koop een Mac!!</p>
 
-		<ul class="clean">
-			<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78967460&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">James Blunt - Back to Bedlam</a></li>
-			<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78922696&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Kraak &amp; Smaak - Boogie Angst</a></li>
-			<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=17641181&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Massive Attack - Mezzanine</a></li>
-			<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=18219190&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Soel - Memento</a></li>
-			<li><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=118028886&amp;s=143452" title="Woensdag 16 augustus 2006" target="_blank" rel="link">Thievery Corporation - Sound from the Thievery Hi-Fi</a></li>
-		</ul>	
-		
-		<h2>Veilig muziek downloaden met je bank- of girorekening</h2>
+        <h2>Artikelen</h2>
 
-		<p>
-			Het is mogelijk om <strong>zonder creditcard</strong> toch online muziek te downloaden van de iTunes Music Store. Hiervoor kun je je eigen bank- of girorekening voor gebruiken.
-			Via de website van <a href="http://www.clickandbuy.com/NL/nl/" title="Click 'N Buy" target="_blank" rel="link">Firstgate</a> kunt u een online <strong>Click 'N Buy</strong> account aanmaken welke gekoppeld wordt aan uw bank- of girorekening.
-		</p>
-		
-		<p>
-			In iTunes maak je een account aanmaken en daarbij geef je aan dat je via Clik 'N Buy muziek wilt kopen. Vul de gegevens in die je van Firstgate krijgt en je kunt beginnen met <strong>legaal
-			online muziek te downloaden</strong>. De meeste muziek nummer kosten slechts € 0,99 cent.
-		</p>
-		
-		<h3>Persoonlijke ervaring</h3>
+        <p>
+            Ik heb een aantal <a href="article.php" title="Artiekelen over de Mac en webservers">artikelen geschreven</a> hoe je van een Mac een <strong
+            >
+                webserver
+            </strong> kunt maken. Zie de rechter zijkant. Deze pagina zal binnenkort nog verder worden uitgebreidt met sappige informatie waarom ik iedereen
+            aanraad over te stappen naar de Mac. Ik zal je vertellen wat er zo 'beter' is aan de Mac en waar u op moet letten als u overstapt. De voordelen
+            zullen uitgebreidt aan bod komen. Een Mac werkt gewoon prettiger.
+        </p>
 
-		<p>
-			Ik ben ook altijd huiverig geweest bij online betalingen. Maar ik moet zeggen dat alles perfect verloopt bij de aanschaf van online muziek via de iTunes Music Store.
-			In de Music Store kan ik gewoon muziek aanklikken en een boodschappen mantje aanmaken. Als ik tevreden ben koop het in één keer en het downloaden gaat ook heel vlot. Binnen
-			enkele minuten heb ik een nieuwe collectie muziek. <strong>Per email krijg je gelijk een bevestiging</strong> dat Firstgate de nota van de iTunes Music Store heeft ontvangen en dat het verschuldigde bedrag
-			binnen enkele werkdagen van mijn rekening zal worden afgeschreven. Het werkt gewoon perfect!!
-		</p>
-		
-		<h2>Apple iPod</h2>
+        <h3 class="attention">Let op!</h3>
 
-		<p>
-			<img class="float_left" src="/img/ipod.jpg" loading="lazy" alt="Apple iPod Photo">Een kleine twee jaar heb ik ook een <a href="http://www.apple.com/ipod/" title="Apple iPod" target="_blank" rel="link">Apple iPod</a> aangeschaft. Een vierde generatie (net voor de iPod Photo). Ik heb ooit in mijn school periode een echt 'My first Sony' - walkman gehad. 
-			Maar de iPod is mijn tweede muziek speler. Ik moet zeggen dat ik eerst het nut er niet van inzag om zo'n ding elke keer mee te slepen. Maar de eenvoud en koppeling met iTunes is gewoon
-			verbazingwekkend. En de zojuist gekochte online muziek wordt zonder enige moeite op m'n iPod gezet en speelt voortreffelijk.
-		</p>
-		
-		<h3>Rage</h3>
+        <p>Atlantisdesign neemt geen verantwoording voor eventuele schade aan uw bestaand systeem.</p>
 
-		<p>
-			Het begint een beetje een rage te worden om bezitter te zijn van een iPod. Als ik op straat loop kan ik tellen hoeveel mensen er een iPod in hun broekzak hebben zitten. Dat kun je
-			zien aan de witte oordopjes die heel erg opvallen. Ik ben er ook fan van geworden. Zeker omdat ik een beetje Apple fan/freak ben.
-		</p>			
-	</main>
+        <ArticlesTable />
+
+        <h1>Muziek beheerbaar maken</h1>
+
+        <p>
+            Vroeger heb ik veel programma'tje geprobeert om muziek mee te beheren. Zoals <a
+                href="http://www.winamp.com/"
+                title="WinAmp"
+                target="_blank"
+                rel="link"
+            >
+                WinAmp
+            </a>
+            bijvoorbeeld en zelfs de <a
+                href="http://www.microsoft.com/windows/windowsmedia/default.mspx"
+                title="Microsoft Windows Media Player"
+                target="_blank"
+                rel="link"
+            >
+                Windows Media Player
+            </a>. Ja, ik heb vroeger ook een Windows PC gehad!
+        </p>
+
+        <h3>Nadelen</h3>
+
+        <p>
+            Geen van alle kwam in de buurt van prettig werken met vele muziek bestanden. Het nadeel wat ik altijd vond is dat je elke keer weer van
+            die play-listen moet aanmaken en niet alle gegeven werden getoont. Daarbij kwam nog eens dat ik de interfaces erg onhandig vond.
+        </p>
+
+        <p>
+            Bovendien &hellip; heeft iemand ooit wel eens succesvol een audio cd kunnen branden met de Microsoft Media Player? Nou ik heb wel vijf
+            cd's weg moeten gooien of de laaste paar nummers staan er niet een op.
+        </p>
+
+        <h2>Apple iTunes</h2>
+
+        <p>
+            Ik heb de eerste versies van Apple's iTunes mogen bekijken in het Mac OS 8 en 9 tijdperk. Het zag er veel belovend uit en was makkelijk te
+            bedienen. Geen ingewikkelde programma structuur. Ik hou er ook van als een programma in een oogopslag duidelijkheid toont. Ik heb een
+            hekel aan zoeken of een programma leren kennen.
+        </p>
+
+        <p class="center">
+            <a href="http://www.apple.com/itunes" title="Apple iTunes"><img src="/img/itunes.jpg" loading="lazy" alt="Apple iTunes" /></a>
+        </p>
+
+        <p>
+            Ik adviseer iedereen, ook de Windows gebruikers, om <a
+                href="http://www.apple.com/itunes/"
+                title="Download Apple's iTunes!!"
+                target="_blank"
+                rel="link"
+            >
+                Apple's iTunes
+            </a> te gebruiken voor muziek en online muziek downloads. Het programma is helder, bevat opties voor een playlist en de mogelijkheid om zogenaamde
+            <strong>smart playlist</strong> aan te maken. Deze lijsten zijn op basis van <strong>criteria</strong> vast te stellen. Bijvoorbeeld de laatste
+            gespeelde nummers van de afgelopen week. Of de nummers met jou eigen hoogst genoteerde waardering in de categorie Dance.
+        </p>
+
+        <h2>iTunes Music Store</h2>
+
+        <p>
+            De beste online muziek winkel!! Het heeft een tijd geduurd maar er is een <strong>Nederlandse versie</strong> van de online muziek winkel.
+            Nu kan men dus ook Dance music vinden wat populair is in Europa. Er blijven natuurlijk verschillen in muziek voorkeur per continent.
+        </p>
+
+        <h3>Goede persoonlijk muziek</h3>
+
+        <p>
+            Dit zijn een aantal cd's die ik goed vind en te verkrijgen zijn in de <strong>iTunes Music Store</strong>. Als je op de link klikt opent
+            iTunes zich automatisch en neemt u mee naar de Music Store waar u naar voorstukjes van het album kunt luisteren. Geheel gratis!!
+        </p>
+
+        <h3>iTunes Music Store</h3>
+
+        <ul class="clean">
+            <li>
+                <a
+                    href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78967460&s=143452"
+                    title="Woensdag 16 augustus 2006"
+                    target="_blank"
+                    rel="link"
+                >
+                    James Blunt - Back to Bedlam
+                </a>
+            </li>
+            <li>
+                <a
+                    href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=78922696&s=143452"
+                    title="Woensdag 16 augustus 2006"
+                    target="_blank"
+                    rel="link"
+                >
+                    Kraak &amp; Smaak - Boogie Angst
+                </a>
+            </li>
+            <li>
+                <a
+                    href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=17641181&s=143452"
+                    title="Woensdag 16 augustus 2006"
+                    target="_blank"
+                    rel="link"
+                >
+                    Massive Attack - Mezzanine
+                </a>
+            </li>
+            <li>
+                <a
+                    href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=18219190&s=143452"
+                    title="Woensdag 16 augustus 2006"
+                    target="_blank"
+                    rel="link"
+                >
+                    Soel - Memento
+                </a>
+            </li>
+            <li>
+                <a
+                    href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=118028886&s=143452"
+                    title="Woensdag 16 augustus 2006"
+                    target="_blank"
+                    rel="link"
+                >
+                    Thievery Corporation - Sound from the Thievery Hi-Fi
+                </a>
+            </li>
+        </ul>
+
+        <h2>Veilig muziek downloaden met je bank- of girorekening</h2>
+
+        <p>
+            Het is mogelijk om <strong>zonder creditcard</strong> toch online muziek te downloaden van de iTunes Music Store. Hiervoor kun je je eigen
+            bank- of girorekening voor gebruiken. Via de website van <a
+                href="http://www.clickandbuy.com/NL/nl/"
+                title="Click 'N Buy"
+                target="_blank"
+                rel="link"
+            >
+                Firstgate
+            </a> kunt u een online <strong>Click 'N Buy</strong> account aanmaken welke gekoppeld wordt aan uw bank- of girorekening.
+        </p>
+
+        <p>
+            In iTunes maak je een account aanmaken en daarbij geef je aan dat je via Clik 'N Buy muziek wilt kopen. Vul de gegevens in die je van
+            Firstgate krijgt en je kunt beginnen met <strong>legaal online muziek te downloaden</strong>. De meeste muziek nummer kosten slechts €
+            0,99 cent.
+        </p>
+
+        <h3>Persoonlijke ervaring</h3>
+
+        <p>
+            Ik ben ook altijd huiverig geweest bij online betalingen. Maar ik moet zeggen dat alles perfect verloopt bij de aanschaf van online muziek
+            via de iTunes Music Store. In de Music Store kan ik gewoon muziek aanklikken en een boodschappen mantje aanmaken. Als ik tevreden ben koop
+            het in één keer en het downloaden gaat ook heel vlot. Binnen enkele minuten heb ik een nieuwe collectie muziek. <strong>
+                Per email krijg je gelijk een bevestiging
+            </strong> dat Firstgate de nota van de iTunes Music Store heeft ontvangen en dat het verschuldigde bedrag binnen enkele werkdagen van mijn
+            rekening zal worden afgeschreven. Het werkt gewoon perfect!!
+        </p>
+
+        <h2>Apple iPod</h2>
+
+        <p>
+            <img class="float_left" src="/img/ipod.jpg" loading="lazy" alt="Apple iPod Photo" />Een kleine twee jaar heb ik ook een <a
+                href="http://www.apple.com/ipod/"
+                title="Apple iPod"
+                target="_blank"
+                rel="link"
+            >
+                Apple iPod
+            </a> aangeschaft. Een vierde generatie (net voor de iPod Photo). Ik heb ooit in mijn school periode een echt 'My first Sony' - walkman gehad.
+            Maar de iPod is mijn tweede muziek speler. Ik moet zeggen dat ik eerst het nut er niet van inzag om zo'n ding elke keer mee te slepen. Maar
+            de eenvoud en koppeling met iTunes is gewoon verbazingwekkend. En de zojuist gekochte online muziek wordt zonder enige moeite op m'n iPod gezet
+            en speelt voortreffelijk.
+        </p>
+
+        <h3>Rage</h3>
+
+        <p>
+            Het begint een beetje een rage te worden om bezitter te zijn van een iPod. Als ik op straat loop kan ik tellen hoeveel mensen er een iPod
+            in hun broekzak hebben zitten. Dat kun je zien aan de witte oordopjes die heel erg opvallen. Ik ben er ook fan van geworden. Zeker omdat
+            ik een beetje Apple fan/freak ben.
+        </p>
+    </main>
 </Layout>

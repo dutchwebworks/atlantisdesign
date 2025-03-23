@@ -42,25 +42,25 @@ We gaan maar **1x een configuratie** wijziging maken in Apache en daarna worden 
 
 In de `/etc/hosts` file van onze Mac staat bijvoorbeeld een regel als:
 
-	127.0.0.1 vogelfotografie.local
+    127.0.0.1 vogelfotografie.local
 
 Dit betekend dat als we in een webbrowser op dezelfde Mac onderstaande URL intypen:
 
-	http://vogelfotografie.local/
+    http://vogelfotografie.local/
 
 Dat de webbrowser deze website gaat vragen aan het IP nummer wat ervoor staat. In dit geval is dat een bekend IP nummer voor computers (Windows/Mac/Linux etc.) want dit IP nummer betekend '**deze computer**'. Hij verwijst dus naar zichzelf.
 
 De Apache webserver krijgt dit verzoek (**request**) binnen. Via de virtual-host configuratie serveerd Apache de website vanuit onderstaande map:
 
-	/Library/WebServer/vhosts/vogelfotografie/httpdocs/
+    /Library/WebServer/vhosts/vogelfotografie/httpdocs/
 
 De werking van onze virtual hosts zijn **elke keer hetzelde**. Nog een voorbeeld met de racewagen website.
 
-	http://racewagens.local/
+    http://racewagens.local/
 
 Deze website staat in de onderstaande map op onze Mac:
 
-	/Library/WebServer/vhosts/racewagens/httpdocs/
+    /Library/WebServer/vhosts/racewagens/httpdocs/
 
 Zoals je kunt zien veranderd eigenlijk alleen het **eerste stuk van de URL en de een na laatse map naam** van waaruit Apache de website serveerd. Ofwel: **die naam komt overeen**.
 
@@ -68,16 +68,16 @@ Zoals je kunt zien veranderd eigenlijk alleen het **eerste stuk van de URL en de
 
 Met een alias laten we een stukje van de URL overeen komen met een map naam op onze eigen Mac. Zolang we maar gebruik blijven maken van deze opzet (want anders werkt het niet correct):
 
-* altijd dezelfde logica in URL's die naar onze eigen Mac wijzen (via het host file)
-* altijd dezelfde mappen structuur aanhouden, zodat het eerste deel van de URL overeen komt een map op onze eigen Mac
+- altijd dezelfde logica in URL's die naar onze eigen Mac wijzen (via het host file)
+- altijd dezelfde mappen structuur aanhouden, zodat het eerste deel van de URL overeen komt een map op onze eigen Mac
 
 Deze opzet wordt veelvuldig toegepast bij hosting bedrijven die heel veel virtual-hosts op hun (veelal Linux) computers hebben draaien.
 
 Voorbeelden die niet werken
 
-* `http://testvogelfotogafie/`
-* `http://mijn.vogelfotogafie.local/`
-* `http://www.vogelfotografie.local/`
+- `http://testvogelfotogafie/`
+- `http://mijn.vogelfotogafie.local/`
+- `http://www.vogelfotografie.local/`
 
 Deze URL logica komt niet overeen. Het eerst woord in de URL, wat voor een punt staat, komt overeen.
 
@@ -85,11 +85,11 @@ Deze URL logica komt niet overeen. Het eerst woord in de URL, wat voor een punt 
 
 Volgens bovenstaande opzet gaan we eerst een **generieke mappen structuur** aanmaken. Zodat straks de URL's naar de juiste mappen verwijzen. In de Finder gaan we naar de volgende map toe;
 
-	/Library/WebServer
+    /Library/WebServer
 
 Ofwel de Library map van onze opstartschijf en dan de WebServer map. Maak hier de juiste mappen aan voor de **vogelfotografie** website. Het ziet er dan als volgt uit:
 
-	/Library/WebServer/vhosts/vogelfotografie/httpdocs
+    /Library/WebServer/vhosts/vogelfotografie/httpdocs
 
 In de laatst map (httpdocs) staan de bestanden voor de vogelfotografie website. Daar komt dus de index.html (of PHP bestand) te staan.
 
@@ -103,9 +103,9 @@ Een logishe opzet dus om hier dynamisch de virtual-hosts te plaatsen. Houd alles
 
 Deze opzet vind ik prettig werken. Omdat je de **vogelfotografie** map als een project kan zien met daarin de website zelf (httpdocs) samen met bijvoorbeeld andere mappen die bij het project horen.
 
-* Een werkmap: `/Library/WebServer/vhost/vogelfotografie/werkmap`.
-* Een backup map: /`Library/WebServer/vhost/vogelfotografie/backup`
-* Documentatie: `/Library/WebServer/vhost/vogelfotografie/docs`
+- Een werkmap: `/Library/WebServer/vhost/vogelfotografie/werkmap`.
+- Een backup map: /`Library/WebServer/vhost/vogelfotografie/backup`
+- Documentatie: `/Library/WebServer/vhost/vogelfotografie/docs`
 
 1 geheel, 1 project, op 1 plek.
 
@@ -123,36 +123,36 @@ Start **TextWrangler** (of BBEdit) en laat het de **command line tools** install
 
 Open de **Terminal** (`/Applications/Utilities/Terminal`) en typ onderstaande in om het Apache configuratie bestand te openen in TextWrangler:
 
-	edit /etc/apache2/httpd.conf
+    edit /etc/apache2/httpd.conf
 
 Ga (bijvoorbeeld met Apple'tje + j) naar **regel 461**. Daar staat al iets over virtual-hosts. Plak onder deze regel het volgende:
 
-	Include /private/etc/apache2/extra/httpd-vhost-alias.conf
+    Include /private/etc/apache2/extra/httpd-vhost-alias.conf
 
-Het bestand dat we hierboven willen **includen** bestaat natuurlijk nog niet. Maak een nieuw bestand aan plak hierin dit [mod_vhost_alias voorbeeld](http://www.atlantisdesign.nl/public/apache_vhost_alias.txt). 
+Het bestand dat we hierboven willen **includen** bestaat natuurlijk nog niet. Maak een nieuw bestand aan plak hierin dit [mod_vhost_alias voorbeeld](http://www.atlantisdesign.nl/public/apache_vhost_alias.txt).
 
-	########################################
-	## Default
-	########################################
-	
-	# Override the default httpd.conf directives.  Make sure to
-	# use 'Allow from all' to prevent 403 Forbidden message.
-	<Directory /Library/WebServer/vhosts>
-		Options ExecCGI FollowSymLinks
-		AllowOverride all
-		Allow from all
-	</Directory>
-	
-	########################################
-	## Dynamic creation of vhosts
-	########################################
-	
-	UseCanonicalName Off
-	VirtualDocumentRoot /Library/WebServer/vhosts/%1/httpdocs
+    ########################################
+    ## Default
+    ########################################
+
+    # Override the default httpd.conf directives.  Make sure to
+    # use 'Allow from all' to prevent 403 Forbidden message.
+    <Directory /Library/WebServer/vhosts>
+    	Options ExecCGI FollowSymLinks
+    	AllowOverride all
+    	Allow from all
+    </Directory>
+
+    ########################################
+    ## Dynamic creation of vhosts
+    ########################################
+
+    UseCanonicalName Off
+    VirtualDocumentRoot /Library/WebServer/vhosts/%1/httpdocs
 
 Bewaar dit bestand met de juiste naam op de juiste plek:
 
-	/private/etc/apache2/extra/httpd-vhost-alias.conf
+    /private/etc/apache2/extra/httpd-vhost-alias.conf
 
 ### Finder truuk
 
@@ -170,13 +170,13 @@ Meer informatie over deze variablen zijn te vinden in de [Apache mod_vhost_alias
 
 Om deze configuratie te gebruiken moeten we de Apache webserver herstarten:
 
-	sudo apachectl graceful
+    sudo apachectl graceful
 
 ## Stap 2: host file aanpassen
 
 Apache snapt wat hij straks met de specifieke URL's moet doen. Nu moeten ervoor zorgen dat de `http://vogelfotografie.local/` URL verwijst naar onze eigen Mac. In de **Terminal** typen we het volgende in om de host file te bewerken in TextWrangler:
 
-	edit /etc/hosts
+    edit /etc/hosts
 
 Er opent zich een file dat betrekkelijk klein en leeg is. **Wees hier voorzichtig mee**. Want alles wat van onze Mac aan het internet gevraagd wordt komt eerst hier langs.
 
@@ -184,7 +184,7 @@ Op deze manier kun je bijvoorbeeld Google.nl naar heel andere website laten verw
 
 Onderaan dit host file voegen de vogelfotogafie website toe:
 
-	127.0.0.1 vogelfotografie.local
+    127.0.0.1 vogelfotografie.local
 
 Ikzelf zet altijd **local** er achter omdat deze URL op het internet zo goed als nooit voor komt. Daarnaast kun je zelf zien dat het dan om een **lokale website** gaat. Bewaar het hosts bestand met een administrator wachtwoord.
 
@@ -192,7 +192,7 @@ Ikzelf zet altijd **local** er achter omdat deze URL op het internet zo goed als
 
 Open een webbrowser en typ de nieuwe virtual-host in:
 
-	http://vogelfotografie.local/
+    http://vogelfotografie.local/
 
 De **vogelfotografie** website wordt nu geserveerd op een dynamische manier met Apache mod_vhost_alias.
 
@@ -200,11 +200,11 @@ De **vogelfotografie** website wordt nu geserveerd op een dynamische manier met 
 
 Dit was makkelijk! Maak nogmaals de juiste mappen structuur aan en plaats de **racewagen** website hierin:
 
-	/Library/WebServer/vhosts/racewagens/httpdocs
+    /Library/WebServer/vhosts/racewagens/httpdocs
 
 Open het host file nog een keer en voeg ook deze URL onderaan toe:
 
-	127.0.0.1 racewagens.local
+    127.0.0.1 racewagens.local
 
 Open weer webbrowser en typ de nieuwe virtual host in:
 
@@ -222,15 +222,15 @@ Met Apple's **Console** programma (`/Applications/Utilities/Console`) kun je vel
 
 Open de **Console** en in de linker lijst zoeken we de Apache **access_log** &hellip;
 
-	LOG FILES /var/log/apache2/access_log
+    LOG FILES /var/log/apache2/access_log
 
 &hellip; en de error_log.
 
-	LOG FILES /var/log/apache2/error_log
+    LOG FILES /var/log/apache2/error_log
 
 Hierin staan alle requests die Apache heeft gekregen. Van onze eigen webbrowser (localhost / virtual-hosts) of via het netwerk / internet. Zo ook het IP nummer van onze eigen (interne / lokale) Mac:
 
-	127.0.0.1
+    127.0.0.1
 
 Zoals je ziet staat hier **geen vermelding** in dat we bepaalde requests via een virtual-host hebben gedaan. Alles komt van hetzelfde IP nummer.
 
@@ -238,29 +238,29 @@ Zoals je ziet staat hier **geen vermelding** in dat we bepaalde requests via een
 
 We openen de Apache configuratie bestand weer met **TextWrangler** via de Terminal. Of open het configuratie bestand direct in TextWrangler als je weet waar het staat.
 
-	edit /etc/apache2/httpd.conf
+    edit /etc/apache2/httpd.conf
 
 We moeten een stukje toevoegen aan de **log-format regel**. We gaan met Apple'tje + j naar **regel 274** daar staat het volgende (in het **IfModule log_config_module** blok).
 
-	LogFormat "%h %l %u %t \"%r\" %>s %b" common
+    LogFormat "%h %l %u %t \"%r\" %>s %b" common
 
 Dit is het **format** hoe Apache specifieke regels schrijft in de log bestanden. Nu staat er niet bij dat Apache moet vermelden dat het ook de **Servername** (ofwel virtual-host in dit geval vogelfotografie.local of racewagens.local) moet vermelden in dit log bestand. Met **%V** vooraan in de regel zal Apache de naam van de virtual-host erbij zetten. Zodat we kunnen zien welke virtual-host de request heeft gemaakt.
 
 Plak onderstaande format regel op een **nieuwe regel** onder de hier boven genoemde regel. Zet voor bovenstaande regel een hekje (dan is het een comment) zodat deze niet meer mee genomen wordt bij het loggen van requests.
 
-	LogFormat "%V %h %l %u %t \"%r\" %>s %b" vcommon
+    LogFormat "%V %h %l %u %t \"%r\" %>s %b" vcommon
 
 We hebben `%V` toegevoegd (dit staat voor de naam van de virtual-host) en achteraan **vcommon** aangegeven als format variable. Verderop moeten we aangeven dat we het **nieuwe format** (vcommon) willen gebruiken bij de Apache access_log. Zoek op:
 
-	CustomLog /private/var/log/apache2/access_log common
+    CustomLog /private/var/log/apache2/access_log common
 
 Hier staat waar Apache het log bestand wegschrijft. Met de **Console** kunnen we dit bestand dus weer bekijken. Achteraan (als variable) staat in welk **format** dit log bestand beschreven zal worden. Hier moeten we dus aangeven dat we de **vcommon** formattering willen gebruiken (zie laatste stuk):
 
-	CustomLog /private/var/log/apache2/access_log vcommon
+    CustomLog /private/var/log/apache2/access_log vcommon
 
 Bewaar het Apache configuratie bestaand met een administrator wachtwoord. **Herstart nu de Apache** server zodat het nieuwe log formaat, met vermelding van de virtual-hosts, bekeken kan worden met Apple's Console programma.
 
-	sudo apachectl graceful
+    sudo apachectl graceful
 
 Open een webbrowser en bekijk bijvoorbeeld de `vogelfotografie.local` of `racewagens.local` websites. Open nu de **Console** weer en blader weer naar de Apache access_log. Nu wordt wel de naam van de virtual-host getoond per request.
 
@@ -268,6 +268,6 @@ Open een webbrowser en bekijk bijvoorbeeld de `vogelfotografie.local` of `racewa
 
 Voor de Unix freaks kun je ook log bestanden bekijken met het Unix `tail` programma. Met `tail` laat je altijd het 'laatste stuk' van een bestand zien. Ook als deze gewijzigd wordt, heel handig om log bestanden te zien.
 
-	tail -f /var/log/apache2/access_log
+    tail -f /var/log/apache2/access_log
 
 Natuurlijk kun je hiermee ook het `error_log` bestand bekijken. Met `ctrl + c` sluit je het Unix tail programma af en komt de Terminal promt weer terug.

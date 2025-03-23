@@ -32,9 +32,9 @@ Dit is een **donation-ware** (**gratis**, donaties zijn zeer welkom) van fransma
 
 Onderstaande klinkt moeilijk maar dat is het zeer zeker niet. Als we hiermeer klaar zijn kunnen we veel, heel veel, ftp-only-users aanmaken die speciaal bedoelt zijn om bestanden uit te wisselen met de Mac.
 
-* De bestaande FTP server vervangen door PureFTPd
-* Virtual ftp-only gebruikers aanmaken met eigen home directory
-* Iets geavanceerdere authentication methode via een MySQL database
+- De bestaande FTP server vervangen door PureFTPd
+- Virtual ftp-only gebruikers aanmaken met eigen home directory
+- Iets geavanceerdere authentication methode via een MySQL database
 
 ## Downloaden en installeren
 
@@ -64,7 +64,7 @@ In het hoofdscherm van PureFTPd klikken we rechtsonderin op **Start**. Aan de li
 
 Start bijvoorbeeld een **FTP client** als [Fetch](http://www.fetchsoftworks.com/), [Transmit](http://www.panic.com/transmit/), het gratis [Classic FTP](http://www.nchsoftware.com/classic/index.html) (for Mac) of het **gratis** [CyberDuck](http://cyberduck.ch/). Typ bij het IP nummer het volgende in. Dit betekend gewoon 'je eigen Mac', ofwel deze Mac zelf.
 
-	localhost
+    localhost
 
 Gebruik vervolgens je **eigen Mac OS X account met username en password**. Als het goed is zie je nu je eigen thuis map (ofwel home directory). Blader nu in het **console window** (een lijst met commando's die worden uitgevoerd door het FTP programma) iets terug en we zien daar dat Mac OS X nu gebruik maakt van **PureFTPd**.
 

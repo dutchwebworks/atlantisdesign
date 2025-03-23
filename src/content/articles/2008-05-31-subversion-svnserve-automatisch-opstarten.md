@@ -8,7 +8,7 @@ Dit artikel gaat ervan uit dat [Subversion al op de Mac draait](http://www.atlan
 
 ### Subversion repository pool
 
-	/Library/Subversion/Repository
+    /Library/Subversion/Repository
 
 Natuurlijk kun is deze plek niet verplicht.
 
@@ -20,7 +20,7 @@ Er zijn een aantal manier om een SVN repository te benaderen. Via het file-syste
 
 Een SVN checkout ziet er dan als volgt uit:
 
-	svn checkout file:///Library/Subversion/Repository/mijn-project/trunk mijn-project/
+    svn checkout file:///Library/Subversion/Repository/mijn-project/trunk mijn-project/
 
 Op deze manier kun je heel snel verbinding maken met de lokale repository.
 
@@ -28,7 +28,7 @@ Op deze manier kun je heel snel verbinding maken met de lokale repository.
 
 Apache ondersteunt webDAV en hiermee kun je ook een Subversion repositories beschikbaar maken via het HTTP protocol (port 80):
 
-	svn checkout http://ip-nummer-mac/svn/mijn-project/trunk mijn-project/
+    svn checkout http://ip-nummer-mac/svn/mijn-project/trunk mijn-project/
 
 Deze manier is wat langzamer omdat het eerst via Apache verbinding moet maken. Het voordeel is wel dat je met Apache de toegang tot de repositories kun beperken met een **usernames en passwords.**
 
@@ -40,7 +40,7 @@ Als Subversion is geinstalleerd wordt ook het **svnserve** Unix programma mee ge
 
 Dit is een lichtgewicht achtergrond server / daemon waarmee je direct met een SVN repository kan communiceren. Het draait op z'n eigen protocol, namelijk `svn://`. Een svn checkout zou er dan ongeveer zo uit kunnen zien:
 
-	svn checkout svn://ip-nummer-mac/mijn-project/trunk mijn-project/
+    svn checkout svn://ip-nummer-mac/mijn-project/trunk mijn-project/
 
 Dit is een snellere manier dan met Apache. Want je maakt direct verbinding met de repository. Bovendien kun je op deze manier ook usernames en passwords toekennen aan bepaalde svn repositories.
 
@@ -62,17 +62,17 @@ In dit artikel gaan we svnserve configureren en automatisch laten opstarten als 
 
 Open de Terminal en typ onderstaande in. Vervang het laatste stuk met het pad waar de SVN repositories staan:
 
-	sudo svnserve -d -r /Library/Subversion/Repository
+    sudo svnserve -d -r /Library/Subversion/Repository
 
 Met **-d** geef je aan dat je **svnserve** als een Unix daemon (achtergrond programma / proces) wilt draaien. Met bovenstaand pad geef je met **-r** aan waar de svn repository **parent-directory** staat. De repositories staan dus een map verder, bijvoorbeeld:
 
-	/Library/Subversion/Repository/mijn-project
+    /Library/Subversion/Repository/mijn-project
 
 Op deze manier zijn alle repositories die achter -r vermeld staan bereikbaar via het eigen SVN protocol:
 
-	svn://ip-nummer-mac/mijn-project
+    svn://ip-nummer-mac/mijn-project
 
-	svn://ip-nummer-mac/mijn-tweede-project
+    svn://ip-nummer-mac/mijn-tweede-project
 
 Dit is aanzienlijk korter.
 
@@ -80,7 +80,7 @@ Dit is aanzienlijk korter.
 
 Met het [hosts file](http://en.wikipedia.org/wiki/Hosts_file) (Windows, Mac en Linux) kun je ook makkelijk zelf een soort **nepdomein** aanmaken waardoor bovenstaande er zo uit kan zien:
 
-	svn://mijn-mac.local/mijn-project
+    svn://mijn-mac.local/mijn-project
 
 In het hosts bestand wordt het IP nummer van de Mac ge-mapped aan de naam mijn-mac.local. Hier is het artikel te klein voor dus zoek op internet naar uitleg over het hosts bestand.
 
@@ -102,35 +102,35 @@ Eigenlijk is alles al aanwezig nadat [Subversion is geinstalleerd](http://www.at
 
 Download het voorbeeld [org.tigris.subversion.svnserve.plist](http://www.atlantisdesign.nl/public/svnserve_launchd_plist.txt) bestand:
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-	<plist version="1.0">
-	<dict>
-		<key>KeepAlive</key>
-		<false/>
-		<key>Label</key>
-		<string>org.tigris.subversion.plist</string>
-		<key>ProgramArguments</key>
-		<array>
-			<string>/usr/local/bin/svnserve</string>
-			<string>-d</string>
-			<string>-r</string>
-			<string>/Library/Subversion/Repository</string>
-		</array>
-		<key>RunAtLoad</key>
-		<true/>
-	</dict>
-	</plist>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+    	<key>KeepAlive</key>
+    	<false/>
+    	<key>Label</key>
+    	<string>org.tigris.subversion.plist</string>
+    	<key>ProgramArguments</key>
+    	<array>
+    		<string>/usr/local/bin/svnserve</string>
+    		<string>-d</string>
+    		<string>-r</string>
+    		<string>/Library/Subversion/Repository</string>
+    	</array>
+    	<key>RunAtLoad</key>
+    	<true/>
+    </dict>
+    </plist>
 
- &hellip; en bewaar deze op de volgende locatie met de juiste naam:
+&hellip; en bewaar deze op de volgende locatie met de juiste naam:
 
-	/Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
+    /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
 
 In dit plist bestand staat in feite wat we net zelf hebben ingetyped in de Terminal. Met het **Terminal** programma (`/Applications/Utilities/Terminal`) geven de juiste rechten aan dit bestand:
 
-	sudo chown root:wheel /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
+    sudo chown root:wheel /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
 
-	sudo chmod 644 /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
+    sudo chmod 644 /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
 
 ### Herstarten
 
@@ -140,7 +140,7 @@ Nu staat het opstart bestand op de juist plek. Met een herstart kunnen we zien o
 
 Dit kun je ook achterhalen met een Unix commando:
 
-	ps -ax | grep svnserve
+    ps -ax | grep svnserve
 
 Als er twee regels in beeld komen (1 van grep en een andere) betekend dat het proces draaid.
 
@@ -152,7 +152,7 @@ Het plist xml bestand kunnen we ook handmatig in de Terminal in laden en laten s
 
 Let op! Dit is 1 lange regel zonder afbrekingen.
 
-	sudo launchctl load /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
+    sudo launchctl load /Library/LaunchDaemons/org.tigris.subversion.svnserve.plist
 
 #### Handmatig starten van svnserve via launchd
 
