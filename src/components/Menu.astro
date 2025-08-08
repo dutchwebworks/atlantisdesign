@@ -1,16 +1,22 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import menuItems from "@/content/lists/Menu.json";
+
+// Types for clarity
+type MenuItem = { title: string; url: string; accesskey?: string };
+const items = menuItems as MenuItem[];
 ---
 
 <menu>
-    <li><HeaderLink href="/" accesskey="h">Home</HeaderLink></li>
-    <li><HeaderLink href="/artikelen" accesskey="a">Artikelen</HeaderLink></li>
-    <li><HeaderLink href="/webdesign" accesskey="w">Webdesign</HeaderLink></li>
-    <li><HeaderLink href="/portfolio" accesskey="p">Portfolio</HeaderLink></li>
-    <li><HeaderLink href="/iphone" accesskey="i">iPhone</HeaderLink></li>
-    <li><HeaderLink href="/apple-macintosh-itunes">Mac &amp; iTunes</HeaderLink></li>
-    <li><HeaderLink href="/mozilla-firefox" accesskey="m">Mozilla Firefox</HeaderLink></li>
-    <li><HeaderLink href="/nintendo-wii" accesskey="n">Nintendo Wii</HeaderLink></li>
-    <li><HeaderLink href="/fun" accesskey="f">Fun</HeaderLink></li>
-    <li><HeaderLink href="/contact" accesskey="c">Contact</HeaderLink></li>
+    {
+        items.map((item) => (
+            <>
+                <li>
+                    <HeaderLink href={item.url} accesskey={item.accesskey}>
+                        {item.title}
+                    </HeaderLink>
+                </li>
+            </>
+        ))
+    }
 </menu>

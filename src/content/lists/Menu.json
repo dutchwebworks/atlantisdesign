@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Home",
+        "url": "/",
+        "accesskey": "h"
+    },
+    {
+        "title": "Artikelen",
+        "url": "/artikelen",
+        "accesskey": "a"
+    },
+    {
+        "title": "Webdesign",
+        "url": "/webdesign",
+        "accesskey": "w"
+    },
+    {
+        "title": "Portfolio",
+        "url": "/portfolio",
+        "accesskey": "p"
+    },
+    {
+        "title": "iPhone",
+        "url": "/iphone",
+        "accesskey": "i"
+    },
+    {
+        "title": "Mac & iTunes",
+        "url": "/apple-macintosh-itunes"
+    },
+    {
+        "title": "Mozilla Firefox",
+        "url": "/mozilla-firefox",
+        "accesskey": "m"
+    },
+    {
+        "title": "Nintendo Wii",
+        "url": "/nintendo-wii",
+        "accesskey": "n"
+    },
+    {
+        "title": "Fun",
+        "url": "/fun",
+        "accesskey": "f"
+    },
+    {
+        "title": "Contact",
+        "url": "/contact",
+        "accesskey": "c"
+    }
+]
