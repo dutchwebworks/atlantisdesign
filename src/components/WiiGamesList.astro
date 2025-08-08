@@ -7,19 +7,21 @@ const { heading } = WiiGames;
 <h2>{heading}</h2>
 
 {
-    WiiGames.items.map(({title, urlYouTube, urlStore, img}) => (
-        <h3>
-            <a href={urlYouTube} data-youtube-link class="youtube">
-                {title}
-            </a>
-        </h3>
-            
-        <p>Nu in de winkel verkrijgbaar!!</p>
-            
-        <p>
-            <a href={urlStore} target="_blank">
-                <img src={img} width="200" height="281" loading="lazy" alt={title}>
-            </a>
-        </p>
+    WiiGames.items.map(({ title, urlYouTube, urlStore, img }) => (
+        <>
+            <h3>
+                <a href={urlYouTube} data-youtube-link class="youtube">
+                    {title}
+                </a>
+            </h3>
+
+            <p>Nu in de winkel verkrijgbaar!!</p>
+
+            <p>
+                <a href={urlStore} target="_blank">
+                    <img src={img} width="200" height="281" loading="lazy" alt={title} />
+                </a>
+            </p>
+        </>
     ))
 }

@@ -8,15 +8,18 @@ const Tag = Astro.props.tag || "h2";
 {heading && <Tag class="headTitle">{heading}</Tag>}
 
 {
-    list.map(({heading, items}) => (
-        <h3>{heading}</h3>
-
-        <ul class="clean">
-        {
-            items.map(({title, url, blank}) => (
-                <li><a href={url} target={blank ? '_blank' : null}>{title}</a></li>
-            ))
-        }
-        </ul>
+    list.map(({ heading: groupHeading, items }) => (
+        <>
+            <h3>{groupHeading}</h3>
+            <ul class="clean">
+                {items.map(({ title, url, blank }) => (
+                    <li>
+                        <a href={url} target={blank ? "_blank" : undefined} rel={blank ? "noopener noreferrer" : undefined}>
+                            {title}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </>
     ))
 }
