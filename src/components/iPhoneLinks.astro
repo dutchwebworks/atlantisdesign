@@ -9,11 +9,13 @@ const { heading, items } = list;
 <ul class="clean">
     {
         items.map(({ title, url, blank }) => (
-            <li>
-                <a href={url} target={blank ? "_blank" : null}>
-                    {title}
-                </a>
-            </li>
+            <>
+                <li>
+                    <a href={url} target={blank ? "_blank" : null}>
+                        {title}
+                    </a>
+                </li>
+            </>
         ))
     }
 </ul>

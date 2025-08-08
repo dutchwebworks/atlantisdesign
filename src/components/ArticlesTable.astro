@@ -17,15 +17,17 @@ const posts = (await getCollection("articles")).sort((a, b) => b.data.pubDate.va
         <tbody>
             {
                 posts.map((article) => (
-                    <tr>
-                        <td>
-                            <a href={"/artikelen/" + article.slug}>{article.data.title}</a>
-                        </td>
-                        <td>{article.data.description}</td>
-                        <td class="design__date">
-                            <FormattedDate date={article.data.pubDate} />
-                        </td>
-                    </tr>
+                    <>
+                        <tr>
+                            <td>
+                                <a href={"/artikelen/" + article.slug}>{article.data.title}</a>
+                            </td>
+                            <td>{article.data.description}</td>
+                            <td class="design__date">
+                                <FormattedDate date={article.data.pubDate} />
+                            </td>
+                        </tr>
+                    </>
                 ))
             }
         </tbody>

@@ -12,9 +12,11 @@ const Tag = Astro.props.tag || "h2";
 <ul>
     {
         posts.map((post) => (
-            <li>
-                <a href={"/artikelen/" + post.slug}>{post.data.title}</a>
-            </li>
+            <>
+                <li>
+                    <a href={"/artikelen/" + post.slug}>{post.data.title}</a>
+                </li>
+            </>
         ))
     }
 </ul>
