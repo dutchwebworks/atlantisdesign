@@ -19,4 +19,13 @@ export const collections = {
             blank: z.boolean(),
         }),
     }),
+    iPhoneLinks: defineCollection({
+        loader: file("src/content/lists/iPhoneLinks.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
 };

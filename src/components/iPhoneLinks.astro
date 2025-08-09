@@ -1,14 +1,13 @@
 ---
-import list from "@/content/lists/iPhoneLinks.json";
-
-const { heading, items } = list;
+import { getCollection } from "astro:content";
+const iphoneLinksCollection = await getCollection("iPhoneLinks");
 ---
 
-<h2>{heading}</h2>
+<h2>iPhone gerelateerd</h2>
 
 <ul class="clean">
     {
-        items.map(({ title, url, blank }) => (
+        iphoneLinksCollection.map(({ data: { title, url, blank } }) => (
             <>
                 <li>
                     <a href={url} target={blank ? "_blank" : null}>
