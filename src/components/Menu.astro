@@ -1,22 +1,22 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import menuItems from "@/content/lists/Menu.json";
+import { getCollection } from "astro:content";
 
-// Types for clarity
-type MenuItem = { title: string; url: string; accesskey?: string };
-const items = menuItems as MenuItem[];
+const menuCollection = await getCollection("menu");
 ---
 
 <menu>
     {
-        items.map((item) => (
-            <>
-                <li>
-                    <HeaderLink href={item.url} accesskey={item.accesskey}>
-                        {item.title}
-                    </HeaderLink>
-                </li>
-            </>
-        ))
+        menuCollection.map(({ data: { title, url, accessKey } }) => {
+            return (
+                <>
+                    <li>
+                        <HeaderLink href={url} accesskey={accessKey}>
+                            {title}
+                        </HeaderLink>
+                    </li>
+                </>
+            );
+        })
     }
 </menu>

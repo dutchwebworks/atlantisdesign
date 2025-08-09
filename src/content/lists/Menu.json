@@ -1,49 +1,59 @@
 [
     {
+        "id": 1,
         "title": "Home",
         "url": "/",
         "accesskey": "h"
     },
     {
+        "id": 2,
         "title": "Artikelen",
         "url": "/artikelen",
         "accesskey": "a"
     },
     {
+        "id": 3,
         "title": "Webdesign",
         "url": "/webdesign",
         "accesskey": "w"
     },
     {
+        "id": 4,
         "title": "Portfolio",
         "url": "/portfolio",
         "accesskey": "p"
     },
     {
+        "id": 5,
         "title": "iPhone",
         "url": "/iphone",
         "accesskey": "i"
     },
     {
+        "id": 6,
         "title": "Mac & iTunes",
         "url": "/apple-macintosh-itunes"
     },
     {
+        "id": 7,
         "title": "Mozilla Firefox",
         "url": "/mozilla-firefox",
         "accesskey": "m"
     },
     {
+        "id": 8,
         "title": "Nintendo Wii",
         "url": "/nintendo-wii",
         "accesskey": "n"
     },
     {
+        "id": 9,
         "title": "Fun",
         "url": "/fun",
         "accesskey": "f"
     },
     {
+        "id": 10,
         "title": "Contact",
         "url": "/contact",
         "accesskey": "c"
