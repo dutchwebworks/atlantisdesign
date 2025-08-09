@@ -1,14 +1,13 @@
 ---
-import list from "@/content/lists/WiiLinks.json";
-
-const { heading, items } = list;
+import { getCollection } from "astro:content";
+const wiiLinksCollection = await getCollection("wiiLinks");
 ---
 
-<h2>{heading}</h2>
+<h2>Wii links</h2>
 
 <ul class="clean">
     {
-        items.map(({ title, url, blank }) => (
+        wiiLinksCollection.map(({ data: { title, url, blank } }) => (
             <>
                 <li>
                     <a href={url} target={blank ? "_blank" : null}>

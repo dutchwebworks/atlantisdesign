@@ -1,13 +1,12 @@
 ---
-import WiiGames from "@/content/lists/WiiGames.json";
-
-const { heading } = WiiGames;
+import { getCollection } from "astro:content";
+const wiiGamesCollection = await getCollection("wiiGames");
 ---
 
-<h2>{heading}</h2>
+<h2>Game releases</h2>
 
 {
-    WiiGames.items.map(({ title, urlYouTube, urlStore, img }) => (
+    wiiGamesCollection.map(({ data: { title, urlYouTube, urlStore, img } }) => (
         <>
             <h3>
                 <a href={urlYouTube} data-youtube-link class="youtube">

@@ -1,45 +1,50 @@
-{
-    "heading": "Wii links",
-    "items": [
-        {
-            "title": "Nederlandse Nintendo Wii website",
-            "url": "http://nl.wii.com/",
-            "blank": true
-        },
-        {
-            "title": "We Love Wii",
-            "url": "http://www.welovewii.nl/",
-            "blank": true
-        },
-        {
-            "title": "Wii damage!!",
-            "url": "http://www.wiidamage.com/",
-            "blank": true
-        },
-        {
-            "title": "Wii have a problem",
-            "url": "http://www.wiihaveaproblem.com/",
-            "blank": true
-        },
-        {
-            "title": "Consoleshop",
-            "url": "http://www.consoleshop.nl/",
-            "blank": true
-        },
-        {
-            "title": "Wii Only",
-            "url": "http://wiionly.nl/",
-            "blank": true
-        },
-        {
-            "title": "GameSpot Wii",
-            "url": "http://www.gamespot.com/wii",
-            "blank": true
-        },
-        {
-            "title": "IGN Wii",
-            "url": "http://wii.ign.com/",
-            "blank": true
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "title": "Nederlandse Nintendo Wii website",
+        "url": "http://nl.wii.com/",
+        "blank": true
+    },
+    {
+        "id": 2,
+        "title": "We Love Wii",
+        "url": "http://www.welovewii.nl/",
+        "blank": true
+    },
+    {
+        "id": 3,
+        "title": "Wii damage!!",
+        "url": "http://www.wiidamage.com/",
+        "blank": true
+    },
+    {
+        "id": 4,
+        "title": "Wii have a problem",
+        "url": "http://www.wiihaveaproblem.com/",
+        "blank": true
+    },
+    {
+        "id": 5,
+        "title": "Consoleshop",
+        "url": "http://www.consoleshop.nl/",
+        "blank": true
+    },
+    {
+        "id": 6,
+        "title": "Wii Only",
+        "url": "http://wiionly.nl/",
+        "blank": true
+    },
+    {
+        "id": 7,
+        "title": "GameSpot Wii",
+        "url": "http://www.gamespot.com/wii",
+        "blank": true
+    },
+    {
+        "id": 8,
+        "title": "IGN Wii",
+        "url": "http://wii.ign.com/",
+        "blank": true
+    }
+]

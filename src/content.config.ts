@@ -28,4 +28,22 @@ export const collections = {
             blank: z.boolean(),
         }),
     }),
+    wiiGames: defineCollection({
+        loader: file("src/content/lists/WiiGames.json"),
+        schema: z.object({
+            title: z.string(),
+            urlYouTube: z.string(),
+            urlStore: z.string(),
+            img: z.string(),
+        }),
+    }),
+    wiiLinks: defineCollection({
+        loader: file("src/content/lists/WiiLinks.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
 };
