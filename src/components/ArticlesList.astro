@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("articles")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
+const articles = (await getCollection("articles")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const { heading } = Astro.props;
 const Tag = Astro.props.tag || "h2";
 ---
@@ -11,10 +10,10 @@ const Tag = Astro.props.tag || "h2";
 
 <ul>
     {
-        posts.map((post) => (
+        articles.map(({ id, data: { title } }) => (
             <>
                 <li>
-                    <a href={"/artikelen/" + post.slug}>{post.data.title}</a>
+                    <a href={"/artikelen/" + id}>{title}</a>
                 </li>
             </>
         ))

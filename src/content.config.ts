@@ -1,4 +1,4 @@
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 export const collections = {
@@ -9,6 +9,17 @@ export const collections = {
             title: z.string(),
             url: z.string(),
             accessKey: z.string().optional(),
+        }),
+    }),
+    articles: defineCollection({
+        loader: glob({
+            pattern: "**/*.md",
+            base: "src/content/articles",
+        }),
+        schema: z.object({
+            title: z.string(),
+            description: z.string(),
+            pubDate: z.date(),
         }),
     }),
     iPhoneAppLinks: defineCollection({
