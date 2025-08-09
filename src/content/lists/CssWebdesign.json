@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "AList Apart",
+        "url": "https://www.alistapart.com",
+        "blank": true
+    },
+    {
+        "id": 2,
+        "title": "CSS Zen Garden",
+        "url": "https://www.csszengarden.com/",
+        "blank": true
+    },
+    {
+        "id": 3,
+        "title": "MeyerWeb.com",
+        "url": "https://www.meyerweb.com/",
+        "blank": true
+    },
+    {
+        "id": 4,
+        "title": "WASP",
+        "url": "https://www.webstandards.org/",
+        "blank": true
+    },
+    {
+        "id": 5,
+        "title": "Zeldman.com",
+        "url": "https://www.zeldman.com/",
+        "blank": true
+    }
+]

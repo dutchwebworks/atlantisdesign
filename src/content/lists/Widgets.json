@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "ColourMod",
+        "url": "http://www.colourmod.com/",
+        "blank": true
+    },
+    {
+        "id": 2,
+        "title": "Dashboard Widgets.com",
+        "url": "http://www.dashboardwidgets.com/",
+        "blank": true
+    },
+    {
+        "id": 3,
+        "title": "iCal events",
+        "url": "http://www.benkazez.com/icalevents.php",
+        "blank": true
+    },
+    {
+        "id": 4,
+        "title": "iCal ToDo's",
+        "url": "http://www.dashboardwidgets.com/showcase/details.php?wid=628",
+        "blank": true
+    },
+    {
+        "id": 5,
+        "title": "iTunes Lyrics",
+        "url": "http://www.dashboardwidgets.com/showcase/details.php?wid=486",
+        "blank": true
+    },
+    {
+        "id": 6,
+        "title": "iTunes RSS",
+        "url": "http://www.acdesigns.biz/itmsrss/",
+        "blank": true
+    },
+    {
+        "id": 7,
+        "title": "NS Reisplanner en Mac nieuws",
+        "url": "http://www.vanwilligen.nl/widgets.html",
+        "blank": true
+    },
+    {
+        "id": 8,
+        "title": "VanDale",
+        "url": "http://www.raggers.net/pathos/widgets.php",
+        "blank": true
+    },
+    {
+        "id": 9,
+        "title": "WidgetWorld",
+        "url": "http://www.widgetworld.nl/",
+        "blank": true
+    },
+    {
+        "id": 10,
+        "title": "WikiPedia",
+        "url": "http://www.whatsinthehouse.com/widgets/",
+        "blank": true
+    }
+]

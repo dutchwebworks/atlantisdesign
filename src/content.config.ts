@@ -39,6 +39,60 @@ export const collections = {
             blank: z.boolean(),
         }),
     }),
+    cssWebdesign: defineCollection({
+        loader: file("src/content/lists/CssWebdesign.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
+    externalWebsites: defineCollection({
+        loader: file("src/content/lists/ExternalWebsites.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
+    iTunesMusicStore: defineCollection({
+        loader: file("src/content/lists/iTunesMusicStore.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
+    macOSX: defineCollection({
+        loader: file("src/content/lists/MacOSX.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
+    webServers: defineCollection({
+        loader: file("src/content/lists/WebServers.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
+    widgets: defineCollection({
+        loader: file("src/content/lists/Widgets.json"),
+        schema: z.object({
+            id: z.number(),
+            title: z.string(),
+            url: z.string(),
+            blank: z.boolean(),
+        }),
+    }),
     wiiGames: defineCollection({
         loader: file("src/content/lists/WiiGames.json"),
         schema: z.object({

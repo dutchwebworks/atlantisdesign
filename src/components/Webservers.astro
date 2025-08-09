@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+const list = await getCollection("webServers");
+
+const { heading } = Astro.props;
+const Tag = Astro.props.tag || "h2";
+---
+
+{heading && <Tag class="headTitle">{heading}</Tag>}
+
+<ul class="clean">
+    {
+        list.map(({ data: { title, url, blank } }) => (
+            <li>
+                <a href={url} target={blank ? "_blank" : undefined} rel={blank ? "noopener noreferrer" : undefined}>
+                    {title}
+                </a>
+            </li>
+        ))
+    }
+</ul>

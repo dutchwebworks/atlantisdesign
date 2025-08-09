@@ -1,25 +1,15 @@
 ---
-import list from "@/content/lists/WebLinks.json";
-
-const { heading } = Astro.props;
-const Tag = Astro.props.tag || "h2";
+import CssWebdesign from "./CssWebdesign.astro";
+import ExternalWebsites from "./ExternalWebsites.astro";
+import iTunesMusicStore from "./iTunesMusicStore.astro";
+import MacOsX from "./MacOsX.astro";
+import Webservers from "./Webservers.astro";
+import Widgets from "./Widgets.astro";
 ---
 
-{heading && <Tag class="headTitle">{heading}</Tag>}
-
-{
-    list.map(({ heading: groupHeading, items }) => (
-        <>
-            <h3>{groupHeading}</h3>
-            <ul class="clean">
-                {items.map(({ title, url, blank }) => (
-                    <li>
-                        <a href={url} target={blank ? "_blank" : undefined} rel={blank ? "noopener noreferrer" : undefined}>
-                            {title}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </>
-    ))
-}
+<CssWebdesign heading="CSS Webdesign" />
+<ExternalWebsites heading="External Websites" />
+<iTunesMusicStore heading="iTunes Music Store"></iTunesMusicStore>
+<MacOsX heading="MacOSX" />
+<Webservers heading="Webservers" />
+<Widgets heading="Widgets" />
