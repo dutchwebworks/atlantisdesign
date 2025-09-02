@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Adobe",
-        "url": "http://www.adobe.com/",
+        "url": "https://www.adobe.com/",
         "blank": true
     },
     {
@@ -44,7 +44,7 @@
     {
         "id": 8,
         "title": "Planet Internet",
-        "url": "https//www.planet.nl/",
+        "url": "https://www.planet.nl/",
         "blank": true
     },
     {

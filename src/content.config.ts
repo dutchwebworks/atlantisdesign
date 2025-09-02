@@ -25,8 +25,9 @@ export const collections = {
     iPhoneAppLinks: defineCollection({
         loader: file("src/content/lists/iPhoneAppLinks.json"),
         schema: z.object({
+            id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -35,7 +36,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -44,7 +45,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -53,7 +54,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -62,7 +63,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -71,7 +72,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -80,7 +81,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -89,7 +90,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),
@@ -97,8 +98,8 @@ export const collections = {
         loader: file("src/content/lists/WiiGames.json"),
         schema: z.object({
             title: z.string(),
-            urlYouTube: z.string(),
-            urlStore: z.string(),
+            urlYouTube: z.string().url(),
+            urlStore: z.string().url(),
             img: z.string(),
         }),
     }),
@@ -107,7 +108,7 @@ export const collections = {
         schema: z.object({
             id: z.number(),
             title: z.string(),
-            url: z.string(),
+            url: z.string().url(),
             blank: z.boolean(),
         }),
     }),

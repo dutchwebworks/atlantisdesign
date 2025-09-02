@@ -85,14 +85,8 @@
     },
     {
         "id": 15,
-        "title": "Wayfinder Power Search",
-        "url": "",
-        "blank": true
-    },
-    {
-        "id": 16,
         "title": "Veronica TV Guide",
-        "url": "",
+        "url": "https://www.veronicasuperguide.nl/tv-gids?referrer=https%3A%2F%2Fwww.google.com%2F",
         "blank": true
     }
 ]
