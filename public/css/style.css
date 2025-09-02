@@ -1,0 +1,854 @@
+/* Screen style for https://atlantisdesign.nl/
+
+Swatches
+-----------------------------------------------
+
+Orange			#D64F20		(h1, main title, strong, main nav:hover)
+Purple			#771982		(h2, subheadings)
+Light blue		#0092D2		(h3, intro's, a)
+Dark blue		#014372		(h4, main nav a)
+Dark blue		#02436D		(p, main body tekst)
+Light blue bg	#E2F1F7		(code, background colors)
+
+*/
+
+/* Font
+============================================== */
+
+@font-face {
+    font-family: "OCRAStd";
+    src: url(/fonts/OCRAStd.otf) format("opentype");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 960 grid
+============================================== */
+
+body.showGrid {
+    background: #112233 !important;
+}
+
+body.showGrid .container_16 {
+    background: url(/img/16_col.gif) repeat-y top center !important;
+}
+
+body.showGrid .container_12 {
+    background: url(/img/12_col.gif) #112233 repeat-y top center !important;
+}
+
+/* wrapper
+============================================== */
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 960px) {
+    #wrapper {
+        width: auto;
+        margin: 0 10px;
+        overflow: visible;
+    }
+}
+
+/* skip nav for small viewports
+============================================== */
+
+@media screen and (max-width: 960px) {
+    #skipNav {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background: #0092d2;
+        color: white;
+    }
+
+    #skipNav a {
+        color: inherit;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+
+    }
+}
+
+/* common tags 
+============================================== */
+
+body {
+    font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+    font-size: 65.5%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: #02436D;
+}
+
+@media (min-width: 960px) {
+    body {
+        background: #fff url(/img/mainbg.webp) repeat-x center top;
+    }
+}
+
+td,
+textarea,
+select,
+input {
+    font: 1em Verdana, Helvetica, Arial, sans-serif;
+}
+
+iframe,
+img {
+    border: 0;
+    max-width: 100%;
+}
+
+iframe {
+    aspect-ratio: 1.78;
+    width: 100%;
+    height: auto;
+}
+
+a img {
+    border: none;
+    margin: 0;
+}
+
+.astro-code {
+    margin-block-end: 20px;
+}
+
+code {
+    font-family: Courier New, Courier, monospace;
+    color: inherit;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    overflow: auto;
+}
+
+strong {
+    font-weight: bold;
+    color: #d64f20;
+}
+
+abbr {
+    border-bottom: 1px dotted #771982;
+}
+
+object {
+    outline: none;
+}
+
+h3.attention {
+    margin-left: 10px;
+    padding-left: 25px !important;
+}
+
+.attention {
+    padding-left: 25px;
+    padding-top: 15px;
+    background: url(/img/attention.gif) no-repeat left 10px;
+}
+
+/* itunes lijst
+============================================== */
+
+object#iTunesList {
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+/* icons 
+============================================== */
+
+.iconRss {
+    background: url(/img/rss-icon.gif) no-repeat top left;
+    padding: 3px 0 3px 25px;
+}
+
+
+/* YouTube video's
+============================================== */
+
+dl.youTubes dt {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    background: url(/upload/youtube_icon.gif) no-repeat top left;
+}
+
+dl.youTubes dt a {
+    color: #D64F20 !important;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+dl.youTubes dd {
+    padding: 0;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+/* form
+============================================== */
+
+form input,
+form select,
+form textarea {
+    border: 1px solid #072C58;
+}
+
+/* Header 
+============================================== */
+
+#header {
+    height: 185px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 960px) {
+    #header {
+        height: 217px;
+        position: relative;
+        left: -10px;
+        background: url(/img/mainbg-small.jpg) repeat-x #fff left 0;
+    }
+}
+
+#header p {
+    margin: 0;
+}
+
+#header h1,
+#header h2#tagline {
+    display: none;
+}
+
+#header h2#tagline span.head {
+    font-family: Verdana;
+    color: #d64f20;
+    font-size: 2em;
+}
+
+/* special links
+============================================== */
+
+.content a[rel="link"] {
+    padding-right: 15px;
+    background-image: url(/img/external.gif);
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.content a[rel="link"]:hover {
+    background-image: url(/img/external_hover.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+/* NAV 
+============================================== */
+
+#nav {
+    height: 26px;
+    margin: 0 0 0px 10px;
+    padding: 8px 0 0;
+}
+
+@media screen and (max-width: 960px) {
+    #nav {
+        height: auto;
+        text-align: center;
+    }
+
+    #nav li {
+        line-height: 2.5em;
+    }
+}
+
+#nav menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#nav li {
+    display: inline;
+    padding-right: 20px;
+}
+
+#nav a {
+    font-size: 1.1em;
+    color: #014372;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#nav a:hover,
+#nav a.is-active {
+    color: #d64f20;
+}
+
+/* Funny page YouTube video's
+============================================== */
+
+#youTubePlayer {
+    aspect-ratio: 1.64;
+    width: 640px;
+    height: 390px;
+}
+
+/* Content 
+============================================== */
+
+/* Indent */
+/*
+#main h3,
+#main h4,
+#main h5,
+#main ul,
+#main p,
+#main table {
+	margin-left: 10px;
+}
+*/
+
+.content {
+    width: 960px;
+    font-size: 1em;
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0 0 0px;
+}
+
+.content h1 {
+    color: #d64f20;
+    font-family: "OCRAStd", Verdana, Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.sIFR-hasFlash h1 {
+    visibility: hidden;
+    letter-spacing: -9px !important;
+    font-size: 2.8em !important;
+    margin: 0px 10px 10px 0;
+    padding: 0 30px 0 0;
+}
+
+.content h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #fff;
+    margin: 0px 0 10px 0;
+    padding: 10px 5px 10px 10px;
+    clear: left;
+    border-radius: 8px;
+    background: rgb(96, 20, 105);
+    background: linear-gradient(0deg, rgba(96, 20, 105, 1) 0%, rgba(119, 25, 130, 1) 100%);
+}
+
+@media screen and (max-width: 960px) {
+    .content h2 {
+        padding-bottom: 6px;
+    }
+}
+
+.content h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0092d2;
+}
+
+.content h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content #c2 h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #0092d2;
+    margin: 0 0 10px 0;
+}
+
+.content #c1 h3 {
+    color: #D64F20;
+}
+
+.content ul {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    line-height: normal;
+}
+
+.content ul li {
+    list-style: square;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+.content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.content p:hover {
+    color: #000450;
+}
+
+.content code {
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.content p code {
+    margin-left: 0px;
+}
+
+#intro a:link,
+.content a:link {
+    color: #0092d2;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.content a:visited {
+    color: #0d305a;
+}
+
+#intro a:hover,
+.content a:hover {
+    text-decoration: none;
+}
+
+.content a:active {
+    text-decoration: underline;
+}
+
+.content h1 a:visited,
+.content h2 a:visited,
+.content h3 a:visited,
+.content h4 a:visited {
+    color: #0d305a;
+    background-color: transparent;
+}
+
+.content .date {
+    font-size: 1em;
+    color: #771982;
+}
+
+#main ul,
+#side ul {
+    list-style: none;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#main ul li,
+#side ul li {
+    list-style: none;
+    background-image: url(/img/arrow1.gif);
+    background-position: left 2px;
+    background-repeat: no-repeat;
+    line-height: normal;
+    margin: 0pt 0pt 0pt 00px;
+    padding: 0pt 0pt 10px 15px;
+}
+
+/* homepage > article list
+============================================== */
+
+.article h3 {
+    color: #D64F20;
+    margin-top: 20px !important;
+}
+
+.article h4 {
+    background-image: url(/img/arrow1.gif);
+    background-position: left 2px;
+    background-repeat: no-repeat;
+    margin: 0 0 0 10px;
+    padding: 0 0 10px 15px;
+    line-height: normal;
+}
+
+/* sIFR
+============================================== */
+
+.sIFR-flash {
+    visibility: visible !important;
+    margin: 0;
+}
+
+.sIFR-replaced {
+    visibility: visible !important;
+}
+
+span.sIFR-alternate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+}
+
+/* Hide Adblock Object tab: the text should show up just fine, not poorly with a tab laid over it. */
+.sIFR-flash+div[adblocktab=true] {
+    display: none !important;
+}
+
+/* Design table 
+============================================== */
+
+table.design {
+    margin: 20px 0;
+    width: 100%;
+}
+
+table.design caption {
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+table.design th {
+    padding-top: 10px;
+    text-align: left;
+    border-bottom: 1px solid #d64f20;
+    color: #d64f20;
+    padding: 20px 10px 5px 5px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+table.design tr:nth-child(odd) td {
+    background: #E2F1F7;
+}
+
+table.design td {
+    padding: 5px 10px 5px 5px;
+    vertical-align: top;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+table.design td a {
+    font-weight: bold;
+}
+
+table.design td a:hover {
+    background: transparent;
+}
+
+table.design td.design__date {
+    white-space: nowrap;
+}
+
+/* iPhone pics
+======================= */
+
+.photo {
+    width: 150px;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.photo img {
+    border: 1px solid #0D305A;
+}
+
+/* Books
+======================= */
+
+.bookReview {
+    margin: 10px 0 0px 0px;
+    padding: 0 0 0 0px;
+    border-bottom: 1px solid #771982;
+    overflow: hidden;
+}
+
+.bookReview h3 {
+    margin-top: 15px !important;
+}
+
+.bookReview img {
+    margin-bottom: 20px;
+}
+
+/* Image gallery 
+======================= */
+
+img.gallery_thumb {
+    width: 150px;
+}
+
+img.gallery_large {
+    width: 450px;
+}
+
+.gallery_detail a.page_current {
+    font-size: 1.5em;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#content table.design td img.gallery_thumb {
+    width: 150px;
+}
+
+/* Intro 
+============================================== */
+
+#intro {
+    font-size: 1.1em;
+    line-height: 1em;
+    margin: 20px 0;
+}
+
+#intro blockquote {
+    margin: 0 10px;
+    padding: 0;
+    padding-right: 20px;
+
+    background: url(/img/qoute.gif) no-repeat right bottom;
+}
+
+#intro blockquote p {
+    padding-left: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0092d2;
+    line-height: 1.8em;
+    background: url(/img/qoute.gif) no-repeat left top;
+}
+
+#intro blockquote p:hover {
+    color: #0092d2;
+}
+
+#intro p {
+    line-height: 1.2em;
+    font-weight: bold;
+}
+
+/* Footer 
+============================================== */
+
+#footer {
+    width: auto;
+    background: url(/img/footer.jpg) repeat-x center bottom;
+    color: #d9d9d9;
+    height: 120px;
+    clear: both;
+}
+
+#footerContent {
+    width: 960px;
+    margin: 20px auto 0 auto;
+    padding: 40px 0 0 0px;
+}
+
+@media screen and (max-width: 960px) {
+    #footerContent {
+        width: auto;
+        padding-top: 30px;
+        padding-bottom: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+#footerContent menu {
+    margin: 0;
+    padding: 0;
+    margin-left: 0px;
+}
+
+#footerContent li {
+    display: inline;
+    padding-right: 15px;
+}
+
+@media screen and (max-width: 960px) {
+    #footerContent li {
+        line-height: 2em;
+    }
+}
+
+#footerContent a {
+    font-size: 1.2em;
+    color: #1c75a4;
+    text-decoration: none;
+}
+
+#footerContent a:hover,
+#footerContent a.is-active {
+    color: #fff;
+}
+
+#footerContent p {
+    margin: 20px 0 0 0px;
+}
+
+@media screen and (max-width: 960px) {
+    #footerContent p {
+        margin: 0;
+    }
+}
+
+#footerContent p:hover {
+    color: #fff;
+}
+
+/* webBadges
+============================================== */
+
+#webBadges {
+    float: left;
+    margin: 20px 0 20px 0px;
+    padding: 0;
+    width: 600px;
+}
+
+@media screen and (max-width: 960px) {
+    #webBadges {
+        width: auto;
+        display: none;
+    }
+}
+
+#webBadges img {
+    margin-right: 20px;
+}
+
+
+/* Contact form
+============================================== */
+
+#contactForm .formIndent {
+    margin: 20px 0 0 80px;
+}
+
+#contactForm .formIndent p {
+    margin: 20px 0pt;
+}
+
+/* WordPress */
+#commentform textarea {
+    width: 550px;
+}
+
+#contactDisplay {
+    height: 335px;
+}
+
+#contactDisplay {
+    height: 400px;
+}
+
+#contactForm {
+    margin-bottom: 20px;
+}
+
+#contactForm p {
+    margin: 0 0 5px 0;
+}
+
+#contactForm label {
+    display: block;
+    float: left;
+    width: 80px;
+}
+
+#comment textarea {
+    border: 1px solid #E2F1F7;
+}
+
+#contactForm input[type=text] {
+    width: 400px;
+}
+
+#contactForm textarea {
+    width: 400px;
+    height: 100px;
+}
+
+#contactForm input.validateRequired,
+#contactForm textarea.validateRequired {
+    background: #d9f3ff;
+}
+
+#contactForm img#captchaImg {
+    border: 1px solid #000000;
+}
+
+/* Common classes 
+============================================== */
+
+.clean {
+    margin: 0;
+    padding: 0;
+}
+
+.clean li {
+    list-style: none !important;
+}
+
+.hide {
+    display: none;
+}
+
+.float_left {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+.float_right {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+#youTubePlayer {
+    margin-block-end: 15px;
+}
