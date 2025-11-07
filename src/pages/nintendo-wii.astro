@@ -180,5 +180,8 @@ const metaData = {
         <p><img src="/upload/starwars_force_unleashed.jpg" loading="lazy" alt="Star Wars: The Force Unleashed" /></p>
     </main>
 
-    <script src="/js/hijack-youtube-links.js" defer slot="end-head"></script>
+    <script>
+        import { initYouTubePlayer } from "@/scripts/hijack-youtube-links";
+        document.addEventListener("DOMContentLoaded", initYouTubePlayer);
+    </script>
 </Layout>

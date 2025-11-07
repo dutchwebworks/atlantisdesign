@@ -1,6 +1,9 @@
 {
     "extends": "astro/tsconfigs/base",
+    "include": [".astro/types.d.ts", "**/*"],
+    "exclude": ["dist"],
     "compilerOptions": {
+        "target": "ES2022",
         "allowJs": true,
         "baseUrl": ".",
         "paths": {
