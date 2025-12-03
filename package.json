@@ -12,10 +12,10 @@
         "format": "prettier --plugin prettier-plugin-astro --write ."
     },
     "dependencies": {
-        "@astrojs/check": "^0.9.5",
+        "@astrojs/check": "^0.9.6",
         "@astrojs/sitemap": "^3.6.0",
         "@tailwindcss/vite": "^4.1.17",
-        "astro": "^5.15.9",
+        "astro": "^5.16.3",
         "typescript": "^5.9.3"
     },
     "devDependencies": {
