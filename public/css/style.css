@@ -303,9 +303,12 @@ form textarea {
 ============================================== */
 
 #youTubePlayer {
-    aspect-ratio: 1.64;
-    width: 640px;
-    height: 390px;
+    aspect-ratio: 1.78;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    margin-block-end: 15px;
 }
 
 /* Content 
@@ -847,8 +850,4 @@ img.gallery_large {
 
 .right {
     text-align: right;
-}
-
-#youTubePlayer {
-    margin-block-end: 15px;
 }

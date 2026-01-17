@@ -29,6 +29,7 @@ function insertYouTubePlayer(videoId: string): void {
     const playerId: string = "player";
     const ytId = document.createElement("div");
     ytId.id = playerId;
+    ytId.setAttribute("loading", "lazy");
     const youTubePlayer: HTMLElement | null = document.getElementById("youTubePlayer");
     if (youTubePlayer) {
         youTubePlayer.innerHTML = "";
@@ -37,8 +38,6 @@ function insertYouTubePlayer(videoId: string): void {
 
     // @ts-ignore - YouTube API loaded externally
     new YT.Player(playerId, {
-        height: "390",
-        width: "640",
         videoId: videoId,
     });
 }
