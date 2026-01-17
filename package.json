@@ -12,24 +12,24 @@
         "format": "prettier --plugin prettier-plugin-astro --write ."
     },
     "dependencies": {
-        "@astrojs/check": "^0.9.5",
-        "@astrojs/sitemap": "^3.6.0",
-        "@tailwindcss/vite": "^4.1.16",
-        "astro": "^5.15.2",
+        "@astrojs/check": "^0.9.6",
+        "@astrojs/sitemap": "^3.7.0",
+        "@tailwindcss/vite": "^4.1.18",
+        "astro": "^5.16.11",
         "typescript": "^5.9.3"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.16",
-        "autoprefixer": "^10.4.21",
+        "@tailwindcss/postcss": "^4.1.18",
+        "autoprefixer": "^10.4.23",
         "postcss": "^8.5.6",
-        "prettier": "3.6.2",
+        "prettier": "3.8.0",
         "prettier-plugin-astro": "0.14.1",
-        "tailwindcss": "^4.1.16"
+        "tailwindcss": "^4.1.18"
     },
     "pnpm": {
         "overrides": {
             "vite": ">=7.1.11"
         }
     },
-    "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
+    "packageManager": "pnpm@10.28.0"
 }
