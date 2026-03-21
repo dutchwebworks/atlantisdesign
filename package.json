@@ -12,19 +12,19 @@
         "format": "prettier --plugin prettier-plugin-astro --write ."
     },
     "dependencies": {
-        "@astrojs/check": "^0.9.7",
+        "@astrojs/check": "^0.9.8",
         "@astrojs/sitemap": "^3.7.1",
-        "@tailwindcss/vite": "^4.2.1",
-        "astro": "^6.0.4",
+        "@tailwindcss/vite": "^4.2.2",
+        "astro": "^6.0.8",
         "typescript": "^5.9.3"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.2.1",
+        "@tailwindcss/postcss": "^4.2.2",
         "autoprefixer": "^10.4.27",
         "postcss": "^8.5.8",
         "prettier": "3.8.1",
         "prettier-plugin-astro": "0.14.1",
-        "tailwindcss": "^4.2.1"
+        "tailwindcss": "^4.2.2"
     },
     "pnpm": {
         "overrides": {
